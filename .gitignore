@@ -8,3 +8,6 @@ test
 # log dir
 log
 
+# ssh dir
+.ssh
+

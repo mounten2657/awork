@@ -1,10 +1,10 @@
 
-awork:
+#**awork**:
 
-a tiny and simple framework.
+## a tiny and simple framework.
 
-catalog summary：
-
+> catalog summary：
+```
 /---
 -----app
     |
@@ -21,7 +21,7 @@ catalog summary：
     -----route
 
 -----lib
-    |
+    |``
     -----addon
     |
     -----common
@@ -42,6 +42,6 @@ catalog summary：
 
 -----README.md           文档说明
 
-
+```
 
 

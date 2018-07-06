@@ -1,0 +1,44 @@
+
+目录结构：
+
+/---
+-----app
+    |
+    -----config
+    |
+    -----data
+    |
+    -----html
+    |
+    -----http
+    |
+    -----lang
+    |
+    -----route
+
+-----lib
+    |
+    -----addon
+    |
+    -----common
+    |
+    -----core
+    |
+    awork.php
+
+-----log
+    |
+    -----default
+
+-----public
+    |
+    -----.htaccess
+    -----favicon.ico
+    -----index.php       入口文件
+
+-----z-document.txt      文档说明
+
+
+
+
+

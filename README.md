@@ -3,7 +3,7 @@
 
 ## a tiny and simple framework.
 
-> catalog summary：
+> catalog summary ：
 ```
 /---
 -----app
@@ -21,7 +21,7 @@
     -----route
 
 -----lib
-    |``
+    |
     -----addon
     |
     -----common

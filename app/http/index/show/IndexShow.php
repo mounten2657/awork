@@ -20,6 +20,8 @@ class IndexShow extends BaseShow
 
         dump($_REQUEST);
 
+        dump(gethostbyname(gethostname()));
+
         $this->display();
     }
 
@@ -42,5 +44,11 @@ class IndexShow extends BaseShow
             'sig' => $sign
         ]);
     }
+
+    public function getClientIp()
+    {
+        die(json_encode($_REQUEST));
+    }
+
 
 }

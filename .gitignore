@@ -11,3 +11,6 @@ log
 # ssh dir
 .ssh
 
+# log dir
+log
+

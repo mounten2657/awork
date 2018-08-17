@@ -16,11 +16,8 @@ class IndexShow extends BaseShow
 
         dump(IndexFacade::getName());
         dump(config('awork_version'));
-        dump(config('database.type'));
 
         dump($_REQUEST);
-
-        dump(gethostbyname(gethostname()));
 
         $this->display();
     }

@@ -22,7 +22,7 @@ return [
         'var_controller' => 'c',
         'var_action' => 'a',
         'default_module' => 'index',
-        'default_controller' => 'IndexShow',
+        'default_controller' => 'indexShow',
         'default_action' => 'index',
         'url_case_insensitive' => false,
         'url_html_suffix' => 'html',

@@ -77,7 +77,6 @@ class UrlDispatcher
         $paths = explode(self::$depr, trim($_SERVER['PATH_INFO'], self::$depr));
         $_GET[self::$varController] = array_shift($paths);
         $_GET[self::$varAction] = array_shift($paths);
-        $_GET[self::$varAction] = strstr($_GET[self::$varAction], '?', true);
 
         // 解析剩余的URL参数
         $var = [];
@@ -87,10 +86,6 @@ class UrlDispatcher
             }
             $var[$match[1]] = strip_tags($match[2]);
         }, implode('/', $paths));
-
-        //保证$_REQUEST正常取值
-        $_GET = array_merge($var, $_GET);
-        $_REQUEST = array_merge($_POST, $_GET);
 
         return true;
     }
@@ -115,7 +110,9 @@ class UrlDispatcher
             case self::$varAction:
                 $partName = !empty($_GET[$var]) ? $_GET[$var] : config('url_dispatcher.default_action');
                 break;
-        }unset($_GET[$var]);
+        }
+        unset($_GET[$var]);
+        $_GET[$var] = $partName;
         // 返回名称
         return strip_tags(self::$urlCase ? strtolower($partName) : $partName);
     }
@@ -127,7 +124,7 @@ class UrlDispatcher
     public static function dispatch()
     {
         // 路由初始化
-        self::_init();
+        self::_init();dump($_GET);
 
         // 定义模块名
         define('MODULE_NAME', self::_getPartName(self::$varModule));
@@ -137,6 +134,9 @@ class UrlDispatcher
 
         // 定义操作名
         define('ACTION_NAME', self::_getPartName(self::$varAction));
+
+        //保证$_REQUEST正常取值
+        $_REQUEST = array_merge($_POST, $_GET);
 
         return true;
     }

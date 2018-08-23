@@ -100,15 +100,15 @@ class UrlDispatcher
         switch ($var) {
             case self::$varModule:
                 $partName = !empty($_GET[$var]) ? $_GET[$var] : config('url_dispatcher.default_module');
-                if (!is_dir(APP_PATH.APP_MODULE_LAYER.DIRECTORY_SEPARATOR.$partName)) {
-                    throw new \Exception('MODULE NOT EXIST', 404);
-                }
                 break;
             case self::$varController:
                 $partName = !empty($_GET[$var]) ? $_GET[$var] : config('url_dispatcher.default_controller');
                 break;
             case self::$varAction:
                 $partName = !empty($_GET[$var]) ? $_GET[$var] : config('url_dispatcher.default_action');
+                break;
+            default:
+                $partName = 'index';
                 break;
         }
         unset($_GET[$var]);
@@ -128,10 +128,8 @@ class UrlDispatcher
 
         // 定义模块名
         define('MODULE_NAME', self::_getPartName(self::$varModule));
-
         // 定义控制器名
         define('CONTROLLER_NAME', self::_getPartName(self::$varController));
-
         // 定义操作名
         define('ACTION_NAME', self::_getPartName(self::$varAction));
 

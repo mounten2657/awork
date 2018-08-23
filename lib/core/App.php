@@ -27,6 +27,7 @@ class App
         // 定义应用目录层
         define('APP_MODULE_LAYER', 'http');
         define('APP_MODULE_LAYER_GROUP', 'api,facade,show');
+        define('APP_ROUTE_LAYER', 'route');
 
         // 设置时区
         date_default_timezone_set(config('default_timezone'));
@@ -43,6 +44,10 @@ class App
      */
     private static function _exec()
     {
+        if (!is_dir(APP_PATH.APP_MODULE_LAYER.DIRECTORY_SEPARATOR.MODULE_NAME)) {
+            throw new \Exception('MODULE NOT EXIST', 404);
+        }
+
         $controllerName = self::_getControllerName();
 
         $controllerInstance = new $controllerName();
@@ -82,12 +87,15 @@ class App
         try {
             // 初始化
             self::_init();
-            // 路由解析
-            if (ROUTE_MODE == 'mvc') {
-                UrlDispatcher::dispatch();
-            } else {
-                Router::dispatch();
+
+            // PATH INFO 解析
+            UrlDispatcher::dispatch();
+
+            // 自定义路由模式
+            if (ROUTE_MODE == 'route') {
+                Router::loader();
             }
+
             // 应用执行
             self::_exec();
         } catch (\Exception $e) {

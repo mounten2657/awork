@@ -62,9 +62,9 @@ class AutoLoader
         }
         if (in_array($path, ['AUTOLOAD_COMMON', 'AUTOLOAD_CONFIG'])) {
             foreach (self::$_AUTOLOAD_CONFIG[$path] as $dir) {
-                $files = self::_scanFile($dir);
+                $files = self::scanFile($dir);
                 foreach ($files as $file) {
-                    $fileName = $dir.DIRECTORY_SEPARATOR.$file;
+                    $fileName = $dir.DIRECTORY_SEPARATOR.basename($file);
                     if (!in_array($fileName, self::$_AUTOLOAD_FILES[$path])) {
                         if (is_file($fileName)) {
                             $configFile[] = $fileName;
@@ -82,8 +82,9 @@ class AutoLoader
      * @param $path
      * @return array
      */
-    private static function _scanFile($path)
+    public static function scanFile($path)
     {
+        $file = [];
         $item = scandir($path);
         foreach ($item as $k=>$v) {
             if ($v == '.' || $v == '..') {
@@ -91,9 +92,9 @@ class AutoLoader
             }
             $v = $path.DIRECTORY_SEPARATOR.$v;
             if (is_dir($v)) {
-                return self::_scanFile($v);
-            }else{
-                $file[] = basename($v);
+                $file = array_merge($file, self::scanFile($v));
+            } else {
+                $file[] = $v;
             }
         }
         return $file;

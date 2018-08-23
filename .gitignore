@@ -1,9 +1,6 @@
 
-# ide file
+# ide dir
 .idea
-
-# test dir
-test
 
 # log dir
 log
@@ -13,4 +10,7 @@ log
 
 # log dir
 log
+
+# log file
+*.log
 

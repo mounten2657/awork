@@ -124,7 +124,7 @@ class UrlDispatcher
     public static function dispatch()
     {
         // 路由初始化
-        self::_init();dump($_GET);
+        self::_init();
 
         // 定义模块名
         define('MODULE_NAME', self::_getPartName(self::$varModule));

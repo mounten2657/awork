@@ -11,7 +11,7 @@ define('VERSION', '6.0.0');
 $startRunTime = microtime(true);
 
 // 开始日期
-$startDate  = isset($_GET['start_time']) ? $_GET['start_time'] : date('Y-m-d', time() - 7 * 86400);
+$startDate  = isset($_GET['start_time']) ? $_GET['start_time'] : date('Y-m-d', time() - 6 * 86400);
 // 检索天数
 $dateNum = isset($_GET['date_num']) ? $_GET['date_num'] : 7;
 // 开始行数（手动选择行数，减少检索行数，提高效率）
@@ -25,7 +25,7 @@ dd('end line: '.substr(end($content), 0 , 48));
 $stat = _getStatData($content);
 
 // 信息输出
-dd('统计日期：'.date('d/M/Y', strtotime($startDate)).'---'.date('d/M/Y', strtotime($startDate) + $dateNum * 86400));
+dd('统计日期：'.date('d/M/Y', strtotime($startDate)).'---'.date('d/M/Y', strtotime($startDate) + $dateNum * 86400 -1));
 dd('点击按钮总数：'.$stat[EVENT_BTN]['total_count']);
 dd('点击推荐消息总数：'.$stat[EVENT_RCM]['total_count']);
 dd('点击推荐消息详情：');
@@ -113,12 +113,13 @@ function _getContentByLine($path, $line)
  */
 function _getContentByDate($path, $date, $num, $line = 1)
 {
+    // the record log should be exist every day
     $start = date('d/M/Y', strtotime($date));
-    $end = date('d/M/Y', strtotime($date) + ($num + 1) * 86400);
+    $end = date('d/M/Y', strtotime($date) + $num * 86400 + 1);
     $content = _getContentByLine($path, $line);
     $statLine = _getLineByDate($content, $start);
     $endLine = _getLineByDate($content, $end);
-    return array_slice($content, $statLine, ($endLine - $statLine + 1));
+    return array_slice($content, $statLine, ($endLine - $statLine   ));
 }
 
 /**

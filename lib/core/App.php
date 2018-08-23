@@ -85,6 +85,8 @@ class App
             // 路由解析
             if (ROUTE_MODE == 'mvc') {
                 UrlDispatcher::dispatch();
+            } else {
+                Router::dispatch();
             }
             // 应用执行
             self::_exec();

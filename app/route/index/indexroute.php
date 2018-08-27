@@ -2,4 +2,5 @@
 
 use core\Router;
 
-Router::bind('idx', 'index/indexShow/index');
+Router::get('idx', 'index/indexShow/index');
+Router::get('index/indexShow/index', 'index/indexShow/index');

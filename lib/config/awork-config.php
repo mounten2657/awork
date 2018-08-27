@@ -12,10 +12,11 @@ return [
     'default_ajax_return' => 'json',
 
     // 默认路由解析方式，route mode list: mvc,route
-    'default_route_mode' => 'mvc',
+    'default_route_mode' => 'route',
 
     // 路由解析
     'url_dispatcher' => [
+        'var_prefix' => 'awork:',
         'var_pathinfo' => 's',
         'var_module' => 'm',
         'var_controller' => 'c',

@@ -5,6 +5,8 @@ namespace core;
 class App
 {
 
+    private static $_pathInfo = [];
+
     /**
      * 应用初始化
      * @return bool
@@ -89,12 +91,19 @@ class App
             self::_init();
 
             // PATH INFO 解析
-            UrlDispatcher::dispatch();
+            UrlDispatcher::dispatch(self::$_pathInfo);
 
             // 自定义路由模式
             if (ROUTE_MODE == 'route') {
-                Router::loader();
+                Router::loader(self::$_pathInfo);
             }
+
+            // 定义模块名
+            define('MODULE_NAME', self::$_pathInfo[0]);
+            // 定义控制器名
+            define('CONTROLLER_NAME', self::$_pathInfo[1]);
+            // 定义操作名
+            define('ACTION_NAME', self::$_pathInfo[2]);
 
             // 应用执行
             self::_exec();

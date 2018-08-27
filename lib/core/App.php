@@ -46,6 +46,9 @@ class App
      */
     private static function _exec()
     {
+        // init request parameters
+        self::_initParameters();
+
         if (!is_dir(APP_PATH.APP_MODULE_LAYER.DIRECTORY_SEPARATOR.MODULE_NAME)) {
             throw new \Exception('MODULE NOT EXIST', 404);
         }
@@ -59,6 +62,17 @@ class App
         $methodInstance->invoke($controllerInstance);
 
         return true;
+    }
+
+    private static function _initParameters()
+    {
+        // 保证$_REQUEST正常取值
+        $prefix = config('url_dispatcher.var_prefix');
+        unset($_GET[$prefix.config('url_dispatcher.var_pathinfo')]);
+        unset($_GET[$prefix.config('url_dispatcher.var_module')]);
+        unset($_GET[$prefix.config('url_dispatcher.var_controller')]);
+        unset($_GET[$prefix.config('url_dispatcher.var_action')]);
+        $_REQUEST = array_merge($_POST, $_GET);
     }
 
     /**

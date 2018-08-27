@@ -73,9 +73,6 @@ class Router
         // 获取路由是否已添加
         $sParm = config('url_dispatcher.var_prefix').config('url_dispatcher.var_pathinfo');
         $rule = strtolower($_SERVER['REQUEST_METHOD']).':'.substr($_GET[$sParm],1);
-        if (strpos($rule, '?')) {
-            $rule = strstr($rule, '?', true);
-        }
         if (!in_array($rule, array_keys($routeList))) {
             throw new \Exception('MODULE NOT OPEN : '.$rule, 405);
         }
@@ -84,10 +81,6 @@ class Router
 
         // 保存解析结果
         $path = [$module , $controller, $action];
-
-        // unset GET & REQUEST parameters awork:s
-        unset($_GET[$sParm]);
-        unset($_REQUEST[$sParm]);
 
         return true;
     }

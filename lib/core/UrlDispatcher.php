@@ -52,6 +52,9 @@ class UrlDispatcher
             }
         }
         // 重新保存 PATH_INFO
+        if (strpos($_SERVER['PATH_INFO'], '?')) {
+            $_SERVER['PATH_INFO'] = strstr($_SERVER['PATH_INFO'], '?', true);
+        }
         $_GET[$prefix.self::$varPath] = $_SERVER['PATH_INFO'];
 
         // 参数处理
@@ -146,14 +149,6 @@ class UrlDispatcher
             self::_getPartName(self::$varController),
             self::_getPartName(self::$varAction),
         ];
-
-        // unset GET parameters awork:*
-        unset($_GET[self::$varModule]);
-        unset($_GET[self::$varController]);
-        unset($_GET[self::$varAction]);
-
-        //保证$_REQUEST正常取值
-        $_REQUEST = array_merge($_POST, $_GET);
 
         return true;
     }

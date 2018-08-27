@@ -11,7 +11,7 @@ return [
     // 默认ajax返回
     'default_ajax_return' => 'json',
 
-    // 默认路由解析方式，route mode list: mvc,route
+    // 默认路由解析方式，route mode list: mvc, route
     'default_route_mode' => 'route',
 
     // 路由解析

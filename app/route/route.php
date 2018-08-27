@@ -2,4 +2,4 @@
 
 use core\Router;
 
-Router::bind('idf', 'index/indexShow/index');
+Router::get('idc', 'index/indexShow/getClientIp');

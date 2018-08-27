@@ -14,12 +14,16 @@ class IndexShow extends BaseShow
         dump(intval(floatval(2.05) * 100));
         dump(intval(2.05 * 1000 /10));
 
-        dump(IndexFacade::getName());
         dump(config('awork_version'));
 
         dump($_REQUEST);
 
         $this->display();
+    }
+
+    public function getClientIp()
+    {
+        dump(IndexFacade::getName());
     }
 
     public function getSign()
@@ -41,11 +45,5 @@ class IndexShow extends BaseShow
             'sig' => $sign
         ]);
     }
-
-    public function getClientIp()
-    {
-        die(json_encode($_REQUEST));
-    }
-
 
 }

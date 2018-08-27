@@ -23,22 +23,36 @@ class UrlDispatcher
     private static function _init()
     {
         // 获取基本配置
+        $prefix = config('url_dispatcher.var_prefix') ? : '';
         self::$varPath = config('url_dispatcher.var_pathinfo');
-        self::$varModule = config('url_dispatcher.var_module');
-        self::$varController = config('url_dispatcher.var_controller');
-        self::$varAction = config('url_dispatcher.var_action');
+        self::$varModule = $prefix.config('url_dispatcher.var_module');
+        self::$varController = $prefix.config('url_dispatcher.var_controller');
+        self::$varAction = $prefix.config('url_dispatcher.var_action');
         self::$urlCase = config('url_dispatcher.url_case_insensitive');
         self::$depr = config('url_dispatcher.url_pathinfo_depr');
 
         // 模式参数判断
-        if (isset($_GET[self::$varPath])) { // 判断URL里面是否有兼容模式参数
-            $_SERVER['PATH_INFO'] = $_GET[self::$varPath] ? : $_SERVER['REQUEST_URI'];
-            unset($_GET[self::$varPath]);
+        if (isset($_GET[$prefix.self::$varPath])) { // 判断URL里面是否有兼容模式参数
+            $_SERVER['PATH_INFO'] = $_GET[$prefix.self::$varPath] ? : $_SERVER['REQUEST_URI'];
         } elseif (IS_CLI) { // CLI模式下 index.php module/controller/action/params/...
             $_SERVER['PATH_INFO'] = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
         } else {
             $_SERVER['PATH_INFO'] = $_SERVER['REQUEST_URI'];
         }
+        // 删除多余参数
+        if (isset($_GET[self::$varPath])) {
+            if (strpos($_SERVER['REQUEST_URI'], '?')) {
+                if ($_GET[self::$varPath] == strstr($_SERVER['REQUEST_URI'], '?', true)) {
+                    unset($_GET[self::$varPath]);
+                }
+            } else {
+                if ($_GET[self::$varPath] == $_SERVER['REQUEST_URI']) {
+                    unset($_GET[self::$varPath]);
+                }
+            }
+        }
+        // 重新保存 PATH_INFO
+        $_GET[$prefix.self::$varPath] = $_SERVER['PATH_INFO'];
 
         // 参数处理
         self::_analyzeParams();
@@ -121,17 +135,22 @@ class UrlDispatcher
      * 路由解析
      * @return bool
      */
-    public static function dispatch()
+    public static function dispatch(&$path)
     {
         // 路由初始化
         self::_init();
 
-        // 定义模块名
-        define('MODULE_NAME', self::_getPartName(self::$varModule));
-        // 定义控制器名
-        define('CONTROLLER_NAME', self::_getPartName(self::$varController));
-        // 定义操作名
-        define('ACTION_NAME', self::_getPartName(self::$varAction));
+        // 保存解析结果
+        $path = [
+            self::_getPartName(self::$varModule),
+            self::_getPartName(self::$varController),
+            self::_getPartName(self::$varAction),
+        ];
+
+        // unset GET parameters awork:*
+        unset($_GET[self::$varModule]);
+        unset($_GET[self::$varController]);
+        unset($_GET[self::$varAction]);
 
         //保证$_REQUEST正常取值
         $_REQUEST = array_merge($_POST, $_GET);

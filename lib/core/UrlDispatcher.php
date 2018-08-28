@@ -103,6 +103,7 @@ class UrlDispatcher
             }
             $var[$match[1]] = strip_tags($match[2]);
         }, implode('/', $paths));
+        $_GET = array_merge($_GET, $var);
 
         return true;
     }

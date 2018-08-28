@@ -19,12 +19,13 @@ class Router
     /**
      * 获取路由
      * @param string $rule
+     * @param string $method
      * @return array|mixed
      */
-    private static function _get($rule = '')
+    private static function _get($rule = '', $method = 'get')
     {
-        if (!empty($rule)) {
-            return self::$_router[$rule];
+        if (!empty($rule) && isset(self::$_router[$method][$rule])) {
+            return self::$_router[$method][$rule];
         }
         // get route
         return self::$_router;
@@ -39,11 +40,34 @@ class Router
      */
     private static function _set($rule, $route, $method)
     {
-        if (isset(self::$_router[$rule])) {
-            return self::$_router[$rule];
+        // no rewrite
+        if (isset(self::$_router[$method][$rule])) {
+            return self::$_router[$method][$rule];
         }
         // set route
-        return self::$_router[self::$_request_type[$method]][$rule] = $route;
+        return self::$_router[$method][$rule] = $route;
+    }
+
+    /**
+     * 解析路由
+     * @param $route
+     * @return array
+     */
+    private static function _parseRoute($route)
+    {
+        $path = ['', '', ''];
+        $route = explode('/', $route);
+        $count = count($route);
+        if ($count <= 2) {
+            return $path;
+        } elseif ($count == 3) {
+            $path = $route;
+        } else {
+            $path[2] = $route[$count - 1];
+            $path[1] = $route[$count - 2];
+            $path[0] = implode('/', array_slice($route, 0, -2));
+        }
+        return $path;
     }
 
     /**
@@ -63,7 +87,7 @@ class Router
             return false;
         }
 
-        return self::_set($rule, $route, $method);
+        return self::_set($rule, $route, strtolower($method));
     }
 
     /**
@@ -119,9 +143,12 @@ class Router
     {
         // 扫描文件
         $routerFile = AutoLoader::scanFile(APP_PATH.APP_ROUTE_LAYER);
+        usort($routerFile, function ($a, $b) {
+            return (strlen($a) > strlen($b)) ? 1 : -1;
+        });
         foreach ($routerFile as $file) {
             if (is_file($file)) {
-                include_once $file;
+                include $file;
             }
         }
         // 获取路由列表
@@ -134,8 +161,8 @@ class Router
         if (!in_array($rule, array_keys($routeList[$method]))) {
             throw new \Exception("MODULE NOT OPEN : [{$_SERVER['REQUEST_METHOD']}] $rule", 405);
         }
-        // 解析路由规则
-        list($module, $controller, $action) = explode('/', $routeList[$method][$rule], 3);
+        // 解析路由规则（兼容多层目录）
+        list($module, $controller, $action) = self::_parseRoute($routeList[$method][$rule]);
 
         // 保存解析结果
         $path = [$module , $controller, $action];

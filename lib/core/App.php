@@ -5,6 +5,7 @@ namespace core;
 class App
 {
 
+    /** @var array PATH_INFO 解析结果集 */
     private static $_pathInfo = [];
 
     /**
@@ -40,7 +41,7 @@ class App
     }
 
     /**
-     * 应用执行-通过反射类
+     * 应用执行 - 通过反射类
      * @throws \ReflectionException
      * @return bool
      */
@@ -49,21 +50,23 @@ class App
         // init request parameters
         self::_initParameters();
 
+        // check module exist
         if (!is_dir(APP_PATH.APP_MODULE_LAYER.DIRECTORY_SEPARATOR.MODULE_NAME)) {
             throw new \Exception('MODULE NOT EXIST', 404);
         }
 
+        // invoke app
         $controllerName = self::_getControllerName();
-
         $controllerInstance = new $controllerName();
-
         $methodInstance = new \ReflectionMethod($controllerInstance, ACTION_NAME);
-
         $methodInstance->invoke($controllerInstance);
 
         return true;
     }
 
+    /**
+     * 整合请求参数
+     */
     private static function _initParameters()
     {
         // 保证$_REQUEST正常取值
@@ -123,10 +126,7 @@ class App
             self::_exec();
         } catch (\Exception $e) {
             // 捕获异常
-            exit(json_encode([
-                'code' => $e->getCode(),
-                'message' => $e->getMessage()
-            ]));
+            error($e->getMessage(), $e->getCode());
         }
 
         return true;

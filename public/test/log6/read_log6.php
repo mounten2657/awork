@@ -19,23 +19,23 @@ $startLine = isset($_GET['start_line']) ? $_GET['start_line'] : 1;
 
 // 读取日志内容
 $content = _getContentByDate(LOG_PATH, $startDate, $dateNum, $startLine);
-dd('start line: '.substr($content[0], 0 , 48));
-dd('end line: '.substr(end($content), 0 , 48));
+read_log6_dump('start line: '.substr($content[0], 0 , 48));
+read_log6_dump('end line: '.substr(end($content), 0 , 48));
 // 获取统计数据
 $stat = _getStatData($content);
 
 // 信息输出
-dd('统计日期：'.date('d/M/Y', strtotime($startDate)).'---'.date('d/M/Y', strtotime($startDate) + $dateNum * 86400 -1));
-dd('点击按钮总数：'.$stat[EVENT_BTN]['total_count']);
-dd('点击推荐消息总数：'.$stat[EVENT_RCM]['total_count']);
-dd('点击推荐消息详情：');
+read_log6_dump('统计日期：'.date('d/M/Y', strtotime($startDate)).'---'.date('d/M/Y', strtotime($startDate) + $dateNum * 86400 -1));
+read_log6_dump('点击按钮总数：'.$stat[EVENT_BTN]['total_count']);
+read_log6_dump('点击推荐消息总数：'.$stat[EVENT_RCM]['total_count']);
+read_log6_dump('点击推荐消息详情：');
 foreach ($stat[EVENT_RCM]['group_data'] as $name => $value) {
-    dd("|---推荐消息ID：{$name}，点击数：{$value}");
+    read_log6_dump("|---推荐消息ID：{$name}，点击数：{$value}");
 }
 
 // 查看运行时间
 $endRunTime = microtime(true);
-dd("run time: ".round($endRunTime - $startRunTime, 8) ."s");
+read_log6_dump("run time: ".round($endRunTime - $startRunTime, 8) ."s");
 
 /*================================== 函数区 =====================================*/
 
@@ -143,7 +143,7 @@ function _getLineByDate($content, $date)
  * 打印调试信息
  * @param $var
  */
-function dd($var)
+function read_log6_dump($var)
 {
     echo '<pre>';
     var_dump($var);

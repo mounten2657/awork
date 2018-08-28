@@ -14,20 +14,20 @@ define('COMMAND_RRIZE_SEND', 'cron_worldcup_prize_send');
 
 
 // 接收命令类型
-$type = _get('type');
+$type = worldcup_get('type');
 if (!$type) {
-    _error(101, 'type is not given');
+    worldcup_error(101, 'type is not given');
 }
 
 // 获取命令信息
-$command = _getCommand($type);
+$command = worldcup_getCommand($type);
 if (isset($command['code'])) {
-    _error($command['code'], $command['info']);
-}dd($command);
+    worldcup_error($command['code'], $command['info']);
+}worldcup_dump($command);
 
 // 执行命令
-$result = _execute($command);
-dd($result);
+$result = worldcup_execute($command);
+worldcup_dump($result);
 
 
 /*================================== 函数区 =====================================*/
@@ -37,14 +37,14 @@ dd($result);
  * @param $command
  * @return string
  */
-function _execute($command)
+function worldcup_execute($command)
 {
     $result  = 'execute info: '."\r\n";
     try {
         $commands = implode(' && ',$command);
-        dd('real execute command: '.$commands);
+        worldcup_dump('real execute command: '.$commands);
         $result .= shell_exec($commands);
-        $logInfo = _getCommandLog($command, $result);
+        $logInfo = worldcup_getCommandLog($command, $result);
         file_put_contents(LOG_DIR.'cron_worldcup_web_exec.log', $logInfo,FILE_APPEND);
     } catch (\Exception $e) {
         $result .= $e->getMessage();
@@ -58,7 +58,7 @@ function _execute($command)
  * @param $result
  * @return string
  */
-function _getCommandLog($command, $result)
+function worldcup_getCommandLog($command, $result)
 {
     $time = '['.date('Y-m-d H:i:s').']';
     $log  = $time.'[COMMAND] '.var_export($command, true)."\r\n";
@@ -71,11 +71,11 @@ function _getCommandLog($command, $result)
  * @param $type
  * @return array
  */
-function _getCommand($type)
+function worldcup_getCommand($type)
 {
     switch ($type) {
         case 1:
-            $params = _getLoadParams();
+            $params = worldcup_getLoadParams();
             if (isset($params['code'])) {
                 return $params;
             }
@@ -107,11 +107,11 @@ function _getCommand($type)
  * 获取录入结果参数
  * @return array
  */
-function _getLoadParams()
+function worldcup_getLoadParams()
 {
-    $matchId = _get('match_id');
-    $score = _get('score');
-    $odds = _get('odds') ? : 1;       // [!] 废弃，不再维护
+    $matchId = worldcup_get('match_id');
+    $score = worldcup_get('score');
+    $odds = worldcup_get('odds') ? : 1;       // [!] 废弃，不再维护
     if ($matchId && $score && $odds) {
         return ['match_id'=> $matchId, 'score' => $score, 'odds' => $odds];
     } else {
@@ -124,7 +124,7 @@ function _getLoadParams()
  * @param $name
  * @return string
  */
-function _get($name)
+function worldcup_get($name)
 {
     return isset($_GET[$name]) ? $_GET[$name] : '';
 }
@@ -134,7 +134,7 @@ function _get($name)
  * @param $code
  * @param $message
  */
-function _error($code, $message)
+function worldcup_error($code, $message)
 {
     $error = ['code' => $code, 'info' => $message];
     return exit(json_encode($error));
@@ -144,7 +144,7 @@ function _error($code, $message)
  * 打印调试信息
  * @param $var
  */
-function dd($var)
+function worldcup_dump($var)
 {
     echo '<pre>';
     var_dump($var);

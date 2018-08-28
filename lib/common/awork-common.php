@@ -4,7 +4,7 @@
  * 发送HTTP状态
  * @param integer $code                          状态码
  * @param string $content                        提示信息
- * @return void
+ * @return mixed
  */
 function abort($code, $content = '')
 {
@@ -57,11 +57,24 @@ function abort($code, $content = '')
         505 => 'HTTP Version Not Supported',
         509 => 'Bandwidth Limit Exceeded'
     ];
-    $content = isset($_status[$code]) ? $_status[$code] : $content;
+    if (empty($content) && isset($_status[$code])) {
+        $content = $_status[$code];
+    }
     header('HTTP/1.1 '.$code.' '.$content);
     // 确保FastCGI模式下正常
     header('Status:'.$code.' '.$content);
-    exit($code.' '.$content);
+    return error($content, $code);
+}
+
+/**
+ * 错误输出
+ * @param $message
+ * @param int $code
+ * @return mixed
+ */
+function error($message, $code = 400)
+{
+    return die(json_encode(['code' => $code, 'message' => $message]));
 }
 
 /**

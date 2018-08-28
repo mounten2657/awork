@@ -173,15 +173,13 @@ class AutoLoader
             case E_COMPILE_ERROR:
             case E_USER_ERROR:
                 ob_end_clean();
-                $errorStr = "$errstr ".$errfile." 第 $errline 行.";
+                $errorStr = "$errstr ".$errfile." line: $errline ";
                 break;
             default:
-                $errorStr = "[$errno] $errstr ".$errfile." 第 $errline 行.";
+                $errorStr = "$errstr ".$errfile." line: $errline  [$errno]";
                 break;
         }
-        Log::record($errorStr, 'erra', Log::ERR);
-        dump($errorStr);
-        abort(405);
+        abort(405, $errorStr);
     }
 
     /**
@@ -200,10 +198,9 @@ class AutoLoader
             $error['line']  =   $e->getLine();
         }
         $error['trace']     =   $e->getTraceAsString();
-        Log::record($error, 'erra', Log::ERR);
-        dump($error);
+        $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
         // 发送404信息
-        abort(404);
+        abort(404, $errorStr);
 
     }
 
@@ -211,8 +208,8 @@ class AutoLoader
      * Shutdown Handler
      */
     public static function appShutdown() {
-        if ($e = error_get_last()) {
-            switch($e['type']){
+        if ($error = error_get_last()) {
+            switch($error['type']){
                 case E_ERROR:
                 case E_PARSE:
                 case E_CORE_ERROR:
@@ -221,9 +218,8 @@ class AutoLoader
                     ob_end_clean();
                     break;
             }
-            dump($e);
-            Log::record($e, 'erra', Log::ERR);
-            abort(403);
+            $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
+            abort(403, $errorStr);
         }
     }
 

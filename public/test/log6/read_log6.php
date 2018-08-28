@@ -1,7 +1,7 @@
 <?php
 
 // 日志路径
-define('LOG_PATH','./log6.coobar.cn.access.log');
+define('READ_LOG6_PATH','./log6.coobar.cn.access.log');
 // 事件列表
 define('EVENT_RCM', 'client/msgcenterrcm');
 define('EVENT_BTN', 'client/msgcenterbtn');
@@ -18,7 +18,7 @@ $dateNum = isset($_GET['date_num']) ? $_GET['date_num'] : 7;
 $startLine = isset($_GET['start_line']) ? $_GET['start_line'] : 1;
 
 // 读取日志内容
-$content = _getContentByDate(LOG_PATH, $startDate, $dateNum, $startLine);
+$content = _getContentByDate(READ_LOG6_PATH, $startDate, $dateNum, $startLine);
 read_log6_dump('start line: '.substr($content[0], 0 , 48));
 read_log6_dump('end line: '.substr(end($content), 0 , 48));
 // 获取统计数据

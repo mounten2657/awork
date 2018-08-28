@@ -68,13 +68,10 @@ class Log
      */
     private static function _getLogPath($module)
     {
-        $config = config('log_path');
         if ('' == $module) {
-            $logPath = $config['default'];
-        } elseif (isset($config[$module])) {
-            $logPath = $config[$module];
+            $logPath = LOG_PATH.'default';
         } else {
-            return false;
+            $logPath = LOG_PATH.$module;
         }
         return $logPath;
     }

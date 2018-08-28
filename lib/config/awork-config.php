@@ -12,6 +12,8 @@ return [
     'default_ajax_return' => 'json',
 
     // 默认路由解析方式，route mode list: mvc, route
+    // [!] mvc 模式不支持多于三层以上的路由
+    // [!] 强烈建议采用 route 模式
     'default_route_mode' => 'route',
 
     // 路由解析
@@ -35,13 +37,6 @@ return [
     'log_file_size' => 2097152,
     'log_date_format' => 'Ymd',
     'log_time_format' => 'H',
-    'log_path' => [
-        'default' => LOG_PATH.'default',
-        'erra' => LOG_PATH.'error/autoload',
-        'index' => LOG_PATH.'index',
-        'idxt' => LOG_PATH.'index/test',
-        'idxs' => LOG_PATH.'index/sign',
-    ],
 
     // 基础数据库
     'database' => [

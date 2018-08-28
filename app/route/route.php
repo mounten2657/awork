@@ -10,3 +10,4 @@ use core\Router;
 
 // 默认访问首页
 Router::get('', 'index/indexShow/index');
+Router::get('index/indexShow/index', 'index/indexShow/index');

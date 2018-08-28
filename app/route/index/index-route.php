@@ -7,6 +7,6 @@ use core\Router;
  */
 
 Router::get('index/show/index', 'index/indexShow/index');
-Router::get('index/show/facade', 'index/indexShow/getClientIp');
+Router::get('index/show/client', 'index/indexShow/getClientIp');
 Router::get('index/show/sign', 'index/indexShow/getSign');
 Router::get('index/show/version', 'v10000/index/indexShow/getVersion');

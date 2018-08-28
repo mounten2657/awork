@@ -94,7 +94,7 @@ class App
             }
         }
 
-        return $controllerName.'\\'.ucfirst(CONTROLLER_NAME);
+        return str_replace('/', '\\', $controllerName.'\\'.ucfirst(CONTROLLER_NAME));
     }
 
     /**

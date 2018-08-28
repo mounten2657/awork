@@ -30,18 +30,18 @@ class AutoLoader
     private static function _findClassFile($class)
     {
         // 查找类文件
-        if(false !== strpos($class,'\\')){
+        if (false !== strpos($class,'\\')) {
             $name           =   strstr($class, '\\', true);
-            if(in_array($name, self::$_AUTOLOAD_CONFIG['AUTOLOAD_LIBRARY']) || is_dir(LIB_PATH.$name)){
+            if (in_array($name, self::$_AUTOLOAD_CONFIG['AUTOLOAD_LIBRARY']) || is_dir(LIB_PATH.$name)) {
                 // lib目录下面的命名空间自动定位
                 $path       =   LIB_PATH;
-            }else{
+            } else {
                 // 检测自定义命名空间 否则就以模块为命名空间
                 $namespace  =   self::$_AUTOLOAD_CONFIG['AUTOLOAD_NAMESPACE'];
                 $path       =   isset($namespace[$name]) ? dirname($namespace[$name]) . DIRECTORY_SEPARATOR : ROOT_PATH;
             }
             $filename       =   $path . str_replace('\\', DIRECTORY_SEPARATOR, $class) . self::EXT;
-            if(is_file($filename)) {
+            if (is_file($filename)) {
                 return $filename;
             }
         }
@@ -165,7 +165,8 @@ class AutoLoader
      * @param  string  $errfile 出错的文件
      * @param  integer $errline 出错行号
      */
-    public static function appError($errno, $errstr, $errfile, $errline) {
+    public static function appError($errno, $errstr, $errfile, $errline)
+    {
         switch ($errno) {
             case E_ERROR:
             case E_PARSE:
@@ -179,6 +180,7 @@ class AutoLoader
                 $errorStr = "$errstr ".$errfile." line: $errline  [$errno]";
                 break;
         }
+        // 发送405信息
         abort(405, $errorStr);
     }
 
@@ -186,7 +188,8 @@ class AutoLoader
      * Exception Handler
      * @param mixed $e 异常对象
      */
-    public static function appException($e) {
+    public static function appException($e)
+    {
         $error = array();
         $error['message']   =   $e->getMessage();
         $trace              =   $e->getTrace();
@@ -201,15 +204,15 @@ class AutoLoader
         $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
         // 发送404信息
         abort(404, $errorStr);
-
     }
 
     /**
      * Shutdown Handler
      */
-    public static function appShutdown() {
+    public static function appShutdown()
+    {
         if ($error = error_get_last()) {
-            switch($error['type']){
+            switch ($error['type']) {
                 case E_ERROR:
                 case E_PARSE:
                 case E_CORE_ERROR:
@@ -219,6 +222,7 @@ class AutoLoader
                     break;
             }
             $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
+            // 发送403信息
             abort(403, $errorStr);
         }
     }

@@ -68,14 +68,27 @@ function abort($code, $content = '')
 }
 
 /**
- * 错误输出
+ * 错误跳转输出
  * @param $message
  * @param int $code
  * @return mixed
  */
 function error($message, $code = 400)
 {
-    return die(json_encode(['code' => $code, 'message' => $message]));
+    switch ($code) {
+        case 404 :
+            $url = '/error/404';
+            break;
+        case 405 :
+            $url = '/error/405';
+            break;
+        default :
+            $url = '/error/default';
+            break;
+    }
+    $param = http_build_query(['code' => $code, 'message' => $message]);
+    echo "<script type='text/javascript'>window.location.href='$url?$param'</script>";
+    return true;
 }
 
 /**
@@ -160,4 +173,53 @@ function dump($var)
         $output = '<pre>' . $output . '</pre>';
     }
     echo $output;
+}
+
+/**
+ * 获取http请求参数
+ * @param $name
+ * @param string $default
+ * @param string $filter
+ * @return null|string
+ */
+function input($name, $default = '', $filter = '')
+{
+    if (strpos($name, '.')) {
+        $name = explode('.', $name, 2);
+    } else {
+        $name = [$name, ''];
+    }
+
+    if ('GET' == strtoupper($name[0])) {
+        $input = $_GET;
+    } elseif (in_array(strtoupper($name[0]), ['POST', 'DELETE'])) {
+        $input = $_POST;
+    } elseif ('PUT' == strtoupper($name[0])) {
+        $uri = @file_get_contents('php://input');
+        parse_str($uri, $input);
+        $input = $input ? : null;
+    } else {
+        $input = null;
+    }
+
+    if (!empty($name[1]) && $name[1] != '*') {
+        $input = isset($input[$name[1]]) ? $input[$name[1]] : null;
+    }
+
+    if (!is_array($input)) {
+        if (null !== $input) {
+            if (!empty($filter)) {
+                $input = $filter($input);
+            }
+        } else {
+            $input = $default;
+        }
+    }
+
+    return $input;
+}
+
+function redirect()
+{
+
 }

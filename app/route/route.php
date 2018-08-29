@@ -9,5 +9,10 @@ use core\Router;
  */
 
 // 默认访问首页
-Router::get('', 'index/indexShow/index');
-Router::get('index/indexShow/index', 'index/indexShow/index');
+Router::get('', 'index/IndexShow/index');
+Router::get('index/indexShow/index', 'index/IndexShow/index');
+
+// 错误页面
+Router::get('error/default', 'error/ErrorShow/defaultPage');
+Router::get('error/404', 'error/ErrorShow/notFoundPage');
+Router::get('error/405', 'error/ErrorShow/notAllowedPage');

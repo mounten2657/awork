@@ -157,6 +157,9 @@ class Router
         // 检测路由是否在列表中
         $sParm = config('url_dispatcher.var_prefix').config('url_dispatcher.var_pathinfo');
         $rule = substr($_GET[$sParm],1);
+        $rule = preg_replace_callback('/([\/]+[A-Z]{1})/i', function ($matchs) {
+            return strtolower($matchs[0]);
+        }, $rule);
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         if (!in_array($rule, array_keys($routeList[$method]))) {
             throw new \Exception("MODULE NOT OPEN : [{$_SERVER['REQUEST_METHOD']}] $rule", 405);

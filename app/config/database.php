@@ -1,47 +1,6 @@
 <?php
 
 return [
-
-    // 版本号
-    'awork_version' => '1.0.0',
-
-    // 默认时区
-    'default_timezone' => 'PRC',
-
-    // 默认ajax返回
-    'default_ajax_return' => 'json',
-
-    // 默认路由解析方式，route mode list: mvc, route
-    // [!] mvc 模式不支持多于三层以上的路由
-    // [!] 强烈建议采用 route 模式
-    'default_route_mode' => 'route',
-
-    // 路由解析
-    'url_dispatcher' => [
-        'var_prefix' => 'awork:',
-        'var_pathinfo' => 's',
-        'var_module' => 'm',
-        'var_controller' => 'c',
-        'var_action' => 'a',
-        'default_module' => 'index',
-        'default_controller' => 'indexShow',
-        'default_action' => 'index',
-        'url_case_insensitive' => false,
-        'url_html_suffix' => 'html',
-        'url_pathinfo_depr' => '/',
-        'module_allow_list' => '',
-    ],
-
-    // 日志相关
-    'log_level' => 'info',
-    'log_file_size' => 2097152,
-    'log_date_format' => 'Ymd',
-    'log_time_format' => 'H',
-    'log_path' => [
-        'default'          => LOG_PATH.'default',
-        'autoload'         => LOG_PATH.'autoload',
-    ],
-
     // 默认数据库
     'database' => [
         'default' => [
@@ -50,7 +9,7 @@ return [
             // 数据库连接DSN配置
             'dsn'            => '',
             // 服务器地址
-            'hostname'       => 'localhost',
+            'hostname'       => '127.0.0.1',
             // 数据库名
             'database'       => 'awork',
             // 数据库用户名
@@ -80,6 +39,6 @@ return [
             // 自动写入时间戳字段
             'auto_timestamp' => false,
         ],
-    ],
 
+    ]
 ];

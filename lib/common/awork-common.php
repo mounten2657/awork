@@ -63,6 +63,7 @@ function abort($code, $content = '')
     header('HTTP/1.1 '.$code.' '.$content);
     // 确保FastCGI模式下正常
     header('Status:'.$code.' '.$content);
+    // 展示错误
     return error($content, $code);
 }
 
@@ -142,11 +143,21 @@ function ip($type = 0, $adv = true)
 
 /**
  * 打印信息
- * @param null $var
+ * @param $var
  */
-function dump($var = null)
+function dump($var)
 {
-    echo "<pre>";
+    ob_start();
     var_dump($var);
-    echo "</pre>";
+    $output = ob_get_clean();
+    $output = preg_replace('/\]\=\>\n(\s+)/m', '] => ', $output);
+    if (IS_CLI) {
+        $output = PHP_EOL . $output . PHP_EOL;
+    } else {
+        if (!extension_loaded('xdebug')) {
+            $output = htmlspecialchars($output, ENT_SUBSTITUTE);
+        }
+        $output = '<pre>' . $output . '</pre>';
+    }
+    echo $output;
 }

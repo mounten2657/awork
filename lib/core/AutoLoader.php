@@ -174,12 +174,13 @@ class AutoLoader
             case E_COMPILE_ERROR:
             case E_USER_ERROR:
                 ob_end_clean();
-                $errorStr = "$errstr ".$errfile." line: $errline ";
+                $errorStr = "$errstr. [File] ".$errfile." [Line] $errline ";
                 break;
             default:
-                $errorStr = "$errstr ".$errfile." line: $errline  [$errno]";
+                $errorStr = "$errstr. [File] ".$errfile." [Line] $errline  [$errno]";
                 break;
         }
+        Log::record('[APP_ERROR] '.$errorStr, 'autoload', Log::ERR);
         // 发送405信息
         abort(405, $errorStr);
     }
@@ -201,7 +202,8 @@ class AutoLoader
             $error['line']  =   $e->getLine();
         }
         $error['trace']     =   $e->getTraceAsString();
-        $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
+        $errorStr = "{$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
+        Log::record('[APP_EXCEPTION] '.$errorStr, 'autoload', Log::ERR);
         // 发送404信息
         abort(404, $errorStr);
     }
@@ -221,7 +223,8 @@ class AutoLoader
                     ob_end_clean();
                     break;
             }
-            $errorStr = "{$error['message']}. {$error['file']} line: {$error['line']} ";
+            $errorStr = "{$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
+            Log::record('[APP_SHUTDOWN] '.$errorStr, 'autoload', Log::ERR);
             // 发送403信息
             abort(403, $errorStr);
         }

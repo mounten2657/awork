@@ -10,17 +10,33 @@ class Log
     const EXT       = '.log';
 
     /**
-     * 日志级别 从上到下，由高到低
+     * 日志级别 从上到下，由低到高
      */
-    const EMERG     = 'EMERG';   // 严重错误: 导致系统崩溃无法使用
-    const ALERT     = 'ALERT';   // 警戒性错误: 必须被立即修改的错误
-    const CRIT      = 'CRIT';    // 临界值错误: 超过临界值的错误，例如一天24小时，而输入的是25小时这样
-    const ERR       = 'ERR';     // 一般错误: 一般性错误
-    const WARN      = 'WARN';    // 警告性错误: 需要发出警告的错误
-    const NOTICE    = 'NOTIC';   // 通知: 程序可以运行但是还不够完美的错误
-    const INFO      = 'INFO';    // 信息: 程序输出信息
-    const DEBUG     = 'DEBUG';   // 调试: 调试信息
-    const SQL       = 'SQL';     // SQL：SQL语句 注意只在调试模式开启时有效
+    const SQL       = '1';   // SQL：SQL语句 注意只在调试模式开启时有效
+    const DEBUG     = '2';   // 调试: 调试信息
+    const INFO      = '3';   // 信息: 程序输出信息
+    const NOTICE    = '4';   // 通知: 程序可以运行但是还不够完美的错误
+    const WARN      = '5';   // 警告性错误: 需要发出警告的错误
+    const ERR       = '6';   // 一般错误: 一般性错误
+    const CRIT      = '7';   // 临界值错误: 超过临界值的错误，例如一天24小时，而输入的是25小时这样
+    const ALERT     = '8';   // 警戒性错误: 必须被立即修改的错误
+    const EMERG     = '9';   // 严重错误: 导致系统崩溃无法使用
+
+    /**
+     * 日志级别索引，与常量保持一致
+     * @var array
+     */
+    private static $_logLevel = [
+        self::SQL    => 'SQL',
+        self::DEBUG  => 'DEBUG',
+        self::INFO   => 'INFO',
+        self::NOTICE => 'NOTICE',
+        self::WARN   => 'WARN',
+        self::ERR    => 'ERR',
+        self::CRIT   => 'CRIT',
+        self::ALERT  => 'ALERT',
+        self::EMERG  => 'EMERG',
+    ];
 
     /**
      * 日志写入
@@ -54,7 +70,8 @@ class Log
             if(is_file($destination) && floor(config('log_file_size')) <= filesize($destination) ){
                 $destination = dirname($destination).'/'.basename($destination).'-over'.self::EXT;
             }
-            $result = error_log('['.date("Y-m-d H:i:s").']['.ip().']['.$level.'] '.$message."\n", 3,$destination);
+            $level = self::$_logLevel[$level];
+            $result = error_log('['.date("Y-m-d H:i:s").']['.ip().']['.$level.']'.$message."\n", 3,$destination);
         }catch (\Exception $e){
             return false;
         }
@@ -68,10 +85,13 @@ class Log
      */
     private static function _getLogPath($module)
     {
+        $config = config('log_path');
         if ('' == $module) {
-            $logPath = LOG_PATH.'default';
+            $logPath = $config['default'];
+        } elseif (isset($config[$module])) {
+            $logPath = $config[$module];
         } else {
-            $logPath = LOG_PATH.$module;
+            return false;
         }
         return $logPath;
     }
@@ -85,7 +105,8 @@ class Log
      * @return mixed                             写入结果
      */
     public static function record($message, $module, $level = self::INFO, $file = '') {
-        if(false !== stripos(config('log_level'), $level)) {
+        $defaultLevel = array_search(strtoupper(config('log_level')), self::$_logLevel) ? : '0';
+        if($level < $defaultLevel) {
             return false;
         }
         return self::_write($message, $module, $level, $file);

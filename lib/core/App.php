@@ -42,7 +42,6 @@ class App
 
     /**
      * 应用执行 - 通过反射类
-     * @throws \ReflectionException
      * @return bool
      */
     private static function _exec()
@@ -99,7 +98,7 @@ class App
 
     /**
      * 应用执行
-     * @return bool
+     * @return mixed
      */
     public static function run()
     {
@@ -126,7 +125,7 @@ class App
             self::_exec();
         } catch (\Exception $e) {
             // 捕获异常
-            error($e->getMessage(), $e->getCode());
+            return error($e->getMessage(), $e->getCode());
         }
 
         return true;

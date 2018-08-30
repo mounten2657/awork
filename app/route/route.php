@@ -13,6 +13,6 @@ Router::get('', 'index/IndexShow/index');
 Router::get('index/indexShow/index', 'index/IndexShow/index');
 
 // 错误页面
-Router::get('error/default', 'error/ErrorShow/defaultPage');
-Router::get('error/404', 'error/ErrorShow/notFoundPage');
-Router::get('error/405', 'error/ErrorShow/notAllowedPage');
+Router::get('error/default', 'error/ErrorShow/defaultShow');
+Router::get('error/404', 'error/ErrorShow/_404');
+Router::get('error/405', 'error/ErrorShow/_405');

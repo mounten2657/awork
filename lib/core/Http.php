@@ -74,7 +74,7 @@ class Http
     private static $_errorPage = [
         400 => 'error/default',
         404 => 'error/404',
-        405 => 'error/404',
+        405 => 'error/405',
     ];
 
     /**
@@ -103,8 +103,8 @@ class Http
      */
     public static function error($message, $code = 400)
     {
+        $param = ['message' => $message, 'from' => defined('ROUTE_PATH') ? ROUTE_PATH : 'Unknown', 'time' => time()];
         $url = isset(self::$_errorPage[$code]) ? self::$_errorPage[$code] : self::$_errorPage[400];
-        $param = ['code' => $code, 'message' => $message];
         return self::redirect($url, $param);
     }
 

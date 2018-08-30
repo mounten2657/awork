@@ -43,6 +43,10 @@ return [
         'http'             => LOG_PATH.'http',
     ],
 
+    // 错误显示相关
+    'error_show_all' => false,
+    'error_show_time' => 5,
+
     // 默认数据库
     'database' => [
         'default' => [

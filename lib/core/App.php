@@ -120,12 +120,15 @@ class App
             define('CONTROLLER_NAME', self::$_pathInfo[1]);
             // 定义操作名
             define('ACTION_NAME', self::$_pathInfo[2]);
+            // 定义路由规则
+            define('ROUTE_PATH', isset(self::$_pathInfo[3]) ? self::$_pathInfo[3] : implode('/', self::$_pathInfo));
 
             // 应用执行
             self::_exec();
         } catch (\Exception $e) {
             // 捕获异常
-            return error($e->getMessage(), $e->getCode());
+            $message = $e->getMessage().' [File] '.$e->getFile().' [Line] '.$e->getLine();
+            Http::error($message, $e->getCode());
         }
 
         return true;

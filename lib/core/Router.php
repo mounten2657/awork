@@ -162,13 +162,13 @@ class Router
         }, $rule);
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         if (!in_array($rule, array_keys($routeList[$method]))) {
-            throw new \Exception("MODULE NOT OPEN : [{$_SERVER['REQUEST_METHOD']}] $rule", 405);
+            throw new \Exception("MODULE NOT OPEN [{$_SERVER['REQUEST_METHOD']}] : $rule.", 405);
         }
         // 解析路由规则（兼容多层目录）
         list($module, $controller, $action) = self::_parseRoute($routeList[$method][$rule]);
 
         // 保存解析结果
-        $path = [$module , $controller, $action];
+        $path = [$module , $controller, $action, $rule];
 
         return true;
     }

@@ -9,6 +9,7 @@ return [
     'log_path' => [
         'default'          => LOG_PATH.'default',
         'catch'            => LOG_PATH.'catch',
+        'http'             => LOG_PATH.'http',
         'index/client'     => LOG_PATH.'index/client',
         'index/test'       => LOG_PATH.'index/test',
         'index/sign'       => LOG_PATH.'index/sign',

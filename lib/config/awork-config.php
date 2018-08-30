@@ -40,6 +40,7 @@ return [
     'log_path' => [
         'default'          => LOG_PATH.'default',
         'catch'            => LOG_PATH.'catch',
+        'http'             => LOG_PATH.'http',
     ],
 
     // 默认数据库

@@ -9,7 +9,7 @@ class Router
     private static $_router = [];
 
     /** @var array 请求类型 */
-    private static $_request_type = [
+    private static $_requestType = [
         'get'    => 'get',
         'post'   => 'post',
         'put'    => 'put',
@@ -79,7 +79,7 @@ class Router
      */
     public static function bind($rule, $route, $method)
     {
-        if (!in_array(strtolower($method), self::$_request_type)) {
+        if (!in_array(strtolower($method), self::$_requestType)) {
             return false;
         }
         // request filter
@@ -98,7 +98,7 @@ class Router
      */
     public static function get($rule, $route)
     {
-        return self::bind($rule, $route, self::$_request_type['get']);
+        return self::bind($rule, $route, self::$_requestType['get']);
     }
 
     /**
@@ -109,7 +109,7 @@ class Router
      */
     public static function post($rule, $route)
     {
-        return self::bind($rule, $route, self::$_request_type['post']);
+        return self::bind($rule, $route, self::$_requestType['post']);
     }
 
     /**
@@ -120,7 +120,7 @@ class Router
      */
     public static function put($rule, $route)
     {
-        return self::bind($rule, $route, self::$_request_type['put']);
+        return self::bind($rule, $route, self::$_requestType['put']);
     }
 
     /**
@@ -131,7 +131,7 @@ class Router
      */
     public static function delete($rule, $route)
     {
-        return self::bind($rule, $route, self::$_request_type['delete']);
+        return self::bind($rule, $route, self::$_requestType['delete']);
     }
 
     /**

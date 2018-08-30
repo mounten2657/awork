@@ -1,97 +1,6 @@
 <?php
 
 /**
- * 发送HTTP状态
- * @param integer $code                          状态码
- * @param string $content                        提示信息
- * @return mixed
- */
-function abort($code, $content = '')
-{
-    $_status = [
-        // Informational 1xx
-        100 => 'Continue',
-        101 => 'Switching Protocols',
-        // Success 2xx
-        200 => 'OK',
-        201 => 'Created',
-        202 => 'Accepted',
-        203 => 'Non-Authoritative Information',
-        204 => 'No Content',
-        205 => 'Reset Content',
-        206 => 'Partial Content',
-        // Redirection 3xx
-        300 => 'Multiple Choices',
-        301 => 'Moved Permanently',
-        302 => 'Moved Temporarily ',  // 1.1
-        303 => 'See Other',
-        304 => 'Not Modified',
-        305 => 'Use Proxy',
-        // 306 is deprecated but reserved
-        307 => 'Temporary Redirect',
-        // Client Error 4xx
-        400 => 'Bad Request',
-        401 => 'Unauthorized',
-        402 => 'Payment Required',
-        403 => 'Forbidden',
-        404 => 'Not Found',
-        405 => 'Method Not Allowed',
-        406 => 'Not Acceptable',
-        407 => 'Proxy Authentication Required',
-        408 => 'Request Timeout',
-        409 => 'Conflict',
-        410 => 'Gone',
-        411 => 'Length Required',
-        412 => 'Precondition Failed',
-        413 => 'Request Entity Too Large',
-        414 => 'Request-URI Too Long',
-        415 => 'Unsupported Media Type',
-        416 => 'Requested Range Not Satisfiable',
-        417 => 'Expectation Failed',
-        // Server Error 5xx
-        500 => 'Internal Server Error',
-        501 => 'Not Implemented',
-        502 => 'Bad Gateway',
-        503 => 'Service Unavailable',
-        504 => 'Gateway Timeout',
-        505 => 'HTTP Version Not Supported',
-        509 => 'Bandwidth Limit Exceeded'
-    ];
-    if (empty($content) && isset($_status[$code])) {
-        $content = $_status[$code];
-    }
-    header('HTTP/1.1 '.$code.' '.$content);
-    // 确保FastCGI模式下正常
-    header('Status:'.$code.' '.$content);
-    // 展示错误
-    return error($content, $code);
-}
-
-/**
- * 错误跳转输出
- * @param $message
- * @param int $code
- * @return mixed
- */
-function error($message, $code = 400)
-{
-    switch ($code) {
-        case 404 :
-            $url = '/error/404';
-            break;
-        case 405 :
-            $url = '/error/405';
-            break;
-        default :
-            $url = '/error/default';
-            break;
-    }
-    $param = http_build_query(['code' => $code, 'message' => $message]);
-    echo "<script type='text/javascript'>window.location.href='$url?$param'</script>";
-    return true;
-}
-
-/**
  * 过滤参数
  * @param string $value
  */
@@ -101,6 +10,52 @@ function awork_filter(&$value)
     if(preg_match('/^(EXP|NEQ|GT|EGT|LT|ELT|OR|XOR|LIKE|NOTLIKE|NOT BETWEEN|NOTBETWEEN|BETWEEN|NOTIN|NOT IN|IN)$/i', $value)){
         $value .= ' ';
     }
+}
+
+/**
+ * 发送 HTTP 状态
+ * @param integer $code                          状态码
+ * @param string $content                        提示信息
+ * @return mixed
+ */
+function abort($code, $content = '')
+{
+    return \core\Http::abort($code, $content);
+}
+
+/**
+ * 错误跳转输出
+ * @param string $message                        错误信息
+ * @param int $code                              错误码
+ * @return mixed
+ */
+function error($message, $code = 400)
+{
+    return \core\Http::error($message, $code);
+}
+
+/**
+ * 获取 HTTP 请求参数
+ * @param string $name                           参数名
+ * @param string $default                        默认值
+ * @param string $filter                         过滤器
+ * @return null|string                           参数值
+ */
+function input($name, $default = '', $filter = '')
+{
+    return \core\Http::input($name, $default, $filter);
+}
+
+/**
+ * HTTP 链接跳转
+ * @param string $url                            跳转链接
+ * @param array $param                           跳转参数
+ * @param int $wait                              等待时间
+ * @return bool
+ */
+function redirect($url, $param = [], $wait = 0)
+{
+    return \core\Http::redirect($url, $param, $wait);
 }
 
 /**
@@ -173,53 +128,4 @@ function dump($var)
         $output = '<pre>' . $output . '</pre>';
     }
     echo $output;
-}
-
-/**
- * 获取http请求参数
- * @param $name
- * @param string $default
- * @param string $filter
- * @return null|string
- */
-function input($name, $default = '', $filter = '')
-{
-    if (strpos($name, '.')) {
-        $name = explode('.', $name, 2);
-    } else {
-        $name = [$name, ''];
-    }
-
-    if ('GET' == strtoupper($name[0])) {
-        $input = $_GET;
-    } elseif (in_array(strtoupper($name[0]), ['POST', 'DELETE'])) {
-        $input = $_POST;
-    } elseif ('PUT' == strtoupper($name[0])) {
-        $uri = @file_get_contents('php://input');
-        parse_str($uri, $input);
-        $input = $input ? : null;
-    } else {
-        $input = null;
-    }
-
-    if (!empty($name[1]) && $name[1] != '*') {
-        $input = isset($input[$name[1]]) ? $input[$name[1]] : null;
-    }
-
-    if (!is_array($input)) {
-        if (null !== $input) {
-            if (!empty($filter)) {
-                $input = $filter($input);
-            }
-        } else {
-            $input = $default;
-        }
-    }
-
-    return $input;
-}
-
-function redirect()
-{
-
 }

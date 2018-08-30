@@ -71,7 +71,7 @@ class UrlDispatcher
     {
         // 获取模块名
         if (empty($_SERVER['PATH_INFO'])) {
-            abort(404);
+            Http::abort(404);
         } else {
             $info = trim($_SERVER['PATH_INFO'], '/');
             // URL后缀

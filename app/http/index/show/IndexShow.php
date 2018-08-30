@@ -23,6 +23,8 @@ class IndexShow extends BaseShow
 
     public function getClientIp()
     {
+        dump(ROUTE_PATH);
+        //dump($_REQUEST['catch']);
         Log::record('getClientIp: '.gethostbyname(gethostname()), 'index/client');
         dump(IndexFacade::getName());
     }

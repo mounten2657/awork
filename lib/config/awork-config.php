@@ -39,7 +39,7 @@ return [
     'log_time_format' => 'H',
     'log_path' => [
         'default'          => LOG_PATH.'default',
-        'autoload'         => LOG_PATH.'autoload',
+        'catch'            => LOG_PATH.'catch',
     ],
 
     // 默认数据库

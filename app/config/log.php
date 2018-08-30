@@ -8,7 +8,7 @@ return [
     'log_time_format' => 'H',
     'log_path' => [
         'default'          => LOG_PATH.'default',
-        'autoload'         => LOG_PATH.'autoload',
+        'catch'            => LOG_PATH.'catch',
         'index/client'     => LOG_PATH.'index/client',
         'index/test'       => LOG_PATH.'index/test',
         'index/sign'       => LOG_PATH.'index/sign',

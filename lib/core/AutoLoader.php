@@ -180,7 +180,7 @@ class AutoLoader
                 $errorStr = "$errstr. [File] ".$errfile." [Line] $errline  [$errno]";
                 break;
         }
-        Log::record('[APP_ERROR] '.$errorStr, 'autoload', Log::ERR);
+        Log::record('[APP_ERROR] '.$errorStr, 'catch', Log::ERR);
         // 发送405信息
         abort(405, $errorStr);
     }
@@ -203,7 +203,7 @@ class AutoLoader
         }
         $error['trace']     =   $e->getTraceAsString();
         $errorStr = "{$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
-        Log::record('[APP_EXCEPTION] '.$errorStr, 'autoload', Log::ERR);
+        Log::record('[APP_EXCEPTION] '.$errorStr, 'catch', Log::ERR);
         // 发送404信息
         abort(404, $errorStr);
     }
@@ -224,7 +224,7 @@ class AutoLoader
                     break;
             }
             $errorStr = "{$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
-            Log::record('[APP_SHUTDOWN] '.$errorStr, 'autoload', Log::ERR);
+            Log::record('[APP_SHUTDOWN] '.$errorStr, 'catch', Log::ERR);
             // 发送403信息
             abort(403, $errorStr);
         }

@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * APP 运行类
+ */
 class App
 {
 

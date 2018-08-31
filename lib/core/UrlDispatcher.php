@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * URL 解析类
+ */
 class UrlDispatcher
 {
 

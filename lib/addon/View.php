@@ -2,9 +2,11 @@
 
 namespace addon;
 
+/**
+ * 视图类
+ */
 class View
 {
-
 
     const THEME_PATH           = APP_PATH.'html/'.MODULE_NAME.'/view/';
     const DEFAULT_CHARSET      = 'utf-8';

@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * 日志记录类
+ */
 class Log
 {
     /**

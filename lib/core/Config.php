@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * 配置类
+ */
 class Config
 {
 

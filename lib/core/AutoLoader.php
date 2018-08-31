@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * 自动加载类
+ */
 class AutoLoader
 {
 

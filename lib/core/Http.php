@@ -2,6 +2,9 @@
 
 namespace core;
 
+/**
+ * HTTP 处理类
+ */
 class Http
 {
 

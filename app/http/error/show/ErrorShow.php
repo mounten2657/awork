@@ -4,6 +4,9 @@ namespace app\http\error\show;
 
 use core\Log;
 
+/**
+ * 错误展示类
+ */
 class ErrorShow
 {
 

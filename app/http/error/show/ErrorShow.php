@@ -40,9 +40,11 @@ class ErrorShow
 
     /**
      * 错误信息预处理
+     * @param $code
      */
-    private function _beforeShow()
+    private function _beforeShow($code)
     {
+        self::$_code = $code;
         // record error message
         $record = true;
         foreach (self::$_logFilter as $word) {
@@ -51,7 +53,7 @@ class ErrorShow
             }
         }
         if (true === $record && (time() - self::$_time <= config('error_show_time'))) {
-            Log::record(self::$_message, 'http', Log::ERR);
+            Log::record('[HTTP_ERROR] '.self::$_message, 'catch', Log::ERR);
         }
         // filter file info
         if (!config('error_show_all') && strpos(self::$_message, '[File]')) {
@@ -66,8 +68,8 @@ class ErrorShow
      */
     private function _show($code)
     {
-        self::_beforeShow();
-        return die(json_encode(['code' => $code, 'message' => self::$_message, 'from' => self::$_from]));
+        self::_beforeShow($code);
+        return die(json_encode(['code' => $code, 'message' => self::$_message]));
     }
 
     /**

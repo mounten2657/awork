@@ -44,8 +44,8 @@ return [
     ],
 
     // 错误显示相关
-    'error_show_all' => true,
-    'error_show_time' => 5,
+    'error_show_all' => false,
+    'error_show_time' => 3,
 
     // 加密秘钥
     'encrypt_key' => 'Awork@v1.00',

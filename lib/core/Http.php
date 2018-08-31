@@ -103,7 +103,11 @@ class Http
      */
     public static function error($message, $code = 400)
     {
-        $param = ['message' => $message, 'from' => defined('ROUTE_PATH') ? ROUTE_PATH : 'Unknown', 'time' => time()];
+        $param = ['auth' => encrypt(json_encode([
+            'message' => $message,
+            'from' => defined('ROUTE_PATH') ? ROUTE_PATH : 'Unknown',
+            'time' => time()
+        ]))];
         $url = isset(self::$_errorPage[$code]) ? self::$_errorPage[$code] : self::$_errorPage[400];
         return self::redirect($url, $param);
     }

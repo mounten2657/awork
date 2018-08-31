@@ -75,6 +75,28 @@ function config($name = '', $value = null, $range = '')
 }
 
 /**
+ * 加密函数
+ * @param string $string                         待加密字符串
+ * @param string $key                            秘钥字符串
+ * @return bool|mixed|string
+ */
+function encrypt($string, $key = '')
+{
+    return \addon\Encrypt::encrypt($string, $key);
+}
+
+/**
+ * 解密函数
+ * @param string $string                         待解密字符串
+ * @param string $key                            秘钥字符串
+ * @return bool|mixed|string
+ */
+function decrypt($string, $key = '')
+{
+    return \addon\Encrypt::decrypt($string, $key);
+}
+
+/**
  * 获取客户端IP地址
  * @param integer $type                          返回类型 0 返回IP地址 1 返回IPV4地址数字
  * @param boolean $adv                           是否进行高级模式获取（有可能被伪装）

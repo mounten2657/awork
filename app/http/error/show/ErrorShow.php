@@ -14,7 +14,7 @@ class ErrorShow
     private static $_message = 'Bad Request';
 
     /** @var string from route */
-    private static $_from = '';
+    private static $_from = '/';
 
     /** @var int error time */
     private static $_time = 0;
@@ -27,10 +27,12 @@ class ErrorShow
      */
     public function __construct()
     {
-        self::$_code = input('get.code', 400, 'intval');
-        self::$_message = input('get.message', 'Bad Request', 'strval');
-        self::$_from = input('get.from', '', 'strval');
-        self::$_time = input('get.time', 0, 'intval');
+        $param = input('get.auth', '', 'decrypt');
+        if ($param = json_decode($param, true)) {
+            self::$_message = isset($param['message']) ? $param['message'] : '';
+            self::$_from = isset($param['from']) ? $param['from'] : '';
+            self::$_time = isset($param['time']) ? $param['time'] : 0;
+        }
     }
 
     /**

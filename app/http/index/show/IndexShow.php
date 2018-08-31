@@ -18,13 +18,19 @@ class IndexShow extends BaseShow
 
         dump($_REQUEST);
 
+        $str = '1@!%^&*()_+{}|"?><=-`~":;,./\\aZ';
+        dump($str);
+        dump(base64_encode($str));
+        dump($dstr = encrypt($str));
+        dump(decrypt($dstr));
+
         $this->display();
     }
 
     public function getClientIp()
     {
         dump(ROUTE_PATH);
-        //dump($_REQUEST['catch']);
+        dump($_REQUEST['catch']);
         Log::record('getClientIp: '.gethostbyname(gethostname()), 'index/client');
         dump(IndexFacade::getName());
     }

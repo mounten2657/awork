@@ -44,8 +44,11 @@ return [
     ],
 
     // 错误显示相关
-    'error_show_all' => false,
+    'error_show_all' => true,
     'error_show_time' => 5,
+
+    // 加密秘钥
+    'encrypt_key' => 'Awork@v1.00',
 
     // 默认数据库
     'database' => [

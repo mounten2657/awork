@@ -19,7 +19,6 @@ class IndexShow extends BaseShow
         dump($_REQUEST);
 
         $list = IndexFacade::getOperationTreeList();
-
         dump($list);
 
         $this->display();

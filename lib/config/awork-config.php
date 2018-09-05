@@ -50,6 +50,8 @@ return [
     // 加密秘钥
     'encrypt_key' => 'Awork@v1.00',
 
+    // 数据库相关
+    'default_model_layer'    => 'model',
     'database' => [
         // 默认数据库
         'default' => [

@@ -10,16 +10,8 @@ use database\Model;
 class OperationTreeModel extends Model
 {
 
-    protected $dbName = 'coobar';
-
-    public function _initialize()
-    {
-        //$this->dbName = '';
-    }
-
     public function getList($sql)
     {
-        //return $this->tableName;
         return $this->query($sql);
     }
 

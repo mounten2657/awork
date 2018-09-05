@@ -63,15 +63,16 @@ function redirect($url, $param = [], $wait = 0)
  * @param string|array  $name                    参数名
  * @param mixed         $value                   参数值
  * @param string        $range                   作用域
- * @return mixed
+ * @return array
  */
 function config($name = '', $value = null, $range = '')
 {
     if (is_null($value) && is_string($name)) {
-        return 0 === strpos($name, '?') ? \core\Config::has(substr($name, 1), $range) : \core\Config::get($name, $range);
+        $config = (0 === strpos($name, '?') ? \core\Config::has(substr($name, 1), $range) : \core\Config::get($name, $range));
     } else {
-        return \core\Config::set($name, $value, $range);
+        $config = \core\Config::set($name, $value, $range);
     }
+    return empty($config) ? [] : $config;
 }
 
 /**

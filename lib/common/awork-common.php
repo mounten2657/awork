@@ -98,6 +98,34 @@ function decrypt($string, $key = '')
 }
 
 /**
+ * 下划线转驼峰
+ * @param $str
+ * @return null|string|string[]
+ */
+function lineToHump($str)
+{
+    $str = preg_replace_callback('/([-_]+([a-z]{1}))/i',function($matches){
+        return strtoupper($matches[2]);
+    }, $str);
+    return $str;
+}
+
+/**
+ * 驼峰转下划线
+ * @param $str
+ * @return null|string|string[]
+ */
+function humpToLine($str){
+    $str = preg_replace_callback('/([A-Z]{1})/',function($matches){
+        return '_'.strtolower($matches[0]);
+    }, $str);
+    if (0 === strpos($str, '_')) {
+        $str = substr($str, 1);
+    }
+    return $str;
+}
+
+/**
  * 获取客户端IP地址
  * @param integer $type                          返回类型 0 返回IP地址 1 返回IPV4地址数字
  * @param boolean $adv                           是否进行高级模式获取（有可能被伪装）

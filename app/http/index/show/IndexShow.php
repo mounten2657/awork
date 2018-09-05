@@ -18,11 +18,9 @@ class IndexShow extends BaseShow
 
         dump($_REQUEST);
 
-        $str = '1@!%^&*()_+{}|"?><=-`~":;,./\\aZ';
-        dump($str);
-        dump(base64_encode($str));
-        dump($dstr = encrypt($str));
-        dump(decrypt($dstr));
+        $list = IndexFacade::getOperationTreeList();
+
+        dump($list);
 
         $this->display();
     }

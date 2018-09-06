@@ -4,6 +4,9 @@ namespace database\driver;
 
 use database\Db;
 
+/**
+ * 驱动类
+ */
 class Driver
 {
 

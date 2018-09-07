@@ -14,9 +14,6 @@ class Db
     /** @var null 数据库驱动类 */
     private static $_driver = null;
 
-    /** @var null 数据库配置 */
-    private static $_option = [];
-
     /** @var null PDO 连接 */
     private static $_connection = null;
 
@@ -51,19 +48,19 @@ class Db
         $needle = ['type', 'hostname', 'database', 'username', 'password', 'hostport', 'params', 'charset', 'prefix'];
         $result = array_diff($needle, array_keys($option));
         if (!empty($result)) {
-            throw new \Exception('Db option keys not exist: '.implode(',', $result), 550);
+            throw new \Exception('Db option invalid, these keys not exist: '.implode(',', $result), 550);
         }
         return $option;
     }
 
     /**
      * 获取数据库驱动
+     * @param $option
      * @return object
      */
-    private static function _getDriver()
+    private static function _getDriver($option)
     {
         if (null === self::$_driver) {
-            $option = self::$_option;
             $driver =  "\\database\\driver\\".ucfirst($option['type']);
             if (!class_exists($driver)) {
                 throw new \Exception("Db driver not ready for ".$option['type'], 551);
@@ -81,8 +78,8 @@ class Db
     public static function getInstance($database = '')
     {
         if (null === self::$_instance) {
-            self::$_option = self::_getOption($database);
-            self::$_instance = self::_getDriver()->getInstance();
+            $option = self::_getOption($database);
+            self::$_instance = self::_getDriver($option)->getInstance();
         }
         return self::$_instance;
     }
@@ -95,7 +92,7 @@ class Db
     public static function connection($option)
     {
         try {
-            $dsn = self::_getDriver()->parseDsn();
+            $dsn = self::_getDriver($option)->parseDsn();
             self::$_connection = new \PDO($dsn, $option['username'], $option['password'], $option['params']);
         } catch (\PDOException $e) {
             throw new \Exception("Connecting Db failed: ".$e->getMessage(), $e->getCode());

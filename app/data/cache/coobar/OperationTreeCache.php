@@ -19,9 +19,9 @@ class OperationTreeCache extends Cache
         return self::$_instance;
     }
 
-    public static function getList($sql)
+    public static function getList()
     {
-        return self::_getInstance()->getList($sql);
+        return self::_getInstance()->getList();
     }
 
 }

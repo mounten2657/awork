@@ -10,9 +10,17 @@ use database\Model;
 class OperationTreeModel extends Model
 {
 
-    public function getList($sql)
+    public function getList()
     {
-        return $this->query($sql);
+        $list = $this
+            ->where('is_deleted', '=', 0)
+            ->where('source_type', '0')
+            //->where('controller_name', 'rental')
+            ->order('operation_tree_id desc')
+            ->limit(2)
+            ->select();
+        $list['sql'] = $this->lastSql();
+        return $list;
     }
 
 }

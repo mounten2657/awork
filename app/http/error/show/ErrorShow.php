@@ -33,6 +33,7 @@ class ErrorShow
         $param = input('get.auth', '', 'decrypt');
         if ($param = json_decode($param, true)) {
             self::$_message = isset($param['message']) ? $param['message'] : '';
+            self::$_code = isset($param['code']) ? $param['code'] : self::$_code;
             self::$_from = isset($param['from']) ? $param['from'] : '';
             self::$_time = isset($param['time']) ? $param['time'] : 0;
         }

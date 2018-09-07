@@ -108,6 +108,7 @@ class Http
     {
         $param = ['auth' => encrypt(json_encode([
             'message' => $message,
+            'code' => $code,
             'from' => defined('ROUTE_PATH') ? ROUTE_PATH : 'Unknown',
             'time' => time()
         ]))];

@@ -12,15 +12,13 @@ class OperationTreeModel extends Model
 
     public function getList()
     {
-        $list = $this
-            ->where('is_deleted', '=', 0)
-            ->where('source_type', '0')
-            //->where('controller_name', 'rental')
+        return $this
+            ->where('is_deleted', 0)
+            ->where('source_type', 0)
+            ->where('controller_name','like', 'rental%')
             ->order('operation_tree_id desc')
             ->limit(2)
             ->select();
-        $list['sql'] = $this->lastSql();
-        return $list;
     }
 
 }

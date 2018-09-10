@@ -38,6 +38,9 @@ class Model
     /** @var array 预执行信息 */
     protected $query = [];
 
+    /** @var string 最近一条 SQL 语句 */
+    protected $lastSql = '';
+
     /**
      * Model constructor.
      */
@@ -54,10 +57,22 @@ class Model
     /**
      * initialize variable
      */
-    public function _initialize()
-    {
-        // to initialize model variable
-    }
+    public function _initialize()  {}
+
+    /**
+     * operation of after insert
+     */
+    public function after_insert() {}
+
+    /**
+     * operation of after update
+     */
+    public function after_update() {}
+
+    /**
+     * operation of after delete
+     */
+    public function after_delete() {}
 
     /**
      * 获取数据库名
@@ -119,8 +134,8 @@ class Model
             if ('__string' == $field) {
                 $whereStr .= "AND $where ";
             } elseif (!is_array($where)) {
-                $whereStr .= "AND $field = 'w:$field' ";
-                $wherePar["w:$field"] = $where;
+                $whereStr .= "AND $field = :w_$field ";
+                $wherePar[":w_$field"] = $where;
             } elseif (isset($where[0]) && isset($where[1]) && in_array(strtoupper($where[0]), $this->_operator)) {
                 if (in_array(strtolower($where[0]), ['in', 'between', 'not in', 'not between'])) {
                     $where[0] = strtoupper($where[0]);
@@ -128,8 +143,8 @@ class Model
                         $where[1] = '('.implode(',', $where[1]).')';
                     }
                 }
-                $whereStr .= "AND $field {$where[0]} 'w:$field' ";
-                $wherePar["w:$field"] = $where[1];
+                $whereStr .= "AND $field {$where[0]} :w_$field ";
+                $wherePar[":w_$field"] = $where[1];
             } else {
                 continue;
             }
@@ -152,9 +167,9 @@ class Model
             return [$insertStr, $insertPar];
         }
         foreach ($this->query['insert'] as $key => $insert) {
-            $insertStr .= ", ('i:[$key]".substr(implode("', 'i:[$key]", array_keys($insert)), 3).')';
+            $insertStr .= ", (':i_[$key]".substr(implode("', :i_[$key]", array_keys($insert)), 3).')';
             array_map(function ($val) use (&$insertPar, $key) {
-                $insertPar["i:$key"] = $val;
+                $insertPar[":i_$key"] = $val;
             },array_values($insert));
         }
         if (!empty($insertStr)) {
@@ -175,8 +190,8 @@ class Model
             return [$updateStr, $updatePar];
         }
         foreach ($this->query['update'] as $key => $update) {
-            $updateStr .= ", $key = 'u:$key'";
-            $updatePar["u:$key"] = $update;
+            $updateStr .= ", $key = ':u_$key'";
+            $updatePar[":u_$key"] = $update;
         }
         if (!empty($updateStr)) {
             $updateStr = substr($updateStr, 1);
@@ -235,21 +250,47 @@ class Model
                 break;
         }
         // return sql
-        return $sql;
+        return $sql ? trim(substr($sql, 0, -1)).";" : '';
     }
 
     /**
-     * 绑定条件参数
-     * @param $stmt
-     * @param $param
+     * 自动执行 SQL 语句
+     * @param int $sqlType
      * @return mixed
      */
-    private function _bindParam($stmt, $param)
+    private function _exec($sqlType = self::SQL_TYPE_SELECT)
     {
-        foreach ($param as $key => $value) {
-            $stmt->bindValue($key + 1, $value);
+        $preSql = $this->_buildPreSql($sqlType);
+        $param = isset($this->query['parse']['where'][1]) ? $this->query['parse']['where'][1] : null;
+        return $this->execute($preSql, $param);
+    }
+
+    /**
+     * 模型结果集返回处理
+     * @param $result
+     * @param int $sqlType
+     * @return mixed
+     */
+    private function _modelReturn($result, $sqlType = self::SQL_TYPE_SELECT)
+    {
+        $this->lastSql = $this->buildSql($sqlType);
+        unset($this->query);
+        switch ($sqlType) {
+            case self::SQL_TYPE_SELECT :
+                break;
+            case self::SQL_TYPE_INSERT :
+                $this->after_insert();
+                break;
+            case self::SQL_TYPE_UPDATE :
+                $this->after_update();
+                break;
+            case self::SQL_TYPE_DELETE :
+                $this->after_delete();
+                break;
+            default :
+                break;
         }
-        return $stmt;
+        return $result;
     }
 
     /**
@@ -283,27 +324,27 @@ class Model
     }
 
     /**
-     * 查询操作
+     * 原生 SQL 查询操作
      * @param $sql
      * @return mixed
      */
     public function query($sql)
     {
-        $stmt = $this->db->query($sql);
-        return $stmt->fetchAll();
+        return $this->db->query($sql)->fetchAll();
     }
 
     /**
-     * 执行操作
-     * @param $sql
+     * 执行 SQL 操作
+     * @param $preSql
      * @param $param
      * @return mixed
      */
-    public function execute($sql, $param = [])
+    public function execute($preSql, $param = [])
     {
-        $stmt = $this->db->prepare($sql);
+        $param = !empty($param) ? $param : null;
+        $stmt = $this->db->prepare($preSql);
         $stmt->execute($param);
-        return $stmt->rowCount();
+        return $stmt;
     }
 
     /**
@@ -317,7 +358,13 @@ class Model
         foreach ($this->query['parse'] as $parse) {
             if (isset($parse[1]) && !empty($parse[1])) {
                 $replace = $parse[1];
-                $sql = str_replace(array_keys($replace), array_values($replace), $sql);
+                $values = array_map(function ($v) {
+                    if (is_string($v)) {
+                        $v = "'$v'";
+                    }
+                    return $v;
+                }, array_values($replace));
+                $sql = str_replace(array_keys($replace), $values, $sql);
             }
         }
         return $sql;
@@ -339,7 +386,7 @@ class Model
      */
     public function lastSql()
     {
-        return $this->query['sql'];
+        return $this->lastSql;
     }
 
     /**
@@ -370,9 +417,6 @@ class Model
             if (null === $value) {
                 $this->query['where'][$field] = $operator;
             } else {
-                if (is_string($value)) {
-                    $value = "'$value'";
-                }
                 $this->query['where'][$field] = [$operator, $value];
             }
         }
@@ -416,46 +460,102 @@ class Model
         return $this;
     }
 
+    /**
+     * 获取单条记录
+     * @return mixed
+     */
     public function find()
     {
-
+        $sqlTyep = self::SQL_TYPE_SELECT;
+        $result = $this->_exec($sqlTyep)->fetch();
+        $result = empty($result) ? [] : $result;
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 获取多条记录
+     * @return mixed
+     */
     public function select()
     {
-        $preSql = $this->_buildPreSql(self::SQL_TYPE_SELECT);
-        $sql = $this->buildSql();
-        $this->query['sql'] = $sql;
-        $stmt = $this->db->prepare($preSql);
-        $this->_bindParam($stmt, $this->query['parse']['where'][1]);
-        return $this->query($preSql);
+        $sqlTyep = self::SQL_TYPE_SELECT;
+        $result = $this->_exec($sqlTyep)->fetchAll();
+        $result = empty($result) ? [] : $result;
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 获取记录条数
+     * @return mixed
+     */
     public function count()
     {
-
+        $sqlTyep = self::SQL_TYPE_SELECT;
+        $result = $this->_exec($sqlTyep)->rowCount();
+        $result = empty($result) ? 0 : intval($result);
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 插入单条数据
+     * @param $data
+     * @return mixed
+     */
     public function insert($data)
     {
+        $sqlTyep = self::SQL_TYPE_INSERT;
         $this->query['insert'][] = $data;
+        $result = $this->_exec($sqlTyep)->rowCount();
+        if ($result) {
+            $result = $this->db->lastInsertId();
+        }
+        $result = empty($result) ? false : intval($result);
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 插入多条数据
+     * @param $data
+     * @return mixed
+     */
     public function insertAll($data)
     {
+        $sqlTyep = self::SQL_TYPE_INSERT;
         foreach ($data as $item) {
-            $this->insert($item);
+            $this->query['insert'][] = $item;
         }
+        $result = $this->_exec($sqlTyep)->rowCount();
+        if ($result) {
+            $result = $this->db->lastInsertId() + $result - 1;
+        }
+        $result = empty($result) ? false : intval($result);
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 更新数据
+     * @param $data
+     * @return mixed
+     */
     public function update($data)
     {
+        $sqlTyep = self::SQL_TYPE_UPDATE;
         $this->query['update'] = $data;
+        $result = $this->_exec($sqlTyep)->rowCount();
+        $result = empty($result) ? false : intval($result);
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
+    /**
+     * 删除数据
+     * @return mixed
+     */
     public function delete()
     {
-
+        $sqlTyep = self::SQL_TYPE_DELETE;
+        $result = $this->_exec($sqlTyep)->rowCount();
+        $result = empty($result) ? false : intval($result);
+        return $this->_modelReturn($result, $sqlTyep);
     }
 
 }

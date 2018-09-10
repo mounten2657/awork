@@ -15,9 +15,7 @@ class IndexShow extends BaseShow
         dump(intval(2.05 * 1000 /10));
 
         dump(config('awork_version'));
-
-        dump($_REQUEST);
-
+        
         $list = IndexFacade::getOperationTreeList();
         dump($list);
 

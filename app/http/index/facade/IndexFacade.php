@@ -17,8 +17,7 @@ class IndexFacade
 
     public static function getOperationTreeList()
     {
-        $sql = 'select * from cb_operation_tree limit 2;';
-        $list = OperationTreeCache::getList($sql);
+        $list = OperationTreeCache::getList();
         return $list;
     }
 

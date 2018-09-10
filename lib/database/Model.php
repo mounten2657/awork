@@ -211,6 +211,9 @@ class Model
         $this->query['parse']['update'] = $this->_parseUpdate();
         $this->query['parse']['where']  = $this->_parseWhere();
         $tableName = "{$this->prefix}{$this->tableName}";
+        if (strpos($tableName, 'SELECT')) {
+            $tableName = "($tableName)";
+        }
         $field = isset($this->query['field']) ? $this->query['field'] : '*';
         // build sql
         switch ($sqlType) {
@@ -384,7 +387,7 @@ class Model
      * 获取最新操作 SQL
      * @return mixed
      */
-    public function lastSql()
+    public function getLastSql()
     {
         return $this->lastSql;
     }

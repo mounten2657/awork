@@ -11,13 +11,7 @@ class Cache
     /** @var null 缓存实例 */
     protected static $_instance = null;
 
-    /**
-     * 获取 Model 类
-     * @return null
-     */
-    public static function getModel()
-    {
-        return self::$_instance;
-    }
+    /** @var null 模型实例 */
+    protected static $_model = null;
 
 }

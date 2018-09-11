@@ -11,17 +11,17 @@ use database\Cache;
 class OperationTreeCache extends Cache
 {
 
-    private static function _getInstance()
+    public static function getModel()
     {
-        if (null === self::$_instance) {
-            self::$_instance = new OperationTreeModel();
+        if (null === self::$_model) {
+            self::$_model = new OperationTreeModel();
         }
-        return self::$_instance;
+        return self::$_model;
     }
 
     public static function getList()
     {
-        return self::_getInstance()->getList();
+        return self::getModel()->getList();
     }
 
 }

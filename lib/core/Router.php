@@ -171,7 +171,7 @@ class Router
         list($module, $controller, $action) = self::_parseRoute($routeList[$method][$rule]);
 
         // 保存解析结果
-        $path = [$module , $controller, $action, $rule];
+        $path = [$module , $controller, $action, $_SERVER['REQUEST_URI']];
 
         return true;
     }

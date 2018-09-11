@@ -16,9 +16,8 @@ class Model
     const SQL_TYPE_UPDATE = 3;
     /** @var int 删除类型 */
     const SQL_TYPE_DELETE = 4;
-
     /** @var array 条件运算符 */
-    private $_operator = ['<', '>', '=', '<=', '>=', '<>', '!=', 'IN', 'LIKE', 'BETWEEN', 'NOT IN', 'NOT LIKE', 'NOT BETWEEN'];
+    const SQL_OPERATOR = ['<', '>', '=', '<=', '>=', '<>', '!=', 'IN', 'LIKE', 'BETWEEN', 'NOT IN', 'NOT LIKE', 'NOT BETWEEN'];
 
     /** @var array 数据库对象池 */
     private $_instance = [];
@@ -136,7 +135,7 @@ class Model
             } elseif (!is_array($where)) {
                 $whereStr .= "AND $field = :w_$field ";
                 $wherePar[":w_$field"] = $where;
-            } elseif (isset($where[0]) && isset($where[1]) && in_array(strtoupper($where[0]), $this->_operator)) {
+            } elseif (isset($where[0]) && isset($where[1]) && in_array(strtoupper($where[0]), self::SQL_OPERATOR)) {
                 if (in_array(strtolower($where[0]), ['in', 'between', 'not in', 'not between'])) {
                     $where[0] = strtoupper($where[0]);
                     if (is_array($where[1])) {

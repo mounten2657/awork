@@ -220,7 +220,7 @@ class Model
             case self::SQL_TYPE_SELECT :
                 $sql = "SELECT {$field} FROM {$tableName} rule:where rule:order rule:group rule:limit;";
                 $sql = str_replace(["rule:where", "rule:order", "rule:group", "rule:limit"], [
-                    isset($this->query['parse']['where'][0]) ? "WHERE {$this->query['parse']['where'][0]}" : "",
+                    !empty($this->query['parse']['where'][0]) ? "WHERE {$this->query['parse']['where'][0]}" : "",
                     isset($this->query['order']) ? "ORDER BY {$this->query['order']}" : "",
                     isset($this->query['group']) ? "GROUP BY {$this->query['group']}" : "",
                     isset($this->query['limit']) ? "LIMIT {$this->query['limit']}" : "",
@@ -253,7 +253,7 @@ class Model
                 break;
         }
         // return sql
-        return $sql ? trim(substr($sql, 0, -1)).";" : '';
+        return preg_replace('/(\s)+/s', '\\1', $sql);
     }
 
     /**
@@ -348,6 +348,31 @@ class Model
         $stmt = $this->db->prepare($preSql);
         $stmt->execute($param);
         return $stmt;
+    }
+
+    /**
+     * 启动事务
+     * @return boolean
+     */
+    public function beginTransaction() {
+        $this->commit();
+        return $this->db->beginTransaction();
+    }
+
+    /**
+     * 提交事务
+     * @return boolean
+     */
+    public function commit() {
+        return $this->db->commit();
+    }
+
+    /**
+     * 事务回滚
+     * @return boolean
+     */
+    public function rollback() {
+        return $this->db->rollback();
     }
 
     /**
@@ -470,6 +495,7 @@ class Model
     public function find()
     {
         $sqlTyep = self::SQL_TYPE_SELECT;
+        $this->query['limit'] = "0,1";
         $result = $this->_exec($sqlTyep)->fetch();
         $result = empty($result) ? [] : $result;
         return $this->_modelReturn($result, $sqlTyep);

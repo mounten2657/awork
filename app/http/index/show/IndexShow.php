@@ -15,9 +15,6 @@ class IndexShow extends BaseShow
         dump(intval(2.05 * 1000 /10));
 
         dump(config('awork_version'));
-        
-        $list = IndexFacade::getOperationTreeList();
-        dump($list);
 
         $this->display();
     }
@@ -25,7 +22,8 @@ class IndexShow extends BaseShow
     public function getClientIp()
     {
         dump(ROUTE_PATH);
-        dump($_REQUEST['catch']);
+        $list = IndexFacade::getOperationTreeList();
+        dump($list);
         Log::record('getClientIp: '.gethostbyname(gethostname()), 'index/client');
         dump(IndexFacade::getName());
     }

@@ -17,8 +17,8 @@ class IndexFacade
 
     public static function getOperationTreeList()
     {
-        $list = OperationTreeCache::getList();
         $list['model'] = OperationTreeCache::getModel();
+        $list['list'] = OperationTreeCache::getList();
         return $list;
     }
 

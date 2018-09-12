@@ -54,7 +54,11 @@ class ErrorShow
             }
         }
         if (true === $record && (time() - self::$_time <= config('error_show_time'))) {
-            Log::record('[HTTP_ERROR] '.self::$_message, 'catch', Log::ERR);
+            $errorType = 'HTTP_ERROR';
+            if (strpos(self::$_message, 'SQLSTATE') !== false) {
+                $errorType = 'SQL_ERROR';
+            }
+            Log::record("[{$errorType}] ".self::$_message, 'catch', Log::ERR);
         }
         // filter file info
         if (!config('error_show_all') && strpos(self::$_message, '[File]')) {
@@ -71,10 +75,10 @@ class ErrorShow
     {
         self::_beforeShow($code);
         $url = self::$_from;
-        $time = date('Y-m-d H:i:s', self::$_time);
-        $html  = json_encode(['code' => $code, 'message' => self::$_message." {$time}", 'url' => $url]);
-        $html .=  "<script type='text/javascript'>window.onload = function () {document.body.onclick = function() {window.location.href= '{$url}';}}</script>";
-        $html .=  "<br/><button><-- Back</button>";
+        $content = json_encode(['code' => $code, 'message' => self::$_message." ".date('Y-m-d H:i:s', self::$_time), 'url' => $url]);
+        $html  = "<br/><button id='error_show_back'><-- Back</button><br/>";
+        $html .= "<div style='padding-left: 100px'>{$content}</div>";
+        $html .= "<script type='text/javascript'>window.onload = function () {document.getElementById('error_show_back').onclick = function() {window.location.href= '{$url}';}}</script>";
         return exit($html);
     }
 

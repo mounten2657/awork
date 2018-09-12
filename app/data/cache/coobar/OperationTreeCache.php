@@ -11,7 +11,7 @@ use database\Cache;
 class OperationTreeCache extends Cache
 {
 
-    public static function getModel()
+    private static function _getModel()
     {
         if (null === self::$_model) {
             self::$_model = new OperationTreeModel();
@@ -21,7 +21,7 @@ class OperationTreeCache extends Cache
 
     public static function getList()
     {
-        return self::getModel()->getList();
+        return self::_getModel()->getList();
     }
 
 }

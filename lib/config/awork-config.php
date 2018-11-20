@@ -32,6 +32,13 @@ return [
         'module_allow_list' => '',
     ],
 
+    // 页面模板
+    'tmpl_default_charset' => 'utf-8',
+    'tmpl_content_type' => 'text/html',
+    'tmpl_file_suffix' => '.html',
+    'tmpl_cache_control' => 'private',
+    'tmpl_assign_rule' => '{{$__VALUE__}}',
+
     // 日志相关
     'log_level' => 'info',
     'log_file_size' => 2097152,

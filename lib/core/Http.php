@@ -308,7 +308,7 @@ class Http
      * @param $xml
      * @return mixed
      */
-    static public function xmlToArray($xml)
+    public static function xmlToArray($xml)
     {
         // 将XML转为array
         $arrayData = json_decode(json_encode (simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
@@ -320,7 +320,7 @@ class Http
      * @param $array
      * @return string
      */
-    static public function arrayToXml($array)
+    public static function arrayToXml($array)
     {
         $xml = "<xml>";
         foreach ( $array as $key => $val ) {
@@ -331,6 +331,39 @@ class Http
         }
         $xml .= "</xml>";
         return $xml;
+    }
+
+    /**
+     * Ajax方式返回数据到客户端
+     * @param mixed $data 要返回的数据
+     * @param String $type AJAX返回数据格式
+     * @param int $json_option 传递给json_encode的option参数
+     * @return void
+     */
+    public static function ajaxReturn($data, $type = '', $json_option = 0)
+    {
+        if (empty($type)) $type = config('default_ajax_return');
+        switch (strtoupper($type)) {
+            case 'JSON' :
+                // 返回JSON数据格式到客户端 包含状态信息
+                header('Content-Type:application/json; charset=utf-8');
+                exit(json_encode($data, $json_option));
+            case 'XML'  :
+                // 返回xml格式数据
+                header('Content-Type:text/xml; charset=utf-8');
+                exit(json_encode($data));
+            case 'JSONP':
+                // 返回JSON数据格式到客户端 包含状态信息
+                header('Content-Type:application/json; charset=utf-8');
+                exit(json_encode($data, $json_option));
+            case 'EVAL' :
+                // 返回可执行的js脚本
+                header('Content-Type:text/html; charset=utf-8');
+                exit($data);
+            default     :
+                header('Content-Type:application/json; charset=utf-8');
+                exit(json_encode($data, $json_option));
+        }
     }
 
 }

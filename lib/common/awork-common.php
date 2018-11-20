@@ -63,7 +63,7 @@ function redirect($url, $param = [], $wait = 0)
  * @param string|array  $name                    参数名
  * @param mixed         $value                   参数值
  * @param string        $range                   作用域
- * @return array
+ * @return mixed
  */
 function config($name = '', $value = null, $range = '')
 {
@@ -72,7 +72,7 @@ function config($name = '', $value = null, $range = '')
     } else {
         $config = \core\Config::set($name, $value, $range);
     }
-    return empty($config) ? [] : $config;
+    return empty($config) ? '' : $config;
 }
 
 /**

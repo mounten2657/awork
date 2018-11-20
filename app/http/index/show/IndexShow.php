@@ -4,19 +4,28 @@ namespace app\http\index\show;
 
 use app\http\BaseShow;
 use app\http\index\facade\IndexFacade;
+use core\Http;
 use core\Log;
 
 class IndexShow extends BaseShow
 {
 
+    /**
+     * 首页
+     */
     public function index()
     {
-        dump(intval(floatval(2.05) * 100));
-        dump(intval(2.05 * 1000 /10));
+        $aworkVersion = config('awork_version');
 
-        dump(config('awork_version'));
+        $math = [
+            'intval(floatval(2.05) * 100)' => intval(floatval(2.05) * 100),
+            'intval(2.05 * 1000 /10)' => intval(2.05 * 1000 /10)
+        ];
 
-        $this->display();
+        $this->display([
+            'awork_version' => $aworkVersion,
+            'math' => $math,
+        ]);
     }
 
     public function getClientIp()
@@ -42,7 +51,7 @@ class IndexShow extends BaseShow
 
         Log::record($sign, 'index/sign');
 
-        $this->ajaxReturn([
+        Http::ajaxReturn([
             'code' => '000000',
             'sig' => $sign
         ]);

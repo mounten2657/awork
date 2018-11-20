@@ -86,20 +86,19 @@ class View
         // 页面缓存
         ob_start();
         ob_implicit_flush(0);
-        $_content = $content;
-        // 模板阵列变量替换成为独立变量
+        // 直接载入PHP模板
+        empty($content) ? include $templateFile : eval(' ?>' . $content);
+        // 获取并清空缓存
+        $html = ob_get_clean();
+        // 模板变量替换
         $find = $replace = [];
         foreach ($this->tVar as $key => $val) {
             $find[] = str_replace('__VALUE__', $key, config('tmpl_assign_rule'));
             $replace[] = (is_array($val) || is_object($val)) ? '<pre>'.var_export($val, true).'</pre>' : $val;
         }
-        // 直接载入PHP模板
-        empty($_content) ? include $templateFile : eval(' ?>' . $_content);
-        // 获取并清空缓存
-        $content = ob_get_clean();
-        $content = str_replace($find, $replace, $content);
+        $html = str_replace($find, $replace, $html);
         // 输出模板文件
-        return $content;
+        return $html;
     }
 
 }

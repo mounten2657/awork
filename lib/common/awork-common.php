@@ -98,6 +98,17 @@ function decrypt($string, $key = '')
 }
 
 /**
+ * 获取后缀名
+ * @param $path
+ * @return mixed
+ */
+function getExt($path)
+{
+    $pathAry = explode('.', $path);
+    return strtolower(array_pop($pathAry));
+}
+
+/**
  * 下划线转驼峰
  * @param $str
  * @return null|string|string[]

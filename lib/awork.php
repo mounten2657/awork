@@ -11,6 +11,7 @@ if(version_compare(PHP_VERSION,'5.4.0','<'))  die('require PHP > 5.4.0 !');
 define('ROOT_PATH', './../');
 define('LIB_PATH', ROOT_PATH.'lib/');
 define('LOG_PATH', ROOT_PATH.'log/');
+define('HTML_PATH', APP_PATH.'html/');
 
 // 环境常量
 define('IS_CLI', PHP_SAPI == 'cli' ? true : false);

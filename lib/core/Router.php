@@ -163,6 +163,15 @@ class Router
         $rule = preg_replace_callback('/([\/]+[A-Z]{1})/i', function ($matchs) {
             return strtolower($matchs[0]);
         }, $rule);
+        if (is_file(HTML_PATH.$rule)) {
+            $ext = getExt($rule);
+            if ('css' == $ext) {
+                header("Content-Type:text/css");
+            } elseif ('js' == $ext) {
+                header("Content-Type:application/javascript");
+            }
+            die(require HTML_PATH.$rule);
+        }
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         if (!in_array($rule, array_keys($routeList[$method]))) {
             throw new \Exception("MODULE NOT OPEN [{$_SERVER['REQUEST_METHOD']}] : $rule.", 405);

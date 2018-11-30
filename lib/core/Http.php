@@ -93,7 +93,7 @@ class Http
         }
         header('HTTP/1.1 '.$code.' '.$content);
         // 确保FastCGI模式下正常
-        header('Status:'.$code.' '.$content);
+        //header('Status:'.$code.' '.$content);
         // 展示错误
         return self::error($content, $code);
     }
@@ -125,11 +125,12 @@ class Http
      */
     public static function redirect($url, $param = [], $wait = 0)
     {
-        if ($wait) {
-            sleep($wait);
-        }
+        $wait && sleep($wait);
         $param = http_build_query($param);
-        echo "<script type='text/javascript'>window.location.href='/$url?$param'</script>";
+        $url = "/$url?$param";
+        header('Auth-params:'.$param);
+        header('Location:'.$url);
+        //echo "<script type='text/javascript'>window.location.href='$url'</script>";
         return true;
     }
 

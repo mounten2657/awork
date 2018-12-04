@@ -2,6 +2,8 @@
 
 namespace core;
 
+use app\http\error\facade\ErrorFacade;
+
 /**
  * HTTP 处理类
  */
@@ -91,9 +93,9 @@ class Http
         if (empty($content) && isset(self::$_status[$code])) {
             $content = self::$_status[$code];
         }
-        header('HTTP/1.1 '.$code.' '.$content);
+        //header('HTTP/1.1 '.$code.' '.self::$_status[$code]);
         // 确保FastCGI模式下正常
-        //header('Status:'.$code.' '.$content);
+        header('Status:'.$code.' '.self::$_status[$code]);
         // 展示错误
         return self::error($content, $code);
     }
@@ -112,8 +114,8 @@ class Http
             'from' => defined('ROUTE_PATH') ? ROUTE_PATH : '',
             'time' => time()
         ]))];
-        $url = isset(self::$_errorPage[$code]) ? self::$_errorPage[$code] : self::$_errorPage[400];
-        return self::redirect($url, $param);
+        $error = new ErrorFacade($param);
+        return $error->show($code);
     }
 
     /**
@@ -128,7 +130,6 @@ class Http
         $wait && sleep($wait);
         $param = http_build_query($param);
         $url = "/$url?$param";
-        header('Auth-params:'.$param);
         header('Location:'.$url);
         //echo "<script type='text/javascript'>window.location.href='$url'</script>";
         return true;

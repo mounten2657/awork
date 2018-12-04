@@ -81,6 +81,16 @@ class AutoLoader
     }
 
     /**
+     * 获取文件短路径
+     * @param $path
+     * @return string
+     */
+    private static function _getShortFilePath($path)
+    {
+        return strstr($path, DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR);
+    }
+
+    /**
      * 扫描文件
      * @param $path
      * @return array
@@ -170,6 +180,7 @@ class AutoLoader
      */
     public static function appError($errno, $errstr, $errfile, $errline)
     {
+        $errfile = self::_getShortFilePath($errfile);
         switch ($errno) {
             case E_ERROR:
             case E_PARSE:
@@ -177,10 +188,10 @@ class AutoLoader
             case E_COMPILE_ERROR:
             case E_USER_ERROR:
                 ob_end_clean();
-                $errorStr = "[APP_ERROR] $errstr. [File] ".$errfile." [Line] $errline ";
+                $errorStr = "[APP_ERROR] $errstr . [File] ".$errfile." [Line] $errline ";
                 break;
             default:
-                $errorStr = "[APP_ERROR] $errstr. [File] ".$errfile." [Line] $errline  [$errno]";
+                $errorStr = "[APP_ERROR] $errstr . [File] ".$errfile." [Line] $errline ";
                 break;
         }
         Log::record($errorStr, 'catch', Log::ERR);
@@ -204,8 +215,9 @@ class AutoLoader
             $error['file']  =   $e->getFile();
             $error['line']  =   $e->getLine();
         }
+        $error['file'] = self::_getShortFilePath($error['file']);
         $error['trace']     =   $e->getTraceAsString();
-        $errorStr = "[APP_EXCEPTION] {$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
+        $errorStr = "[APP_EXCEPTION] {$error['message']} . [File] {$error['file']} [Line] {$error['line']} ";
         Log::record($errorStr, 'catch', Log::ERR);
         // 发送404信息
         Http::abort(404, $errorStr);
@@ -226,7 +238,8 @@ class AutoLoader
                     ob_end_clean();
                     break;
             }
-            $errorStr = "[APP_SHUTDOWN] {$error['message']}. [File] {$error['file']} [Line] {$error['line']} ";
+            $error['file'] = self::_getShortFilePath($error['file']);
+            $errorStr = "[APP_SHUTDOWN] {$error['message']} . [File] {$error['file']} [Line] {$error['line']} ";
             Log::record($errorStr, 'catch', Log::ERR);
             // 发送403信息
             Http::abort(403, $errorStr);

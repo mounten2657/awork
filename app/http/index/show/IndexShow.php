@@ -21,7 +21,7 @@ class IndexShow extends BaseShow
             'intval(floatval(2.05) * 100)' => intval(floatval(2.05) * 100),
             'intval(2.05 * 1000 /10)' => intval(2.05 * 1000 /10)
         ];
-
+        //$rest = $math['test'];
         $this->display([
             'awork_version' => $aworkVersion,
             'math' => $math,

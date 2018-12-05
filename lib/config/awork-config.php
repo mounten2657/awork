@@ -37,7 +37,7 @@ return [
     'tmpl_content_type' => 'text/html',
     'tmpl_file_suffix' => '.html',
     'tmpl_cache_control' => 'private',
-    'tmpl_assign_rule' => '<<$__VALUE__>>',
+    'tmpl_assign_rule' => '/<<(\$[_]*\w+(\[\'\w+\'\]|\[\"\\w+"\]|\.\w+)*)>>/',
 
     // 日志相关
     'log_level' => 'info',

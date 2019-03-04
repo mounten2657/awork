@@ -22,11 +22,21 @@ class IndexShow extends BaseShow
             'intval(2.05 * 1000 /10)' => intval(2.05 * 1000 /10),
             //'test' => 'TEST',
         ];
+
+
         //$rest = $math['test'];
         $this->display([
             'awork_version' => $aworkVersion,
             'math' => $math,
         ]);
+    }
+
+    /**
+     * CNZZ 统计测试
+     */
+    public function cnzz()
+    {
+        $this->display();
     }
 
     public function getClientIp()

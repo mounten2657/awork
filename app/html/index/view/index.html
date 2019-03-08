@@ -42,14 +42,14 @@
             <h4 class="text-info">tool for json</h4>
             <input type="text" class="form-control" id="text_in" placeholder="Input...">
 
-            <label id="json_decode"><button type="button" class="btn btn-primary btn-xs">Json decode</button></label>
-            <label id="json_encode"><button type="button" class="btn btn-primary btn-xs">Json encode</button></label>
+            <label id="json_decode"><button type="button" class="btn btn-primary btn-xs">json decode</button></label>
+            <label id="json_encode"><button type="button" class="btn btn-primary btn-xs">json encode</button></label>
             <label id="url_decode"><button type="button" class="btn btn-primary btn-xs">url decode</button></label>
             <label id="url_encode"><button type="button" class="btn btn-primary btn-xs">url encode</button></label>
             <label id="implode"><button type="button" class="btn btn-primary btn-xs">implode</button></label>
             <label id="explode"><button type="button" class="btn btn-primary btn-xs">explode</button></label>
 
-            <textarea title="textarea" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none" ></textarea>
+            <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none" ></textarea>
         </div>
     </div>
 
@@ -71,6 +71,7 @@
     $(function () {
 
         //初始化
+        let color = '#333';
         let nowTimer = setInterval("getNowTime()",1000);
         let nowTimeInt = parseInt((new Date()).getTime()/1000);
         $('#now_time').html('<' + nowTimeInt + '...>');
@@ -109,16 +110,56 @@
             $('#date_out').html(formatDate(nowTimeDate));
         });
 
-        //点击 Json Decode
+        //点击 json decode
         $('#json_decode').click(function () {
+            let json = '';
+            let tmpColor = color;
             let text = $('#text_in').val();
-            $('#text_out').val(formatJsonDecode(text));
+            try {
+                json = formatJsonDecode(text);
+            } catch (e) {
+                let error = e.name + ": " + e.message;
+                console.log(e);
+                json = error;
+                tmpColor = '#c7254e';
+            }
+            $('#text_out').val(json).css('color', tmpColor);
         });
 
-        //点击 Json Encode
+        //点击 json encode
         $('#json_encode').click(function () {
             let text = $('#text_in').val();
-            $('#text_out').val(formatJsonEncode(text));
+            $('#text_out').val(formatJsonEncode(text)).css('color', color);
+        });
+
+        //点击 url decode
+        $('#url_decode').click(function () {
+            let text = $('#text_in').val();
+            text = decodeURI(text);
+            text += "\r\n\r\n Request Parameters: " + formatJsonDecode(getUrlParams(text));
+            $('#text_out').val(text).css('color', color);
+        });
+
+        //点击 url encode
+        $('#url_encode').click(function () {
+            let text = $('#text_in').val();
+            $('#text_out').val(encodeURI(text)).css('color', color);
+        });
+
+        //点击 implode
+        $('#implode').click(function () {
+            let text = $('#text_in').val();
+            text = text.replace(/\ +/g, ',');
+            text = sortStr(text, ",");
+            $('#text_out').val(text).css('color', color);
+        });
+
+        //点击 explode
+        $('#explode').click(function () {
+            let text = $('#text_in').val();
+            text = text.replace(/\,/g, "\r\n");
+            text = sortStr(text, "\r\n");
+            $('#text_out').val(text).css('color', color);
         });
 
     });
@@ -169,14 +210,14 @@
     //JSON解码
     function formatJsonEncode(text)
     {
-        text = JSON.stringify(text);
-        text = text.replace(/[\r\n]/g, "");
-        text = text.replace(/\",\ +/g, "\",");
-        text = text.replace(/\{\ +/g, "\{");
-        text = text.replace(/\[\ +/g, "\[");
-        text = text.replace(/\ +\}/g, "\}");
-        text = text.replace(/\ +\]/g, "\]");
-        return JSON.parse(text);
+        let json = JSON.stringify(text);
+        json = json.replace(/[\r\n]/g, "");
+        json = json.replace(/\",\ +/g, "\",");
+        json = json.replace(/\{\ +/g, "\{");
+        json = json.replace(/\[\ +/g, "\[");
+        json = json.replace(/\ +\}/g, "\}");
+        json = json.replace(/\ +\]/g, "\]");
+        return JSON.parse(json);
     }
 
     //JSON编码
@@ -261,5 +302,24 @@
         return formatted;
     }
 
+    //获取 url 参数
+    function getUrlParams(url) {
+        let json = {};
+        let arr = url.substr(url.indexOf('?') + 1).split('&');
+        arr.forEach(item=>{
+            let tmp = item.split('=');
+            json[tmp[0]] = tmp[1];
+        });
+        return json;
+    }
+
+    //字符串数组排序
+    function sortStr(str, spliter) {
+        let arr = str.split(spliter);
+        arr.sort((a, b) => {
+            return a-b;
+        });
+        return arr.join(spliter);
+    }
 
 </script>

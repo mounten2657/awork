@@ -202,7 +202,7 @@
     //日期转时间戳
     function formatDate(timeDate)
     {
-        let time = new Date(timeDate);
+        let time = new Date(timeDate.replace(/-/g,"/"));
         let timeInt = time.getTime();
         return parseInt(timeInt/1000);
     }
@@ -212,7 +212,7 @@
     {
         let json = JSON.stringify(text);
         json = json.replace(/[\r\n]/g, "");
-        //json = json.replace(/\ +\,\ +/g, ',');
+        //json = json.replace(/^\ +\,\ +"$/g, ',"');
         json = json.replace(/\{\ +/g, "\{");
         json = json.replace(/\[\ +/g, "\[");
         json = json.replace(/\ +\}/g, "\}");
@@ -306,7 +306,7 @@
     function getUrlParams(url) {
         let json = {};
         let arr = url.substr(url.indexOf('?') + 1).split('&');
-        arr.forEach(item=>{
+        arr.forEach(function (item) {
             let tmp = item.split('=');
             json[tmp[0]] = tmp[1];
         });
@@ -316,7 +316,7 @@
     //字符串数组排序
     function sortStr(str, spliter) {
         let arr = str.split(spliter);
-        arr.sort((a, b) => {
+        arr.sort(function(a, b){
             return a-b;
         });
         return arr.join(spliter);

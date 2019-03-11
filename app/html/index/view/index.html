@@ -212,6 +212,8 @@
     {
         let json = JSON.stringify(text);
         json = json.replace(/[\r\n]/g, "");
+        json = json.replace(/\ *\,\ +/g, ',');
+        json = json.replace(/\ *\:\ +/g, ':');
         //json = json.replace(/^\ +\,\ +"$/g, ',"');
         json = json.replace(/\{\ +/g, "\{");
         json = json.replace(/\[\ +/g, "\[");

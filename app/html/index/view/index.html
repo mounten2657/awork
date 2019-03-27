@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h4 class="text-center">awork <<$awork_version>> index</h4>
+<h4 class="text-center">awork <<$awork_version>> index <small>(<a href="/test/proxy/test.php">go to test</a>)</small></h4>
 
 <div class="container" style="width: 1500px; line-height: 3em">
 
@@ -48,6 +48,7 @@
             <label id="url_encode"><button type="button" class="btn btn-primary btn-xs">url encode</button></label>
             <label id="implode"><button type="button" class="btn btn-primary btn-xs">implode</button></label>
             <label id="explode"><button type="button" class="btn btn-primary btn-xs">explode</button></label>
+            <label id="rand_passwd"><button type="button" class="btn btn-primary btn-xs">rand passwd</button></label>
 
             <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none" ></textarea>
         </div>
@@ -63,6 +64,7 @@
 
 <script src="../../common/js/vue_v2_2_2.min.js"></script>
 <script src="../../common/js/jquery_v2_1_1.min.js"></script>
+<script src="../../common/js/md5.js"></script>
 
 </body>
 </html>
@@ -162,7 +164,18 @@
             $('#text_out').val(text).css('color', color);
         });
 
+        //点击 rand passwd
+        $('#rand_passwd').click(function () {
+            let text = (new Date()).getTime().toString() + Math.floor((Math.random()*10000)+1);
+            text = b64_md5(text);
+            text = text.replace(/\+/g, "_");
+            text = text.replace(/\//g, "_");
+            $('#text_out').val(text).css('color', color);
+        });
+
     });
+
+    /*************************************************函*数*区**********************************************************/
 
     //实时时间
     function getNowTime()

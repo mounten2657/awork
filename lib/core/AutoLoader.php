@@ -137,6 +137,11 @@ class AutoLoader
                 }
             }
         }
+        // 加载 Composer
+        $composerPath = VENDOR_PATH.'autoload.php';
+        if (is_file($composerPath)) {
+            include $composerPath;
+        }
         return true;
     }
 

@@ -12,6 +12,7 @@ define('ROOT_PATH', './../');
 define('LIB_PATH', ROOT_PATH.'lib/');
 define('LOG_PATH', ROOT_PATH.'log/');
 define('HTML_PATH', APP_PATH.'html/');
+define('VENDOR_PATH', ROOT_PATH.'vendor/');
 
 // 环境常量
 define('IS_CLI', PHP_SAPI == 'cli' ? true : false);

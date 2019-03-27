@@ -1,0 +1,15 @@
+{
+  "require": {
+    "codeception/codeception": "2.5.5",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  },
+  "config": {
+    "secure-http": false
+  }
+}

@@ -10,6 +10,7 @@ use core\Router;
 
 // 默认访问首页
 Router::get('', 'index/IndexShow/index');
+Router::get('index.php', 'index/IndexShow/index');
 Router::get('index/indexShow/index', 'index/IndexShow/index');
 Router::get('index/indexshow/index', 'index/IndexShow/index');
 

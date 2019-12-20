@@ -163,6 +163,7 @@ class Router
         $rule = preg_replace_callback('/([\/]+[A-Z]{1})/i', function ($matchs) {
             return strtolower($matchs[0]);
         }, $rule);
+        $rule = substr($rule, -1) == '/' ? substr($rule, 0, -1) : $rule;
         if (is_file(HTML_PATH.$rule)) {
             $ext = getExt($rule);
             if ('css' == $ext) {

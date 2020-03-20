@@ -10,3 +10,6 @@ Router::get('index/indexShow/index', 'index/IndexShow/index');
 Router::get('index/indexShow/cnzz', 'index/IndexShow/cnzz');
 Router::get('index/indexShow/client', 'index/IndexShow/getClientIp');
 Router::get('index/indexShow/sign', 'index/IndexShow/getSign');
+
+Router::post('index/api/generateBat', 'index/IndexApi/generateBat');
+Router::get('index/api/downloadBat', 'index/IndexApi/downloadBat');

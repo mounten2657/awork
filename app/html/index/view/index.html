@@ -49,6 +49,7 @@
             <label id="implode"><button type="button" class="btn btn-primary btn-xs">implode</button></label>
             <label id="explode"><button type="button" class="btn btn-primary btn-xs">explode</button></label>
             <label id="rand_passwd"><button type="button" class="btn btn-primary btn-xs">rand passwd</button></label>
+            <label id="version_bat"><button type="button" class="btn btn-primary btn-xs" title="双击下载">version bat</button></label>
 
             <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none" ></textarea>
         </div>
@@ -74,6 +75,7 @@
 
         //初始化
         let color = '#333';
+        let errColor = '#c7254e';
         let nowTimer = setInterval("getNowTime()",1000);
         let nowTimeInt = parseInt((new Date()).getTime()/1000);
         $('#now_time').html('<' + nowTimeInt + '...>');
@@ -115,7 +117,6 @@
         //点击 json decode
         $('#json_decode').click(function () {
             let json = '';
-            let tmpColor = color;
             let text = $('#text_in').val();
             try {
                 json = formatJsonDecode(text);
@@ -123,9 +124,9 @@
                 let error = e.name + ": " + e.message;
                 console.log(e);
                 json = error;
-                tmpColor = '#c7254e';
+                color = errColor;
             }
-            $('#text_out').val(json).css('color', tmpColor);
+            $('#text_out').val(json).css('color', color);
         });
 
         //点击 json encode
@@ -171,6 +172,33 @@
             text = text.replace(/\+/g, "_");
             text = text.replace(/\//g, "_");
             $('#text_out').val(text).css('color', color);
+        });
+
+        //点击 version bat
+        $('#version_bat').click(function () {
+            let text = $('#text_in').val();
+            text = text.replace(/\ +/g, ',');
+            $.ajax({
+                url: '/index/api/generateBat',
+                type:'post',
+                data:{text: text},
+                success:function (res) {
+                    res = JSON.parse(res);
+                    if (res.code === '0') {
+                        $('#text_out').val(res.data.bat).css('color', color);
+                    } else {
+                        $('#text_out').val(res.msg).css('color', errColor);
+                    }
+                }
+            });
+            return true;
+        });
+
+        //双击 version bat
+        $('#version_bat').dblclick(function () {
+            let text = $('#text_in').val();
+            text = text.replace(/\ +/g, ',');
+            window.location.href = '/index/api/downloadBat?text='+text;
         });
 
     });

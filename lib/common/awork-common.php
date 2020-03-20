@@ -191,3 +191,19 @@ function dump($var)
     }
     echo $output;
 }
+
+/**
+ * get sapp instance
+ * [!] please use loadSimpleClass() first
+ * @param string $name
+ * @return mixed|\simple\Sapp
+ */
+function sapp($name = '')
+{
+    $app = new \simple\Sapp();
+    if ($name) {
+        return $app->$name();
+    }
+    return $app;
+}
+

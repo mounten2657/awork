@@ -198,7 +198,9 @@
         $('#version_bat').dblclick(function () {
             let text = $('#text_in').val();
             text = text.replace(/\ +/g, ',');
-            window.location.href = '/index/api/downloadBat?text='+text;
+            if (text !== '') {
+                window.location.href = '/index/api/downloadBat?text='+text;
+            }
         });
 
     });

@@ -53,8 +53,8 @@ $(function () {
         } catch (e) {
             let error = e.name + ": " + e.message;
             console.log(e);
-            json = error;
-            color = errColor;
+            $('#text_out').val(error).css('color', errColor);
+            return false;
         }
         $('#text_out').val(json).css('color', color);
     });
@@ -188,7 +188,7 @@ function formatDate(timeDate)
 //JSON½âÂë
 function formatJsonEncode(text)
 {
-    let json = JSON.stringify(text);
+    let json = text.toString();
     json = json.replace(/[\r\n\t]/g, "");
     json = json.replace(/(\\t)*/g, "");
     json = json.replace(/\s*\,\s*/g, ',');
@@ -197,7 +197,7 @@ function formatJsonEncode(text)
     json = json.replace(/\s*\[\s*/g, "[");
     json = json.replace(/\s*\}\s*/g, "}");
     json = json.replace(/\s*\]\s*/g, "]");
-    return JSON.parse(json);
+    return  json;
 }
 
 //JSON±àÂë

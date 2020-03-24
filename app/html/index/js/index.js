@@ -189,14 +189,14 @@ function formatDate(timeDate)
 function formatJsonEncode(text)
 {
     let json = JSON.stringify(text);
-    json = json.replace(/[\r\n]/g, "");
-    json = json.replace(/\ *\,\ +/g, ',');
-    json = json.replace(/\ *\:\ +/g, ':');
-    //json = json.replace(/^\ +\,\ +"$/g, ',"');
-    json = json.replace(/\{\ +/g, "\{");
-    json = json.replace(/\[\ +/g, "\[");
-    json = json.replace(/\ +\}/g, "\}");
-    json = json.replace(/\ +\]/g, "\]");
+    json = json.replace(/[\r\n\t]/g, "");
+    json = json.replace(/(\\t)*/g, "");
+    json = json.replace(/\s*\,\s*/g, ',');
+    json = json.replace(/\s*\:\s*/g, ':');
+    json = json.replace(/\s*\{\s*/g, "{");
+    json = json.replace(/\s*\[\s*/g, "[");
+    json = json.replace(/\s*\}\s*/g, "}");
+    json = json.replace(/\s*\]\s*/g, "]");
     return JSON.parse(json);
 }
 

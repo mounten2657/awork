@@ -154,6 +154,7 @@ function getNowTime()
         }
     }
     $('#now_time').html('<' + timestamp + str + '>');
+    $('#now_date_record').html(formatTime(timestamp));
 }
 
 //时间戳转日期格式

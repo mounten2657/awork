@@ -3,7 +3,7 @@
 return [
 
     // 版本号
-    'awork_version' => '1.0.3',
+    'awork_version' => '1.0.4',
 
     // 日志相关
     'log_level' => 'info',

@@ -98,10 +98,14 @@ $(function () {
     //µã»÷ rand passwd
     $('#rand_passwd').click(function () {
         let text = (new Date()).getTime().toString() + Math.floor((Math.random()*10000)+1);
-        text = b64_md5(text);
-        text = text.replace(/\+/g, "_");
-        text = text.replace(/\//g, "_");
-        $('#text_out').val(text).css('color', color);
+        let str = '';
+        for (let i = 10; i > 0; i--) {
+            let stext = b64_md5(text + i);
+            stext = stext.replace(/\+/g, "_");
+            stext = stext.replace(/\//g, "_");
+            str += stext + "\r\n";
+        }
+        $('#text_out').val(str).css('color', color);
     });
 
     //µã»÷ version bat

@@ -99,11 +99,11 @@ $(function () {
     $('#rand_passwd').click(function () {
         let text = (new Date()).getTime().toString() + Math.floor((Math.random()*10000)+1);
         let str = '';
-        for (let i = 10; i > 0; i--) {
+        for (let i = 9; i > 0; i--) {
             let stext = b64_md5(text + i);
             stext = stext.replace(/\+/g, "_");
             stext = stext.replace(/\//g, "_");
-            str += stext + "\r\n";
+            str += stext + "\r\n\r\n";
         }
         $('#text_out').val(str).css('color', color);
     });

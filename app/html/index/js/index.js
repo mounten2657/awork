@@ -69,7 +69,7 @@ $(function () {
     $('#url_decode').click(function () {
         let text = $('#text_in').val();
         text = decodeURI(text);
-        text += "\r\n\r\n Request Parameters: " + formatJsonDecode(getUrlParams(text));
+        text += "\r\n\r\nRequest Parameters: " + formatJsonDecode(getUrlParams(text));
         $('#text_out').val(text).css('color', color);
     });
 

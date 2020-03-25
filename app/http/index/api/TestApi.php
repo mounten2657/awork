@@ -28,7 +28,7 @@ class TestApi
      */
     public function index()
     {
-        echo "current: " . md5(time());
+        echo "Current ID : " . md5(time());
     }
 
     /**

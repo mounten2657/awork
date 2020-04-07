@@ -9,11 +9,6 @@ class AutoLoader
 {
 
     /**
-     * 文件后缀
-     */
-    const EXT = '.php';
-
-    /**
      * 自动加载文件
      * @var array
      */
@@ -43,13 +38,13 @@ class AutoLoader
                 $namespace  =   self::$_AUTOLOAD_CONFIG['AUTOLOAD_NAMESPACE'];
                 $path       =   isset($namespace[$name]) ? dirname($namespace[$name]) . DIRECTORY_SEPARATOR : ROOT_PATH;
             }
-            $filename       =   $path . str_replace('\\', DIRECTORY_SEPARATOR, $class) . self::EXT;
+            $filename       =   $path . str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
             if (is_file($filename)) {
                 return $filename;
             }
         }
         // 返回本类文件
-        return strtr($class, '\\', DIRECTORY_SEPARATOR) . self::EXT;
+        return strtr($class, '\\', DIRECTORY_SEPARATOR) . '.php';
     }
 
     /**
@@ -155,7 +150,7 @@ class AutoLoader
         spl_autoload_register($autoload ? : 'core\\AutoLoader::autoload', true, true);
         // 加载基本配置文件
         if (empty(self::$_AUTOLOAD_CONFIG)) {
-            $file = LIB_PATH.'core/auto-path'.self::EXT;
+            $file = LIB_PATH.'core/auto-path.php';
             self::$_AUTOLOAD_CONFIG = is_file($file) ? include $file : [];
         }
         // 设定错误和异常处理
@@ -167,6 +162,7 @@ class AutoLoader
      */
     public static function setError()
     {
+        include_once LIB_PATH . 'core/Log.php';
         error_reporting(E_ALL);
         // 错误处理方法
         set_error_handler([__CLASS__, 'appError']);

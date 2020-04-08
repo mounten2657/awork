@@ -1761,6 +1761,18 @@ class SLog
 
 }
 
+/**
+ * define function sapp
+ */
+if (!function_exists('sapp')) {
+    /**
+     * sapp
+     * @return Sapp
+     */
+    function sapp() {
+        return new \simple\Sapp();
+    }
+}
 
 /**
  * Class Sapp

@@ -37,7 +37,7 @@ class IndexFacade
      */
     public static function getBat($data)
     {
-        $droot = 'D:\\code\\ihtml\\';
+        $droot = 'D:\\code\\html\\';
         $path = array();
         foreach ($data as $key => $val) {
             if (!strpos($val, '/')) {

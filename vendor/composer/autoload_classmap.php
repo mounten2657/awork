@@ -163,8 +163,6 @@ return array(
     'PHPUnit\\Util\\GlobalState' => $vendorDir . '/phpunit/phpunit/src/Util/GlobalState.php',
     'PHPUnit\\Util\\InvalidArgumentHelper' => $vendorDir . '/phpunit/phpunit/src/Util/InvalidArgumentHelper.php',
     'PHPUnit\\Util\\Json' => $vendorDir . '/phpunit/phpunit/src/Util/Json.php',
-    'PHPUnit\\Util\\Log\\JUnit' => $vendorDir . '/phpunit/phpunit/src/Util/Log/JUnit.php',
-    'PHPUnit\\Util\\Log\\TeamCity' => $vendorDir . '/phpunit/phpunit/src/Util/Log/TeamCity.php',
     'PHPUnit\\Util\\PHP\\AbstractPhpProcess' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/AbstractPhpProcess.php',
     'PHPUnit\\Util\\PHP\\DefaultPhpProcess' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/DefaultPhpProcess.php',
     'PHPUnit\\Util\\PHP\\WindowsPhpProcess' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/WindowsPhpProcess.php',

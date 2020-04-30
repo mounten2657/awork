@@ -1762,14 +1762,14 @@ class SLog
 }
 
 /**
- * define function sapp
+ * define function osapp
  */
-if (!function_exists('sapp')) {
+if (!function_exists('osapp')) {
     /**
-     * sapp
+     * osapp
      * @return Sapp
      */
-    function sapp() {
+    function osapp() {
         return new \simple\Sapp();
     }
 }

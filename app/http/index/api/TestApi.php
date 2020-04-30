@@ -28,7 +28,46 @@ class TestApi
      */
     public function index()
     {
-        echo "Current ID : " . md5(time());
+        $target = sapp()->request()->get('tcode', 'index');
+        if ($target != 'index') {
+            return $this->$target();
+        }
+        echo "Current ID : " . md5(time()) . "<br>";
+        $listHtml = '';
+        $methods = get_class_methods($this);
+        foreach ($methods as $key => $method) {
+            if ($key == 0) continue;
+            $listHtml .= "--$key. [<a href='/test/index?tcode={$method}' target='_blank'>$method</a>]&nbsp;";
+            if ($key % 4 == 0) {
+                $listHtml .= "<br>";
+            }
+        }
+        echo $listHtml;
+    }
+
+    /**
+     * xlsTest
+     * @return bool
+     */
+    public function xlsTest()
+    {
+        $config = ['path' => '/tmp/'];
+        $excel  = new \Vtiful\Kernel\Excel($config);
+
+        $filename = "t01.xlsx";
+        $filePath = $excel->fileName($filename, 'sheet1')
+            ->header(['Item', 'Cost'])
+            ->data([
+                ['Rent', 1000],
+                ['Gas',  100],
+                ['Food', 300],
+                ['Gym',  50],
+            ])
+            ->output();
+        //return sapp()->response()->ok(['path' => $filePath]);
+        return sapp()->download()->setOption([
+            'file' => $config['path'].$filename,
+        ])->down();
     }
 
     /**

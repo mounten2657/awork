@@ -46,6 +46,26 @@ class TestApi
     }
 
     /**
+     * sacPostTest
+     * @return bool
+     */
+    public function sacPostTest()
+    {
+        $request = sapp()->request()->all();
+        return sapp()->response()->data(['code' => 0, 'data' => $request, 'message' => 'sacPostTest']);
+    }
+
+    /**
+     * sacDelTest
+     * @return bool
+     */
+    public function sacDelTest()
+    {
+        $request = sapp()->request()->all();
+        return sapp()->response()->data(['code' => 0, 'data' => $request, 'message' => 'sacDelTest']);
+    }
+
+    /**
      * xlsTest
      * @return bool
      */

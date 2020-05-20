@@ -55,7 +55,7 @@ class TestApi
         $header = sapp()->request()->header();
         $request = array_merge($request, array('header' => $header));
         $data = ['code' => 0, 'data' => $request, 'message' => 'sacPostTest'];
-        return sapp()->response()->data($data)->debug();
+        return sapp()->response()->data($data)->debug(0);
     }
 
     /**

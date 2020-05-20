@@ -52,7 +52,10 @@ class TestApi
     public function sacPostTest()
     {
         $request = sapp()->request()->all();
-        return sapp()->response()->data(['code' => 0, 'data' => $request, 'message' => 'sacPostTest']);
+        $header = sapp()->request()->header();
+        $request = array_merge($request, array('header' => $header));
+        $data = ['code' => 0, 'data' => $request, 'message' => 'sacPostTest'];
+        return sapp()->response()->data($data)->debug();
     }
 
     /**

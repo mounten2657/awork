@@ -27,6 +27,7 @@ class SRequest
     private $method;
     private $payload;
     private $file;
+    private $header;
 
     /**
      * SRequest constructor.
@@ -87,6 +88,27 @@ class SRequest
     }
 
     /**
+     * get request http header
+     * @return array
+     */
+    public function header()
+    {
+        $header = array();
+        foreach ($this->server as $key => $val) {
+            if (strpos($key, 'TTP_')) {
+                $key = str_replace(array('HTTP_', '_'), array('', ' '), $key);
+                if (strpos($key, ' ')) {
+                    $key = implode('-', array_map(function ($v) {return ucfirst(strtolower($v));}, explode(' ', $key)));
+                } else {
+                    $key = ucfirst(strtolower($key));
+                }
+                $header[] = $key .': '.$val;
+            }
+        }
+        return $this->header = $header;
+    }
+
+    /**
      * get request server
      * @return mixed
      */
@@ -137,6 +159,7 @@ class SResponse
      * @var array
      */
     private $response;
+    private $data;
 
     /**
      * SResponse constructor.
@@ -151,7 +174,7 @@ class SResponse
      * response with ok
      * @param array $data
      * @param string $msg
-     * @return bool
+     * @return $this
      */
     public function ok($data = array(), $msg = 'ok')
     {
@@ -163,7 +186,7 @@ class SResponse
      * @param array $data
      * @param int $count
      * @param string $msg
-     * @return bool
+     * @return $this
      */
     public function page($data = array(), $count = 1, $msg = 'ok')
     {
@@ -173,7 +196,7 @@ class SResponse
     /**
      * data
      * @param array $data
-     * @return bool
+     * @return $this
      */
     public function data($data = array())
     {
@@ -185,7 +208,7 @@ class SResponse
      * @param array $data
      * @param string $msg
      * @param int $code
-     * @return bool
+     * @return $this
      */
     public function fail($msg = 'fail', $data = array(), $code = 10001)
     {
@@ -218,11 +241,25 @@ class SResponse
     /**
      * return with json format
      * @param array $data
-     * @return bool
+     * @return $this
      */
     public function sreturn($data = array())
     {
-        echo $this->json($data);
+        $this->data = $this->json($data);
+        echo $this->data;
+        return $this;
+    }
+
+    /**
+     * echo debug info
+     * @param $on
+     * @return bool
+     */
+    public function debug($on = 1)
+    {
+        $data = json_decode($this->data, true);
+        if (!$on) return true;
+        echo "<br><br><pre><b>data preview:</b> ->> ".var_export($data, true)."</pre>";
         return true;
     }
 

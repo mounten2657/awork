@@ -17,5 +17,6 @@ Router::post('index/api/generateBat', 'index/IndexApi/generateBat');
 Router::get('index/api/downloadBat', 'index/IndexApi/downloadBat');
 
 // Test Api
+Router::get('v1/online-users', 'index/TestApi/sacPostTest');
 Router::post('v1/online-users', 'index/TestApi/sacPostTest');
 Router::delete('v1/online-users', 'index/TestApi/sacDelTest');

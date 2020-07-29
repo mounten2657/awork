@@ -44,6 +44,7 @@ class SRequest
             $this->payload = $payload ?: array();
         }
         $this->file = $_FILES;
+        $this->header = $this->header();
     }
 
     /**
@@ -70,12 +71,81 @@ class SRequest
     }
 
     /**
+     * get put request
+     * @param string $name
+     * @param null $default
+     * @return mixed|null
+     */
+    public function put($name = '', $default = null)
+    {
+        return $this->post($name, $default);
+    }
+
+    /**
+     * get delete request
+     * @param string $name
+     * @param null $default
+     * @return mixed|null
+     */
+    public function delete($name = '', $default = null)
+    {
+        return $this->post($name, $default);
+    }
+
+    /**
+     * get head
+     * @param string $name
+     * @param null $default
+     * @return mixed|null
+     */
+    public function head($name = '', $default = null)
+    {
+        return isset($this->header[$name]) ? $this->header[$name] : $default;
+    }
+
+    /**
      * get request method
      * @return string
      */
     public function method()
     {
         return $this->method;
+    }
+
+    /**
+     * is get method
+     * @return bool
+     */
+    public function isGet()
+    {
+        return $this->method === 'get';
+    }
+
+    /**
+     * is post method
+     * @return bool
+     */
+    public function isPost()
+    {
+        return $this->method === 'post';
+    }
+
+    /**
+     * is put method
+     * @return bool
+     */
+    public function isPut()
+    {
+        return $this->method === 'put';
+    }
+
+    /**
+     * is delete method
+     * @return bool
+     */
+    public function isDelete()
+    {
+        return $this->method === 'delete';
     }
 
     /**
@@ -102,7 +172,7 @@ class SRequest
                 } else {
                     $key = ucfirst(strtolower($key));
                 }
-                $header[] = $key .': '.$val;
+                $header[$key] = $val;
             }
         }
         return $this->header = $header;
@@ -119,12 +189,15 @@ class SRequest
 
     /**
      * get all request
+     * @param $head
      * @return array
      */
-    public function all()
+    public function all($head = false)
     {
         $file = $this->file ? array('file' => $this->file) : array();
-        return array_merge($this->request, $this->payload, $file);
+        $all = array_merge($this->request, $this->payload, $file);
+        $head && $all = array_merge($all, array('header' => $this->header));
+        return $all;
     }
 
     /**
@@ -1729,8 +1802,11 @@ class SLog
     private static function _getLogPath($module)
     {
         $path = self::config('log_path');
-        if (empty($path) || !isset($path[$module])) {
+        if (empty($path)) {
             return false;
+        }
+        if (!isset($path[$module])) {
+            $path[$module] = str_replace('default', $module, $path['default']);
         }
         return $path[$module];
     }
@@ -1970,12 +2046,13 @@ class Sapp
     {
         $appName = 'SLog';
         if ($app = $this->hasApp($appName)) return $app;
+        $dir = RSAPI_ROOT ? RSAPI_ROOT : ( DROOT ? DROOT . '/' : './' );
         $config = array(
             'log_level' => 'info',
             'log_date_format' => 'Y_m_d',
             'log_file_size' => 1024 * 1000 * 1000,
             'log_path' => array(
-                'default' => '/var/www/html/logs/default/',
+                'default' => $dir . 'logs/default/',
             ),
         );
         $app = new SLog();

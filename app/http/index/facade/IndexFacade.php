@@ -64,8 +64,10 @@ class IndexFacade
         $batStr .= "echo start ..." . PHP_EOL;
         //$batStr .= "D: && cd D:\document" . PHP_EOL;
         //$batStr .= "md ". date('YmdHis') . PHP_EOL;
-        $batStr .= "md %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%" . PHP_EOL;
-        $batStr .= "cd %date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%" . PHP_EOL;
+        $batStr .= "set h=%time:~0,2%" . PHP_EOL;
+        $batStr .= "set h=%h: =0%" . PHP_EOL;
+        $batStr .= "md %date:~0,4%%date:~5,2%%date:~8,2%_%h%%time:~3,2%%time:~6,2%" . PHP_EOL;
+        $batStr .= "cd %date:~0,4%%date:~5,2%%date:~8,2%_%h%%time:~3,2%%time:~6,2%" . PHP_EOL;
         $batStr .= "md var\www\html" . PHP_EOL;
         $batStr .= "cd var\www\html" . PHP_EOL . PHP_EOL;
         $batStr .= "echo mkdir ..." . PHP_EOL;

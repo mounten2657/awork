@@ -140,4 +140,12 @@ class TestApi
         ]);
     }
 
+    /**
+     * phpinfo
+     */
+    public function phpinfo()
+    {
+        phpinfo();
+    }
+
 }

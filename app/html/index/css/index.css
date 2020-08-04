@@ -1,7 +1,22 @@
 
-.mg-15
+.mg-b-15
 {
     margin-bottom: 15px;
+}
+
+.mg-t-15
+{
+    margin-top: 15px;
+}
+
+.mg-l-20
+{
+    margin-left: 20px;
+}
+
+.mg-r-20
+{
+    margin-right: 20px;
 }
 
 .lh-1_5
@@ -14,3 +29,40 @@
     min-height: 40px;
     line-height: 2em;
 }
+
+.platform-sm-line
+{
+    line-height: 1.5em;
+}
+
+.platform-sm-line #image_list,#doc_list a
+{
+    background: #0a9afe;
+    border-color: #0a9afe;
+}
+
+.string-sm-line
+{
+    line-height: 1em;
+}
+
+.string-sm-line input
+{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 99.6%;
+}
+
+.string-sm-line textarea
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 99.6%;
+}
+
+.string-sm-line label
+{
+    margin-top: 3px;
+    margin-left: 2px;
+}
+

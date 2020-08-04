@@ -148,4 +148,15 @@ class TestApi
         phpinfo();
     }
 
+    /**
+     * first index
+     * @return mixed
+     */
+    public function first()
+    {
+        $methods = get_class_methods($this);
+        $method = $methods[1];
+        return $this->$method();
+    }
+
 }

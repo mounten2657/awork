@@ -166,7 +166,7 @@ $(function () {
         $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
-    //加载百度翻译
+    // 加载百度翻译
     setTimeout(function () {
         let baidufyHtml = '    <div class="row">\n' +
             '        <div class="col-sm-12">\n' +
@@ -174,7 +174,16 @@ $(function () {
             '        </div>\n' +
             '    </div>';
         $(".container").append(baidufyHtml);
-    } ,500);
+        //$('#baidu_translate_input').attr('disabled', 'disabled');
+    } ,200);
+
+    // 抢聚焦
+    var focus = setInterval(function () {
+        $('#text_in').focus();
+    }, 100);
+    setTimeout(function () {
+        window.clearInterval(focus)
+    },2000)
 
 });
 

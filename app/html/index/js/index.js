@@ -73,10 +73,25 @@ $(function () {
         $('#text_out').val(text).css('color', color);
     });
 
+    //双击 url decode
+    $('#url_decode').dblclick(function () {
+        let text = $('#text_in').val();
+        text = decodeURIComponent(text);
+        text += "\r\n\r\nRequest Parameters: " + formatJsonDecode(getUrlParams(text));
+        $('#text_out').val(text).css('color', color);
+    });
+
     //点击 url encode
     $('#url_encode').click(function () {
         let text = $('#text_in').val();
         $('#text_out').val(encodeURI(text)).css('color', color);
+    });
+
+    //双击 url encode
+    $('#url_encode').dblclick(function () {
+        let text = $('#text_in').val();
+
+        $('#text_out').val(encodeURIComponent(text)).css('color', color);
     });
 
     //点击 implode
@@ -135,6 +150,20 @@ $(function () {
         if (text !== '') {
             window.location.href = '/index/api/downloadBat?text='+text;
         }
+    });
+
+    //点击 unicode
+    $('#unicode').click(function () {
+        let text = $('#text_in').val();
+        $('#text_out').val(unicode(text)).css('color', color);
+    });
+
+    //点击 uni_decode
+    $('#uni_decode').click(function () {
+        let text = $('#text_in').val();
+        //text = text.replace(/\\u/g, '%u');
+        //$('#text_out').val(unescape(text)).css('color', color);
+        $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
     //加载百度翻译

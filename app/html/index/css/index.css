@@ -1,29 +1,4 @@
 
-.mg-b-15
-{
-    margin-bottom: 15px;
-}
-
-.mg-t-15
-{
-    margin-top: 15px;
-}
-
-.mg-l-20
-{
-    margin-left: 20px;
-}
-
-.mg-r-20
-{
-    margin-right: 20px;
-}
-
-.lh-1_5
-{
-    line-height: 1.5em;
-}
-
 .time-sm-line
 {
     min-height: 40px;
@@ -66,3 +41,23 @@
     margin-left: 2px;
 }
 
+.btn:hover,.btn:focus
+{
+    outline: none;
+}
+
+.to-fix-select.layui-layer-content
+{
+    overflow: visible;
+}
+
+.layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn
+{
+    padding-right: 25px;
+}
+
+body h4
+{
+    margin-top: 15px;
+    font-size: 18px;
+}

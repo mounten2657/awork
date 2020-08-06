@@ -46,6 +46,32 @@ class TestApi
     }
 
     /**
+     * generate short css
+     */
+    public function getShortCss()
+    {
+        $str = '';
+        for ($i = 0; $i <= 50; $i++) {
+            $str .= '.mg-'.$i.' {margin: '.$i.'px;}'.PHP_EOL;
+            $str .= '.mg-t-'.$i.' {margin-top: '.$i.'px;}'.PHP_EOL;
+            $str .= '.mg-r-'.$i.' {margin-right: '.$i.'px;}'.PHP_EOL;
+            $str .= '.mg-b-'.$i.' {margin-bottom: '.$i.'px;}'.PHP_EOL;
+            $str .= '.mg-l-'.$i.' {margin-left: '.$i.'px;}'.PHP_EOL;
+            $str .= PHP_EOL;
+            $str .= '.pd-'.$i.' {padding: '.$i.'px;}'.PHP_EOL;
+            $str .= '.pd-t-'.$i.' {padding-top: '.$i.'px;}'.PHP_EOL;
+            $str .= '.pd-r-'.$i.' {padding-right: '.$i.'px;}'.PHP_EOL;
+            $str .= '.pd-b-'.$i.' {padding-bottom: '.$i.'px;}'.PHP_EOL;
+            $str .= '.pd-l-'.$i.' {padding-left: '.$i.'px;}'.PHP_EOL;
+            $str .= PHP_EOL;
+        }
+        for ($i = 0; $i <= 30; $i ++) {
+            $str .= '.lh-'.(str_replace('.', '_', $i*10/100)).' {line-height: '.($i*10/100).'em;}'.PHP_EOL;
+        }
+        echo $str;
+    }
+
+    /**
      * sacPostTest
      * @return bool
      */

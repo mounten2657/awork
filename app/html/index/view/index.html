@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>awork</title>
     <link rel="stylesheet" type="text/css" href="../../common/css/bootstrap_v3_3_0.min.css">
+    <link rel="stylesheet" type="text/css" href="../../common/layui-v2.5.6/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../../common/css/short.css">
     <link rel="stylesheet" type="text/css" href="../../index/css/index.css">
 </head>
 
@@ -61,11 +63,11 @@
             <!-- Html -->
             <div  class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Html</code></div>
-                <label id="current_i"><a href="/extra/url?current_i" target="_blank" type="button" class="btn btn-primary btn-xs">Current</a></label>
-                <label id="host_ip"><a href="/extra/url?host_ip" target="_blank" type="button" class="btn btn-primary btn-xs">Host IP</a></label>
-                <label id="code_bch"><a href="/extra/url?code_bch" target="_blank" type="button" class="btn btn-primary btn-xs">Code Branch</a></label>
-                <label id="php_ver"><a href="/extra/url?php_ver" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Version</a></label>
-                <label id="ch_submit"><a href="/extra/url?ch_submit" target="_blank" type="button" class="btn btn-danger btn-xs">Submit</a></label>
+                <label id="current_i"><button type="button" class="btn btn-primary btn-xs">Current</button></label>
+                <label id="host_ip"><button type="button" class="btn btn-primary btn-xs">Host IP</button></label>
+                <label id="code_bch"><button type="button" class="btn btn-primary btn-xs">Code Branch</button></label>
+                <label id="php_ver"><button type="button" class="btn btn-primary btn-xs">PHP Version</button></label>
+                <label id="ch_submit"><button type="button" class="btn btn-danger btn-xs">Submit</button></label>
                 <label id="ch_check"><a href="/extra/url?ch_check" target="_blank" type="button" class="btn btn-primary btn-xs">Check</a></label>
             </div>
             <!-- File -->
@@ -124,13 +126,53 @@
         </div>
     </div>*-->
 
+    <!-- Select Host -->
+    <div id="host_form" class="none pd-t-30">
+        <form class="layui-form" action="">
+            <div class="layui-form-item"><label class="layui-form-label" >Host&nbsp;&nbsp;&nbsp;</label>
+                <div class="layui-input-block pd-r-30">
+                    <select name="HostIP" id="HostIP">
+                        <option value="local">172.18.0.12</option>
+                        <option value="128">192.168.50.128</option>
+                        <option value="210">192.168.50.210</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item"><label class="layui-form-label">Branch</label>
+                <div class="layui-input-block pd-r-30">
+                    <select name="CodeBranch" id="CodeBranch">
+                        <option value="html_latest">release/Latest</option>
+                        <option value="huaweiweb">release/HuaWei</option>
+                        <option value="v1906">release/V1906</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item"><label class="layui-form-label">Version</label>
+                <div class="layui-input-block pd-r-30">
+                    <select name="PHPVersion" id="PHPVersion">
+                        <option value="php7.2">PHP 7.2</option>
+                        <option value="php5.3">PHP 5.3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item text-muted"><label class="layui-form-label pd-t-15">*</label>
+                <div class="layui-input-block pd-r-30">
+                    Your project will be set with host <i>192.168.50.210</i>
+                    and branch <i>release/HuaWei</i>
+                    and version <i>PHP 5.3</i>.
+                </div>
+            </div>
+        </form>
+    </div>
+
 </div>
 
 <script src="../../common/js/vue_v2_2_2.min.js"></script>
 <script src="../../common/js/jquery_v2_1_1.min.js"></script>
+<script src="../../common/layui-v2.5.6/layui.all.js"></script>
 <script src="../../common/js/md5.js"></script>
 <script src="../../index/js/index_function.js"></script>
-<script src="../../index/js/index.js"></script>
+<script src="../../index/js/index.js" charset="gb2312"></script>
 
 </body>
 </html>

@@ -161,9 +161,36 @@ $(function () {
     //点击 uni_decode
     $('#uni_decode').click(function () {
         let text = $('#text_in').val();
-        //text = text.replace(/\\u/g, '%u');
-        //$('#text_out').val(unescape(text)).css('color', color);
         $('#text_out').val(deUnicode(text)).css('color', color);
+    });
+
+    //点击 current_i
+    var version = ['v5', 'v1906 + php5.3'];
+    $('#current_i button').html($('#current_i button').html() + ' : ' + version[0]);
+    $('#current_i').click(function () {
+        layer.tips(version[1], '#current_i', {tips:[1, '#111'],time:3000});
+    });
+
+    //点击 host_ip
+    $('#host_ip,#code_bch,#php_ver').click(function () {
+        layer.open({
+            title: 'Select Property Of Html'
+            ,type: 1
+            ,area: ['460px', '420px']
+            ,offset: ['20%', '20%']
+            ,btn: ['&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;', 'Cancel']
+            ,content: $('#host_form')
+            ,yes: function (index) {
+                var host = $('#HostIP option:selected').text();
+                var branch = $('#CodeBranch option:selected').text();
+                var version = $('#PHPVersion option:selected').text();
+                layer.msg(host + ' - ' + branch + ' - ' + version);
+                layer.close(index)
+            }
+            ,btn2: function (index) {
+                layer.close(index);
+            }
+        });
     });
 
     // 加载百度翻译
@@ -174,7 +201,6 @@ $(function () {
             '        </div>\n' +
             '    </div>';
         $(".container").append(baidufyHtml);
-        //$('#baidu_translate_input').attr('disabled', 'disabled');
     } ,200);
 
     // 抢聚焦

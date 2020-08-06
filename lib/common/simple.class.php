@@ -2046,7 +2046,7 @@ class Sapp
     {
         $appName = 'SLog';
         if ($app = $this->hasApp($appName)) return $app;
-        $dir = RSAPI_ROOT ? RSAPI_ROOT : ( DROOT ? DROOT . '/' : './' );
+        $dir = defined('RSAPI_ROOT') ? RSAPI_ROOT : ( defined('DROOT') ? DROOT . '/' : '/tmp/' );
         $config = array(
             'log_level' => 'info',
             'log_date_format' => 'Y_m_d',

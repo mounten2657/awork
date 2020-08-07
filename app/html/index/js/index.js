@@ -254,7 +254,8 @@ $(function () {
                         console.log(res);
                         res = JSON.parse(res);
                         if (res.code === '30010') {
-                            setTimeout(function () {
+                            layer.msg(res.msg);
+                            return setTimeout(function () {
                                 layer.close(loadIndex);
                                 top.location.reload();
                             }, 3000);
@@ -263,6 +264,7 @@ $(function () {
                             return layer.msg(res.msg);
                         }
                         layer.msg('The project has been changed successful!');
+                        layer.close(loadIndex);
                     }
                 });
                 layer.close(index);

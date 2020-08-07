@@ -164,6 +164,12 @@ $(function () {
         $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
+    //点击 md5
+    $('#md5').click(function () {
+        let text = $('#text_in').val();
+        $('#text_out').val($.md5(text)).css('color', color);
+    });
+
     // 获取版本信息
     var version = {};
     var loadIndex = layer.load(2, {time: 10 * 1000});

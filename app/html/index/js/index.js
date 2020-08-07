@@ -180,6 +180,9 @@ $(function () {
                 version = res.data;
                 var info = version.data.branch + ' + ' + version.data.version;
                 $('#current_i button').html(info);
+                $('#host_text').html(version.data.host);
+                $('#branch_text').html('release/'+version.data.branch);
+                $('#version_text').html('PHP '+version.data.version);
                 $('#HostIP').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.host + '"]').click();
                 $('#CodeBranch').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.branch + '"]').click();
                 $('#PHPVersion').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.version + '"]').click();
@@ -215,7 +218,7 @@ $(function () {
         layer.open({
             title: 'Select Property Of Html'
             ,type: 1
-            ,area: ['460px', '420px']
+            ,area: ['480px', '420px']
             ,offset: ['20%', '20%']
             ,btn: ['&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;', 'Cancel']
             ,content: $('#host_form')
@@ -264,7 +267,10 @@ $(function () {
                             return layer.msg(res.msg);
                         }
                         layer.msg('The project has been changed successful!');
-                        layer.close(loadIndex);
+                        return setTimeout(function () {
+                            layer.close(loadIndex);
+                            top.location.reload();
+                        }, 1000);
                     }
                 });
                 layer.close(index);

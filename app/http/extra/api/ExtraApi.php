@@ -25,6 +25,9 @@ class ExtraApi
     /** @var string type */
     public $type;
 
+    /** @var string pass */
+    private $pass = 'Infogo123456';
+
     /**
      * get hosts
      * @return array
@@ -102,22 +105,38 @@ class ExtraApi
         switch($this->type)
         {
             case 'current_i':
-                sapp()->response()->ok();
+                $url = $this->hosts['host_asm'] . '/test/?tradecode=getCurrentInfo';
+                $res = sapp()->http()->request('post', $url);
+                if (!isset($res['code'])) {
+                    return sapp()->response()->fail(json_encode($res));
+                }
+                return sapp()->response()->ok($res);
                 break;
             case 'host_ip':
-                sapp()->response()->ok();
-                break;
             case 'code_bch':
-                sapp()->response()->ok();
-                break;
             case 'php_ver':
-                sapp()->response()->ok();
-                break;
             case 'ch_submit':
-                sapp()->response()->ok();
+                $branch = sapp()->request()->get('branch');
+                $php = sapp()->request()->get('php');
+                $pass = sapp()->request()->get('pass');
+                if (!$branch || !$php || !$pass) {
+                    return sapp()->response()->fail('Invalid Request!');
+                }
+                if (md5(md5($this->pass)) !== $pass) {
+                    return sapp()->response()->fail('Invalid Password!');
+                }
+                $url = $this->hosts['host_asm'] . '/test/?tradecode=setHtml';
+                $data = array('branch' => $branch, 'php' => $php);
+                $res = sapp()->http()->request('post', $url, array('body' => $data));
+                if (!isset($res['code']) || isset($res['code']) && $res['code']) {
+                    $ret = !isset($res['code']) ? array('code' => 30010,'msg' => 'Request Waiting... Please Refresh Page.', 'data' => $res) : $res;
+                    $ret = array_merge($ret, array('request'=>array('url' => $url, 'params' => $data)));
+                    return sapp()->response()->data($ret);
+                }
+                return sapp()->response()->data($res);
                 break;
             case 'ch_check':
-                header('Location: ' . $this->hosts['host_asm'] . '/test/phpinfo.php');
+                header('Location: ' . $this->hosts['host_asm'] . '/test/?tradecode=phpinfo');
                 break;
         }
         return true;
@@ -159,7 +178,7 @@ class ExtraApi
      */
     public function getType()
     {
-        $keys = array_keys($_REQUEST);
+        $keys = array_keys($_GET);
         return isset($keys[0]) ? $keys[0] : 'unknown';
     }
 

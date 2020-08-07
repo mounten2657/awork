@@ -164,15 +164,54 @@ $(function () {
         $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
+    // 获取版本信息
+    var version = {};
+    var loadIndex = layer.load(2, {time: 10 * 1000});
+    setTimeout(function () {
+        $.ajax({
+            url: '/extra/url?current_i',
+            type:'post',
+            data:{},
+            success:function (res) {
+                res = JSON.parse(res);
+                if (res.code !== '0') {
+                    return layer.msg(res.msg);
+                }
+                version = res.data;
+                var info = version.data.branch + ' + ' + version.data.version;
+                $('#current_i button').html(info);
+                $('#HostIP').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.host + '"]').click();
+                $('#CodeBranch').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.branch + '"]').click();
+                $('#PHPVersion').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.version + '"]').click();
+                layer.close(loadIndex);
+            }
+        });
+    },500);
+
     //点击 current_i
-    var version = ['v5', 'v1906 + php5.3'];
-    $('#current_i button').html($('#current_i button').html() + ' : ' + version[0]);
     $('#current_i').click(function () {
-        layer.tips(version[1], '#current_i', {tips:[1, '#111'],time:3000});
+        var info = version.data.host + ' <br> ' + version.data.branch + ' <br> ' + version.data.version;
+        layer.tips(info, '#current_i', {tips:[1, '#111'],time:3000});
     });
 
     //点击 host_ip
-    $('#host_ip,#code_bch,#php_ver').click(function () {
+    $('#host_ip').click(function () {
+        var info = version.data.host;
+        layer.tips(info, '#host_ip', {tips:[1, '#111'],time:3000});
+    });
+
+    //点击 code_bch
+    $('#code_bch').click(function () {
+        var info = version.data.branch;
+        layer.tips(info, '#code_bch', {tips:[1, '#111'],time:3000});
+    });
+
+    //点击 php_ver
+    $('#php_ver').click(function () {
+        var info = version.data.version;
+        layer.tips(info, '#php_ver', {tips:[1, '#111'],time:3000});
+    });
+    $('#host_ip,#code_bch,#php_ver').dblclick(function () {
         layer.open({
             title: 'Select Property Of Html'
             ,type: 1
@@ -181,11 +220,52 @@ $(function () {
             ,btn: ['&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;', 'Cancel']
             ,content: $('#host_form')
             ,yes: function (index) {
-                var host = $('#HostIP option:selected').text();
-                var branch = $('#CodeBranch option:selected').text();
-                var version = $('#PHPVersion option:selected').text();
-                layer.msg(host + ' - ' + branch + ' - ' + version);
+                layer.msg('The html has been set, click \'Submit\' to save it.');
                 layer.close(index)
+            }
+            ,btn2: function (index) {
+                layer.close(index);
+            }
+        });
+    });
+
+    //点击 ch_submit
+    $('#ch_submit').click(function () {
+        var host = $('#HostIP').val();
+        var branch = $('#CodeBranch').val();
+        var php = $('#PHPVersion').val();
+        layer.prompt({
+            title: 'Enter Your Password : '
+            ,formType: 1
+            ,maxlength: 50
+            ,offset: ['30%', '25%']
+            ,btn: ['Ok', 'Cancel']
+            ,yes: function (index) {
+                var loadIndex = layer.load(2, {time: 5 * 1000});
+                var pass = layui.jquery('#layui-layer'+ index + " .layui-layer-input").val();
+                pass = $.md5($.md5(pass));
+                console.log(host,branch,php,pass);
+                $.ajax({
+                    url: '/extra/url?ch_submit',
+                    type:'post',
+                    async:false,
+                    data:{branch:branch,php:php,pass:pass},
+                    success:function (res) {
+                        console.log(res);
+                        res = JSON.parse(res);
+                        if (res.code === '30010') {
+                            setTimeout(function () {
+                                layer.close(loadIndex);
+                                top.location.reload();
+                            }, 3000);
+                        }
+                        if (res.code !== '0') {
+                            return layer.msg(res.msg);
+                        }
+                        layer.msg('The project has been changed successful!');
+                    }
+                });
+                layer.close(index);
             }
             ,btn2: function (index) {
                 layer.close(index);

@@ -51,10 +51,15 @@ class SRequest
      * get request
      * @param string $name
      * @param null $default
+     * @param bool $all
      * @return mixed|null
      */
-    public function get($name = '', $default = null)
+    public function get($name = '', $default = null, $all = false)
     {
+        if ($all) {
+            $all1 = $this->all(true);
+            return isset($all1[$name]) ? $all1[$name] : $default;
+        }
         return isset($this->request[$name]) ? $this->request[$name] : $default;
     }
 
@@ -321,6 +326,16 @@ class SResponse
         $this->data = $this->json($data);
         echo $this->data;
         return $this;
+    }
+
+    /**
+     * final call back
+     * @param $call
+     * @return mixed
+     */
+    public function call($call)
+    {
+        return $call;
     }
 
     /**
@@ -1875,6 +1890,408 @@ class SLog
 }
 
 /**
+ * Class SHttpClient
+ * @package simple
+ */
+Class SHttpClient
+{
+
+    /**
+     * 请求类型
+     */
+    const REQUEST_TYPE_GET    = 'GET';
+    const REQUEST_TYPE_POST   = 'POST';
+    const REQUEST_TYPE_PUT    = 'PUT';
+    const REQUEST_TYPE_DELETE = 'DELETE';
+
+    /**
+     * 常用状态码
+     * @var array
+     */
+    private $_status = array(
+        // Informational 1xx
+        100 => 'Continue',
+        101 => 'Switching Protocols',
+        // Success 2xx
+        200 => 'OK',
+        201 => 'Created',
+        202 => 'Accepted',
+        203 => 'Non-Authoritative Information',
+        204 => 'No Content',
+        205 => 'Reset Content',
+        206 => 'Partial Content',
+        // Redirection 3xx
+        300 => 'Multiple Choices',
+        301 => 'Moved Permanently',
+        302 => 'Moved Temporarily ',  // 1.1
+        303 => 'See Other',
+        304 => 'Not Modified',
+        305 => 'Use Proxy',
+        // 306 is deprecated but reserved
+        307 => 'Temporary Redirect',
+        // Client Error 4xx
+        400 => 'Bad Request',
+        401 => 'Unauthorized',
+        402 => 'Payment Required',
+        403 => 'Forbidden',
+        404 => 'Not Found',
+        405 => 'Method Not Allowed',
+        406 => 'Not Acceptable',
+        407 => 'Proxy Authentication Required',
+        408 => 'Request Timeout',
+        409 => 'Conflict',
+        410 => 'Gone',
+        411 => 'Length Required',
+        412 => 'Precondition Failed',
+        413 => 'Request Entity Too Large',
+        414 => 'Request-URI Too Long',
+        415 => 'Unsupported Media Type',
+        416 => 'Requested Range Not Satisfiable',
+        417 => 'Expectation Failed',
+        // Server Error 5xx
+        500 => 'Internal Server Error',
+        501 => 'Not Implemented',
+        502 => 'Bad Gateway',
+        503 => 'Service Unavailable',
+        504 => 'Gateway Timeout',
+        505 => 'HTTP Version Not Supported',
+        509 => 'Bandwidth Limit Exceeded'
+    );
+
+    /**
+     * 发送HTTP状态
+     * @param integer $code                      状态码
+     * @param string $content                    提示信息
+     * @return mixed
+     */
+    public function abort($code, $content = '')
+    {
+        if (empty($content) && isset($this->_status[$code])) {
+            $content = $this->_status[$code];
+        }
+        // 确保FastCGI模式下正常
+        header('Status:'.$code.' '.$this->_status[$code]);
+        // 展示错误
+        echo $content;
+        die;
+    }
+
+    /**
+     * 页面跳转
+     * @param string $url                        跳转链接
+     * @param array $param                       链接参数
+     * @param int $wait                          等待时间
+     * @return bool
+     */
+    public function redirect($url, $param = array(), $wait = 0)
+    {
+        $wait && sleep($wait);
+        $param = http_build_query($param);
+        $url = "$url?$param";
+        header('Location:'.$url);
+        return true;
+    }
+
+    /**
+     * 推荐使用，eg：
+        $response = $client->request('POST', $url, array(
+            'body' => $acJson,
+            'headers' => array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($acJson),
+            )
+        ));
+     * request
+     * @param $method
+     * @param $url
+     * @param array $option
+     * @return array|bool|string
+     */
+    public function request($method, $url, $option = array())
+    {
+        //get parameters
+        static $reties = 0;
+        $method = strtoupper($method);
+        $data = isset($option['body']) ? $option['body'] : array();
+        //if (is_array($data)) $data = json_encode($data);
+        if (is_array($data)) $data = http_build_query($data);
+        $headers = isset($option['headers']) ? $option['headers'] : array(
+            //'Content-Type: application/json',
+            'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
+            'Content-Length: ' . strlen($data)
+        );
+        $retry = isset($option['retry']) ? $option['retry'] : array(3, 1000);
+
+        // switch to method
+        switch ($method)
+        {
+            case 'GET' :
+                $response = $this->curl_get($url, $headers);
+                break;
+            case 'POST' :
+                $response = $this->curl_post($url, $data, $headers);
+                break;
+            case 'PUT' :
+                $response = $this->curl_put($url, $data, $headers);
+                break;
+            case 'DELETE' :
+                $response = $this->curl_delete($url, $data, $headers);
+                break;
+            default:
+                $response = array();
+                break;
+        }
+
+        // retry
+        if ( '' === $response && isset($retry[0]) && $retry[0] && $reties < $retry[0] ) {
+            $reties ++;
+            return $this->request($method, $url, $option);
+        }
+
+        // return response
+        return $response;
+    }
+
+    /**
+     * curl_post
+     * @param string $url
+     * @param bool $post_data
+     * @param array $header
+     * @return bool|string
+     */
+    private function curl_post($url, $post_data = false, $header = array())
+    {
+        //$url = str_replace(" ", "∞", $url);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        $aurl = parse_url($url);
+        if (strtolower($aurl['scheme']) == 'https')
+        {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        }
+        curl_setopt($ch, CURLOPT_USERAGENT,  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36');
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $output = json_decode($output, true) ? json_decode($output, true) : $output;
+        return $output;
+    }
+
+    /**
+     * curl_get
+     * @param $url
+     * @param array $header
+     * @return bool|string
+     */
+    private function curl_get($url, $header = array())
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($ch, CURLOPT_USERAGENT,  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36');
+        curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 16);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 300);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $output = json_decode($output, true) ? json_decode($output, true) : $output;
+        return  $output;
+    }
+
+    /**
+     * curl_put
+     * @param string $url
+     * @param bool $put_data
+     * @param array $header
+     * @return bool|mixed|string
+     */
+    private function curl_put($url = '', $put_data = false, $header = array())
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $put_data);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $output = json_decode($output, true) ? json_decode($output, true) : $output;
+        return $output;
+    }
+
+    /**
+     * curl_delete
+     * @param $url
+     * @param bool $del_data
+     * @param array $header
+     * @return bool|string
+     */
+    private function curl_delete($url, $del_data, $header = array())
+    {
+        $data  = json_encode($del_data);
+        $ch = curl_init();
+        curl_setopt ($ch,CURLOPT_URL, $url);
+        curl_setopt ($ch, CURLOPT_HTTPHEADER, array('Content-type:application/json'));
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $output = json_decode($output, true) ? json_decode($output, true) : $output;
+        return $output;
+    }
+
+    /**
+     * 通过 POST 方式请求
+     * @param string $url
+     * @param array $postData
+     * @param array $header
+     * @param bool $headerBool
+     * @return bool|mixed
+     */
+    public function post($url, $postData = array(), $header = array(), $headerBool=true)
+    {
+        $curl = curl_init();
+        if (!empty($header)) {
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+            curl_setopt($curl, CURLOPT_HEADER, $headerBool);
+        } else {
+            curl_setopt($curl, CURLOPT_HEADER, false);
+        }
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 60);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postData));
+        $result = curl_exec($curl);
+        if (curl_errno($curl)) {
+            return false;
+        }
+        curl_close($curl);
+        return $result;
+    }
+
+    /**
+     * 通过 GET 方式请求
+     * @param string $url
+     * @param array $getData
+     * @param array $header
+     * @param bool $encode
+     * @return bool|mixed
+     */
+    public function get($url, $getData = array(), $header = array(), $encode = true)
+    {
+        $curl = curl_init();
+        if ( count($getData) > 0) {
+            $queryData = $encode ? http_build_query($getData) : urldecode(http_build_query($getData));
+            curl_setopt($curl, CURLOPT_URL, $url.'?'.$queryData);
+        } else {
+            curl_setopt($curl, CURLOPT_URL, $url);
+        }
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($curl, CURLOPT_HEADER, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 60);
+        $result = curl_exec($curl);
+        if (curl_errno($curl)) {
+            return false;
+        }
+        curl_close($curl);
+        return $result;
+    }
+
+    /**
+     * 通过 PUT 方式请求
+     * @param string $url
+     * @param array $putData
+     * @return bool|mixed
+     */
+    public function put($url, $putData = array())
+    {
+        $curl = curl_init();
+        $header = array("X-HTTP-Method-Override: put");
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $putData);
+        $result = curl_exec($curl);
+        if (curl_errno($curl)) {
+            return false;
+        }
+        curl_close($curl);
+        return $result;
+    }
+
+    /**
+     * 通过 DELETE 方式请求
+     * @param string $url
+     * @param array $header
+     * @return bool|mixed
+     */
+    public function delete($url, $header = array())
+    {
+        $curl = curl_init ();
+        curl_setopt ( $curl, CURLOPT_URL, $url);
+        curl_setopt ( $curl, CURLOPT_FILETIME, true );
+        curl_setopt ( $curl, CURLOPT_FRESH_CONNECT, false );
+        curl_setopt ( $curl, CURLOPT_HEADER, true );
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+        curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt ( $curl, CURLOPT_TIMEOUT, 5184000 );
+        curl_setopt ( $curl, CURLOPT_CONNECTTIMEOUT, 120 );
+        curl_setopt ( $curl, CURLOPT_NOSIGNAL, true );
+        curl_setopt ( $curl, CURLOPT_CUSTOMREQUEST, 'DELETE' );
+        $res = curl_exec ( $curl );
+        if (curl_errno($curl)) return false;
+        curl_close($curl);
+        return $res;
+    }
+
+    /**
+     * 将 xml 转为 array
+     * @param $xml
+     * @return mixed
+     */
+    public function xmlToArray($xml)
+    {
+        // 将XML转为array
+        $arrayData = json_decode(json_encode (simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        return $arrayData;
+    }
+
+    /**
+     * array 转 xml
+     * @param $array
+     * @return string
+     */
+    public function arrayToXml($array)
+    {
+        $xml = "<xml>";
+        foreach ( $array as $key => $val ) {
+            if (is_numeric ( $val )) {
+                $xml .= "<" . $key . ">" . $val . "</" . $key . ">";
+            } else
+                $xml .= "<" . $key . "><![CDATA[" . $val . "]]></" . $key . ">";
+        }
+        $xml .= "</xml>";
+        return $xml;
+    }
+
+}
+
+/**
  * define function osapp
  */
 if (!function_exists('osapp')) {
@@ -2059,6 +2476,15 @@ class Sapp
         $app->setConfig($config);
         $this->setApp($appName, $app);
         return $app;
+    }
+
+    /**
+     * http instance
+     * @return SHttpClient
+     */
+    public function http()
+    {
+        return $this->getInstance('SHttpClient');
     }
 
 }

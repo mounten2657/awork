@@ -1,6 +1,7 @@
 
 $(function () {
 
+    /**************************************Tool for timestamp***********************************************/
     //³õÊ¼»¯
     let color = '#333';
     let errColor = '#c7254e';
@@ -44,6 +45,8 @@ $(function () {
         $('#date_out').html(formatDate(nowTimeDate));
     });
 
+    /**************************************Tool for string***********************************************/
+    let clickTimer = null;
     //µã»÷ json decode
     $('#json_decode').click(function () {
         let json = '';
@@ -67,14 +70,17 @@ $(function () {
 
     //µã»÷ url decode
     $('#url_decode').click(function () {
-        let text = $('#text_in').val();
-        text = decodeURI(text);
-        text += "\r\n\r\nRequest Parameters: " + formatJsonDecode(getUrlParams(text));
-        $('#text_out').val(text).css('color', color);
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            text = decodeURI(text);
+            text += "\r\n\r\nRequest Parameters: " + formatJsonDecode(getUrlParams(text));
+            $('#text_out').val(text).css('color', color);
+        },300);
     });
-
     //Ë«»÷ url decode
     $('#url_decode').dblclick(function () {
+        clearTimeout(clickTimer);
         let text = $('#text_in').val();
         text = decodeURIComponent(text);
         text += "\r\n\r\nRequest Parameters: " + formatJsonDecode(getUrlParams(text));
@@ -83,14 +89,16 @@ $(function () {
 
     //µã»÷ url encode
     $('#url_encode').click(function () {
-        let text = $('#text_in').val();
-        $('#text_out').val(encodeURI(text)).css('color', color);
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            $('#text_out').val(encodeURI(text)).css('color', color);
+        },300);
     });
-
     //Ë«»÷ url encode
     $('#url_encode').dblclick(function () {
+        clearTimeout(clickTimer);
         let text = $('#text_in').val();
-
         $('#text_out').val(encodeURIComponent(text)).css('color', color);
     });
 
@@ -125,26 +133,29 @@ $(function () {
 
     //µã»÷ version bat
     $('#version_bat').click(function () {
-        let text = $('#text_in').val();
-        text = text.replace(/\ +/g, ',');
-        $.ajax({
-            url: '/index/api/generateBat',
-            type:'post',
-            data:{text: text},
-            success:function (res) {
-                res = JSON.parse(res);
-                if (res.code === '0') {
-                    $('#text_out').val(res.data.bat).css('color', color);
-                } else {
-                    $('#text_out').val(res.msg).css('color', errColor);
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            text = text.replace(/\ +/g, ',');
+            $.ajax({
+                url: '/index/api/generateBat',
+                type: 'post',
+                data: {text: text},
+                success: function (res) {
+                    res = JSON.parse(res);
+                    if (res.code === '0') {
+                        $('#text_out').val(res.data.bat).css('color', color);
+                    } else {
+                        $('#text_out').val(res.msg).css('color', errColor);
+                    }
                 }
-            }
-        });
+            });
+        },300);
         return true;
     });
-
     //Ë«»÷ version bat
     $('#version_bat').dblclick(function () {
+        clearTimeout(clickTimer);
         let text = $('#text_in').val();
         text = text.replace(/\ +/g, ',');
         if (text !== '') {
@@ -164,12 +175,104 @@ $(function () {
         $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
+    //µã»÷ sql_format
+    $('#sql_format').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            tooLuFormat(text, 'beauty', 'sql_format');
+        },300);
+        return true;
+    });
+    //Ë«»÷ sql_format
+    $('#sql_format').dblclick(function () {
+        clearTimeout(clickTimer);
+        let text = $('#text_in').val();
+        tooLuFormat(text, 'compress', 'sql_format');
+    });
+
+    //µã»÷ xml_format
+    $('#xml_format').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            tooLuFormat(text, 'beauty', 'xml_format');
+        },300);
+        return true;
+    });
+    //Ë«»÷ xml_format
+    $('#xml_format').dblclick(function () {
+        clearTimeout(clickTimer);
+        let text = $('#text_in').val();
+        tooLuFormat(text, 'purify', 'xml_format');
+    });
+
     //µã»÷ md5
     $('#md5').click(function () {
-        let text = $('#text_in').val();
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            $('#text_out').val($.md5(text)).css('color', color);
+        },300);
+    });
+    //Ë«»÷ md5
+    $('#md5').dblclick(function () {
+        clearTimeout(clickTimer);
+        let text = $('#text_out').val();
         $('#text_out').val($.md5(text)).css('color', color);
     });
 
+    //µã»÷ base64_encode
+    $('#base64_encode').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            $('#text_out').val($.base64.encode(text)).css('color', color);
+        },300);
+    });
+    //Ë«»÷ base64_encode
+    $('#base64_encode').dblclick(function () {
+        clearTimeout(clickTimer);
+        let text = $('#text_in').val();
+        $('#text_out').val($.base64.encodeExt(text)).css('color', color);
+    });
+
+    //µã»÷ base64_decode
+    $('#base64_decode').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            $('#text_out').val($.base64.decode(text)).css('color', color);
+        },300);
+    });
+    //Ë«»÷ base64_decode
+    $('#base64_decode').dblclick(function () {
+        clearTimeout(clickTimer);
+        let text = $('#text_in').val();
+        $('#text_out').val($.base64.decodeExt(text)).css('color', color);
+    });
+
+    //µã»÷ sha256
+    $('#sha256').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            ssha(text,'sha256');
+        },300);
+        return true;
+    });
+
+    //µã»÷ sha512
+    $('#sha512').click(function () {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            let text = $('#text_in').val();
+            ssha(text,'sha512');
+        },300);
+        return true;
+    });
+
+    /**************************************Tool for platform***********************************************/
     // »ñÈ¡°æ±¾ÐÅÏ¢
     var version = {};
     var loadIndex = layer.load(2, {time: 10 * 1000});
@@ -205,22 +308,34 @@ $(function () {
 
     //µã»÷ host_ip
     $('#host_ip').click(function () {
-        var info = version.data.host;
-        layer.tips(info, '#host_ip', {tips:[1, '#111'],time:3000});
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            var info = version.data.host;
+            layer.tips(info, '#host_ip', {tips:[1, '#111'],time:3000});
+        },300);
     });
 
     //µã»÷ code_bch
     $('#code_bch').click(function () {
-        var info = version.data.branch;
-        layer.tips(info, '#code_bch', {tips:[1, '#111'],time:3000});
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            var info = version.data.branch;
+            layer.tips(info, '#code_bch', {tips:[1, '#111'],time:3000});
+        },300);
     });
 
     //µã»÷ php_ver
     $('#php_ver').click(function () {
-        var info = version.data.version;
-        layer.tips(info, '#php_ver', {tips:[1, '#111'],time:3000});
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () {
+            var info = version.data.version;
+            layer.tips(info, '#php_ver', {tips:[1, '#111'],time:3000});
+        },300);
     });
+
+    //Ë«»÷ host_ip code_bch php_ver
     $('#host_ip,#code_bch,#php_ver').dblclick(function () {
+        clearTimeout(clickTimer);
         layer.open({
             title: 'Select Property Of Html'
             ,type: 1
@@ -256,30 +371,23 @@ $(function () {
                 console.log(host,branch,php,pass);
                 $.ajax({
                     url: '/extra/url?ch_submit',
-                    type:'post',
-                    async:false,
-                    data:{branch:branch,php:php,pass:pass},
-                    success:function (res) {
+                    type: 'post',
+                    async: false,
+                    data: {branch:branch,php:php,pass:pass},
+                    success: function (res) {
                         console.log(res);
                         res = JSON.parse(res);
-                        if (res.code === '30010') {
-                            layer.msg(res.msg);
-                            return setTimeout(function () {
-                                layer.close(loadIndex);
-                                top.location.reload();
-                            }, 3000);
-                        }
-                        if (res.code !== '0') {
+                        if (res.code !== '0' || res.code === '30010') {
                             return layer.msg(res.msg);
                         }
                         layer.msg('The project has been changed successful!');
-                        return setTimeout(function () {
-                            layer.close(loadIndex);
-                            top.location.reload();
-                        }, 1000);
                     }
                 });
                 layer.close(index);
+                setTimeout(function () {
+                    layer.close(loadIndex);
+                    window.location.reload();
+                }, 3000);
             }
             ,btn2: function (index) {
                 layer.close(index);
@@ -294,7 +402,7 @@ $(function () {
             '            <iframe frameborder="0" scrolling="auto" height="300" width="100%" src="https://fanyi.baidu.com/#zh/en/"></iframe>\n' +
             '        </div>\n' +
             '    </div>';
-        $(".container").append(baidufyHtml);
+        //$(".container").append(baidufyHtml);
     } ,200);
 
     // ÇÀ¾Û½¹

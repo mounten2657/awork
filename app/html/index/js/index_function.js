@@ -192,3 +192,57 @@ function deUnicode(str){
     return str;
 }
 
+// text_out
+function tout(msg, err = false) {
+    msg = deUnicode(msg);
+    if (!err) {
+        $('#text_out').val(msg).css('color', '#333');
+    } else {
+        $('#text_out').val(msg).css('color', '#c7254e');
+    }
+    return true;
+}
+
+// tool.lu
+function tooLuFormat(code, operate, id)
+{
+    var loadIndex = layer.load(2, {time: 10 * 1000});
+    $.ajax({
+        url: '/extra/url?' + id,
+        type: 'post',
+        data: {code: code, operate: operate},
+        success: function (res) {
+            res = JSON.parse(res);
+            if (res.code === '0') {
+                tout(res.data);
+            } else {
+                tout(res.msg, true);
+            }
+            layer.close(loadIndex);
+        }
+    });
+    return true;
+}
+
+// ssha256 and ssha512
+function ssha(code, id)
+{
+    var loadIndex = layer.load(2, {time: 10 * 1000});
+    $.ajax({
+        url: '/extra/url?' + id,
+        type: 'post',
+        data: {code: code},
+        success: function (res) {
+            res = JSON.parse(res);
+            if (res.code === '0') {
+                tout(res.data);
+            } else {
+                tout(res.msg, true);
+            }
+            layer.close(loadIndex);
+        }
+    });
+    return true;
+}
+
+

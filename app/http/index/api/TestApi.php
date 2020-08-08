@@ -14,6 +14,7 @@ namespace app\http\index\api;
 use app\http\index\facade\IndexFacade;
 use core\Http;
 use core\Log;
+use database\Db;
 
 /**
  * ≤‚ ‘ API
@@ -43,6 +44,18 @@ class TestApi
             }
         }
         echo $listHtml;
+    }
+
+    /**
+     * merge test
+     */
+    public function mergeTest()
+    {
+        echo '<pre>';
+        $ar1 = array('b' => 'xx=123','h' => array('aa','bb'),'t' => array(1,2,4));
+        $ar2 = array('b' => array('xx' => 221),'h' => array('aa','bb','cc'),'t' => array(1,3,4));
+        $ar3 = array_merge($ar1, $ar2);
+        print_r($ar3);
     }
 
     /**

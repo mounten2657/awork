@@ -11,6 +11,8 @@
 
 namespace app\http\extra\api;
 
+use app\http\extra\facade\ShaFacade;
+
 /**
  * Class ExtraApi
  * @package app\http\extra\api
@@ -40,6 +42,7 @@ class ExtraApi
             'host_zenTao' => '',
             'host_gitLib' => '',
             'host_package' => '',
+            'host_toolLu' => 'https://tool.lu',
             'port_showDoc' => '9051',
             'port_redis' => '8081',
             'port_mongo' => '1234',
@@ -69,7 +72,7 @@ class ExtraApi
      */
     public function redirect()
     {
-        if (!($this->_api() && $this->_html() && $this->_mark())) {
+        if (!($this->_api() && $this->_html() && $this->_mark() && $this->_string())) {
             throw new \Exception('Not Found', 10404);
         }
         return true;
@@ -115,6 +118,8 @@ class ExtraApi
             case 'host_ip':
             case 'code_bch':
             case 'php_ver':
+                return sapp()->response()->ok();
+                break;
             case 'ch_submit':
                 $branch = sapp()->request()->get('branch');
                 $php = sapp()->request()->get('php');
@@ -167,6 +172,52 @@ class ExtraApi
                 break;
             case 'h152_i':
                 header('Location: ' . $this->hosts['host_package'] . '/webdata/development/v6.0.3043.1906/');
+                break;
+        }
+        return true;
+    }
+
+    private function _string()
+    {
+        $app = sapp();
+        switch($this->type) {
+            case 'sql_format':
+                $code = $app->request()->get('code');
+                $operate = $app->request()->get('operate');
+                $data = array('code' => $code, 'operate' => $operate);
+                $url = $this->hosts['host_toolLu']. '/sql/ajax.html';
+                $res = $app->http()->request('post', $url, array('body' => $data));
+                if (isset($res['text']) && $res['text']) {
+                    return $app->response()->ok($res['text']);
+                }
+                return $app->response()->fail('SQL ERROR : ' . json_encode($res));
+                break;
+            case 'xml_format':
+                $code = $app->request()->get('code');
+                $operate = $app->request()->get('operate');
+                $data = array('code' => $code, 'operate' => $operate);
+                $url = $this->hosts['host_toolLu']. '/xml/ajax.html';
+                $res = $app->http()->request('post', $url, array('body' => $data));
+                if (isset($res['code']) && $res['code']) {
+                    return $app->response()->ok($res['code']);
+                }
+                return $app->response()->fail('XML ERROR : ' . json_encode($res));
+                break;
+            case 'sha256':
+                $code = $app->request()->get('code');
+                if (!$code) {
+                    return $app->response()->fail('Empty Slat!');
+                }
+                $res = ShaFacade::sha256($code);
+                return $app->response()->ok($res);
+                break;
+            case 'sha512':
+                $code = $app->request()->get('code');
+                if (!$code) {
+                    return $app->response()->fail('Empty Slat!');
+                }
+                $res = ShaFacade::sha512($code);
+                return $app->response()->ok($res);
                 break;
         }
         return true;

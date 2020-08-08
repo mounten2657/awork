@@ -1699,6 +1699,7 @@ class SLog
      */
     private static $_logConfig = array(
         'log_level' => 'info',
+        'log_type' => 'var_export',
         'log_date_format' => 'Y_m_d',
         'log_file_size' => 1024000000,
         'log_path' => array(
@@ -1718,26 +1719,48 @@ class SLog
     }
 
     /**
-     * setConfig
+     * set config
      * @param array $config
+     * @return $this
      */
     public function setConfig($config = array())
     {
-        self::$_logConfig = $config ? : self::$_logConfig;
+        self::$_logConfig = $config ? array_merge(self::$_logConfig, $config) : self::$_logConfig;
+        return $this;
     }
 
     /**
-     * set upload option
+     * set option
      * @param $key
      * @param $value
-     * @return mixed
+     * @return $this
      */
     public function setOption($key, $value)
     {
         if (isset(self::$_logConfig[$key])) {
             self::$_logConfig[$key] = $value;
         }
-        return self::$_logConfig;
+        return $this;
+    }
+
+    /**
+     * set log path
+     * @param array $path  eg : array('module' => 'custom', 'dir' => '/tmp/logs/')
+     * @return $this
+     */
+    public function setLogPath($path = array('module' => 'custom', 'dir' => '/tmp/logs/'))
+    {
+        $logPathKey = 'log_path';
+        if (!isset($path['module']) || !isset($path['dir'])) {
+            return $this;
+        }
+        $setPath = array($logPathKey => array(
+            $path['module'] => $path['dir']
+        ));
+        $config = $this->getConfig();
+        $configPath = array_merge($config[$logPathKey], $setPath);
+        $this->setOption($logPathKey, $configPath);
+        return $this;
     }
 
     /**
@@ -1771,21 +1794,31 @@ class SLog
      * @param mixed $message 日志信息
      * @param string $module 日志模块
      * @param string $level 日志级别
-     * @param string $file 日志文件
      * @return mixed 写入结果
      */
-    private static function _write($message, $module, $level, $file)
+    private static function _write($message, $module, $level)
     {
         $module = $module ?: 'default';
-        if (is_array($message) || is_object($message)) {
-            $message = var_export($message, true);
+        if (is_object($message) || is_array($message))
+        {
+            $logType = self::config('log_type');
+            if ('json_encode' === $logType) {
+                $message = json_encode($message);
+            } else {
+                $message = var_export($message, true);
+            }
         }
-        $logPath = self::_getLogPath($module);
-        if (false === $logPath) {
-            return false;
+        if (false !== strpos($module, '.') && 0 === strpos($module, '/')) {
+            $destination = $module;
+        } else {
+            $logPath = self::_getLogPath($module);
+            if (false === $logPath) {
+                return false;
+            }
+            $file = date(self::config('log_date_format')) . self::EXT;
+            $destination = $logPath . '/' . $file;
         }
-        $file = $file ?: date(self::config('log_date_format')) . self::EXT;
-        $destination = $logPath . '/' . $file;
+
         $path = dirname($destination);
         // 避免文件读写出现问题而造成整个挂掉
         try {
@@ -1831,16 +1864,15 @@ class SLog
      * @param mixed $message 日志信息
      * @param string $module 日志模块
      * @param string $level 日志级别
-     * @param string $file 日志文件
      * @return mixed  写入结果
      */
-    public static function record($message, $module = '', $level = self::INFO, $file = '')
+    public static function record($message, $module = '', $level = self::INFO)
     {
         $defaultLevel = array_search(strtoupper(self::config('log_level')), self::$_logLevel) ?: '0';
         if ($level < $defaultLevel) {
             return false;
         }
-        return self::_write($message, $module, $level, $file);
+        return self::_write($message, $module, $level);
     }
 
     /**
@@ -1908,7 +1940,7 @@ Class SHttpClient
      * 常用状态码
      * @var array
      */
-    private $_status = array(
+    private $_status = array (
         // Informational 1xx
         100 => 'Continue',
         101 => 'Switching Protocols',
@@ -1959,6 +1991,11 @@ Class SHttpClient
     );
 
     /**
+     * @var array
+     */
+    private $option = array();
+
+    /**
      * 发送HTTP状态
      * @param integer $code                      状态码
      * @param string $content                    提示信息
@@ -1993,14 +2030,18 @@ Class SHttpClient
     }
 
     /**
-     * 推荐使用，eg：
+     * 推荐使用 eg ：
         $response = $client->request('POST', $url, array(
-            'body' => $acJson,
+            'body' => 'a=1&b=2',
             'headers' => array(
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($acJson),
-            )
+                'Content-Length: 7',
+            ),
+            'retry' => array(3, 1000, 1)
         ));
+     * option.body    : string http_build_query($request_data)
+     * option.headers : array  array($header_string_1, $header_string_2)
+     * option.retry   : array  array($retry_times, $retry_delay_ms, $retry_which_times)
      * request
      * @param $method
      * @param $url
@@ -2010,17 +2051,16 @@ Class SHttpClient
     public function request($method, $url, $option = array())
     {
         //get parameters
-        static $reties = 0;
         $method = strtoupper($method);
-        $data = isset($option['body']) ? $option['body'] : array();
-        //if (is_array($data)) $data = json_encode($data);
-        if (is_array($data)) $data = http_build_query($data);
-        $headers = isset($option['headers']) ? $option['headers'] : array(
-            //'Content-Type: application/json',
-            'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
-            'Content-Length: ' . strlen($data)
-        );
-        $retry = isset($option['retry']) ? $option['retry'] : array(3, 1000);
+        if (isset($option['body']) && is_array($option['body'])) {
+            $option['body'] = http_build_query($option['body']);
+        } else {
+            $option['body'] = '';
+        }
+        $this->option = array_merge($this->getOption($option['body']), $option);
+        $data = $this->option['body'];
+        $headers = $this->option['headers'];
+        $retry = $this->option['retry'];
 
         // switch to method
         switch ($method)
@@ -2042,14 +2082,47 @@ Class SHttpClient
                 break;
         }
 
+        sapp()->log()->setConfig(array('log_type' =>'json_encode'))->info(array('method' => $method, 'url' => $url, 'option' => $this->option, 'response' => $response), '/www/awork/log/request.log');
+
         // retry
-        if ( '' === $response && isset($retry[0]) && $retry[0] && $reties < $retry[0] ) {
-            $reties ++;
-            return $this->request($method, $url, $option);
+        if ( !$response && isset($retry[2]) && $retry[0] && ($retry[2] < $retry[0]) ) {
+            $this->option['retry'][2] ++;
+            usleep($retry[1] * 1000);
+            return $this->request($method, $url, $this->option);
         }
 
         // return response
         return $response;
+    }
+
+    /**
+     * get default option
+     * @param $data
+     * @return array
+     */
+    public function getOption($data)
+    {
+        if (is_array($data)) $data = http_build_query($data);
+        $this->option = array(
+            'body' => $data,
+            'headers' => array(
+                'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
+                'Content-Length: ' . strlen($data)
+            ),
+            'retry' => array(3, 1000, 1)
+        );
+        return $this->option;
+    }
+
+    /**
+     * set option
+     * @param $option
+     * @return $this
+     */
+    public function setOption($option)
+    {
+        $this->option = $option;
+        return $this;
     }
 
     /**
@@ -2061,7 +2134,7 @@ Class SHttpClient
      */
     private function curl_post($url, $post_data = false, $header = array())
     {
-        //$url = str_replace(" ", "∞", $url);
+        $url = str_replace(" ", "∞", $url);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -2071,7 +2144,6 @@ Class SHttpClient
         if (strtolower($aurl['scheme']) == 'https')
         {
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         }
         curl_setopt($ch, CURLOPT_USERAGENT,  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36');
@@ -2466,6 +2538,7 @@ class Sapp
         $dir = defined('RSAPI_ROOT') ? RSAPI_ROOT . '../../../tmp/' : ( defined('DROOT') ? DROOT . '../../../tmp/' : '/tmp/' );
         $config = array(
             'log_level' => 'info',
+            'log_type' => 'var_export',
             'log_date_format' => 'Y_m_d',
             'log_file_size' => 1024 * 1000 * 1000,
             'log_path' => array(

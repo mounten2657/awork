@@ -30,6 +30,12 @@ class ExtraApi
     /** @var string pass */
     private $pass = 'Infogo123456';
 
+    /** @var int is product */
+    private $isProduct;
+
+    /** @var int is show baidufangyi */
+    private $isShowBDFY;
+
     /**
      * get hosts
      * @return array
@@ -63,6 +69,8 @@ class ExtraApi
     {
         $this->hosts = $this->getHost();
         $this->type = $this->getType();
+        $this->isProduct = isTestEnv() ? 0 : 1;
+        $this->isShowBDFY = isset($_REQUEST['bdfy']) ? 0 : 1;
     }
 
     /**
@@ -108,11 +116,15 @@ class ExtraApi
         switch($this->type)
         {
             case 'current_i':
+                if ($this->isProduct) {
+                    return sapp()->response()->fail('No Server!');
+                }
                 $url = $this->hosts['host_asm'] . '/test/?tradecode=getCurrentInfo';
                 $res = sapp()->http()->request('post', $url);
                 if (!isset($res['code'])) {
                     return sapp()->response()->fail(json_encode($res));
                 }
+                $res['data'] = array_merge($res['data'], array('isProduct' => $this->isProduct));
                 return sapp()->response()->ok($res);
                 break;
             case 'host_ip':

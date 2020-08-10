@@ -203,6 +203,21 @@ function tout(msg, err = false) {
     return true;
 }
 
+// disable server
+function  disableServer(deny) {
+    $(deny)
+        .css('pointer-events', 'none')
+        .css('cursor', 'not-allowed')
+        .attr('title', 'Server Offline!')
+        .find('a')
+        .css('pointer-events', 'auto')
+        .attr('disabled', 'disabled')
+        .attr('href', 'javascript:').attr('target', '_self');
+    $(deny).unbind('click').click(function () {return false;});
+    $(deny).unbind('dblclick').dblclick(function () {return false;});
+    return false
+}
+
 // tool.lu
 function tooLuFormat(code, operate, id)
 {

@@ -274,8 +274,10 @@ $(function () {
 
     /**************************************Tool for platform***********************************************/
     // 获取版本信息
-    var version = {};
-    var loadIndex = layer.load(2, {time: 10 * 1000});
+    let version = {};
+    let deny = '#host_ip,#code_bch,#php_ver,#ch_submit,#ch_check';
+    deny += ',#gitlib_i,#zentao_i,#h152_i';
+    let loadIndex = layer.load(2, {time: 10 * 1000});
     setTimeout(function () {
         $.ajax({
             url: '/extra/url?current_i',
@@ -284,26 +286,53 @@ $(function () {
             success:function (res) {
                 res = JSON.parse(res);
                 if (res.code !== '0') {
+                    version.data = null;
+                    version.msg = res.msg;
+                    disableServer(deny);
+                    layer.close(loadIndex);
                     return layer.msg(res.msg);
                 }
                 version = res.data;
-                var info = version.data.branch + ' + ' + version.data.version;
+                // 基本信息
+                let info = version.data.branch + ' + ' + version.data.version;
                 $('#current_i button').html(info);
                 $('#host_text').html(version.data.host);
                 $('#branch_text').html('release/'+version.data.branch);
                 $('#version_text').html('PHP '+version.data.version);
+                // select 赋值
                 $('#HostIP').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.host + '"]').click();
                 $('#CodeBranch').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.branch + '"]').click();
                 $('#PHPVersion').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.version + '"]').click();
+                // 禁用非正式功能
+                if (version.data.isProduct === '1') {
+                    disableServer(deny);
+                }
                 layer.close(loadIndex);
             }
         });
     },500);
 
+    // deny
+    let tips = null;
+    $(deny).hover(function() {
+        let id = $(this).attr('id');
+        let title = $(this).attr('title');
+        if (title) {
+            tips = layer.tips(title, '#'+id, {tips: [1, '#c7254e']});
+        }
+    }, function () {
+        layer.close(tips);
+        return false;
+    });
+
     //点击 current_i
     $('#current_i').click(function () {
-        var info = version.data.host + ' <br> ' + version.data.branch + ' <br> ' + version.data.version;
-        layer.tips(info, '#current_i', {tips:[1, '#111'],time:3000});
+        if (version.data) {
+            var info = version.data.host + ' <br> ' + version.data.branch + ' <br> ' + version.data.version;
+            layer.tips(info, '#current_i', {tips:[1, '#111'],time:3000});
+        } else {
+            layer.tips(version.msg, '#current_i', {tips:[1, '#111'],time:3000});
+        }
     });
 
     //点击 host_ip
@@ -402,7 +431,13 @@ $(function () {
             '            <iframe frameborder="0" scrolling="auto" height="300" width="100%" src="https://fanyi.baidu.com/#zh/en/"></iframe>\n' +
             '        </div>\n' +
             '    </div>';
-        //$(".container").append(baidufyHtml);
+        let isShowBDFY = 1;
+        if (window.location.search.indexOf('bdfy') > -1) {
+            isShowBDFY = 0;
+        }
+        if (isShowBDFY) {
+            $(".container").append(baidufyHtml);
+        }
     } ,200);
 
     // 抢聚焦

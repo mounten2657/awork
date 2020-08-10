@@ -2082,7 +2082,7 @@ Class SHttpClient
                 break;
         }
 
-        sapp()->log()->setConfig(array('log_type' =>'json_encode'))->info(array('method' => $method, 'url' => $url, 'option' => $this->option, 'response' => $response), '/www/awork/log/request.log');
+        //sapp()->log()->setConfig(array('log_type' =>'json_encode'))->info(array('method' => $method, 'url' => $url, 'option' => $this->option, 'response' => $response), '/www/awork/log/request.log');
 
         // retry
         if ( !$response && isset($retry[2]) && $retry[0] && ($retry[2] < $retry[0]) ) {

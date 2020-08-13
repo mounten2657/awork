@@ -274,11 +274,12 @@ class SResponse
     /**
      * data
      * @param array $data
+     * @param bool $isDie
      * @return $this
      */
-    public function data($data = array())
+    public function data($data = array(), $isDie = true)
     {
-        return $this->sreturn($data);
+        return $this->sreturn($data, $isDie);
     }
 
     /**
@@ -319,12 +320,14 @@ class SResponse
     /**
      * return with json format
      * @param array $data
+     * @param bool $isDie
      * @return $this
      */
-    public function sreturn($data = array())
+    public function sreturn($data = array(), $isDie = true)
     {
         $this->data = $this->json($data);
         echo $this->data;
+        $isDie === true && die;
         return $this;
     }
 

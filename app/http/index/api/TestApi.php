@@ -31,7 +31,7 @@ class TestApi
     {
         $target = sapp()->request()->get('tcode', 'index');
         if ($target != 'index') {
-            return $this->$target();
+            return sapp()->response()->ok($this->$target());
         }
         echo "Current ID : " . md5(time()) . "<br>";
         $listHtml = '';
@@ -44,18 +44,6 @@ class TestApi
             }
         }
         echo $listHtml;
-    }
-
-    /**
-     * merge test
-     */
-    public function mergeTest()
-    {
-        echo '<pre>';
-        $ar1 = array('b' => 'xx=123','h' => array('aa','bb'),'t' => array(1,2,4));
-        $ar2 = array('b' => array('xx' => 221),'h' => array('aa','bb','cc'),'t' => array(1,3,4));
-        $ar3 = array_merge($ar1, $ar2);
-        print_r($ar3);
     }
 
     /**
@@ -85,6 +73,31 @@ class TestApi
     }
 
     /**
+     * merge test
+     */
+    public function mergeTest()
+    {
+        $res = array();
+        $startIP  = '123.223.1.256';
+        $reg = '/^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:[.](?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$/';
+        //preg_match_all('/^\d{1,3}+.\d{1,3}+.\d{1,3}+.\d{1,3}+$/', trim($startIP), $matches1);
+        preg_match_all($reg, trim($startIP), $matches1);
+        $res[] = filter_var($startIP, FILTER_VALIDATE_IP);
+        $res[] = $matches1;
+
+        $ar1 = array('b' => 'xx=123','h' => array('aa','bb'),'t' => array(1,2,4));
+        $ar2 = array('b' => array('xx' => 221),'h' => array('aa','bb','cc'),'t' => array(1,3,4));
+        $res[] = array_merge($ar1, $ar2);
+        $ar4 = array();
+        $ar4[] = 'xx';
+        $ar4[] = '44';
+        $ar4[5] = 9;
+        $ar4 = array_values($ar4);
+        $res[] = $ar4;
+        return $res;
+    }
+
+    /**
      * sacPostTest
      * @return bool
      */
@@ -94,7 +107,7 @@ class TestApi
         $header = sapp()->request()->header();
         $request = array_merge($request, array('header' => $header));
         $data = ['code' => 0, 'data' => $request, 'message' => 'sacPostTest'];
-        return sapp()->response()->data($data)->debug(0);
+        return sapp()->response()->data($data, false)->debug(1);
     }
 
     /**
@@ -141,7 +154,7 @@ class TestApi
             'intval(floatval(2.05) * 100)' => intval(floatval(2.05) * 100),
             'intval(2.05 * 1000 /10)' => intval(2.05 * 1000 /10),
         ];
-        dump($math);
+        return $math;
     }
 
     /**

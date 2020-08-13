@@ -117,7 +117,7 @@ class ExtraApi
         {
             case 'current_i':
                 if ($this->isProduct) {
-                    return sapp()->response()->fail('No Server!');
+                    return sapp()->response()->fail('Html Server Offline!');
                 }
                 $url = $this->hosts['host_asm'] . '/test/?tradecode=getCurrentInfo';
                 $res = sapp()->http()->request('post', $url);

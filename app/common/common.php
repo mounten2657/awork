@@ -38,5 +38,20 @@ function getBaseUri($hasPort = false)
     return $http . '://' . $host;
 }
 
+if (!function_exists('dd')) {
+    /**
+     * print var
+     * @param $var
+     * @param $die
+     */
+    function dd($var, $die = 1)
+    {
+        echo "<br><pre>";
+        print_r($var);
+        echo "</pre>";
+        $die && die;
+    }
+}
+
 
 

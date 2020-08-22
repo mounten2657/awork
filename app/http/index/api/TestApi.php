@@ -14,7 +14,6 @@ namespace app\http\index\api;
 use app\http\index\facade\IndexFacade;
 use core\Http;
 use core\Log;
-use database\Db;
 
 /**
  * ≤‚ ‘ API

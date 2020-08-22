@@ -12,6 +12,7 @@
 namespace app\http\extra\api;
 
 use app\http\extra\facade\ShaFacade;
+use simple\Sapp;
 
 /**
  * Class ExtraApi
@@ -27,14 +28,14 @@ class ExtraApi
     /** @var string type */
     public $type;
 
+    /** @var Sapp app */
+    private $app;
+
     /** @var string pass */
     private $pass = 'Infogo123456';
 
     /** @var int is product */
     private $isProduct;
-
-    /** @var int is show baidufangyi */
-    private $isShowBDFY;
 
     /**
      * get hosts
@@ -42,13 +43,16 @@ class ExtraApi
      */
     public function getHost()
     {
+        $extApi = array(
+            'tool_lu' => 'https://tool.lu',
+        );
         $hosts = array(
             'host_self' => getBaseUri(),
             'host_asm' => '',
             'host_zenTao' => '',
             'host_gitLib' => '',
             'host_package' => '',
-            'host_toolLu' => 'https://tool.lu',
+            'host_toolLu' => $extApi['tool_lu'],
             'port_showDoc' => '9051',
             'port_redis' => '8081',
             'port_mongo' => '1234',
@@ -70,7 +74,6 @@ class ExtraApi
         $this->hosts = $this->getHost();
         $this->type = $this->getType();
         $this->isProduct = isTestEnv() ? 0 : 1;
-        $this->isShowBDFY = isset($_REQUEST['bdfy']) ? 0 : 1;
     }
 
     /**
@@ -80,10 +83,11 @@ class ExtraApi
      */
     public function redirect()
     {
+        $this->app = \sapp();
         if (!($this->_api() && $this->_html() && $this->_mark() && $this->_string())) {
-            throw new \Exception('Not Found', 10404);
+            throw new \Exception('Not Found', 404);
         }
-        return true;
+        throw new \Exception('Method Not Allowed', 405);
     }
 
     /**
@@ -95,13 +99,13 @@ class ExtraApi
         switch($this->type)
         {
             case 'h210_api':
-                header('Location: ' . $this->hosts['host_asm'] . '/test');
+                $this->app->http()->redirect($this->hosts['host_asm'] . '/test');
                 break;
             case 'h210_auth':
-                header('Location: ' . $this->hosts['host_asm'] . '/');
+                $this->app->http()->redirect($this->hosts['host_asm'] . '/');
                 break;
             case 'h210_back':
-                header('Location: ' . $this->hosts['host_asm'] . '/admin');
+                $this->app->http()->redirect($this->hosts['host_asm'] . '/admin');
                 break;
         }
         return true;
@@ -168,22 +172,22 @@ class ExtraApi
         switch($this->type)
         {
             case 'show_doc':
-                header('Location: ' . $this->hosts['host_self'] . ':' . $this->hosts['port_showDoc']);
+                $this->app->http()->redirect($this->hosts['host_self'] . ':' . $this->hosts['port_showDoc']);
                 break;
             case 'redis_back':
-                header('Location: ' . $this->hosts['host_self'] . ':' . $this->hosts['port_redis']);
+                $this->app->http()->redirect($this->hosts['host_self'] . ':' . $this->hosts['port_redis']);
                 break;
             case 'mongo_back':
-                header('Location: ' . $this->hosts['host_self'] . ':' . $this->hosts['port_mongo']);
+                $this->app->http()->redirect($this->hosts['host_self'] . ':' . $this->hosts['port_mongo']);
                 break;
             case 'github_i':
-                header('Location: ' . $this->hosts['host_gitLib'] . '/');
+                $this->app->http()->redirect($this->hosts['host_gitLib'] . '/');
                 break;
             case 'zentao_i':
-                header('Location: ' . $this->hosts['host_zenTao'] . '/');
+                $this->app->http()->redirect($this->hosts['host_zenTao'] . '/');
                 break;
             case 'h152_i':
-                header('Location: ' . $this->hosts['host_package'] . '/webdata/development/v6.0.3043.1906/');
+                $this->app->http()->redirect($this->hosts['host_package'] . '/webdata/development/v6.0.3043.1906/');
                 break;
         }
         return true;

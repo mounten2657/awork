@@ -134,7 +134,7 @@ class yapi2posm
     {
         $item = json_decode(
             mb_convert_encoding(
-                '{"name":"'.$api['url'].'","request":{"method":"'.$api['method'].'","header":[],"body":{"mode":"urlencoded","urlencoded":[]},"url":{"raw":"{{'.$params['env_name'].'}}'.$api['url'].'","host":["{{'.$params['env_name'].'}}"],"path":["site","'.$api['url'].'"]}},"response":[]}'
+                '{"name":"'.$api['url'].'","request":{"method":"'.$api['method'].'","header":[],"body":{"mode":"urlencoded","urlencoded":[]},"url":{"raw":"{{'.$params['env_name'].'}}'.$api['url'].'","host":["{{'.$params['env_name'].'}}"],"path":["","'.substr($api['url'], 1).'"]}},"response":[]}'
                 , 'UTF-8', 'UTF-8,GBK,GB2312,BIG5' )
             , true
         );

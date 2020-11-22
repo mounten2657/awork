@@ -2,7 +2,8 @@
   "require": {
     "codeception/codeception": "2.5.5",
     "guzzlehttp/guzzle": "^6.3",
-    "viest/php-ext-xlswriter-ide-helper": "dev-master"
+    "viest/php-ext-xlswriter-ide-helper": "dev-master",
+    "ext-json": "*"
   },
   "repositories": {
     "packagist": {

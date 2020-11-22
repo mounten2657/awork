@@ -45,6 +45,25 @@ class TestApi
         echo $listHtml;
     }
 
+    public function getSmsUrl()
+    {
+        $url1 = 'http://134.176.102.33:8081/api/rest';
+        $url2 = 'https://eop.hn.189.cn:9091/api/rest';
+        $str = array(
+            "method"=> "push.sms.sendsms",
+            "version"=> "1.0",
+            "access_token"=> "ZWU4YjIwNjhlMGZkNWQzYjIxMDFjY2Y1NjQ2NzI5M2U=",
+            "content.phone_num"=> "15757117946",
+            "content.type"=> "1",
+            "content.message"=> iconv("GBK", "UTF-8", "[终端安全管理系统]您的验证码是：918795，切勿将验证码泄露于他人；如非本人操作，请忽略。"),
+            "content.source"=> iconv("GBK", "UTF-8", "终端安全管理系统"),
+            "content.priority"=> "0"
+        );
+        //dd($str);
+        dd($url1 . '/?' . http_build_query($str), 0);
+        dd($url2 . '/?' . http_build_query($str));
+    }
+
     /**
      * generate short css
      */

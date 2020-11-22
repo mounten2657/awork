@@ -28,7 +28,7 @@ class yapi2posm
         $helper = PHP_EOL;
         $helper .= "@usage: php yapi2posm [yapi-project.json] [postman-project.json] [project_name]" . PHP_EOL . PHP_EOL;
         $helper .= "    [yapi-project.json] the json file export from your yapi project." . PHP_EOL;
-        $helper .= "    [postman-project.json] the json file that want import into your postman project." . PHP_EOL . PHP_EOL;
+        $helper .= "    [postman-project.json] the json file that want import into your postman project." . PHP_EOL;
         $helper .= "    [project_name] the prefix name of you postman project." . PHP_EOL . PHP_EOL;
         $helper .= "@example: php yapi2posm api-admin.json test-v3.json admin" . PHP_EOL;
         echo $helper . PHP_EOL;
@@ -134,7 +134,7 @@ class yapi2posm
     {
         $item = json_decode(
             mb_convert_encoding(
-                '{"name":"'.$api['url'].'","request":{"method":"'.$api['method'].'","header":[],"body":{"mode":"urlencoded","urlencoded":[]},"url":{"raw":"{{'.$params['env_name'].'}}'.$api['url'].'","host":["{{'.$params['env_name'].'}}"],"path":["","'.substr($api['url'], 1).'"]}},"response":[]}'
+                '{"name":"'.$api['url'].'","event":[{"listen":"test","script":{"id":"55ae05a5-2e23-4248-96a2-b60dec1a1000","exec":["pm.test(\"statusCode\", function () {\r","    var jsonData = pm.response.json();\r","    pm.expect(jsonData.statusCode).to.eql(200);\r","});\r",""],"type":"text/javascript"}}],"request":{"method":"'.$api['method'].'","header":[],"body":{"mode":"urlencoded","urlencoded":[]},"url":{"raw":"{{'.$params['env_name'].'}}'.$api['url'].'","host":["{{'.$params['env_name'].'}}"],"path":["","'.substr($api['url'], 1).'"]}},"response":[]}'
                 , 'UTF-8', 'UTF-8,GBK,GB2312,BIG5' )
             , true
         );

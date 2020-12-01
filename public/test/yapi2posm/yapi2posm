@@ -31,6 +31,7 @@ class yapi2posm
         $helper .= "    [postman-project.json] the json file that want import into your postman project." . PHP_EOL;
         $helper .= "    [project_name] the prefix name of you postman project." . PHP_EOL . PHP_EOL;
         $helper .= "@example: php yapi2posm api-admin.json test-v3.json admin" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/2021201/api.json api.csv csv" . PHP_EOL;
         echo $helper . PHP_EOL;
         return false;
     }
@@ -95,6 +96,16 @@ class yapi2posm
                     'params' => $v['req_body_form'],
                 );
             }
+        }
+        // generate csv file
+        if ('csv' == $params['env_name']) {
+            $csv  = 'url,method';
+            foreach ($apiList as $value) {
+                $csv .= PHP_EOL . "{$value['url']},{$value['method']}";
+            }
+            file_put_contents($params['direct_file'], $csv);
+            echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+            return true;
         }
         // generate api list
         $template = self::template($params['project_name'], $params['subject_name']);

@@ -1,0 +1,4240 @@
+[
+  {
+    "index": 0,
+    "name": "公共分类",
+    "desc": "公共分类",
+    "add_time": 1602206651,
+    "up_time": 1602206651,
+    "list": [
+      {
+        "query_path": {
+          "path": "/value/area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5156,
+        "method": "POST",
+        "catid": 1324,
+        "title": "【有备注】值域",
+        "path": "/value/area",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1606659855,
+        "up_time": 1606659886,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3af2e8183db28bcf3d6c2",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>对应TB地址：<span class=\"colour\" style=\"color: rgb(38, 38, 38);\"><a href=\"https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105\">https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105</a></span></p>\n",
+        "markdown": "对应TB地址：<span class=\"colour\" style=\"color: rgb(38, 38, 38);\">[https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105](https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105)</span>",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/doc",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5157,
+        "method": "POST",
+        "catid": 1324,
+        "title": "【有备注】文档约定",
+        "path": "/doc",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1606698278,
+        "up_time": 1606698332,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc4455c8183db28bcf3d6c3",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.名称中含有【备注】的一定要看<br>\n2.以关键词进行搜索的，命名为【keywords_XXX】，如搜索文章：keywords_article</p>\n",
+        "markdown": "1.名称中含有【备注】的一定要看\n2\\.以关键词进行搜索的，命名为【keywords\\_XXX】，如搜索文章：keywords\\_article",
+        "req_body_type": "form",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
+      },
+      {
+        "query_path": {
+          "path": "/resources/route",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5155,
+        "method": "POST",
+        "catid": 1324,
+        "title": "【有备注】资源路径",
+        "path": "/resources/route",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1606659090,
+        "up_time": 1606659831,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3aef78183db28bcf3d6c0",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p><span class=\"colour\" style=\"color: rgb(38, 38, 38);\">对应TB地址：<a href=\"https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5fc3aca3eaa1190001337d9d\">https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5fc3aca3eaa1190001337d9d</a></span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color: rgb(38, 38, 38);\">对应TB地址：[https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5fc3aca3eaa1190001337d9d](https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5fc3aca3eaa1190001337d9d)</span>",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "登录",
+    "desc": null,
+    "add_time": 1605159666,
+    "up_time": 1605159666,
+    "list": [
+      {
+        "query_path": {
+          "path": "/inter/allow",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5152,
+        "method": "POST",
+        "catid": 1684,
+        "title": "【有备注】检测登录态",
+        "path": "/inter/allow",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1606658526,
+        "up_time": 1606658700,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3aa8c8183db28bcf3d6b7",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fc3aa8c8183db28bcf3d6b8",
+            "name": "id",
+            "type": "text",
+            "desc": "游客ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】返回结果有【游客】【用户】2种，为了方便看，放在了一起</p>\n",
+        "markdown": "1.【前端】返回结果有【游客】【用户】2种，为了方便看，放在了一起",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":[\n        {\n            \"id\":\"00KHEMRDWZNJAJWYYV096VIM\",\n            \"identity\":3,\n            \"nickname\":\"游客5dMblR\",\n            \"phone\":\"\",\n            \"status\":1,\n            \"avatar\":\"\",\n            \"login_method\":1,\n            \"server_time\":1606658564,\n            \"access_token\":\"UVJSL0dlYmFSL3d5UHhDZ28xL2xxMUxOVVhsYlV0Z0NPaXdQNmxMSGFLSk4zeXh5WCtsVzBEREFVUUQzb1hoMQ==\"\n        },\n        {\n            \"id\":\"00KHEMRDWZNJAJWYYV096VIM\",\n            \"identity\":3,\n            \"nickname\":\"游客5dMblR\",\n            \"phone\":\"\",\n            \"status\":1,\n            \"avatar\":\"\",\n            \"login_method\":1,\n            \"server_time\":1606658564,\n            \"access_token\":\"UVJSL0dlYmFSL3d5UHhDZ28xL2xxMUxOVVhsYlV0Z0NPaXdQNmxMSGFLSk4zeXh5WCtsVzBEREFVUUQzb1hoMQ==\"\n        }\n    ],\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/inter/logout",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5153,
+        "method": "POST",
+        "catid": 1684,
+        "title": "退出登录",
+        "path": "/inter/logout",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1606658735,
+        "up_time": 1606658781,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3aadd8183db28bcf3d6b9",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/site/phone-login",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5128,
+        "method": "POST",
+        "catid": 1684,
+        "title": "手机号验证码登录",
+        "path": "/site/phone-login",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605160694,
+        "up_time": 1606627765,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc331b58183db28bcf3d664",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc331b58183db28bcf3d666",
+            "name": "phone",
+            "type": "text",
+            "desc": "手机号"
+          },
+          {
+            "required": "1",
+            "_id": "5fc331b58183db28bcf3d665",
+            "name": "code",
+            "type": "text",
+            "example": "",
+            "desc": "验证码"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n        \"phone\": \"157****7560\",\n        \"nickname\": \"粉刷匠\",\n        \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n        \"status\": 1,\n        \"special_signature\": \"我是一个粉刷匠~\",\n        \"birthday\": 960336000,\n        \"gender\": 1,\n        \"description\": \"\",\n        \"province\": 0,\n        \"city\": 0,\n        \"industry\": 0,\n        \"job\": 1,\n        \"education\": 7,\n        \"created_at\": 1579197762,\n        \"login_method\": 1,\n        \"server_time\": 1606627751\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/site/pwd-login",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5129,
+        "method": "POST",
+        "catid": 1684,
+        "title": "手机号密码登录",
+        "path": "/site/pwd-login",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605160710,
+        "up_time": 1606627778,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc331c28183db28bcf3d667",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc331c28183db28bcf3d669",
+            "name": "phone",
+            "type": "text",
+            "desc": "手机号"
+          },
+          {
+            "required": "1",
+            "_id": "5fc331c28183db28bcf3d668",
+            "name": "password",
+            "type": "text",
+            "example": "",
+            "desc": "密码"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n        \"phone\": \"157****7560\",\n        \"nickname\": \"粉刷匠\",\n        \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n        \"status\": 1,\n        \"special_signature\": \"我是一个粉刷匠~\",\n        \"birthday\": 960336000,\n        \"gender\": 1,\n        \"description\": \"\",\n        \"province\": 0,\n        \"city\": 0,\n        \"industry\": 0,\n        \"job\": 1,\n        \"education\": 7,\n        \"created_at\": 1579197762,\n        \"login_method\": 1,\n        \"server_time\": 1606627751\n    },\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "动态",
+    "desc": null,
+    "add_time": 1605610229,
+    "up_time": 1605610229,
+    "list": [
+      {
+        "query_path": {
+          "path": "/dynamic/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5148,
+        "method": "POST",
+        "catid": 1690,
+        "title": "删除",
+        "path": "/dynamic/del",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1606028825,
+        "up_time": 1606028869,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fba0e458183db28bcf3d65e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fba0e458183db28bcf3d65f",
+            "name": "id",
+            "type": "text",
+            "desc": "动态ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/dynamic/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5141,
+        "method": "POST",
+        "catid": 1690,
+        "title": "动态详情【有备注】",
+        "path": "/dynamic/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605610248,
+        "up_time": 1606627966,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3327e8183db28bcf3d66a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc3327e8183db28bcf3d66b",
+            "name": "id",
+            "type": "text",
+            "desc": "动态ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】留意字段返回中【注意】的部分</p>\n",
+        "markdown": "1.【前端】留意字段返回中【注意】的部分",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"00KEFGC0YMS64RZ35SJRYJ2O\",\n        \"user_id\":\"00KA3D5KI0EM8X8S5MBNZO51\",\n        \"target_id\":\"00KEFGC1GPYEDTEXZCNNGCGB\",\n        \"target_type\":1,\n        \"type\":1,\n        \"is_deleted\":0,\n        \"created_at\":1598692662,\n        \"user\":{\n            \"id\":\"00KA3D5KI0EM8X8S5MBNZO51\",\n            \"nickname\":\"千千\",\n            \"avatar\":\"bd3833c6d047c3e093bfac85395d305f.png\"\n        },\n        \"article\":{\n            \"【注意】\":\"此节点在【文章动态】中才有值，否则为空对象\",\n            \"id\":\"00KEFGC1GPYEDTEXZCNNGCGB\",\n            \"cover_url\":\"f5198d64e3cb83392f1e18c7d1070c25.jpg\",\n            \"title\":\"红砖绿瓦外高楼林立，是谁带我穿越时空？\",\n            \"description\":\"清晨，晨光熹微，古老的城门在薄雾中影影绰绰，而天安门广场上，早已聚集了人群，静静地等待着一抹鲜艳的红。这里是\",\n            \"is_deleted\":0,\n            \"is_shield\":0,\n            \"created_at\":1598692662,\n            \"content\":\"这是文章内容\"\n        },\n        \"note\":{\n            \"【注意】\":\"此节点在【笔记动态】中才有值，否则为空对象\",\n            \"id\":\"00KFDD0DPC1LFYZUBPWFUFGD\",\n            \"user_id\":\"00K6R8NNVL4GVOGPIGQSPJN3\",\n            \"article_id\":\"00KCFV679OEOYZLPAUQCKZJX\",\n            \"is_choice\":0,\n            \"is_deleted\":0,\n            \"is_public\":1,\n            \"is_shield\":0,\n            \"created_at\":1600742930,\n            \"content\":\"不过这里面不包括糖分高的水果，比如西瓜，吃多了一样是会长胖的\",\n            \"selected\":\"水果中有一个水字，顾名思义，里面所含有的水分很多，很多都达到了90%以上。除了牛油果、榴莲等个别水果以外，大部分水果里所含的脂肪几乎可以忽略不计，而脂肪是供给能量的主要物质之一。因此增加水果这种低能量密度的食物，取代其他高热量的加工类食物，可以显著减少热量摄入，有效实现能量负平衡，减少脂肪组织生成，从而有利于控制体重。\",\n            \"article\":{\n                \"id\":\"00KCFV679OEOYZLPAUQCKZJX\",\n                \"cover_url\":\"a8c95f0208256a1cdd5f3ede1256e572.jpg\",\n                \"title\":\"西瓜、荔枝、榴莲……到底是减肥佳品还是增肥利器？\",\n                \"description\":\"水果营养密度高，热量相对较低，且富含膳食纤维。有研究发现多吃水果与体重降低相关，原因是吃水果有利于减少总能量\",\n                \"is_deleted\":0,\n                \"is_shield\":0,\n                \"created_at\":1594364065\n            },\n            \"count\":{\n                \"collect\":0,\n                \"like\":0,\n                \"comment\":0\n            }\n        }\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "分享",
+    "desc": null,
+    "add_time": 1606658868,
+    "up_time": 1606658868,
+    "list": [
+      {
+        "query_path": {
+          "path": "/share/upload",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5154,
+        "method": "POST",
+        "catid": 1720,
+        "title": "【有备注】分享图上传",
+        "path": "/share/upload",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1606658898,
+        "up_time": 1606659055,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3abef8183db28bcf3d6be",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc3abef8183db28bcf3d6bf",
+            "name": "target_type",
+            "type": "text",
+            "desc": "分享主体类型，1文章，2笔记"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前、后端】这个返回参数有些莫名<br>\n2.【target_type = 1】：resources/share/article/<br>\n3.【target_type = 2】：resources/share/note/</p>\n",
+        "markdown": "1.【前、后端】这个返回参数有些莫名\n2.【target_type = 1】：resources/share/article/\n3.【target_type = 2】：resources/share/note/",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"result\":\"1.jpg\"\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "搜索",
+    "desc": null,
+    "add_time": 1605092001,
+    "up_time": 1605092001,
+    "list": [
+      {
+        "query_path": {
+          "path": "/search/article",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5149,
+        "method": "POST",
+        "catid": 1672,
+        "title": "文章",
+        "path": "/search/article",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1606057776,
+        "up_time": 1606631348,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc33fb48183db28bcf3d674",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc33fb48183db28bcf3d676",
+            "name": "keywords_article",
+            "type": "text",
+            "desc": "搜索内容"
+          },
+          {
+            "required": "0",
+            "_id": "5fc33fb48183db28bcf3d675",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"have_more\": false,\n        \"list\": [\n            {\n                \"id\": \"00KHZ79WZYNM3ISK8HMNO6TP\",\n                \"cover_url\": \"\",\n                \"title\": \"文章标题\",\n                \"description\": \"文章描述\",\n                \"is_deleted\": 0,\n                \"is_shield\": 0,\n                \"created_at\": 1606417117,\n                \"original\": {\n                    \"author_name\": \"麦大人\",\n                    \"from\": 7,\n                    \"time\": 1597498069\n                },\n                \"count\": {\n                    \"collect\": 2,\n                    \"note\": 1\n                }\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/search/user",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5121,
+        "method": "POST",
+        "catid": 1672,
+        "title": "用户",
+        "path": "/search/user",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093341,
+        "up_time": 1606631379,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc33fd38183db28bcf3d677",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc33fd38183db28bcf3d679",
+            "name": "keywords_user",
+            "type": "text",
+            "example": "",
+            "desc": "搜索内容"
+          },
+          {
+            "required": "0",
+            "_id": "5fc33fd38183db28bcf3d678",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"have_more\": false,\n        \"list\": [\n            {\n                \"id\": \"00K5M5AQKM1YGHAQ11F4DVJZ\",\n                \"nickname\": \"陈能\",\n                \"avatar\": \"d3c829ef6cf628f0b8f39184eda76d75.png\",\n                \"special_signature\": \"面对现实，极度开放，与人为善，不丢掉初心和自己！\"\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "消息",
+    "desc": null,
+    "add_time": 1605091962,
+    "up_time": 1605091962,
+    "list": [
+      {
+        "query_path": {
+          "path": "/message/clean",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5119,
+        "method": "POST",
+        "catid": 1666,
+        "title": "一键清零",
+        "path": "/message/clean",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093301,
+        "up_time": 1605145033,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac91c98183db28bcf3d285",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": true,\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/message/comment-send",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5116,
+        "method": "POST",
+        "catid": 1666,
+        "title": "我发出的评论",
+        "path": "/message/comment-send",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093213,
+        "up_time": 1606631624,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc340c88183db28bcf3d67d",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"total_count\": 6,\n    \"page\": 1,\n    \"page_size\": 2,\n    \"list\": [\n      {\n        \"id\": 5,\n        \"created_at\": 1597198306,\n        \"main\": {\n          \"id\": \"00KDNW0H4Q0USZ8I4PB60BV9\",\n          \"target_type\": 4,\n          \"content\": \"这是笔记的评论\",\n          \"user\": {\n            \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n            \"nickname\": \"粉刷匠\",\n            \"avatar\": \"ff56248a614b537781b7ff3cd4b3ad84.jpg\"\n          }\n        },\n        \"child\": {\n          \"id\": \"00KDNW6BWCYCHFITS38CXZGQ\",\n          \"content\": \"这是笔记的回复\",\n          \"target_type\": 3,\n          \"user\": {\n            \"id\": \"00K5HIY7S5QLRA0HE8DYIL0Y\",\n            \"nickname\": \"牧羊人小雷\",\n            \"avatar\": \"270871d1be5127f1e4a6040550c32bf7.png\"\n          }\n        },\n        \"target\": {\n          \"id\": \"00KDFJW207WS7X8HP8ZN04GM\",\n          \"content\": \"笔记内容\",\n          \"target_type\": 2,\n          \"article\": {\n            \"id\": \"00KBZWSFY0JP7KPMYMJKX9STCKBZWSG0K\",\n            \"title\": \"对不起，公司不需要这种“高情商”员工\",\n            \"cover_url\": \"3f20d12d019d4ccc686b2f417ee10e46.jpg\",\n            \"description\": \"文章摘要\"\n          }\n        }\n      },\n      {\n        \"id\": 6,\n        \"created_at\": 1597198313,\n        \"main\": {\n          \"id\": \"00KDNW0H4Q0USZ8I4PB60BV9\",\n          \"target_type\": 4,\n          \"content\": \"这是笔记的评论\",\n          \"user\": {\n            \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n            \"nickname\": \"粉刷匠\",\n            \"avatar\": \"ff56248a614b537781b7ff3cd4b3ad84.jpg\"\n          }\n        },\n        \"child\": {\n          \"id\": \"00KDNW6BWCYCHFITS38CXZGQ\",\n          \"content\": \"这是笔记回复的回复\",\n          \"target_type\": 4,\n          \"user\": {\n            \"id\": \"00K5L1KOTNVFQYGG6EZ0E13Z\",\n            \"nickname\": \"张宗良\",\n            \"avatar\": \"7bbd7428d04b0b8b52e1062a9cb990ba.png\"\n          }\n        },\n        \"target\": {\n          \"id\": \"00KDFJW207WS7X8HP8ZN04GM\",\n          \"target_type\": 2,\n          \"content\": \"笔记内容\",\n          \"article\": {\n            \"id\": \"00KBZWSFY0JP7KPMYMJKX9STCKBZWSG0K\",\n            \"title\": \"对不起，公司不需要这种“高情商”员工\",\n            \"cover_url\": \"3f20d12d019d4ccc686b2f417ee10e46.jpg\",\n            \"description\": \"文章摘要\"\n          }\n        }\n      }\n    ]\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/message/comment-receive",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5115,
+        "method": "POST",
+        "catid": 1666,
+        "title": "我收到的评论",
+        "path": "/message/comment-receive",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093197,
+        "up_time": 1606631631,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc340cf8183db28bcf3d67e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"total_count\": 6,\n    \"page\": 1,\n    \"page_size\": 2,\n    \"list\": [\n      {\n        \"id\": 5,\n        \"created_at\": 1597198306,\n        \"main\": {\n          \"id\": \"00KDNW0H4Q0USZ8I4PB60BV9\",\n          \"target_type\": 4,\n          \"content\": \"这是笔记的评论\",\n          \"user\": {\n            \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n            \"nickname\": \"粉刷匠\",\n            \"avatar\": \"ff56248a614b537781b7ff3cd4b3ad84.jpg\"\n          }\n        },\n        \"child\": {\n          \"id\": \"00KDNW6BWCYCHFITS38CXZGQ\",\n          \"content\": \"这是笔记的回复\",\n          \"target_type\": 3,\n          \"user\": {\n            \"id\": \"00K5HIY7S5QLRA0HE8DYIL0Y\",\n            \"nickname\": \"牧羊人小雷\",\n            \"avatar\": \"270871d1be5127f1e4a6040550c32bf7.png\"\n          }\n        },\n        \"target\": {\n          \"id\": \"00KDFJW207WS7X8HP8ZN04GM\",\n          \"content\": \"笔记内容\",\n          \"target_type\": 2,\n          \"article\": {\n            \"id\": \"00KBZWSFY0JP7KPMYMJKX9STCKBZWSG0K\",\n            \"title\": \"对不起，公司不需要这种“高情商”员工\",\n            \"cover_url\": \"3f20d12d019d4ccc686b2f417ee10e46.jpg\",\n            \"description\": \"文章摘要\"\n          }\n        }\n      },\n      {\n        \"id\": 6,\n        \"created_at\": 1597198313,\n        \"main\": {\n          \"id\": \"00KDNW0H4Q0USZ8I4PB60BV9\",\n          \"target_type\": 4,\n          \"content\": \"这是笔记的评论\",\n          \"user\": {\n            \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n            \"nickname\": \"粉刷匠\",\n            \"avatar\": \"ff56248a614b537781b7ff3cd4b3ad84.jpg\"\n          }\n        },\n        \"child\": {\n          \"id\": \"00KDNW6BWCYCHFITS38CXZGQ\",\n          \"content\": \"这是笔记回复的回复\",\n          \"target_type\": 4,\n          \"user\": {\n            \"id\": \"00K5L1KOTNVFQYGG6EZ0E13Z\",\n            \"nickname\": \"张宗良\",\n            \"avatar\": \"7bbd7428d04b0b8b52e1062a9cb990ba.png\"\n          }\n        },\n        \"target\": {\n          \"id\": \"00KDFJW207WS7X8HP8ZN04GM\",\n          \"target_type\": 2,\n          \"content\": \"笔记内容\",\n          \"article\": {\n            \"id\": \"00KBZWSFY0JP7KPMYMJKX9STCKBZWSG0K\",\n            \"title\": \"对不起，公司不需要这种“高情商”员工\",\n            \"cover_url\": \"3f20d12d019d4ccc686b2f417ee10e46.jpg\",\n            \"description\": \"文章摘要\"\n          }\n        }\n      }\n    ]\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/message/like",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5117,
+        "method": "POST",
+        "catid": 1666,
+        "title": "我收到的赞",
+        "path": "/message/like",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093229,
+        "up_time": 1606631613,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc340bd8183db28bcf3d67c",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":6,\n        \"page\":1,\n        \"page_size\":2,\n        \"list\":[\n            {\n                \"id\":382,\n                \"created_at\":1605677998,\n                \"main\":{\n                    \"target_type\":2\n                },\n                \"child\":{\n                    \"id\":\"00KF3COB6DYZFZ0RV2R61Q23\",\n                    \"target_type\":2,\n                    \"content\":\"笔记内容\",\n                    \"is_fail\":false,\n                    \"article\":{\n                        \"id\":\"00KDBT47KI7EMIYZQAHZJN26\",\n                        \"target_type\":1,\n                        \"cover_url\":\"5aec4dc84bb149aeb2b35bc7fd305571.jpg\",\n                        \"title\":\"文章标题\",\n                        \"description\":\"文章描述\",\n                        \"is_fail\":false\n                    }\n                }\n            },\n            {\n                \"id\":383,\n                \"created_at\":1605682371,\n                \"main\":{\n                    \"target_type\":5\n                },\n                \"child\":{\n                    \"id\":\"00KHLTTFBZ5PJZHRCRWXUFBD\",\n                    \"target_type\":1,\n                    \"cover_url\":\"d7f52258c213e5cdd1adee1172662aa4.jpg\",\n                    \"title\":\"文章标题\",\n                    \"description\":\"文章描述\",\n                    \"is_fail\":false\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/message/announce",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5118,
+        "method": "POST",
+        "catid": 1666,
+        "title": "系统消息",
+        "path": "/message/announce",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093273,
+        "up_time": 1606631697,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc341118183db28bcf3d67f",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":4,\n        \"page\":1,\n        \"page_size\":20,\n        \"list\":[\n            {\n                \"id\":1,\n                \"title\":\"系统消息标题\",\n                \"content\":{\n                    \"html\":\"公告内容\",\n                    \"operating\":\"操作\"\n                },\n                \"created_at\":1597112552\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/message/unread",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5120,
+        "method": "POST",
+        "catid": 1666,
+        "title": "获取消息数",
+        "path": "/message/unread",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093323,
+        "up_time": 1605145059,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac91e38183db28bcf3d286",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"comment\": 8,\n    \"like\": 99,\n    \"announce\": 109\n  },\n  \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "桌面",
+    "desc": null,
+    "add_time": 1605086497,
+    "up_time": 1605086497,
+    "list": [
+      {
+        "query_path": {
+          "path": "/quick/preview",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5071,
+        "method": "POST",
+        "catid": 1576,
+        "title": "【有备注】一键收藏【未加入收藏夹】",
+        "path": "/quick/preview",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605086581,
+        "up_time": 1606631786,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3416a8183db28bcf3d680",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc3416a8183db28bcf3d681",
+            "name": "url",
+            "type": "text",
+            "desc": "链接"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】只需要校验是否符合url正则即可</p>\n",
+        "markdown": "1.【前端】只需要校验是否符合url正则即可",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"title\": \"文章标题\",\n    \"description\": \"文章摘要，可能位空值\",\n    \"cover_url\": \"封面图，可能位空值\"\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/home/collect-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5073,
+        "method": "POST",
+        "catid": 1576,
+        "title": "【有备注】我的收藏列表",
+        "path": "/home/collect-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605087951,
+        "up_time": 1606790813,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc5ae9d8183db28bcf3d6c4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fc5ae9d8183db28bcf3d6c5",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】翻页时，传的&lt;last_id&gt;是返回字段中的collect_id</p>\n",
+        "markdown": "1.【前端】翻页时，传的\\<last_id>是返回字段中的collect_id",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 2,\n        \"page_size\": 20,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": \"00KF3FHQABQOQSU8HQ1HM6ZJ\",\n                \"user_id\": \"00K6R8O5C6SPAIDSTALCF5GJ\",\n                \"article_id\": \"00KDTRSSL6RF5UF49UH0OFYK\",\n                \"is_choice\": 0,\n                \"is_deleted\": 0,\n                \"is_public\": 1,\n                \"is_shield\": 0,\n                \"created_at\": 1606790559,\n                \"target_type\": 2,\n                \"content\": \"可惜近段时间印度的种种行为充分反映了他们并没有这种意识\",\n                \"selected\": \"印度政客要放下政治成见和地缘野心，心平气和与中国人做生意。中国企业到印度投资，既是为了赚钱，也给印度人民造福。对两国关系来说，没什么比经济往来更重要的稳定器了。\",\n                \"user\": {\n                    \"id\": \"00K6R8O5C6SPAIDSTALCF5GJ\",\n                    \"nickname\": \"赵悦然\",\n                    \"avatar\": \"b4314d6dec6690056a9c2fd017270335.jpg\"\n                },\n                \"article\": {\n                    \"id\": \"00KDTRSSL6RF5UF49UH0OFYK\",\n                    \"cover_url\": \"de7d8870dad4b28065e43ceadcb1f3d3.jpg\",\n                    \"title\": \"中国手机在印度为何完胜\",\n                    \"description\": \"打压中国手机APP之后，印度最近对中国产品又有所针对。\\n8月1日，印度电子和信息技术部长表示，印度将出台6\",\n                    \"is_deleted\": 0,\n                    \"is_shield\": 0,\n                    \"created_at\": 1597381716\n                },\n                \"count\": {\n                    \"like\": 0,\n                    \"collect\": 1\n                },\n                \"collect_id\": \"00KI5DM2JPCT6GV8KJ2KSXLK\"\n            },\n            {\n                \"id\": \"00KD3XBEWNSE5LLD0BEUATJK\",\n                \"cover_url\": \"e27f0f13c21ddbddc617ddbcc1dee195.jpg\",\n                \"title\": \"中国式家庭教育：孩子不努力，爸爸不出力，妈妈用蛮力，到头来却只怪孩子是叛逆...\",\n                \"description\": \"父亲们最根本的缺点在于想要自己的孩子为自己争光——罗素现在的家长都很重视孩子的教育。从孩子3岁左右开始家长就\",\n                \"is_deleted\": 0,\n                \"is_shield\": 0,\n                \"created_at\": 1606790554,\n                \"collect_id\": \"00KI5DLYNYLOCTB3X7WORDAJ\",\n                \"target_type\": 1\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/home/package-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5075,
+        "method": "POST",
+        "catid": 1576,
+        "title": "收藏夹列表",
+        "path": "/home/package-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605088059,
+        "up_time": 1606633177,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc346d98183db28bcf3d686",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc346d98183db28bcf3d687",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"have_more\": false,\n        \"list\": [\n            {\n                \"id\": \"00KFNW99P017PBNZGEGGZU6Y\",\n                \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"name\": \"默认收藏夹\",\n                \"description\": \"\",\n                \"total\": 6,\n                \"is_default\": 1,\n                \"is_deleted\": 0,\n                \"is_public\": 1,\n                \"updated_at\": 1606572208\n            },\n            {\n                \"id\": \"00KHZ2RM1B0TSQDSQATGAEPA\",\n                \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"name\": \"私密收藏夹\",\n                \"description\": \"\",\n                \"total\": 3,\n                \"is_default\": 1,\n                \"is_deleted\": 0,\n                \"is_public\": 0,\n                \"updated_at\": 1606468389\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/quick/collect",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5072,
+        "method": "POST",
+        "catid": 1576,
+        "title": "收藏文章【发生于一键收收藏后】",
+        "path": "/quick/collect",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605086934,
+        "up_time": 1606657840,
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "5fc3a7308183db28bcf3d6b3",
+            "name": "url",
+            "desc": "链接"
+          },
+          {
+            "required": "1",
+            "_id": "5fc3a7308183db28bcf3d6b2",
+            "name": "package_id",
+            "example": "",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3a7308183db28bcf3d6b4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc3a7308183db28bcf3d6b6",
+            "name": "url",
+            "type": "text",
+            "desc": "链接"
+          },
+          {
+            "required": "1",
+            "_id": "5fc3a7308183db28bcf3d6b5",
+            "name": "package_id",
+            "type": "text",
+            "example": "",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位文章ID\",\n        \"title\":\"文章标题\",\n        \"description\":\"文章摘要，可能位空值\",\n        \"cover_url\":\"封面图，可能位空值\"\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/home/note-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5074,
+        "method": "POST",
+        "catid": 1576,
+        "title": "笔记列表",
+        "path": "/home/note-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605087964,
+        "up_time": 1606631953,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc342118183db28bcf3d684",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc342118183db28bcf3d685",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"have_more\": false,\n        \"list\": [\n            {\n                \"id\": \"00KHZCII8WDJR6RBTOCIL0ZS\",\n                \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"article_id\": \"00KGSTUO1LNFEFGDA5AIYMBX\",\n                \"is_choice\": 0,\n                \"is_deleted\": 0,\n                \"is_public\": 1,\n                \"is_shield\": 0,\n                \"created_at\": 1606425916,\n                \"start_index\": 12942,\n                \"end_index\": 13301,\n                \"content\": \"笔记内容\",\n                \"selected\": \"文章节选\",\n                \"is_like\": false,\n                \"is_collect\": false,\n                \"user\": {\n                    \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\": \"粉刷匠\",\n                    \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"article\": {\n                    \"id\": \"00KGSTUO1LNFEFGDA5AIYMBX\",\n                    \"cover_url\": \"6f7822d1a89860a5b85b16ef3154b462.jpg\",\n                    \"title\": \"文章标题\",\n                    \"description\": \"文章描述\",\n                    \"is_deleted\": 0,\n                    \"is_shield\": 0,\n                    \"created_at\": 1603854991\n                },\n                \"count\": {\n                    \"comment\": 0,\n                    \"like\": 0,\n                    \"collect\": 0\n                }\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "广场",
+    "desc": null,
+    "add_time": 1605082253,
+    "up_time": 1605082253,
+    "list": [
+      {
+        "query_path": {
+          "path": "/square/attention-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5069,
+        "method": "POST",
+        "catid": 1564,
+        "title": "关注列表",
+        "path": "/square/attention-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fabefd48183db28bcf3d27b",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fabefd48183db28bcf3d27c",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "desc": "<p>1.【前端】根据target_type可以判断出，去那个节点下取数据<br>\n&nbsp; &nbsp; target_type = 1：article节点<br>\n&nbsp; &nbsp; target_type = 2:：note节点</p>\n",
+        "markdown": "1.【前端】根据target_type可以判断出，去那个节点下取数据\n    target_type = 1：article节点\n    target_type = 2:：note节点",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"has_more\":true,\n        \"list\":[\n            {\n                \"id\":\"24位动态ID\",\n                \"created_at\":1604632694,\n                \"target_type\":1,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"avatar\":\"default.png\",\n                    \"nickname\":\"听君031233\"\n                },\n                \"article\":{\n                    \"id\":\"24位文章ID\",\n                    \"title\":\"文章标题\",\n                    \"cover_url\":\"封面图，可能位空值\",\n                    \"description\":\"摘要，可能位空值\",\n                    \"is_deleted\":0,\n                    \"count\":{\n                        \"like\":0,\n                        \"collect\":0\n                    }\n                },\n                \"note\":{\n                    \"id\":\"24位笔记ID\",\n                    \"content\":\"笔记内容\",\n                    \"type\":\"笔记类型，1文章笔记，2文章划线笔记，3文本类笔记\",\n                    \"selected\":\"文章节选内容，可能位空值\",\n                    \"start_index\":1,\n                    \"end_index\":2,\n                    \"article\":{\n                        \"id\":\"24位文字ID\",\n                        \"title\":\"文字标题\",\n                        \"cover_url\":\"封面图，可能位空值\",\n                        \"description\":\"摘要\",\n                        \"is_deleted\":0\n                    }\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1605083153,
+        "up_time": 1605103572,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/square/recommend-list",
+          "params": []
+        },
+        "edit_uid": 11,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5067,
+        "method": "POST",
+        "catid": 1564,
+        "title": "推荐列表",
+        "path": "/square/recommend-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605082383,
+        "up_time": 1605103577,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fabefd98183db28bcf3d27d",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fabefd98183db28bcf3d27e",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】根据target_type可以判断出，去那个节点下取数据<br>\n&nbsp; &nbsp; target_type = 1：article节点<br>\n&nbsp; &nbsp; target_type = 2:：note节点</p>\n",
+        "markdown": "1.【前端】根据target_type可以判断出，去那个节点下取数据\n    target_type = 1：article节点\n    target_type = 2:：note节点",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"has_more\":true,\n        \"list\":[\n            {\n                \"id\":\"24位动态ID\",\n                \"created_at\":1604632694,\n                \"target_type\":1,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"avatar\":\"default.png\",\n                    \"nickname\":\"听君031233\"\n                },\n                \"article\":{\n                    \"id\":\"24位文章ID\",\n                    \"title\":\"文章标题\",\n                    \"cover_url\":\"封面图，可能位空值\",\n                    \"description\":\"摘要，可能位空值\",\n                    \"is_deleted\":0,\n                    \"count\":{\n                        \"like\":0,\n                        \"collect\":0\n                    }\n                },\n                \"note\":{\n                    \"id\":\"24位笔记ID\",\n                    \"content\":\"笔记内容\",\n                    \"type\":\"笔记类型，1文章笔记，2文章划线笔记，3文本类笔记\",\n                    \"selected\":\"文章节选内容，可能位空值\",\n                    \"start_index\":1,\n                    \"end_index\":2,\n                    \"article\":{\n                        \"id\":\"24位文字ID\",\n                        \"title\":\"文字标题\",\n                        \"cover_url\":\"封面图，可能位空值\",\n                        \"description\":\"摘要\",\n                        \"is_deleted\":0\n                    }\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "智囊团",
+    "desc": null,
+    "add_time": 1605081547,
+    "up_time": 1605081547,
+    "list": [
+      {
+        "query_path": {
+          "path": "/pro/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5065,
+        "method": "POST",
+        "catid": 1558,
+        "title": "【智囊团】列表",
+        "path": "/pro/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605081585,
+        "up_time": 1606634409,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34ba98183db28bcf3d688",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fc34ba98183db28bcf3d689",
+            "name": "category_id",
+            "type": "text",
+            "desc": "不传为全部，否则传分类ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":10,\n        \"page\":1,\n        \"page_size\":5,\n        \"list\":[\n            {\n                \"id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"nickname\":\"粉刷匠\",\n                \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n                \"description\":\"李天其简介\",\n                \"qrcode\":\"\",\n                \"created_at\":1606616678,\n                \"phone\":\"15715867560\",\n                \"category\":[\n                    {\n                        \"id\":1,\n                        \"name\":\"心理\",\n                        \"member_count\":1,\n                        \"weight\":9,\n                        \"status\":1,\n                        \"is_deleted\":0,\n                        \"created_at\":1604374196\n                    },\n                    {\n                        \"id\":2,\n                        \"name\":\"职业发展\",\n                        \"member_count\":1,\n                        \"weight\":8,\n                        \"status\":1,\n                        \"is_deleted\":0,\n                        \"created_at\":1604374196\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro/recommend-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5076,
+        "method": "POST",
+        "catid": 1558,
+        "title": "【智囊团】推荐列表",
+        "path": "/pro/recommend-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605089785,
+        "up_time": 1605091861,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fabc2158183db28bcf3d268",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fabc2158183db28bcf3d269",
+            "name": "page",
+            "type": "text",
+            "desc": "页数，默认是1"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位智囊团ID\",\n                \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n                \"nickname\":\"智囊团昵称\",\n                \"description\":\"智囊团简介\",\n                \"qrcode\":\"微信二维码图片\",\n                \"category\":{\n                    \"id\":1,\n                    \"name\":\"智囊团分类名称\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro-category/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 2,
+        "tag": [],
+        "_id": 5066,
+        "method": "POST",
+        "catid": 1558,
+        "title": "【智囊团分类】列表",
+        "path": "/pro-category/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605082104,
+        "up_time": 1605089974,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fabbab68183db28bcf3d262",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":8,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":2,\n                \"name\":\"职业发展\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "文章",
+    "desc": null,
+    "add_time": 1605091789,
+    "up_time": 1605091789,
+    "list": [
+      {
+        "query_path": {
+          "path": "/article/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5090,
+        "method": "POST",
+        "catid": 1588,
+        "title": "文章详情",
+        "path": "/article/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605091764,
+        "up_time": 1606634548,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34c348183db28bcf3d68a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34c348183db28bcf3d68b",
+            "name": "id",
+            "type": "text",
+            "desc": "文章ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"00KHZ8JNDGFMN3CUSTFSY6WW\",\n        \"cover_url\":\"676d6f4a2e7ccf9534fbf07ba1776a36.jpeg\",\n        \"title\":\"文章标题\",\n        \"description\":\"文章描述\",\n        \"is_deleted\":0,\n        \"is_shield\":0,\n        \"created_at\":1606419251,\n        \"original_url\":\"https://mp.weixin.qq.com/s/PybM-v4_-O2Obw_5u53uow\",\n        \"content\":\"文章内容\",\n        \"original\":{\n            \"author_name\":\"\",\n            \"from\":\"微信公众号\",\n            \"time\":\"1606205585\",\n            \"url\":\"https://mp.weixin.qq.com/s/PybM-v4_-O2Obw_5u53uow\"\n        },\n        \"count\":{\n            \"collect\":1,\n            \"note\":0\n        },\n        \"note_list\":[\n            {\n                \"id\":\"24位笔记ID\",\n                \"start_index\":\"1\",\n                \"end_index\":\"2\"\n            }\n        ],\n        \"is_collect\":0\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "笔记",
+    "desc": null,
+    "add_time": 1605091903,
+    "up_time": 1605091903,
+    "list": [
+      {
+        "query_path": {
+          "path": "/note/line-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5095,
+        "method": "POST",
+        "catid": 1630,
+        "title": "划线笔记列表",
+        "path": "/note/line-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092488,
+        "up_time": 1606634661,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34ca58183db28bcf3d68c",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34ca58183db28bcf3d690",
+            "name": "start_index",
+            "type": "text",
+            "desc": "笔记起始标记"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34ca58183db28bcf3d68f",
+            "name": "end_index",
+            "type": "text",
+            "example": "",
+            "desc": "笔记结束标记"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34ca58183db28bcf3d68e",
+            "name": "order",
+            "type": "text",
+            "example": "",
+            "desc": "最新笔记在，desc：前，asc：后"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34ca58183db28bcf3d68d",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"have_more\": false,\n        \"list\": [\n            {\n                \"id\": \"00KI11C79HFZO4XLP9JK8O82\",\n                \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"article_id\": \"00KI01SU497ZFJWUVUULMX53\",\n                \"is_choice\": 0,\n                \"is_deleted\": 0,\n                \"is_public\": 1,\n                \"is_shield\": 0,\n                \"created_at\": 1606528079,\n                \"start_index\": 2427,\n                \"end_index\": 2501,\n                \"content\": \"123\",\n                \"selected\": \"文章节选\",\n                \"is_like\": false,\n                \"is_collect\": false,\n                \"user\": {\n                    \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\": \"粉刷匠\",\n                    \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"article\": {\n                    \"id\": \"00KI01SU497ZFJWUVUULMX53\",\n                    \"cover_url\": \"\",\n                    \"title\": \"文章标题\",\n                    \"description\": \"文章描述\",\n                    \"is_deleted\": 0,\n                    \"is_shield\": 0,\n                    \"created_at\": 1606468389\n                },\n                \"count\": {\n                    \"comment\": 0,\n                    \"like\": 0,\n                    \"collect\": 0\n                }\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/article-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5096,
+        "method": "POST",
+        "catid": 1630,
+        "title": "【不维护-v2.0.0不需要】文章笔记列表",
+        "path": "/note/article-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092516,
+        "up_time": 1606634714,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34cda8183db28bcf3d696",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34cda8183db28bcf3d69a",
+            "name": "article_id",
+            "type": "text",
+            "desc": "文章ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34cda8183db28bcf3d699",
+            "name": "tab",
+            "type": "text",
+            "example": "",
+            "desc": "my我的，all全部"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34cda8183db28bcf3d698",
+            "name": "order",
+            "type": "text",
+            "example": "",
+            "desc": "最新笔记在，desc：前，asc：后"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34cda8183db28bcf3d697",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"have_more\":40,\n        \"list\":[\n            {\n                \"id\":\"24位文章ID\",\n                \"content\":\"笔记内容\",\n                \"selected\":\"文章节选\",\n                \"start_index\":3,\n                \"end_index\":5,\n                \"is_fail\":0,\n                \"is_public\":2,\n                \"is_collect\":false,\n                \"is_like\":false,\n                \"created_at\":1592910533,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"nickname\":\"用户昵称\",\n                    \"avatar\":\"头像\",\n                    \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                },\n                \"count\":{\n                    \"collect\":1,\n                    \"like\":0,\n                    \"comment\":0\n                },\n                \"article\":{\n                    \"id\":\"24位文章ID\",\n                    \"title\":\"文章标题\",\n                    \"cover_url\":\"封面图\",\n                    \"description\":\"文章摘要\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/add-line",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5091,
+        "method": "POST",
+        "catid": 1630,
+        "title": "新增划线笔记",
+        "path": "/note/add-line",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092202,
+        "up_time": 1605146574,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d3",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d9",
+            "name": "article_id",
+            "type": "text",
+            "desc": "文章ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d8",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "笔记内容"
+          },
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d7",
+            "name": "selected",
+            "type": "text",
+            "example": "",
+            "desc": "文章节选内容"
+          },
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d6",
+            "name": "start_index",
+            "type": "text",
+            "example": "",
+            "desc": "\t\n笔记标记起始位"
+          },
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d5",
+            "name": "end_index",
+            "type": "text",
+            "example": "",
+            "desc": "笔记标记结束位"
+          },
+          {
+            "required": "1",
+            "_id": "5fac97ce8183db28bcf3d2d4",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私有，1公开"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位笔记ID\",\n        \"start_index\":3,\n        \"end_index\":5\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5122,
+        "method": "POST",
+        "catid": 1630,
+        "title": "【不维护-v2.0.0不需要】新增文章笔记",
+        "path": "/note/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34cf28183db28bcf3d69b",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34cf28183db28bcf3d69e",
+            "name": "article_id",
+            "type": "text",
+            "desc": "文章ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34cf28183db28bcf3d69d",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "笔记内容"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34cf28183db28bcf3d69c",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私有，1公开"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位笔记ID\"\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1605146442,
+        "up_time": 1606634738,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/note/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 5,
+        "tag": [],
+        "_id": 5093,
+        "method": "POST",
+        "catid": 1630,
+        "title": "删除",
+        "path": "/note/del",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092379,
+        "up_time": 1605146565,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac97c58183db28bcf3d2cd",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac97c58183db28bcf3d2ce",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/edit",
+          "params": []
+        },
+        "edit_uid": 11,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 6,
+        "tag": [],
+        "_id": 5094,
+        "method": "POST",
+        "catid": 1630,
+        "title": "更新",
+        "path": "/note/edit",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092464,
+        "up_time": 1605162883,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5facd7838183db28bcf3d388",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5facd7838183db28bcf3d38a",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          },
+          {
+            "required": "0",
+            "_id": "5facd7838183db28bcf3d389",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私密，1公开"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 7,
+        "tag": [],
+        "_id": 5097,
+        "method": "POST",
+        "catid": 1630,
+        "title": "详情",
+        "path": "/note/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092544,
+        "up_time": 1606634802,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34d328183db28bcf3d69f",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34d328183db28bcf3d6a0",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"id\": \"00KI11C79HFZO4XLP9JK8O82\",\n        \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n        \"article_id\": \"00KI01SU497ZFJWUVUULMX53\",\n        \"is_choice\": 0,\n        \"is_deleted\": 0,\n        \"is_public\": 1,\n        \"is_shield\": 0,\n        \"created_at\": 1606528079,\n        \"content\": \"123\",\n        \"selected\": \"文章节选\",\n        \"user\": {\n            \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n            \"nickname\": \"粉刷匠\",\n            \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n        },\n        \"article\": {\n            \"id\": \"00KI01SU497ZFJWUVUULMX53\",\n            \"cover_url\": \"\",\n            \"title\": \"文章标题\",\n            \"description\": \"文章描述\",\n            \"is_deleted\": 0,\n            \"is_shield\": 0,\n            \"created_at\": 1606468389\n        },\n        \"count\": {\n            \"collect\": 0,\n            \"like\": 0,\n            \"comment\": 0\n        },\n        \"is_like\": 0,\n        \"is_collect\": 0\n    },\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "评论",
+    "desc": null,
+    "add_time": 1605091881,
+    "up_time": 1605091881,
+    "list": [
+      {
+        "query_path": {
+          "path": "/comment/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5098,
+        "method": "POST",
+        "catid": 1618,
+        "title": "列表",
+        "path": "/comment/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092576,
+        "up_time": 1605147032,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac99988183db28bcf3d2ee",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac99988183db28bcf3d2f1",
+            "name": "target_id",
+            "type": "text",
+            "desc": "主体ID，如笔记ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac99988183db28bcf3d2f0",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记，5动态"
+          },
+          {
+            "required": "1",
+            "_id": "5fac99988183db28bcf3d2ef",
+            "name": "order",
+            "type": "text",
+            "example": "",
+            "desc": "最新评论在，desc：前，asc：后"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":10,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位评论ID\",\n                \"content\":\"评论内容\",\n                \"is_deleted\":0,\n                \"is_like\":false,\n                \"created_at\":1599198791,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"nickname\":\"用户昵称\",\n                    \"avatar\":\"头像\",\n                    \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                },\n                \"count\":{\n                    \"reply\":0,\n                    \"like\":0\n                },\n                \"reply\":{\n                    \"total_count\":0,\n                    \"page_size\":5,\n                    \"page\":1,\n                    \"list\":[\n                        {\n                            \"id\":\"24位回复ID\",\n                            \"content\":\"回复内容\",\n                            \"is_deleted\":0,\n                            \"is_like\":false,\n                            \"created_at\":1599198791,\n                            \"user\":{\n                                \"id\":\"24位用户ID\",\n                                \"nickname\":\"用户昵称\",\n                                \"avatar\":\"头像\",\n                                \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                            },\n                            \"to_user\":{\n                                \"id\":\"24位用户ID\",\n                                \"nickname\":\"用户昵称\",\n                                \"avatar\":\"头像\",\n                                \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                            },\n                            \"count\":{\n                                \"reply\":0,\n                                \"like\":0\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/comment/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5100,
+        "method": "POST",
+        "catid": 1618,
+        "title": "删除",
+        "path": "/comment/del",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092606,
+        "up_time": 1605147205,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9a458183db28bcf3d2fe",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9a458183db28bcf3d2ff",
+            "name": "id",
+            "type": "text",
+            "desc": "评论ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/comment/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5099,
+        "method": "POST",
+        "catid": 1618,
+        "title": "新增",
+        "path": "/comment/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092592,
+        "up_time": 1605147167,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9a1f8183db28bcf3d2fa",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9a1f8183db28bcf3d2fd",
+            "name": "target_id",
+            "type": "text",
+            "desc": "主体ID，如笔记ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9a1f8183db28bcf3d2fc",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记，5动态"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9a1f8183db28bcf3d2fb",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "评论内容"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位评论ID\",\n        \"content\":\"评论内容\",\n        \"is_deleted\":0,\n        \"is_like\":false,\n        \"created_at\":1599198791,\n        \"user\":{\n            \"id\":\"24位用户ID\",\n            \"nickname\":\"用户昵称\",\n            \"avatar\":\"头像\",\n            \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n        },\n        \"count\":{\n            \"reply\":0,\n            \"like\":0\n        }\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "回复",
+    "desc": null,
+    "add_time": 1605091900,
+    "up_time": 1605091900,
+    "list": [
+      {
+        "query_path": {
+          "path": "/reply/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5101,
+        "method": "POST",
+        "catid": 1624,
+        "title": "列表",
+        "path": "/reply/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092620,
+        "up_time": 1605147322,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9aba8183db28bcf3d300",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9aba8183db28bcf3d302",
+            "name": "comment_id",
+            "type": "text",
+            "desc": "评论ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9aba8183db28bcf3d301",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":10,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位回复ID\",\n                \"content\":\"回复内容\",\n                \"is_deleted\":0,\n                \"is_like\":false,\n                \"created_at\":1599198791,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"nickname\":\"用户昵称\",\n                    \"avatar\":\"头像\",\n                    \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                },\n                \"to_user\":{\n                    \"id\":\"24位用户ID\",\n                    \"nickname\":\"用户昵称\",\n                    \"avatar\":\"头像\",\n                    \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n                },\n                \"count\":{\n                    \"reply\":0,\n                    \"like\":0\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/reply/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5103,
+        "method": "POST",
+        "catid": 1624,
+        "title": "删除",
+        "path": "/reply/del",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092662,
+        "up_time": 1605147557,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9ba58183db28bcf3d309",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9ba58183db28bcf3d30a",
+            "name": "id",
+            "type": "text",
+            "desc": "回复ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/reply/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5102,
+        "method": "POST",
+        "catid": 1624,
+        "title": "新增",
+        "path": "/reply/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092638,
+        "up_time": 1605147533,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9b8d8183db28bcf3d306",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9b8d8183db28bcf3d308",
+            "name": "parent_id",
+            "type": "text",
+            "desc": "回复的是评论就是评论ID，回复的是回复就是回复ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9b8d8183db28bcf3d307",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "回复内容"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位回复ID\",\n        \"content\":\"回复内容\",\n        \"is_deleted\":0,\n        \"is_like\":false,\n        \"created_at\":1599198791,\n        \"user\":{\n            \"id\":\"24位用户ID\",\n            \"nickname\":\"用户昵称\",\n            \"avatar\":\"头像\",\n            \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n        },\n        \"to_user\":{\n            \"id\":\"24位用户ID\",\n            \"nickname\":\"用户昵称\",\n            \"avatar\":\"头像\",\n            \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n        },\n        \"count\":{\n            \"reply\":0,\n            \"like\":0\n        }\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "收藏夹",
+    "desc": null,
+    "add_time": 1605092057,
+    "up_time": 1605092057,
+    "list": [
+      {
+        "query_path": {
+          "path": "/package/more-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5139,
+        "method": "POST",
+        "catid": 1678,
+        "title": "侧边栏更多收藏夹",
+        "path": "/package/more-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605581259,
+        "up_time": 1606634901,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34d958183db28bcf3d6a4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34d958183db28bcf3d6a5",
+            "name": "id",
+            "type": "text",
+            "desc": "当前收藏夹ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"user_id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"name\":\"默认收藏夹\",\n                \"description\":\"\",\n                \"total\":7,\n                \"is_default\":1,\n                \"is_deleted\":0,\n                \"is_public\":1,\n                \"updated_at\":1605189506\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/package/target-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5140,
+        "method": "POST",
+        "catid": 1678,
+        "title": "内容列表",
+        "path": "/package/target-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1605581278,
+        "up_time": 1605610053,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb3aa458183db28bcf3d454",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb3aa458183db28bcf3d455",
+            "name": "package_id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
+      },
+      {
+        "query_path": {
+          "path": "/package/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5123,
+        "method": "POST",
+        "catid": 1678,
+        "title": "列表",
+        "path": "/package/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605147707,
+        "up_time": 1605585170,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb349128183db28bcf3d443",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb349128183db28bcf3d446",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fb349128183db28bcf3d445",
+            "name": "user_id",
+            "type": "text",
+            "example": "",
+            "desc": "【查看别人时必传】用户ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fb349128183db28bcf3d444",
+            "name": "target_id",
+            "type": "text",
+            "example": "",
+            "desc": "【主体内容详情页时必传】如文章ID，笔记DI"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】注意看参数的备注</p>\n",
+        "markdown": "1.【前端】注意看参数的备注",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"user_id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"name\":\"默认收藏夹\",\n                \"description\":\"\",\n                \"total\":7,\n                \"is_default\":1,\n                \"is_deleted\":0,\n                \"is_public\":1,\n                \"updated_at\":1605189506\n            },\n            {\n                \"id\":\"00KFNW99PUTOJA1JOAJSSUWE\",\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"name\":\"默认收藏夹\",\n                \"description\":\"\",\n                \"total\":8,\n                \"is_default\":1,\n                \"is_deleted\":0,\n                \"is_public\":1,\n                \"updated_at\":1605273623,\n                \"is_collect\":0\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/package/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5104,
+        "method": "POST",
+        "catid": 1678,
+        "title": "新增",
+        "path": "/package/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092683,
+        "up_time": 1605148004,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9d648183db28bcf3d328",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9d648183db28bcf3d32b",
+            "name": "name",
+            "type": "text",
+            "desc": "名称"
+          },
+          {
+            "required": "0",
+            "_id": "5fac9d648183db28bcf3d32a",
+            "name": "description",
+            "type": "text",
+            "example": "",
+            "desc": "描述"
+          },
+          {
+            "required": "0",
+            "_id": "5fac9d648183db28bcf3d329",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私密，1公开"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位收藏夹ID\",\n        \"name\":\"这是某用户新建的收藏夹\",\n        \"description\":\"这是收藏夹描述\",\n        \"total\":\"内容数\",\n        \"is_default\":0,\n        \"is_public\":1,\n        \"is_deleted\":0\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/package/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5105,
+        "method": "POST",
+        "catid": 1678,
+        "title": "删除",
+        "path": "/package/del",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092696,
+        "up_time": 1605148000,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9d608183db28bcf3d326",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9d608183db28bcf3d327",
+            "name": "id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/package/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 3,
+        "tag": [],
+        "_id": 5107,
+        "method": "POST",
+        "catid": 1678,
+        "title": "修改",
+        "path": "/package/edit",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092754,
+        "up_time": 1605147995,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9d5b8183db28bcf3d321",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9d5b8183db28bcf3d325",
+            "name": "id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9d5b8183db28bcf3d324",
+            "name": "name",
+            "type": "text",
+            "example": "",
+            "desc": "名称"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9d5b8183db28bcf3d323",
+            "name": "description",
+            "type": "text",
+            "example": "",
+            "desc": "摘要"
+          },
+          {
+            "required": "1",
+            "_id": "5fac9d5b8183db28bcf3d322",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私密，1公开"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"id\": \"24位收藏夹ID\",\n    \"name\": \"这是某用户新建的收藏夹\",\n    \"description\": \"这是收藏夹描述\",\n    \"total\": \"内容数\",\n    \"is_default\": 0,\n    \"is_public\": 1,\n    \"is_deleted\": 0\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/package/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5106,
+        "method": "POST",
+        "catid": 1678,
+        "title": "详情",
+        "path": "/package/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092721,
+        "up_time": 1605147989,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9d558183db28bcf3d31f",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9d558183db28bcf3d320",
+            "name": "id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"id\": \"24位收藏夹ID\",\n    \"name\": \"这是某用户新建的收藏夹\",\n    \"description\": \"这是收藏夹描述\",\n    \"total\": \"内容数\",\n    \"is_default\": 0,\n    \"is_public\": 1,\n    \"is_deleted\": 0\n  },\n  \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "用户",
+    "desc": null,
+    "add_time": 1605085696,
+    "up_time": 1605092021,
+    "list": [
+      {
+        "query_path": {
+          "path": "/user/get-info",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5124,
+        "method": "POST",
+        "catid": 1570,
+        "title": "【topBar】详情",
+        "path": "/user/get-info",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605148462,
+        "up_time": 1605148531,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9f738183db28bcf3d330",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.【前端】不需要传ID，一定获取的当前登录用户的</p>\n",
+        "markdown": "1.【前端】不需要传ID，一定获取的当前登录用户的",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位用户ID\",\n        \"nickname\":\"昵称\",\n        \"avatar\":\"封面图\",\n        \"is_fail\":\"是否异常，0否，1是\",\n        \"created_at\":1579197762,\n        \"count\":{\n            \"note\":1,\n            \"dynamic\":1\n        }\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/unbind-wx",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5138,
+        "method": "POST",
+        "catid": 1570,
+        "title": "解绑微信",
+        "path": "/user/unbind-wx",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605581069,
+        "up_time": 1605581076,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb339148183db28bcf3d43e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/re-pwd",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 5135,
+        "method": "POST",
+        "catid": 1570,
+        "title": "修改密码",
+        "path": "/user/re-pwd",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605580694,
+        "up_time": 1605843119,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb738af8183db28bcf3d4e6",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb738af8183db28bcf3d4e9",
+            "name": "code",
+            "type": "text",
+            "desc": "上一步的验证码"
+          },
+          {
+            "required": "1",
+            "_id": "5fb738af8183db28bcf3d4e8",
+            "name": "pwd",
+            "type": "text",
+            "example": "",
+            "desc": "密码"
+          },
+          {
+            "required": "1",
+            "_id": "5fb738af8183db28bcf3d4e7",
+            "name": "confirm_pwd",
+            "type": "text",
+            "example": "",
+            "desc": "确认密码"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/change-phone",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5136,
+        "method": "POST",
+        "catid": 1570,
+        "title": "【有备注】换绑手机号",
+        "path": "/user/change-phone",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605580941,
+        "up_time": 1606658822,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc3ab068183db28bcf3d6ba",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc3ab068183db28bcf3d6bd",
+            "name": "prev_code",
+            "type": "text",
+            "desc": "上一步的验证码"
+          },
+          {
+            "required": "1",
+            "_id": "5fc3ab068183db28bcf3d6bc",
+            "name": "code",
+            "type": "text",
+            "example": "",
+            "desc": "新手机号的验证码"
+          },
+          {
+            "required": "1",
+            "_id": "5fc3ab068183db28bcf3d6bb",
+            "name": "phone",
+            "type": "text",
+            "example": "",
+            "desc": "新手机号"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>第一步：手机号A，验证码A，sms_template：3<br>\n第二步：手机号B，验证码B，sms_template：2</p>\n<p>prev_code：验证码A<br>\ncode：验证码B<br>\nphone：手机号B</p>\n",
+        "markdown": "第一步：手机号A，验证码A，sms_template：3\n第二步：手机号B，验证码B，sms_template：2\n\nprev_code：验证码A\ncode：验证码B\nphone：手机号B",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 1,
+        "tag": [],
+        "_id": 5082,
+        "method": "POST",
+        "catid": 1570,
+        "title": "详情",
+        "path": "/user/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090888,
+        "up_time": 1605148336,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fac9eb08183db28bcf3d32c",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fac9eb08183db28bcf3d32d",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID，查看自己时可不传"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"id\":\"24位用户ID\",\n        \"nickname\":\"昵称\",\n        \"avatar\":\"封面图\",\n        \"identity\":2,\n        \"phone\":\"手机号，注意隐藏中间4位\",\n        \"is_fail\":\"是否异常，0否，1是\",\n        \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\",\n        \"wechat\":{\n            \"nickname\":\"微信昵称\"\n        },\n        \"created_at\":1579197762,\n        \"gender\":\"性别，1男，2女，3保密\",\n        \"birthday\":0,\n        \"sign\":\"个性签名\",\n        \"education\":\"学历\",\n        \"industry\":\"行业\",\n        \"job\":\"职业\",\n        \"count\":{\n            \"note\":1,\n            \"dynamic\":1\n        }\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/edit",
+          "params": []
+        },
+        "edit_uid": 11,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5083,
+        "method": "POST",
+        "catid": 1570,
+        "title": "修改信息",
+        "path": "/user/edit",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090928,
+        "up_time": 1605499503,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb1fa6f8183db28bcf3d417",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb1fa6f8183db28bcf3d422",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d421",
+            "name": "nickname",
+            "type": "text",
+            "example": "",
+            "desc": "昵称"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d420",
+            "name": "sign",
+            "type": "text",
+            "example": "",
+            "desc": "个性签名"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41f",
+            "name": "gender",
+            "type": "text",
+            "example": "",
+            "desc": "性别，1男，2女，3保密"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41e",
+            "name": "birthday",
+            "type": "text",
+            "example": "",
+            "desc": "生日"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41d",
+            "name": "country",
+            "type": "text",
+            "example": "",
+            "desc": "国家ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41c",
+            "name": "province",
+            "type": "text",
+            "example": "",
+            "desc": "省份ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41b",
+            "name": "city",
+            "type": "text",
+            "example": "",
+            "desc": "国家ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d41a",
+            "name": "industry",
+            "type": "text",
+            "example": "",
+            "desc": "职业ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d419",
+            "name": "education",
+            "type": "text",
+            "example": "",
+            "desc": "学历ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fb1fa6f8183db28bcf3d418",
+            "name": "job",
+            "type": "text",
+            "example": "",
+            "desc": "工作ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【后端】参数中的id仅作为校验，代码中使用解析token后得到的用户ID<br>\n2.【前端】注意参数的备注</p>\n",
+        "markdown": "1.【后端】参数中的id仅作为校验，代码中使用解析token后得到的用户ID\n2.【前端】注意参数的备注",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/avatar",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 3,
+        "tag": [],
+        "_id": 5084,
+        "method": "POST",
+        "catid": 1570,
+        "title": "修改用户头像",
+        "path": "/user/avatar",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090963,
+        "up_time": 1606635474,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34fd28183db28bcf3d6a6",
+            "name": "Content-Type",
+            "value": "multipart/form-data"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34fd28183db28bcf3d6a8",
+            "name": "id",
+            "type": "text",
+            "example": "",
+            "desc": "用户ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34fd28183db28bcf3d6a7",
+            "name": "file",
+            "type": "file",
+            "desc": "头像文件"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p><span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.【后端】参数中的id仅作为校验，代码中使用解析token后得到的用户ID</span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.【后端】参数中的id仅作为校验，代码中使用解析token后得到的用户ID</span>",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"url\":\"1.jpg\"\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/dynamic-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5070,
+        "method": "POST",
+        "catid": 1570,
+        "title": "动态列表",
+        "path": "/user/dynamic-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605085820,
+        "up_time": 1605090038,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fabbaf68183db28bcf3d263",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fabbaf68183db28bcf3d264",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p><span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.【前端】根据target_type可以判断出，去那个节点下取数据</span><br>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">&nbsp; &nbsp; target_type = 1：article节点</span><br>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">&nbsp; &nbsp; target_type = 2:：note节点</span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.【前端】根据target_type可以判断出，去那个节点下取数据</span>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">    target_type = 1：article节点</span>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">    target_type = 2:：note节点</span>",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位动态ID\",\n                \"created_at\":1604632694,\n                \"target_type\":1,\n                \"user\":{\n                    \"id\":\"24位用户ID\",\n                    \"avatar\":\"default.png\",\n                    \"nickname\":\"听君031233\"\n                },\n                \"article\":{\n                    \"id\":\"24位文章ID\",\n                    \"title\":\"文章标题\",\n                    \"cover_url\":\"封面图，可能位空值\",\n                    \"description\":\"摘要，可能位空值\",\n                    \"is_fail\":false,\n                    \"count\":{\n                        \"like\":0,\n                        \"collect\":0\n                    }\n                },\n                \"note\":{\n                    \"id\":\"24位笔记ID\",\n                    \"content\":\"笔记内容\",\n                    \"type\":\"笔记类型，1文章笔记，2文章划线笔记，3文本类笔记\",\n                    \"selected\":\"文章节选内容，可能位空值\",\n                    \"start_index\":1,\n                    \"end_index\":2,\n                    \"article\":{\n                        \"id\":\"24位文字ID\",\n                        \"title\":\"文字标题\",\n                        \"cover_url\":\"封面图，可能位空值\",\n                        \"description\":\"摘要\",\n                        \"is_fail\":false\n                    }\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/note-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 5,
+        "tag": [],
+        "_id": 5079,
+        "method": "POST",
+        "catid": 1570,
+        "title": "笔记列表",
+        "path": "/user/note-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090495,
+        "up_time": 1605148746,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca04a8183db28bcf3d33f",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5faca04a8183db28bcf3d341",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID，查看自己时可不传"
+          },
+          {
+            "required": "0",
+            "_id": "5faca04a8183db28bcf3d340",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"have_more\": 40,\n    \"list\": [\n      {\n        \"id\": \"24位文章ID\",\n        \"content\": \"笔记内容\",\n        \"selected\": \"文章节选\",\n        \"start_index\": 3,\n        \"end_index\": 5,\n        \"is_fail\": 0,\n        \"is_public\": 2,\n        \"is_collect\": false,\n        \"is_like\": false,\n        \"created_at\": 1592910533,\n        \"user\": {\n          \"id\": \"24位用户ID\",\n          \"nickname\": \"用户昵称\",\n          \"avatar\": \"头像\",\n          \"attention_status\": \"关注状态，1没关注，2关注了，3自己，4互关\"\n        },\n        \"count\": {\n          \"collect\": 1,\n          \"like\": 0,\n          \"comment\": 0\n        },\n        \"article\": {\n          \"id\": \"24位文章ID\",\n          \"title\": \"文章标题\",\n          \"cover_url\": \"封面图\",\n          \"description\": \"文章摘要\"\n        }\n      }\n    ]\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/like-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 6,
+        "tag": [],
+        "_id": 5080,
+        "method": "POST",
+        "catid": 1570,
+        "title": "点赞列表",
+        "path": "/user/like-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090511,
+        "up_time": 1605148763,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca05b8183db28bcf3d342",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5faca05b8183db28bcf3d343",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID，查看自己时可不传"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"total_count\": 1,\n    \"page_size\": 20,\n    \"page\": 1,\n    \"list\": [\n      {\n        \"id\": \"\",\n        \"created_at\": 1604632694,\n        \"target_type\": 1,\n        \"user\": {\n          \"id\": \"24位用户ID\",\n          \"avatar\": \"default.png\",\n          \"nickname\": \"听君031233\"\n        },\n        \"article\": {\n          \"id\": \"24位文章ID\",\n          \"title\": \"文章标题\",\n          \"cover_url\": \"封面图，可能位空值\",\n          \"description\": \"摘要，可能位空值\",\n          \"is_fail\": false,\n          \"count\": {\n            \"like\": 0,\n            \"collect\": 0\n          }\n        },\n        \"note\": {\n          \"id\": \"24位笔记ID\",\n          \"content\": \"笔记内容\",\n          \"type\": \"笔记类型，1文章笔记，2文章划线笔记，3文本类笔记\",\n          \"selected\": \"文章节选内容，可能位空值\",\n          \"start_index\": 1,\n          \"end_index\": 2,\n          \"article\": {\n            \"id\": \"24位文字ID\",\n            \"title\": \"文字标题\",\n            \"cover_url\": \"封面图，可能位空值\",\n            \"description\": \"摘要\",\n            \"is_fail\": false\n          }\n        }\n      }\n    ]\n  },\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/package-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 7,
+        "tag": [],
+        "_id": 5125,
+        "method": "POST",
+        "catid": 1570,
+        "title": "收藏夹列表",
+        "path": "/user/package-list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca0e58183db28bcf3d34c",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca0e58183db28bcf3d34d",
+            "name": "last_id",
+            "type": "text",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"have_more\":true,\n        \"list\":[\n            {\n                \"id\":\"24位收藏夹ID\",\n                \"name\":\"名称\",\n                \"description\":\"摘要\",\n                \"total\":\"内容数\",\n                \"is_public\":2,\n                \"is_default\":2,\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"updated_at\":1597200251\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1605148770,
+        "up_time": 1605148901,
+        "__v": 0
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "协议",
+    "desc": null,
+    "add_time": 1605091797,
+    "up_time": 1605091797,
+    "list": [
+      {
+        "query_path": {
+          "path": "/agreement/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5089,
+        "method": "POST",
+        "catid": 1594,
+        "title": "协议详情",
+        "path": "/agreement/get-detail",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605091733,
+        "up_time": 1605148957,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca11d8183db28bcf3d350",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca11d8183db28bcf3d351",
+            "name": "route",
+            "type": "text",
+            "desc": "协议路由"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": {\n    \"title\": \"这是协议标题\",\n    \"content\": \"这是协议内容\"\n  },\n  \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "name": "举报",
+    "desc": null,
+    "add_time": 1605091805,
+    "up_time": 1605091805,
+    "list": [
+      {
+        "query_path": {
+          "path": "/report/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5087,
+        "method": "POST",
+        "catid": 1600,
+        "title": "举报",
+        "path": "/report/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1605091671,
+        "up_time": 1605149108,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca1b48183db28bcf3d352",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca1b48183db28bcf3d356",
+            "name": "category_id",
+            "type": "text",
+            "desc": "举报类型ID，1恐怖血腥，2色情低俗，3标题/封面党，4违禁内容，5涉及侵权，6其他"
+          },
+          {
+            "required": "1",
+            "_id": "5faca1b48183db28bcf3d355",
+            "name": "target_id",
+            "type": "text",
+            "example": "",
+            "desc": "主体ID，对应target_type的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5faca1b48183db28bcf3d354",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记，3评论，4回复，6收藏夹"
+          },
+          {
+            "required": "0",
+            "_id": "5faca1b48183db28bcf3d353",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "内容"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】主体，举报笔记动态 = 举报笔记，所以没有target_type = 5</p>\n",
+        "markdown": "1.【前端】主体，举报笔记动态 = 举报笔记，所以没有target_type = 5",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "name": "短信",
+    "desc": null,
+    "add_time": 1605091812,
+    "up_time": 1605091812,
+    "list": [
+      {
+        "query_path": {
+          "path": "/sms/send",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5088,
+        "method": "POST",
+        "catid": 1606,
+        "title": "发送短信【有备注】",
+        "path": "/sms/send",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605091706,
+        "up_time": 1606634866,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fc34d728183db28bcf3d6a1",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fc34d728183db28bcf3d6a3",
+            "name": "template",
+            "type": "text",
+            "desc": "看备注"
+          },
+          {
+            "required": "1",
+            "_id": "5fc34d728183db28bcf3d6a2",
+            "name": "phone",
+            "type": "text",
+            "example": "",
+            "desc": "手机号"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】template文档：<span class=\"colour\" style=\"color:rgb(38, 38, 38)\"><a href=\"https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105\">https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105</a></span><br>\n2.【前端】换绑手机号时：<br>\n&nbsp; &nbsp; 1.第一步：sms_template传3<br>\n&nbsp; &nbsp; 2.第二步：sms_template传2<br>\n3.【前端】修改密码时：<br>\n&nbsp; &nbsp; 1.第一步：sms_template传5<br>\n&nbsp; &nbsp; 2.第二步：sms_template传5<br>\n3.【前端】登陆时：<br>\n&nbsp; &nbsp; sms_template传1</p>\n",
+        "markdown": "1.【前端】template文档：<span class=\"colour\" style=\"color:rgb(38, 38, 38)\">[https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105](https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105)</span>\n2.【前端】换绑手机号时：\n    1.第一步：sms_template传3\n    2.第二步：sms_template传2\n3.【前端】修改密码时：\n    1.第一步：sms_template传5\n    2.第二步：sms_template传5\n3.【前端】登陆时：\n    sms_template传1",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"statusCode\": 200,\n  \"result\": true,\n  \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "name": "关注关系",
+    "desc": null,
+    "add_time": 1605091820,
+    "up_time": 1605091845,
+    "list": [
+      {
+        "query_path": {
+          "path": "/relationship/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5085,
+        "method": "POST",
+        "catid": 1612,
+        "title": "关注",
+        "path": "/relationship/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605091620,
+        "up_time": 1605430015,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb0eaff8183db28bcf3d3c5",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb0eaff8183db28bcf3d3c6",
+            "name": "follow_id",
+            "type": "text",
+            "desc": "要关注的人的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"attention_status\":\"关注关系，1没关注，2关注了，3自己，4互关\"\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/relationship/cancel",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5086,
+        "method": "POST",
+        "catid": 1612,
+        "title": "取消关注",
+        "path": "/relationship/cancel",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605091637,
+        "up_time": 1605430046,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb0eb1e8183db28bcf3d3c7",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb0eb1e8183db28bcf3d3c8",
+            "name": "follow_id",
+            "type": "text",
+            "desc": "要取消关注的人的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"attention_status\":\"关注关系，1没关注，2关注了，3自己，4互关\"\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/relationship/following",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5077,
+        "method": "POST",
+        "catid": 1612,
+        "title": "关注列表",
+        "path": "/relationship/following",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090375,
+        "up_time": 1605430398,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb0ec7e8183db28bcf3d3d2",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fb0ec7e8183db28bcf3d3d4",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID，查看自己时可不传"
+          },
+          {
+            "required": "0",
+            "_id": "5fb0ec7e8183db28bcf3d3d3",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位用户ID\",\n                \"nickname\":\"用户昵称\",\n                \"avatar\":\"头像\",\n                \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/relationship/follower",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5078,
+        "method": "POST",
+        "catid": 1612,
+        "title": "粉丝列表",
+        "path": "/relationship/follower",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605090387,
+        "up_time": 1605430418,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb0ec928183db28bcf3d3d5",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fb0ec928183db28bcf3d3d7",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID，查看自己时可不传"
+          },
+          {
+            "required": "0",
+            "_id": "5fb0ec928183db28bcf3d3d6",
+            "name": "last_id",
+            "type": "text",
+            "example": "",
+            "desc": "【翻页时必传】当前页最后一条记录的ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":1,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"24位用户ID\",\n                \"nickname\":\"用户昵称\",\n                \"avatar\":\"头像\",\n                \"attention_status\":\"关注状态，1没关注，2关注了，3自己，4互关\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "name": "意见反馈",
+    "desc": null,
+    "add_time": 1605091912,
+    "up_time": 1605091912,
+    "list": [
+      {
+        "query_path": {
+          "path": "/feedback/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5108,
+        "method": "POST",
+        "catid": 1636,
+        "title": "新增",
+        "path": "/feedback/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092790,
+        "up_time": 1605149653,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca3d58183db28bcf3d36a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca3d58183db28bcf3d36b",
+            "name": "content",
+            "type": "text",
+            "desc": "内容"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "name": "行业",
+    "desc": null,
+    "add_time": 1605091933,
+    "up_time": 1605091933,
+    "list": [
+      {
+        "query_path": {
+          "path": "/industry/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5126,
+        "method": "POST",
+        "catid": 1642,
+        "title": "列表",
+        "path": "/industry/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605149794,
+        "up_time": 1605150103,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca5978183db28bcf3d375",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5faca5978183db28bcf3d376",
+            "name": "page",
+            "type": "text",
+            "desc": "页数，默认是1"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":10,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":1,\n                \"name\":\"其他\",\n                \"is_other\":1\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/industry/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5109,
+        "method": "POST",
+        "catid": 1642,
+        "title": "新增",
+        "path": "/industry/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092825,
+        "up_time": 1605150077,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca57d8183db28bcf3d373",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca57d8183db28bcf3d374",
+            "name": "name",
+            "type": "text",
+            "desc": "名称"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "name": "职业",
+    "desc": null,
+    "add_time": 1605091936,
+    "up_time": 1605091936,
+    "list": [
+      {
+        "query_path": {
+          "path": "/job/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5127,
+        "method": "POST",
+        "catid": 1648,
+        "title": "列表",
+        "path": "/job/list",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605149872,
+        "up_time": 1605150040,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca5588183db28bcf3d370",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":10,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":1,\n                \"name\":\"其他\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/job/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5110,
+        "method": "POST",
+        "catid": 1648,
+        "title": "新增",
+        "path": "/job/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092834,
+        "up_time": 1605150064,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca5708183db28bcf3d371",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca5708183db28bcf3d372",
+            "name": "name",
+            "type": "text",
+            "desc": "名称"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "name": "点赞",
+    "desc": null,
+    "add_time": 1605091949,
+    "up_time": 1605091949,
+    "list": [
+      {
+        "query_path": {
+          "path": "/like/cancel",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5112,
+        "method": "POST",
+        "catid": 1654,
+        "title": "取消点赞",
+        "path": "/like/cancel",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092863,
+        "up_time": 1605150239,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca61f8183db28bcf3d37a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca61f8183db28bcf3d37c",
+            "name": "target_id",
+            "type": "text",
+            "desc": "主体ID，对应target_type的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5faca61f8183db28bcf3d37b",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/like/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5111,
+        "method": "POST",
+        "catid": 1654,
+        "title": "点赞",
+        "path": "/like/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605092851,
+        "up_time": 1605150194,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca5f28183db28bcf3d377",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca5f28183db28bcf3d379",
+            "name": "target_id",
+            "type": "text",
+            "desc": "主体ID，对应target_type的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5faca5f28183db28bcf3d378",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "name": "收藏",
+    "desc": null,
+    "add_time": 1605091954,
+    "up_time": 1605091954,
+    "list": [
+      {
+        "query_path": {
+          "path": "/collect/cancel",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5114,
+        "method": "POST",
+        "catid": 1660,
+        "title": "取消收藏",
+        "path": "/collect/cancel",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1605093152,
+        "up_time": 1605150359,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faca6978183db28bcf3d383",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faca6978183db28bcf3d385",
+            "name": "target_id",
+            "type": "text",
+            "desc": "对应target_type的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5faca6978183db28bcf3d384",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】目前只有收藏【文章】【笔记】【笔记动态】，其中收藏【笔记动态】 = 收藏【笔记】，因此target_type没有5</p>\n",
+        "markdown": "1.【前端】目前只有收藏【文章】【笔记】【笔记动态】，其中收藏【笔记动态】 = 收藏【笔记】，因此target_type没有5",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/collect/add",
+          "params": []
+        },
+        "edit_uid": 11,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5113,
+        "method": "POST",
+        "catid": 1660,
+        "title": "收藏",
+        "path": "/collect/add",
+        "project_id": 80,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fb4f03d8183db28bcf3d463",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fb4f03d8183db28bcf3d466",
+            "name": "target_id",
+            "type": "text",
+            "desc": "对应target_type的ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fb4f03d8183db28bcf3d465",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "1文章，2笔记，3评论，4回复，5动态，6收藏夹"
+          },
+          {
+            "required": "1",
+            "_id": "5fb4f03d8183db28bcf3d464",
+            "name": "package_id",
+            "type": "text",
+            "example": "",
+            "desc": "收藏夹ID"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1605093034,
+        "up_time": 1605693501,
+        "__v": 0
+      }
+    ]
+  }
+]

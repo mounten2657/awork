@@ -278,6 +278,7 @@ $(function () {
     let deny = '#host_ip,#code_bch,#php_ver,#ch_submit,#ch_check';
     deny += ',#h210_api,#h210_auth,#h210_back,#gitlib_i,#zentao_i,#h152_i';
     disableServer(deny);
+    version = {data:null,msg:"Server Offline!"};
     /*let loadIndex = layer.load(2, {time: 10 * 1000});
     setTimeout(function () {
         $.ajax({

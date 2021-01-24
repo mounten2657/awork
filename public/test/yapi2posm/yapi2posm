@@ -31,7 +31,9 @@ class yapi2posm
         $helper .= "    [postman-project.json] the json file that want import into your postman project." . PHP_EOL;
         $helper .= "    [project_name] the prefix name of you postman project." . PHP_EOL . PHP_EOL;
         $helper .= "@example: php yapi2posm api-admin.json test-v3.json admin" . PHP_EOL;
-        $helper .= "@example: php yapi2posm data/2021201/api.json api.csv csv" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/app.json app-latest.json app" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/api.json api.csv csv" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/api.json api.json url" . PHP_EOL;
         echo $helper . PHP_EOL;
         return false;
     }
@@ -94,8 +96,31 @@ class yapi2posm
                     'url' => $v['path'],
                     'method' => $v['method'],
                     'params' => $v['req_body_form'],
+                    'mock' => $v['res_body'],
                 );
             }
+        }
+        // generate url file
+        if ('url' == $params['env_name']) {
+            $content  = [];
+            foreach ($apiList as $value) {
+                $item = [];
+                foreach ($value as $key => $val) {
+                    foreach ($val as $k => $v ) {
+                        $item[$v['name']] = strtoupper(substr(md5(uniqid()), 15, 16));
+                    }
+                }
+                $value['mock'] = str_replace(PHP_EOL, '', $value['mock']);
+                $content[$value['url']] = [
+                    'method' => $value['method'],
+                    'params' => $item,
+                    'mock' => htmlspecialchars(json_encode(json_decode($value['mock'], true))),
+                ];
+            }
+            $content = json_encode($content, JSON_UNESCAPED_SLASHES);
+            file_put_contents($params['direct_file'], $content);
+            echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+            return true;
         }
         // generate csv file
         if ('csv' == $params['env_name']) {

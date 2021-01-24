@@ -1,0 +1,219 @@
+<?php
+/**
+ * this script is used to generate model file for mysql table.
+ * @usage: php mysql2model [host] [user] [password] [dbname]
+ * @example php mysql2model 192.168.150.128 root 123456 listen_test_v2_0
+ * @author wujun@lanqb.cn
+ * @date 2020.11.17 15:11:13
+ */
+
+// get help
+if (!isset($argv[1]) || (isset($argv[1]) && in_array($argv[1], array('-h', '--help'))) || !isset($argv[4])) {
+    echo PHP_EOL . '@usage: php mysql2model [host] [user] [password] [dbname]' . PHP_EOL;
+    echo PHP_EOL . '@example: php mysql2model 192.168.150.128 root 123456 listen_test_v2_0' . PHP_EOL;
+    echo PHP_EOL . '@example: php mysql2model listen-dev.mysql.rds.aliyuncs.com root TingjunHangzhou@)!(2019 listen-ver-2-0-lv' . PHP_EOL;
+    exit;
+}
+
+// get params
+$params = [
+    'host'     => isset($argv[1]) ? $argv[1] : '',
+    'user'     => isset($argv[2]) ? $argv[2] : '',
+    'password' => isset($argv[3]) ? $argv[3] : '',
+    'dbname'   => isset($argv[4]) ? $argv[4] : '',
+];
+$servername = empty($params['host']) ? "localhost" : $params['host'];
+$username = empty($params['user']) ? "root" : $params['user'];
+$password = empty($params['password']) ? "root" : $params['password'];
+$dbname = empty($params['dbname']) ? "root" : $params['dbname'];
+
+// generate model file
+GenerateModel::run($servername, $username, $password, $dbname);
+echo PHP_EOL . "generate model file successful. preview: model/{$dbname}/*" . PHP_EOL;
+
+class GenerateModel
+{
+
+    /**
+     * generate model file
+     * @param $servername
+     * @param $username
+     * @param $password
+     * @param $dbname
+     */
+    public static function run($servername, $username, $password, $dbname)
+    {
+        try {
+            //error_reporting(0);
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                echo "[Error] mysql connect failed : " . $conn->connect_error . PHP_EOL;exit;
+            }
+        } catch (\Exception $e) {
+            echo "[Error] mysql connect exception : ". $e->getMessage() . PHP_EOL;exit;
+        }
+        echo 'start querying ...' . PHP_EOL;
+        $modelClass = [];
+        $conn->query('set names utf8');
+        $result = $conn->query("show tables");
+        var_dump($result);die;
+        if ($result->num_rows > 0) {
+            $i = 1;
+            while ($row = $result->fetch_assoc()) {
+                $table_name = $row["Tables_in_{$dbname}"];
+                // 跳过分表
+                $tabSuffix = array('_1', '_2', '_3', '_4');
+                if (in_array(substr($table_name, -2, 2), $tabSuffix)) continue;
+
+                $obj = $conn->query("show full columns from {$table_name}");
+                $table_comment = $conn->query("SELECT TABLE_COMMENT FROM INFORMATION_SCHEMA.TABLES WHERE table_name = '{$table_name}'")->fetch_assoc();
+
+                // 获取类名
+                $tabAs = $table_name;
+                $tabSpecial = array('_0', '_20');
+                foreach ($tabSpecial as $p) {
+                    if (false !== strpos($table_name, $p)) {
+                        $tmp = explode($p, $table_name);
+                        $table_name = $tmp[0];
+                        $tabAs = $table_name . '_';
+                    }
+                }
+                $class = self::camelize($table_name);
+                $modelClass[$class] = [
+                    'class' => $class,
+                    'tabAs' => $tabAs,
+                ];
+
+                // 读取字段
+                $fields = [];
+                while ($data = $obj->fetch_assoc()) {
+                    $cType = explode('(',$data['Type']);
+                    $cType = $cType[0];
+                    if (false !== strpos($cType, 'int')) {
+                        $cType = 'int';
+                    } elseif (false !== strpos($cType, 'char')) {
+                        $cType = 'string';
+                    } else {
+                        $cType = 'string';
+                    }
+                    $cLength = substr($data['Type'], strpos($data['Type'], '(') + 1);
+                    $cLength = substr($cLength, 0, strpos($cLength, ')'));
+                    $cDefault = $data['Default'] ? : ($data['Default'] === '0' ? 0 : ($data['Default'] === NULL ? 'NULL' : ''));
+                    $fields[$data['Field']] = [
+                        'name' => $data['Field'],
+                        'type' => $cType,
+                        'length' => $cLength,
+                        'isNull' => $data['Null'],
+                        'isAuto' => $data['Extra'] ? true : false,
+                        'isPid' => $data['Key'] == 'PRI' ? true : false,
+                        'default' => $cDefault,
+                        'comment' => $data['Comment'],
+                    ];
+                }
+                $fieldNameList = array_keys($fields);
+                $propTpl = '';
+                foreach ($fields as $field) {
+                    $propTpl .= self::getPropTpl($field);
+                }
+                $modelClass[$class]['propTpl'] = $propTpl;
+                $modelClass[$class]['pid'] = $fieldNameList[0];
+                $modelClass[$class]['pType'] = $fields[$fieldNameList[0]]['type'];
+                $modelClass[$class]['timestamps'] = in_array('updated_at', $fieldNameList) ? 'true' : 'false';
+
+                echo "generate for table [$i] : " . $table_name . PHP_EOL;
+                $i++;
+                //break;
+            }
+            //file_put_contents($dbname . '.md', $mark);
+        }
+        $conn->close();
+        //var_dump($modelClass);return false;
+
+        // write files
+        $path = "data/{$dbname}/Models/";
+        foreach ($modelClass as $class => $model) {
+            $contents = self::getModelTpl($class, $model);
+            file_put_contents($path.$class.'.php', $contents);
+        }
+    }
+
+    /**
+     * get prop tpl
+     * @param $index
+     * @return string
+     */
+    public static function getPropTpl($index)
+    {
+        $tpl = ' * @property %s $%s %s';
+        return vsprintf($tpl, [$index['type'], $index['name'], $index['comment']]) . PHP_EOL;
+    }
+
+    /**
+     * get service tpl
+     * @param $class
+     * @param array $index [class, tabAs, propTpl, pid, pType, timestamps]
+     * @return string
+     */
+    public static function getModelTpl($class, $index)
+    {
+        $tpl = '<?php
+
+namespace App\Models;
+
+/**
+ * App\Models\%s
+ * This is the model class for table "%s".
+ *
+%s * @method static \Illuminate\Database\Eloquent\Builder|%s newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|%s newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|%s query()
+ */
+class %s extends BaseModel
+{
+
+    protected $table = "%s";
+    protected $primaryKey = "%s";
+    protected $keyType = "%s";
+    public $timestamps = %s;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [];
+    
+
+}
+';
+        return vsprintf($tpl, [$class, $index['tabAs'], $index['propTpl'], $class, $class, $class, $class, $index['tabAs'], $index['pid'], $index['pType'], $index['timestamps']]);
+    }
+
+    /**
+     * 下划线转类命名
+     * @param $uncamelizedWords
+     * @param string $separator
+     * @return string
+     */
+    public static function camelize($uncamelizedWords, $separator = '_')
+    {
+        $uncamelizedWords = $separator. str_replace($separator, " ", strtolower($uncamelizedWords));
+        return ucfirst(ltrim(str_replace(" ", "", ucwords($uncamelizedWords)), $separator ));
+    }
+
+}
+

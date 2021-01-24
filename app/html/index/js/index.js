@@ -277,7 +277,8 @@ $(function () {
     let version = {};
     let deny = '#host_ip,#code_bch,#php_ver,#ch_submit,#ch_check';
     deny += ',#h210_api,#h210_auth,#h210_back,#gitlib_i,#zentao_i,#h152_i';
-    let loadIndex = layer.load(2, {time: 10 * 1000});
+    disableServer(deny);
+    /*let loadIndex = layer.load(2, {time: 10 * 1000});
     setTimeout(function () {
         $.ajax({
             url: '/extra/url?current_i',
@@ -310,7 +311,7 @@ $(function () {
                 layer.close(loadIndex);
             }
         });
-    },500);
+    },500);*/
 
     // deny
     let tips = null;

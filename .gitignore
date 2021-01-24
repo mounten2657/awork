@@ -14,3 +14,6 @@ log
 # log file
 *.log
 
+# yapi
+public/test/yapi2posm/data
+

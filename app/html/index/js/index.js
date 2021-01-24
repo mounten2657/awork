@@ -124,8 +124,8 @@ $(function () {
         let str = '';
         for (let i = 9; i > 0; i--) {
             let stext = b64_md5(text + i);
-            stext = stext.replace(/\+/g, "_");
-            stext = stext.replace(/\//g, "_");
+            stext = stext.replace(/\+/g, "Q");
+            stext = stext.replace(/\//g, "Z");
             str += stext + "\r\n\r\n";
         }
         $('#text_out').val(str).css('color', color);

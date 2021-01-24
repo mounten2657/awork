@@ -3,7 +3,8 @@
 return [
 
     // 版本号
-    'awork_version' => '1.0.4',
+    'awork_version' => '1.0.5',
+    'awork_updated_at' => '2021.01',
 
     // 日志相关
     'log_level' => 'info',

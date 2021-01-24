@@ -13,9 +13,11 @@ class IndexShow extends BaseShow
     public function index()
     {
         $aworkVersion = config('awork_version');
+        $aworkUpdatedAt = config('awork_updated_at');
 
         $this->display([
             'awork_version' => $aworkVersion,
+            'awork_updated_at' => $aworkUpdatedAt,
         ]);
     }
 

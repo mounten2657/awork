@@ -3,7 +3,9 @@
     "codeception/codeception": "2.5.5",
     "guzzlehttp/guzzle": "^6.3",
     "viest/php-ext-xlswriter-ide-helper": "dev-master",
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-amqp": "*",
+    "ext-curl": "*"
   },
   "repositories": {
     "packagist": {

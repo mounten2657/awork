@@ -1,0 +1,2867 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "edu.chnnice.com",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "组班晚辅"
+    }
+  ],
+  "paths": {
+    "/edu/v2/api/v2/tutor/groups/signEditList": {
+      "post": {
+        "summary": "组班晚辅 - 学员签到编辑列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      },
+                      "begin_time": {
+                        "type": "string",
+                        "description": "开始日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      },
+                      "end_time": {
+                        "type": "string",
+                        "description": "结束日期： Y-m-d",
+                        "enum": [
+                          "2021-06-30"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-30": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "begin_time",
+                      "end_time",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "begin_time": "2021-06-01",
+                  "end_time": "2021-06-01"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "sign_id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "sign_date": {
+                                "type": "string",
+                                "description": "日期：Y-m-d"
+                              },
+                              "total_list": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "user_id": {
+                                      "type": "string",
+                                      "description": "用户ID"
+                                    },
+                                    "real_name": {
+                                      "type": "string",
+                                      "description": "用户名"
+                                    },
+                                    "is_selected": {
+                                      "type": "string",
+                                      "description": "是否被选中：0否，1是"
+                                    }
+                                  },
+                                  "required": [
+                                    "user_id",
+                                    "real_name",
+                                    "is_selected"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "sign_id": "1",
+                            "tutor_id": "100",
+                            "tutor_type": "2",
+                            "sign_date": "2021-06-01",
+                            "total_list": [
+                              {
+                                "user_id": "1001",
+                                "real_name": "张三",
+                                "is_selected": "1"
+                              },
+                              {
+                                "user_id": "1002",
+                                "real_name": "李四",
+                                "is_selected": "0"
+                              }
+                            ]
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/searchList": {
+      "post": {
+        "summary": "组班晚辅 - 获取列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅"
+                      },
+                      "year": {
+                        "type": "integer",
+                        "description": "年份"
+                      },
+                      "lesson_type": {
+                        "type": "integer",
+                        "description": "季度"
+                      },
+                      "mode2": {
+                        "type": "integer",
+                        "description": "班型"
+                      },
+                      "subject_group": {
+                        "type": "integer",
+                        "description": "科目"
+                      },
+                      "grade": {
+                        "type": "integer",
+                        "description": "年级"
+                      },
+                      "class_master": {
+                        "type": "string",
+                        "description": "班主任ID"
+                      },
+                      "class_teacher": {
+                        "type": "string",
+                        "description": "授课老师ID"
+                      },
+                      "class_master_name": {
+                        "type": "string",
+                        "description": "班主任名"
+                      },
+                      "class_teacher_name": {
+                        "type": "string",
+                        "description": "授课老师名"
+                      },
+                      "class_room": {
+                        "type": "string",
+                        "description": "教室"
+                      },
+                      "class_name": {
+                        "type": "string",
+                        "description": "班级名"
+                      },
+                      "city": {
+                        "type": "integer",
+                        "description": "城市"
+                      },
+                      "campus": {
+                        "type": "integer",
+                        "description": "校区"
+                      }
+                    },
+                    "required": [
+                      "tutor_type"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "year": 2021,
+                  "lesson_type": 21,
+                  "mode2": 9,
+                  "subject_group": 7,
+                  "grade": 5,
+                  "city": 1,
+                  "campus": 101,
+                  "class_master": "1001",
+                  "class_teacher": "1002",
+                  "class_master_name": "张三",
+                  "class_teacher_name": "李四",
+                  "class_room": "教学楼B-101",
+                  "class_name": "暑假特训A班"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "class_name": {
+                                "type": "string"
+                              },
+                              "grade": {
+                                "type": "string"
+                              },
+                              "grade_str": {
+                                "type": "string"
+                              },
+                              "mode2": {
+                                "type": "string"
+                              },
+                              "f_lesson_mode2": {
+                                "type": "string"
+                              },
+                              "year": {
+                                "type": "string"
+                              },
+                              "lesson_type": {
+                                "type": "string"
+                              },
+                              "lesson_type_str": {
+                                "type": "string"
+                              },
+                              "subject_group": {
+                                "type": "string"
+                              },
+                              "subject_group_str": {
+                                "type": "string"
+                              },
+                              "class_begin": {
+                                "type": "string"
+                              },
+                              "class_end": {
+                                "type": "string"
+                              },
+                              "student_num": {
+                                "type": "string"
+                              },
+                              "class_master": {
+                                "type": "string"
+                              },
+                              "class_teacher": {
+                                "type": "string"
+                              },
+                              "class_master_name": {
+                                "type": "string"
+                              },
+                              "class_teacher_name": {
+                                "type": "string"
+                              },
+                              "class_room": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "city": {
+                                "type": "string"
+                              },
+                              "f_city": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "查询成功",
+                      "result": {
+                        "list": [
+                          {
+                            "tutor_id": "100",
+                            "class_name": "寒假语文课程-8",
+                            "grade": "8,9",
+                            "grade_str": "八年级,九年级",
+                            "mode2": "3",
+                            "f_lesson_mode2": "1V8",
+                            "year": "2021",
+                            "lesson_type": "24",
+                            "lesson_type_str": "寒假班",
+                            "subject_group": "9",
+                            "subject_group_str": "化学",
+                            "class_begin": "2021-01-05",
+                            "class_end": "2021-02-05",
+                            "student_num": "3",
+                            "class_master": "1001",
+                            "class_teacher": "1002",
+                            "class_master_name": "张三",
+                            "class_teacher_name": "李四",
+                            "class_room": "B-101",
+                            "tutor_type": "1",
+                            "city": "5",
+                            "f_city": "崇安"
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/scheduleEditList": {
+      "post": {
+        "summary": "组班晚辅 - 教师排班编辑列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "begin_time": {
+                        "type": "string",
+                        "description": "开始日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      },
+                      "end_time": {
+                        "type": "string",
+                        "description": "结束日期： Y-m-d",
+                        "enum": [
+                          "2021-06-30"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-30": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "begin_time",
+                      "end_time",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "begin_time": "2021-06-01",
+                  "end_time": "2021-06-01"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "schedule_id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "schedule_date": {
+                                "type": "string",
+                                "description": "日期：Y-m-d"
+                              },
+                              "total_list": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "user_id": {
+                                      "type": "string",
+                                      "description": "用户ID"
+                                    },
+                                    "real_name": {
+                                      "type": "string",
+                                      "description": "用户名"
+                                    },
+                                    "is_signed": {
+                                      "type": "string",
+                                      "description": "是否签到：0否1是"
+                                    },
+                                    "is_scheduled": {
+                                      "type": "string",
+                                      "description": "是否排班：0否1是"
+                                    }
+                                  },
+                                  "required": [
+                                    "user_id",
+                                    "real_name",
+                                    "is_signed",
+                                    "is_scheduled"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "schedule_id": "1",
+                            "tutor_id": "100",
+                            "tutor_type": "2",
+                            "schedule_date": "2021-06-01",
+                            "total_list": [
+                              {
+                                "user_id": "1001",
+                                "real_name": "张三",
+                                "is_signed": "1",
+                                "is_scheduled": "1"
+                              },
+                              {
+                                "user_id": "1002",
+                                "real_name": "李四",
+                                "is_signed": "0",
+                                "is_scheduled": "1"
+                              }
+                            ]
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/scheduleList": {
+      "post": {
+        "summary": "组班晚辅 - 教师排班列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "begin_time": {
+                        "type": "string",
+                        "description": "开始日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      },
+                      "end_time": {
+                        "type": "string",
+                        "description": "结束日期： Y-m-d",
+                        "enum": [
+                          "2021-06-30"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-30": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "begin_time",
+                      "end_time",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "begin_time": "2021-06-01",
+                  "end_time": "2021-06-01"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "schedule_id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "schedule_date": {
+                                "type": "string",
+                                "description": "日期：Y-m-d"
+                              },
+                              "total_list": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "user_id": {
+                                      "type": "string",
+                                      "description": "用户ID"
+                                    },
+                                    "real_name": {
+                                      "type": "string",
+                                      "description": "用户名"
+                                    },
+                                    "is_signed": {
+                                      "type": "string",
+                                      "description": "是否签到：0否1是"
+                                    },
+                                    "is_scheduled": {
+                                      "type": "string",
+                                      "description": "是否排班：0否1是"
+                                    }
+                                  },
+                                  "required": [
+                                    "user_id",
+                                    "real_name",
+                                    "is_signed",
+                                    "is_scheduled"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "schedule_id": "1",
+                            "tutor_id": "100",
+                            "tutor_type": "2",
+                            "schedule_date": "2021-06-01",
+                            "total_list": [
+                              {
+                                "user_id": "1001",
+                                "real_name": "张三",
+                                "is_signed": "1",
+                                "is_scheduled": "1"
+                              },
+                              {
+                                "user_id": "1002",
+                                "real_name": "李四",
+                                "is_signed": "0",
+                                "is_scheduled": "1"
+                              }
+                            ]
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/schedule": {
+      "post": {
+        "summary": "组班晚辅 - 教师排班",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "file_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "fileid": {
+                              "type": "string",
+                              "description": "文件ID"
+                            },
+                            "fileurl": {
+                              "type": "string",
+                              "description": "文件链接"
+                            },
+                            "filename": {
+                              "type": "string",
+                              "description": "文件名"
+                            }
+                          },
+                          "required": [
+                            "fileid",
+                            "fileurl",
+                            "filename"
+                          ]
+                        },
+                        "description": "凭证"
+                      },
+                      "schedule_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "schedule_id": {
+                              "type": "integer",
+                              "description": "主键ID"
+                            },
+                            "ids": {
+                              "type": "string",
+                              "description": "已选中的用户ID，多个用英文逗号隔开"
+                            },
+                            "schedule_date": {
+                              "type": "string",
+                              "description": "排班日期：Y-m-d"
+                            }
+                          },
+                          "required": [
+                            "schedule_id",
+                            "ids",
+                            "schedule_date"
+                          ]
+                        },
+                        "description": "排班列表"
+                      }
+                    },
+                    "required": [
+                      "tutor_id",
+                      "schedule_list"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "3",
+                  "file_list": [
+                    {
+                      "fileid": "WU_FILE_0",
+                      "fileurl": "uploads/it_attachment/2021/06/10/20210610162359_76471.jpg",
+                      "filename": "Dingtalk_20210507133023.jpg"
+                    }
+                  ],
+                  "schedule_list": [
+                    {
+                      "schedule_id": 2,
+                      "ids": "1002,1003",
+                      "schedule_date": "2021-06-02"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/boundStudent": {
+      "post": {
+        "summary": "组班晚辅 - 绑定/解绑学员",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅",
+                        "enum": [
+                          1,
+                          2
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": "",
+                            "2": ""
+                          }
+                        }
+                      },
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      },
+                      "ids": {
+                        "type": "string",
+                        "description": "学员ID，多个用英文逗号隔开",
+                        "enum": [
+                          "“1001,1002”"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1001,1002": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "tutor_id",
+                      "ids"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "tutor_id": 100,
+                  "ids": "1001,1002"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/delete": {
+      "post": {
+        "summary": "组班晚辅 - 删除信息",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅",
+                        "enum": [
+                          1,
+                          2
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": "",
+                            "2": ""
+                          }
+                        }
+                      },
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "tutor_id": 100
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/boundList": {
+      "post": {
+        "summary": "组班晚辅 - 待绑定学员列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅",
+                        "enum": [
+                          1,
+                          2
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": "组班",
+                            "2": "晚辅"
+                          }
+                        }
+                      },
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "tutor_id": 100
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "is_selected": {
+                                "type": "string",
+                                "description": "是否已选择：0否，1是"
+                              },
+                              "student_id": {
+                                "type": "string"
+                              },
+                              "student_code": {
+                                "type": "string"
+                              },
+                              "student_name": {
+                                "type": "string"
+                              },
+                              "grade": {
+                                "type": "string"
+                              },
+                              "grade_str": {
+                                "type": "string"
+                              },
+                              "lesson_id": {
+                                "type": "string"
+                              },
+                              "keshi_num": {
+                                "type": "string"
+                              },
+                              "keshi_free": {
+                                "type": "string"
+                              },
+                              "class_in_id": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "id": "1",
+                            "tutor_id": "100",
+                            "is_selected": "1",
+                            "student_id": "1516",
+                            "student_code": "20200102",
+                            "student_name": "王小二",
+                            "grade": "2",
+                            "grade_str": "二年级",
+                            "class_in_id": "100",
+                            "lesson_id": "99",
+                            "keshi_num": "50",
+                            "keshi_free": "20"
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/boundTeacher": {
+      "post": {
+        "summary": "组班晚辅 - 绑定/解绑教师",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅",
+                        "enum": [
+                          1,
+                          2
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": "",
+                            "2": ""
+                          }
+                        }
+                      },
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      },
+                      "ids": {
+                        "type": "string",
+                        "description": "教师ID，多个用英文逗号隔开",
+                        "enum": [
+                          "1001,1002"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "“1001,1002”": ""
+                          }
+                        }
+                      },
+                      "class_master": {
+                        "type": "string",
+                        "description": "班主任ID"
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "tutor_id",
+                      "ids"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "tutor_id": 100,
+                  "ids": "1001,1002",
+                  "class_master": "1001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/signListTeacher": {
+      "post": {
+        "summary": "组班晚辅 - 教师签到列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "begin_time": {
+                        "type": "string",
+                        "description": "开始日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      },
+                      "end_time": {
+                        "type": "string",
+                        "description": "结束日期： Y-m-d",
+                        "enum": [
+                          "2021-06-30"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-30": ""
+                          }
+                        }
+                      },
+                      "teacher_id": {
+                        "type": "string",
+                        "description": "教师ID"
+                      }
+                    },
+                    "required": [
+                      "begin_time",
+                      "end_time",
+                      "tutor_id",
+                      "teacher_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "begin_time": "2021-06-01",
+                  "end_time": "2021-06-01",
+                  "teacher_id": "1001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "schedule_id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "schedule_date": {
+                                "type": "string",
+                                "description": "排班日期：Y-m-d"
+                              },
+                              "sign_time": {
+                                "type": "string",
+                                "description": "签到时间戳"
+                              },
+                              "sign_time_str": {
+                                "type": "string"
+                              },
+                              "file_url": {
+                                "type": "string",
+                                "description": "文件链接"
+                              },
+                              "user_id": {
+                                "type": "string",
+                                "description": "教师ID"
+                              },
+                              "real_name": {
+                                "type": "string",
+                                "description": "教师名"
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "schedule_id": "1",
+                            "tutor_id": "100",
+                            "tutor_type": "2",
+                            "schedule_date": "2021-06-01",
+                            "sign_time": "1623064595",
+                            "sign_time_str": "2021-06-01 14:20",
+                            "file_url": "uploads/teach_plan/2021/06/16/20210616134455_37579.jpg",
+                            "user_id": "1002",
+                            "real_name": "张三"
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/signTeacher": {
+      "post": {
+        "summary": "组班晚辅 - 教师签到",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "teacher_id": {
+                        "type": "string",
+                        "description": "教师ID"
+                      }
+                    },
+                    "required": [
+                      "tutor_id",
+                      "teacher_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "sign_list": [
+                    {
+                      "sign_id": 2,
+                      "ids": "1002,1003"
+                    },
+                    {
+                      "sign_id": 3,
+                      "ids": "1004"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/signFile": {
+      "post": {
+        "summary": "组班晚辅 - 学员签到凭证",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      },
+                      "sign_date": {
+                        "type": "string",
+                        "description": "日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tutor_id",
+                      "sign_date"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": 100,
+                  "sign_date": "2021-01-02"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "file_list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "fileid": {
+                                "type": "string"
+                              },
+                              "fileurl": {
+                                "type": "string"
+                              },
+                              "filename": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "file_list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "file_list": [
+                          {
+                            "fileid": "WU_FILE_0",
+                            "fileurl": "uploads/it_attachment/2021/06/10/20210610162359_76471.jpg",
+                            "filename": "Dingtalk_20210507133023.jpg"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/sign": {
+      "post": {
+        "summary": "组班晚辅 - 学员签到",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "file_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "fileid": {
+                              "type": "string",
+                              "description": "文件ID"
+                            },
+                            "fileurl": {
+                              "type": "string",
+                              "description": "文件链接"
+                            },
+                            "filename": {
+                              "type": "string",
+                              "description": "文件名"
+                            }
+                          },
+                          "required": [
+                            "fileid",
+                            "fileurl",
+                            "filename"
+                          ]
+                        },
+                        "description": "签到凭证"
+                      },
+                      "sign_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "sign_id": {
+                              "type": "integer",
+                              "description": "主键ID"
+                            },
+                            "ids": {
+                              "type": "string",
+                              "description": "已选中的用户ID，多个用英文逗号隔开"
+                            }
+                          },
+                          "required": [
+                            "sign_id",
+                            "ids"
+                          ]
+                        },
+                        "description": "签到列表"
+                      },
+                      "sign_date": {
+                        "type": "string",
+                        "description": "签到日期：Y-m-d"
+                      }
+                    },
+                    "required": [
+                      "tutor_id",
+                      "sign_list",
+                      "sign_date"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "file_list": [
+                    {
+                      "fileid": "WU_FILE_0",
+                      "fileurl": "uploads/it_attachment/2021/06/10/20210610162359_76471.jpg",
+                      "filename": "Dingtalk_20210507133023.jpg"
+                    }
+                  ],
+                  "sign_list": [
+                    {
+                      "sign_id": 2,
+                      "ids": "1002,1003",
+                      "sign_date": "2021-06-01"
+                    },
+                    {
+                      "sign_id": 3,
+                      "ids": "1004",
+                      "sign_date": "2021-06-01"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/signRepairTeacher": {
+      "post": {
+        "summary": "组班晚辅 - 教师补签",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "string",
+                        "description": "主键ID"
+                      },
+                      "schedule_date": {
+                        "type": "string",
+                        "description": "日期：Y-m-d"
+                      },
+                      "teacher_id": {
+                        "type": "integer",
+                        "description": "教师ID"
+                      },
+                      "file_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "fileid": {
+                              "type": "string",
+                              "description": "文件ID"
+                            },
+                            "filename": {
+                              "type": "string",
+                              "description": "文件名"
+                            },
+                            "fileurl": {
+                              "type": "string",
+                              "description": "文件链接"
+                            }
+                          },
+                          "required": [
+                            "fileid",
+                            "filename",
+                            "fileurl"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "schedule_date",
+                      "teacher_id",
+                      "file_list",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "schedule_date": "2021-06-21",
+                  "teacher_id": 4,
+                  "file_list": [
+                    {
+                      "fileid": "2937607",
+                      "filename": "ZvVNPqoTbckLF.jpg",
+                      "fileurl": "uploads/teach_plan/2021/06/16/20210616134455_37579.jpg"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/add": {
+      "post": {
+        "summary": "组班晚辅 - 添加信息",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅"
+                      },
+                      "year": {
+                        "type": "integer",
+                        "description": "年份"
+                      },
+                      "lesson_type": {
+                        "type": "integer",
+                        "description": "季度"
+                      },
+                      "mode2": {
+                        "type": "integer",
+                        "description": "班型"
+                      },
+                      "subject_group": {
+                        "type": "integer",
+                        "description": "科目"
+                      },
+                      "grade": {
+                        "type": "string",
+                        "description": "年级ID，多个用英文逗号隔开"
+                      },
+                      "class_master": {
+                        "type": "string",
+                        "description": "班主任ID"
+                      },
+                      "class_teacher": {
+                        "type": "string",
+                        "description": "授课老师ID，多个用英文逗号隔开"
+                      },
+                      "class_room": {
+                        "type": "string",
+                        "description": "教室"
+                      },
+                      "class_name": {
+                        "type": "string",
+                        "description": "班级名"
+                      },
+                      "class_begin": {
+                        "type": "string",
+                        "description": "开始时间：Y-m-d"
+                      },
+                      "class_end": {
+                        "type": "string",
+                        "description": "结束时间：Y-m-d"
+                      },
+                      "city": {
+                        "type": "integer",
+                        "description": "城市"
+                      },
+                      "campus": {
+                        "type": "integer",
+                        "description": "校区"
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "year",
+                      "lesson_type",
+                      "mode2",
+                      "subject_group",
+                      "grade",
+                      "class_begin",
+                      "class_end",
+                      "class_master",
+                      "class_teacher",
+                      "class_room",
+                      "class_name"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "year": 2021,
+                  "lesson_type": 21,
+                  "mode2": 9,
+                  "subject_group": 7,
+                  "city": 1,
+                  "campus": 101,
+                  "grade": "5,6",
+                  "class_master": "1001",
+                  "class_teacher": "1002,1003",
+                  "class_room": "教学楼B-101",
+                  "class_name": "暑假特训A班",
+                  "class_begin": "2021-01-03",
+                  "class_end": "2021-03-03"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/signList": {
+      "post": {
+        "summary": "组班晚辅 - 学员签到列表",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      },
+                      "begin_time": {
+                        "type": "string",
+                        "description": "开始日期： Y-m-d",
+                        "enum": [
+                          "2021-06-18"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-18": ""
+                          }
+                        }
+                      },
+                      "end_time": {
+                        "type": "string",
+                        "description": "结束日期： Y-m-d",
+                        "enum": [
+                          "2021-06-30"
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "2021-06-30": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "begin_time",
+                      "end_time",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_id": "100",
+                  "begin_time": "2021-06-01",
+                  "end_time": "2021-06-01"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "sign_id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "tutor_type": {
+                                "type": "string"
+                              },
+                              "sign_date": {
+                                "type": "string",
+                                "description": "日期：Y-m-d"
+                              },
+                              "total_num": {
+                                "type": "string",
+                                "description": "应到人数"
+                              },
+                              "real_num": {
+                                "type": "string",
+                                "description": "实到人数"
+                              }
+                            }
+                          }
+                        },
+                        "counts": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "list",
+                        "counts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "list": [
+                          {
+                            "sign_id": "1",
+                            "tutor_id": "100",
+                            "tutor_type": "2",
+                            "sign_date": "2021-06-01",
+                            "total_num": "5",
+                            "real_num": "4"
+                          }
+                        ],
+                        "counts": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/edu/v2/api/v2/tutor/groups/detail": {
+      "post": {
+        "summary": "组班晚辅 - 获取详情",
+        "description": "",
+        "tags": [
+          "组班晚辅"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "tutor_type": {
+                        "type": "integer",
+                        "description": "类型：1组班，2晚辅",
+                        "enum": [
+                          1,
+                          2
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": "组班",
+                            "2": "晚辅"
+                          }
+                        }
+                      },
+                      "tutor_id": {
+                        "type": "integer",
+                        "description": "主键ID",
+                        "enum": [
+                          1
+                        ],
+                        "x-apifox": {
+                          "enumDescriptions": {
+                            "1": ""
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tutor_type",
+                      "tutor_id"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "tutor_type": 1,
+                  "tutor_id": 100
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "tutor_id": {
+                          "type": "string"
+                        },
+                        "class_name": {
+                          "type": "string"
+                        },
+                        "grade": {
+                          "type": "string"
+                        },
+                        "grade_str": {
+                          "type": "string"
+                        },
+                        "mode2": {
+                          "type": "string"
+                        },
+                        "f_lesson_mode2": {
+                          "type": "string"
+                        },
+                        "year": {
+                          "type": "string"
+                        },
+                        "lesson_type": {
+                          "type": "string"
+                        },
+                        "lesson_type_str": {
+                          "type": "string"
+                        },
+                        "subject_group": {
+                          "type": "string"
+                        },
+                        "subject_group_str": {
+                          "type": "string"
+                        },
+                        "class_begin": {
+                          "type": "string"
+                        },
+                        "class_end": {
+                          "type": "string"
+                        },
+                        "student_num": {
+                          "type": "string"
+                        },
+                        "class_master": {
+                          "type": "string"
+                        },
+                        "class_teacher": {
+                          "type": "string"
+                        },
+                        "class_master_name": {
+                          "type": "string"
+                        },
+                        "class_teacher_name": {
+                          "type": "string"
+                        },
+                        "class_room": {
+                          "type": "string"
+                        },
+                        "tutor_type": {
+                          "type": "string"
+                        },
+                        "city": {
+                          "type": "string"
+                        },
+                        "f_city": {
+                          "type": "string"
+                        },
+                        "student_list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "tutor_id": {
+                                "type": "string"
+                              },
+                              "student_id": {
+                                "type": "string"
+                              },
+                              "student_code": {
+                                "type": "string"
+                              },
+                              "student_name": {
+                                "type": "string"
+                              },
+                              "grade": {
+                                "type": "string"
+                              },
+                              "grade_str": {
+                                "type": "string"
+                              },
+                              "lesson_id": {
+                                "type": "string"
+                              },
+                              "keshi_num": {
+                                "type": "string"
+                              },
+                              "keshi_free": {
+                                "type": "string"
+                              },
+                              "class_in_id": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "tutor_id",
+                        "class_name",
+                        "grade",
+                        "grade_str",
+                        "mode2",
+                        "f_lesson_mode2",
+                        "year",
+                        "lesson_type",
+                        "lesson_type_str",
+                        "subject_group",
+                        "subject_group_str",
+                        "class_begin",
+                        "class_end",
+                        "student_num",
+                        "class_master",
+                        "class_teacher",
+                        "class_master_name",
+                        "class_teacher_name",
+                        "class_room",
+                        "tutor_type",
+                        "city",
+                        "f_city",
+                        "student_list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": {
+                        "tutor_id": "100",
+                        "class_name": "寒假语文课程-8",
+                        "grade": "8,9",
+                        "grade_str": "八年级,九年级",
+                        "mode2": "3",
+                        "f_lesson_mode2": "1V8",
+                        "year": "2021",
+                        "lesson_type": "24",
+                        "lesson_type_str": "寒假班",
+                        "subject_group": "9",
+                        "subject_group_str": "化学",
+                        "class_begin": "2021-01-05",
+                        "class_end": "2021-02-05",
+                        "student_num": "3",
+                        "class_master": "1001",
+                        "class_teacher": "1002",
+                        "class_master_name": "张三",
+                        "class_teacher_name": "李四",
+                        "class_room": "B-101",
+                        "tutor_type": "1",
+                        "city": "5",
+                        "f_city": "崇安",
+                        "student_list": [
+                          {
+                            "id": "1",
+                            "tutor_id": "100",
+                            "student_id": "1516",
+                            "student_code": "20200102",
+                            "student_name": "王小二",
+                            "grade": "2",
+                            "grade_str": "二年级",
+                            "class_in_id": "100",
+                            "lesson_id": "99",
+                            "keshi_num": "50",
+                            "keshi_free": "20"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

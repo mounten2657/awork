@@ -1,0 +1,634 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "edu.chnnice.com",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "学生端"
+    }
+  ],
+  "paths": {
+    "\/v2\/student\/user\/resetPass": {
+      "post": {
+        "summary": "学生端 - 修改密码",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_id": {
+                        "type": "string",
+                        "description": "学生ID"
+                      },
+                      "old_passwd": {
+                        "type": "string",
+                        "description": "旧密码"
+                      },
+                      "new_passwd": {
+                        "type": "string",
+                        "description": "新密码"
+                      },
+                      "port_name": {
+                        "type": "string",
+                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                      }
+                    },
+                    "required": [
+                      "student_id",
+                      "old_passwd",
+                      "port_name",
+                      "new_passwd"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_id": "16542",
+                  "passwd": "testpass1234",
+                  "port_name": "student_pad"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/v2\/student\/user\/logout": {
+      "post": {
+        "summary": "学生端 - 登出",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_id": {
+                        "type": "string",
+                        "description": "学生ID"
+                      },
+                      "port_name": {
+                        "type": "string",
+                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                      }
+                    },
+                    "required": [
+                      "student_id",
+                      "port_name"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_id": "16542",
+                  "port_name": "student_pad"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/v2\/student\/user\/login": {
+      "post": {
+        "summary": "学生端 - 登录",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_code": {
+                        "type": "string",
+                        "description": "学号"
+                      },
+                      "passwd": {
+                        "type": "string",
+                        "description": "密码"
+                      },
+                      "port_name": {
+                        "type": "string",
+                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                      }
+                    },
+                    "required": [
+                      "student_code",
+                      "passwd",
+                      "port_name"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_code": "10116442",
+                  "passwd": "student6442",
+                  "port_name": "student_pad"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "student_id": {
+                          "type": "string",
+                          "description": "学生ID"
+                        },
+                        "student_code": {
+                          "type": "string",
+                          "description": "学号"
+                        },
+                        "student_login": {
+                          "type": "string"
+                        },
+                        "student_name": {
+                          "type": "string",
+                          "description": "学生姓名"
+                        },
+                        "letter": {
+                          "type": "string"
+                        },
+                        "avatar": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "description": "性别"
+                        },
+                        "address": {
+                          "type": "string",
+                          "description": "地址"
+                        },
+                        "mobile": {
+                          "type": "string"
+                        },
+                        "school": {
+                          "type": "string"
+                        },
+                        "parent_name": {
+                          "type": "string"
+                        },
+                        "parent_mobile": {
+                          "type": "string"
+                        },
+                        "gradelevel": {
+                          "type": "string"
+                        },
+                        "grade": {
+                          "type": "string",
+                          "description": "年级"
+                        },
+                        "city": {
+                          "type": "string",
+                          "description": "城市"
+                        },
+                        "campus": {
+                          "type": "string",
+                          "description": "校区"
+                        },
+                        "assistant": {
+                          "type": "string"
+                        },
+                        "loginnum": {
+                          "type": "string"
+                        },
+                        "remark": {
+                          "type": "string"
+                        },
+                        "last_class_time": {
+                          "type": "string"
+                        },
+                        "class_status": {
+                          "type": "string"
+                        },
+                        "listorder": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "ctime": {
+                          "type": "string"
+                        },
+                        "cuid": {
+                          "type": "string"
+                        },
+                        "mtime": {
+                          "type": "string"
+                        },
+                        "muid": {
+                          "type": "string"
+                        },
+                        "crm_student_id": {
+                          "type": "string"
+                        },
+                        "crm_assistant": {
+                          "type": "string"
+                        },
+                        "class_campus": {
+                          "type": "string"
+                        },
+                        "class_assistant": {
+                          "type": "string"
+                        },
+                        "parent_mobile2": {
+                          "type": "string"
+                        },
+                        "parent_name2": {
+                          "type": "string"
+                        },
+                        "first_assistant": {
+                          "type": "string"
+                        },
+                        "first_ymd": {
+                          "type": "string"
+                        },
+                        "lesson_mode": {
+                          "type": "string"
+                        },
+                        "first_class_time": {
+                          "type": "string"
+                        },
+                        "parent_open_id": {
+                          "type": "string"
+                        },
+                        "kf_follow_num": {
+                          "type": "string"
+                        },
+                        "last_kf_follow_time": {
+                          "type": "string"
+                        },
+                        "jtf_time": {
+                          "type": "string"
+                        },
+                        "first_pay_time": {
+                          "type": "string"
+                        },
+                        "source_from": {
+                          "type": "string"
+                        },
+                        "lesson_mode2": {
+                          "type": "string"
+                        },
+                        "classin_uid": {
+                          "type": "string"
+                        },
+                        "parent_gzh_openid": {
+                          "type": "string"
+                        },
+                        "avatar_file_id": {
+                          "type": "string"
+                        },
+                        "is_excellent": {
+                          "type": "string"
+                        },
+                        "external_id": {
+                          "type": "string"
+                        },
+                        "school_id": {
+                          "type": "string"
+                        },
+                        "is_experience": {
+                          "type": "string"
+                        },
+                        "experience_status": {
+                          "type": "string"
+                        },
+                        "cin_crm_status": {
+                          "type": "string"
+                        },
+                        "tingke_time": {
+                          "type": "string"
+                        },
+                        "experience_end_time": {
+                          "type": "string"
+                        },
+                        "initial_payment_amount": {
+                          "type": "string"
+                        },
+                        "idcard": {
+                          "type": "string"
+                        },
+                        "student_thumb": {
+                          "type": "string"
+                        },
+                        "file_id": {
+                          "type": "string"
+                        },
+                        "yr_face": {
+                          "type": "string"
+                        },
+                        "wo_face": {
+                          "type": "string"
+                        },
+                        "userid": {
+                          "type": "string"
+                        },
+                        "port_name": {
+                          "type": "string",
+                          "description": "操作端"
+                        }
+                      },
+                      "required": [
+                        "student_id",
+                        "student_code",
+                        "student_login",
+                        "student_name",
+                        "letter",
+                        "avatar",
+                        "gender",
+                        "address",
+                        "mobile",
+                        "school",
+                        "parent_name",
+                        "parent_mobile",
+                        "gradelevel",
+                        "grade",
+                        "city",
+                        "campus",
+                        "assistant",
+                        "loginnum",
+                        "remark",
+                        "last_class_time",
+                        "class_status",
+                        "listorder",
+                        "status",
+                        "ctime",
+                        "cuid",
+                        "mtime",
+                        "muid",
+                        "crm_student_id",
+                        "crm_assistant",
+                        "class_campus",
+                        "class_assistant",
+                        "parent_mobile2",
+                        "parent_name2",
+                        "first_assistant",
+                        "first_ymd",
+                        "lesson_mode",
+                        "first_class_time",
+                        "parent_open_id",
+                        "kf_follow_num",
+                        "last_kf_follow_time",
+                        "jtf_time",
+                        "first_pay_time",
+                        "source_from",
+                        "lesson_mode2",
+                        "classin_uid",
+                        "parent_gzh_openid",
+                        "avatar_file_id",
+                        "is_excellent",
+                        "external_id",
+                        "school_id",
+                        "is_experience",
+                        "experience_status",
+                        "cin_crm_status",
+                        "tingke_time",
+                        "experience_end_time",
+                        "initial_payment_amount",
+                        "idcard",
+                        "student_thumb",
+                        "file_id",
+                        "yr_face",
+                        "wo_face",
+                        "userid",
+                        "port_name"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "登录成功",
+                      "result": {
+                        "student_id": "16542",
+                        "student_code": "10116442",
+                        "student_login": "",
+                        "student_name": "宋佳莹",
+                        "letter": "sjy",
+                        "avatar": "",
+                        "gender": "0",
+                        "address": "",
+                        "mobile": "",
+                        "school": "江溪小学",
+                        "parent_name": "妈妈",
+                        "parent_mobile": "180****3231",
+                        "gradelevel": "2",
+                        "grade": "9",
+                        "city": "5",
+                        "campus": "504",
+                        "assistant": "1575",
+                        "loginnum": "0",
+                        "remark": "",
+                        "last_class_time": "2018-07-27 12:50",
+                        "class_status": "0",
+                        "listorder": "0",
+                        "status": "2",
+                        "ctime": "1527852272",
+                        "cuid": "20180601",
+                        "mtime": "1527852272",
+                        "muid": "0",
+                        "crm_student_id": "131766",
+                        "crm_assistant": "0",
+                        "class_campus": ",504,",
+                        "class_assistant": ",1575,",
+                        "parent_mobile2": "",
+                        "parent_name2": "",
+                        "first_assistant": "0",
+                        "first_ymd": "0",
+                        "lesson_mode": ",3,",
+                        "first_class_time": "2018-06-02 12:30",
+                        "parent_open_id": "",
+                        "kf_follow_num": "0",
+                        "last_kf_follow_time": "0",
+                        "jtf_time": "20180727",
+                        "first_pay_time": "0",
+                        "source_from": "0",
+                        "lesson_mode2": ",0,",
+                        "classin_uid": "0",
+                        "parent_gzh_openid": "",
+                        "avatar_file_id": "",
+                        "is_excellent": "2",
+                        "external_id": "0",
+                        "school_id": "0",
+                        "is_experience": "2",
+                        "experience_status": "2",
+                        "cin_crm_status": "0",
+                        "tingke_time": "0",
+                        "experience_end_time": "0",
+                        "initial_payment_amount": "0.00",
+                        "idcard": "",
+                        "student_thumb": "",
+                        "file_id": "",
+                        "yr_face": "",
+                        "wo_face": "",
+                        "userid": "16542",
+                        "port_name": "student_pad"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": []
+  }
+}

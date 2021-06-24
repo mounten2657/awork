@@ -216,6 +216,7 @@ class TestApi
     public function phpinfo()
     {
         phpinfo();
+        exit();
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * this script is used to generate yapi json from apifox.
- * @usage: php apifox2yapi [project] [group,alias] [regular]
+ * @usage: php apifox2yapi [project] [group,[alias]] [regular] [url]
  * @example php apifox2yap api 组班晚辅 v2/tutor/group
  * @author smplote@gmail.com
  * @date 2021.06.31 15:11:13
@@ -12,10 +12,11 @@ $arg = array_merge($_REQUEST, $_GET, $_POST, $argv ?: []);
 $arg[1] = isset($arg[1]) ? $arg[1] : $arg['project'];
 $arg[2] = isset($arg[2]) ? $arg[2] : $arg['group'];
 $arg[3] = isset($arg[3]) ? $arg[3] : $arg['regular'];
+$arg[4] = isset($arg[4]) ? $arg[4] : $arg['url'];
 
 // get help
 if (!isset($arg[1]) || (isset($arg[1]) && in_array($arg[1], array('-h', '--help')))) {
-    echo PHP_EOL . '@usage: php apifox2yapi [project] [group,alias] [regular]' . PHP_EOL;exit;
+    echo PHP_EOL . '@usage: php apifox2yapi [project] [group,[alias]] [regular] [url]' . PHP_EOL;exit;
 }
 
 // get params
@@ -23,6 +24,7 @@ $params = [
     'project'     => isset($arg[1]) ? $arg[1] : '',
     'group'       => isset($arg[2]) ? $arg[2] : '',
     'regular'     => isset($arg[3]) ? $arg[3] : '',
+    'url'         => isset($arg[4]) ? $arg[4] : '',
 ];
 
 // run main
@@ -34,7 +36,7 @@ main($params);
  */
 function main($params)
 {
-    $url = 'http://127.0.0.1:4523/export/openapi?projectId=389968';
+    $url = $params['url'] ?: 'http://127.0.0.1:4523/export/openapi?projectId=389968';
     $project = $params['project'] ?: '';
     $regular = $params['regular'] ?: '';
     $group = $params['group'] ?: '';
@@ -43,6 +45,10 @@ function main($params)
         $group[1] = $group[0];
     }
     list($group, $alias) = $group;
+    if (!$project || !$group) {
+        echo json_encode(['code' => '998', 'msg' => 'Invalid Parameters!' , 'result' => false]);
+        return  false;
+    }
 
     // get result
     $res = curlGet($url);
@@ -57,7 +63,11 @@ function main($params)
             }
             if ('paths' == $key) {
                 foreach ($val as $k => $v) {
-                    if (false === strpos($k, $regular)) {
+                    if ($regular && false === strpos($k, $regular)) {
+                        unset($val[$k]);
+                    }
+                    $tmpGroup = isset($v['post']['tags'][0]) ? $v['post']['tags'][0] : '';
+                    if ($tmpGroup !== $group) {
                         unset($val[$k]);
                     }
                 }

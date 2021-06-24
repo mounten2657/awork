@@ -11,9 +11,9 @@
     }
   ],
   "paths": {
-    "\/v2\/student\/user\/resetPass": {
+    "\/api\/v1\/student\/ClassOut\/list_classout": {
       "post": {
-        "summary": "学生端 - 修改密码",
+        "summary": "获取学生排课及课耗",
         "description": "",
         "tags": [
           "学生端"
@@ -28,41 +28,98 @@
                   "body": {
                     "type": "object",
                     "properties": {
+                      "class_campus": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "order": {
+                        "type": "integer"
+                      },
                       "student_id": {
-                        "type": "string",
-                        "description": "学生ID"
+                        "type": "string"
                       },
-                      "old_passwd": {
-                        "type": "string",
-                        "description": "旧密码"
+                      "class_status": {
+                        "type": "string"
                       },
-                      "new_passwd": {
-                        "type": "string",
-                        "description": "新密码"
+                      "per_page": {
+                        "type": "integer"
+                      },
+                      "page": {
+                        "type": "integer"
                       },
                       "port_name": {
-                        "type": "string",
-                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "port_user_campus": {
+                        "type": "string"
+                      },
+                      "token": {
+                        "type": "string"
                       }
                     },
                     "required": [
+                      "class_campus",
+                      "city",
+                      "order",
                       "student_id",
-                      "old_passwd",
+                      "class_status",
+                      "per_page",
+                      "page",
                       "port_name",
-                      "new_passwd"
+                      "user_id",
+                      "port_user_campus",
+                      "token"
                     ]
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "integer"
+                  },
+                  "v": {
+                    "type": "integer"
+                  },
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "sign": {
+                    "type": "string"
                   }
                 },
                 "required": [
-                  "body"
+                  "body",
+                  "format",
+                  "timestamp",
+                  "v",
+                  "source_id",
+                  "sign"
                 ]
               },
               "example": {
                 "body": {
+                  "class_campus": "601",
+                  "city": "6",
+                  "order": 1,
                   "student_id": "16542",
-                  "passwd": "testpass1234",
-                  "port_name": "student_pad"
-                }
+                  "class_status": "0",
+                  "per_page": 20,
+                  "page": 1,
+                  "port_name": "student_pad",
+                  "user_id": "2113",
+                  "port_user_campus": "601",
+                  "token": "13cf6df59cc00af16f56d42c8eda188e"
+                },
+                "format": "json",
+                "timestamp": 1624416004,
+                "v": 1,
+                "source_id": "nice_1653",
+                "sign": "14D2820F6CF3FA334663C21DF897EAC1"
               }
             }
           }
@@ -79,13 +136,692 @@
                       "type": "string"
                     },
                     "code": {
-                      "type": "string"
+                      "type": "integer"
                     },
                     "msg": {
                       "type": "string"
                     },
                     "result": {
-                      "type": "boolean"
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "type": "object",
+                          "properties": {
+                            "class_campus": {
+                              "type": "string"
+                            },
+                            "city": {
+                              "type": "string"
+                            },
+                            "order": {
+                              "type": "integer"
+                            },
+                            "student_id": {
+                              "type": "string"
+                            },
+                            "class_status": {
+                              "type": "string"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            },
+                            "page": {
+                              "type": "integer"
+                            },
+                            "port_name": {
+                              "type": "string"
+                            },
+                            "user_id": {
+                              "type": "string"
+                            },
+                            "port_user_campus": {
+                              "type": "string"
+                            },
+                            "token": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "city",
+                            "student_id",
+                            "class_status",
+                            "per_page",
+                            "page",
+                            "port_name",
+                            "user_id",
+                            "port_user_campus",
+                            "token"
+                          ]
+                        },
+                        "counts": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "class_out_id": {
+                                "type": "string"
+                              },
+                              "student_id": {
+                                "type": "string"
+                              },
+                              "serial": {
+                                "type": "string"
+                              },
+                              "city": {
+                                "type": "string"
+                              },
+                              "ymd": {
+                                "type": "string"
+                              },
+                              "keshi_num": {
+                                "type": "string"
+                              },
+                              "class_status": {
+                                "type": "string"
+                              },
+                              "gradelevel": {
+                                "type": "string"
+                              },
+                              "grade": {
+                                "type": "string"
+                              },
+                              "subject": {
+                                "type": "string"
+                              },
+                              "login_time": {
+                                "type": "string"
+                              },
+                              "logout_time": {
+                                "type": "string"
+                              },
+                              "mood_type": {
+                                "type": "string"
+                              },
+                              "heed_type": {
+                                "type": "string"
+                              },
+                              "interaction_type": {
+                                "type": "string"
+                              },
+                              "teacher_comment": {
+                                "type": "string"
+                              },
+                              "target": {
+                                "type": "string"
+                              },
+                              "content": {
+                                "type": "string"
+                              },
+                              "remark": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "ctime": {
+                                "type": "string"
+                              },
+                              "cuid": {
+                                "type": "string"
+                              },
+                              "mtime": {
+                                "type": "string"
+                              },
+                              "muid": {
+                                "type": "string"
+                              },
+                              "bad_type": {
+                                "type": "string"
+                              },
+                              "excellent_type": {
+                                "type": "string"
+                              },
+                              "learning_type": {
+                                "type": "string"
+                              },
+                              "class_type": {
+                                "type": "string"
+                              },
+                              "lesson_id": {
+                                "type": "string"
+                              },
+                              "class_time": {
+                                "type": "string"
+                              },
+                              "business_id": {
+                                "type": "string"
+                              },
+                              "class_begin": {
+                                "type": "string"
+                              },
+                              "class_end": {
+                                "type": "string"
+                              },
+                              "pk_campus": {
+                                "type": "string"
+                              },
+                              "class_campus": {
+                                "type": "string"
+                              },
+                              "class_money": {
+                                "type": "integer"
+                              },
+                              "pk_userid": {
+                                "type": "string"
+                              },
+                              "pk_assistant": {
+                                "type": "string"
+                              },
+                              "class_assistant": {
+                                "type": "string"
+                              },
+                              "pk_teacher_id": {
+                                "type": "string"
+                              },
+                              "class_teacher_id": {
+                                "type": "string"
+                              },
+                              "is_sanshi": {
+                                "type": "string"
+                              },
+                              "attachment": {
+                                "type": "string"
+                              },
+                              "op_person": {
+                                "type": "string"
+                              },
+                              "op_time": {
+                                "type": "string"
+                              },
+                              "class_num": {
+                                "type": "string"
+                              },
+                              "time_sheet": {
+                                "type": "string"
+                              },
+                              "pay_unit": {
+                                "type": "string"
+                              },
+                              "special_course": {
+                                "type": "string"
+                              },
+                              "class_grade": {
+                                "type": "string"
+                              },
+                              "class_is_part": {
+                                "type": "string"
+                              },
+                              "is_evaluate": {
+                                "type": "string"
+                              },
+                              "is_prepare": {
+                                "type": "string"
+                              },
+                              "pk_keshi_num": {
+                                "type": "string"
+                              },
+                              "file_id": {
+                                "type": "string"
+                              },
+                              "time_sheet_file_id": {
+                                "type": "string"
+                              },
+                              "check_classout_status": {
+                                "type": "string"
+                              },
+                              "check_classout_time": {
+                                "type": "string"
+                              },
+                              "check_classout_uid": {
+                                "type": "string"
+                              },
+                              "data_locking_status": {
+                                "type": "string"
+                              },
+                              "class_key": {
+                                "type": "string"
+                              },
+                              "class_subject_key": {
+                                "type": "string"
+                              },
+                              "ting_ke_thumb": {
+                                "type": "string"
+                              },
+                              "ting_ke_file_id": {
+                                "type": "string"
+                              },
+                              "is_finish_class": {
+                                "type": "string"
+                              },
+                              "finish_class_time": {
+                                "type": "string"
+                              },
+                              "finish_class_uid": {
+                                "type": "string"
+                              },
+                              "down_student_face_id": {
+                                "type": "string"
+                              },
+                              "down_face_time": {
+                                "type": "string"
+                              },
+                              "down_face_type": {
+                                "type": "string"
+                              },
+                              "on_student_face_id": {
+                                "type": "string"
+                              },
+                              "on_face_time": {
+                                "type": "string"
+                              },
+                              "on_face_type": {
+                                "type": "string"
+                              },
+                              "is_print": {
+                                "type": "string"
+                              },
+                              "teacher_class_key": {
+                                "type": "string"
+                              },
+                              "student_name": {
+                                "type": "string"
+                              },
+                              "student_code": {
+                                "type": "string"
+                              },
+                              "parent_mobile": {
+                                "type": "string"
+                              },
+                              "school": {
+                                "type": "string"
+                              },
+                              "student_grade": {
+                                "type": "string"
+                              },
+                              "lesson_tag": {
+                                "type": "string"
+                              },
+                              "lesson_subject": {
+                                "type": "string"
+                              },
+                              "lesson_grade": {
+                                "type": "string"
+                              },
+                              "lesson_mode": {
+                                "type": "string"
+                              },
+                              "lesson_mode2": {
+                                "type": "string"
+                              },
+                              "lesson_type": {
+                                "type": "string"
+                              },
+                              "standard_group": {
+                                "type": "string"
+                              },
+                              "unit_time": {
+                                "type": "string"
+                              },
+                              "lesson_name": {
+                                "type": "string"
+                              },
+                              "lesson_price": {
+                                "type": "string"
+                              },
+                              "lesson_nb_mode": {
+                                "type": "string"
+                              },
+                              "class_assistant_realname": {
+                                "type": "string"
+                              },
+                              "class_assistant_is_part": {
+                                "type": "string"
+                              },
+                              "class_teacher_realname": {
+                                "type": "string"
+                              },
+                              "class_teacher_is_part": {
+                                "type": "string"
+                              },
+                              "realname": {
+                                "type": "string"
+                              },
+                              "is_part": {
+                                "type": "string"
+                              },
+                              "f_check_classout_status": {
+                                "type": "string"
+                              },
+                              "f_mood_type": {
+                                "type": "string"
+                              },
+                              "f_heed_type": {
+                                "type": "string"
+                              },
+                              "f_interaction_type": {
+                                "type": "string"
+                              },
+                              "f_bad_type": {
+                                "type": "string"
+                              },
+                              "f_excellent_type": {
+                                "type": "string"
+                              },
+                              "f_learning_type": {
+                                "type": "string"
+                              },
+                              "f_subject": {
+                                "type": "string"
+                              },
+                              "f_gradelevel": {
+                                "type": "string"
+                              },
+                              "f_grade": {
+                                "type": "string"
+                              },
+                              "f_lesson_nb_mode": {
+                                "type": "string"
+                              },
+                              "f_lesson_type": {
+                                "type": "string"
+                              },
+                              "f_city": {
+                                "type": "string"
+                              },
+                              "f_class_status": {
+                                "type": "string"
+                              },
+                              "f_class_type": {
+                                "type": "string"
+                              },
+                              "f_class_time": {
+                                "type": "string"
+                              },
+                              "f_is_part": {
+                                "type": "string"
+                              },
+                              "f_is_sanshi": {
+                                "type": "string"
+                              },
+                              "f_keshi_num": {
+                                "type": "integer"
+                              },
+                              "f_standard_group": {
+                                "type": "string"
+                              },
+                              "f_special_course": {
+                                "type": "string"
+                              },
+                              "f_ctime": {
+                                "type": "string"
+                              },
+                              "f_cuid": {
+                                "type": "string"
+                              },
+                              "f_mtime": {
+                                "type": "string"
+                              },
+                              "f_muid": {
+                                "type": "string"
+                              },
+                              "f_class_begin": {
+                                "type": "string"
+                              },
+                              "f_class_end": {
+                                "type": "string"
+                              },
+                              "f_pk_assistant": {
+                                "type": "string"
+                              },
+                              "f_class_assistant": {
+                                "type": "string"
+                              },
+                              "f_pk_teacher_id": {
+                                "type": "string"
+                              },
+                              "f_class_teacher_id": {
+                                "type": "string"
+                              },
+                              "f_op_person": {
+                                "type": "string"
+                              },
+                              "f_op_time": {
+                                "type": "string"
+                              },
+                              "f_lesson_mode": {
+                                "type": "string"
+                              },
+                              "f_lesson_mode2": {
+                                "type": "string"
+                              },
+                              "f_lesson_subject": {
+                                "type": "string"
+                              },
+                              "f_lesson_grade": {
+                                "type": "string"
+                              },
+                              "f_class_campus": {
+                                "type": "string"
+                              },
+                              "f_student_grade": {
+                                "type": "string"
+                              },
+                              "f_file_id": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "ci_ctime": {
+                                "type": "string"
+                              },
+                              "f_ci_ctime": {
+                                "type": "string"
+                              },
+                              "f_class_is_part": {
+                                "type": "string"
+                              },
+                              "f_class_date": {
+                                "type": "string"
+                              },
+                              "f_week": {
+                                "type": "string"
+                              },
+                              "time_interval": {
+                                "type": "string"
+                              },
+                              "f_class_grade": {
+                                "type": "string"
+                              },
+                              "f_pay_unit": {
+                                "type": "integer"
+                              },
+                              "real_pay_unit": {
+                                "type": "integer"
+                              },
+                              "f_lesson_name": {
+                                "type": "string"
+                              },
+                              "f_lesson_price": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "class_out_id",
+                              "student_id",
+                              "serial",
+                              "city",
+                              "ymd",
+                              "keshi_num",
+                              "class_status",
+                              "gradelevel",
+                              "grade",
+                              "subject",
+                              "login_time",
+                              "logout_time",
+                              "mood_type",
+                              "heed_type",
+                              "interaction_type",
+                              "teacher_comment",
+                              "target",
+                              "content",
+                              "remark",
+                              "status",
+                              "ctime",
+                              "cuid",
+                              "mtime",
+                              "muid",
+                              "bad_type",
+                              "excellent_type",
+                              "learning_type",
+                              "class_type",
+                              "lesson_id",
+                              "class_time",
+                              "business_id",
+                              "class_begin",
+                              "class_end",
+                              "pk_campus",
+                              "class_campus",
+                              "class_money",
+                              "pk_userid",
+                              "pk_assistant",
+                              "class_assistant",
+                              "pk_teacher_id",
+                              "class_teacher_id",
+                              "is_sanshi",
+                              "attachment",
+                              "op_person",
+                              "op_time",
+                              "class_num",
+                              "time_sheet",
+                              "pay_unit",
+                              "special_course",
+                              "class_grade",
+                              "class_is_part",
+                              "is_evaluate",
+                              "is_prepare",
+                              "pk_keshi_num",
+                              "file_id",
+                              "time_sheet_file_id",
+                              "check_classout_status",
+                              "check_classout_time",
+                              "check_classout_uid",
+                              "data_locking_status",
+                              "class_key",
+                              "class_subject_key",
+                              "ting_ke_thumb",
+                              "ting_ke_file_id",
+                              "is_finish_class",
+                              "finish_class_time",
+                              "finish_class_uid",
+                              "down_student_face_id",
+                              "down_face_time",
+                              "down_face_type",
+                              "on_student_face_id",
+                              "on_face_time",
+                              "on_face_type",
+                              "is_print",
+                              "teacher_class_key",
+                              "student_name",
+                              "student_code",
+                              "parent_mobile",
+                              "school",
+                              "student_grade",
+                              "lesson_tag",
+                              "lesson_subject",
+                              "lesson_grade",
+                              "lesson_mode",
+                              "lesson_mode2",
+                              "lesson_type",
+                              "standard_group",
+                              "unit_time",
+                              "lesson_name",
+                              "lesson_price",
+                              "lesson_nb_mode",
+                              "class_assistant_realname",
+                              "class_assistant_is_part",
+                              "class_teacher_realname",
+                              "class_teacher_is_part",
+                              "realname",
+                              "is_part",
+                              "f_check_classout_status",
+                              "f_mood_type",
+                              "f_heed_type",
+                              "f_interaction_type",
+                              "f_bad_type",
+                              "f_excellent_type",
+                              "f_learning_type",
+                              "f_subject",
+                              "f_gradelevel",
+                              "f_grade",
+                              "f_lesson_nb_mode",
+                              "f_lesson_type",
+                              "f_city",
+                              "f_class_status",
+                              "f_class_type",
+                              "f_class_time",
+                              "f_is_part",
+                              "f_is_sanshi",
+                              "f_keshi_num",
+                              "f_standard_group",
+                              "f_special_course",
+                              "f_ctime",
+                              "f_cuid",
+                              "f_mtime",
+                              "f_muid",
+                              "f_class_begin",
+                              "f_class_end",
+                              "f_pk_assistant",
+                              "f_class_assistant",
+                              "f_pk_teacher_id",
+                              "f_class_teacher_id",
+                              "f_op_person",
+                              "f_op_time",
+                              "f_lesson_mode",
+                              "f_lesson_mode2",
+                              "f_lesson_subject",
+                              "f_lesson_grade",
+                              "f_class_campus",
+                              "f_student_grade",
+                              "f_file_id",
+                              "ci_ctime",
+                              "f_ci_ctime",
+                              "f_class_is_part",
+                              "f_class_date",
+                              "f_week",
+                              "time_interval",
+                              "f_class_grade",
+                              "f_pay_unit",
+                              "real_pay_unit",
+                              "f_lesson_name",
+                              "f_lesson_price"
+                            ]
+                          }
+                        },
+                        "keshi_mode_total": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "mode2": {
+                                "type": "string"
+                              },
+                              "keshi_num": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "param",
+                        "counts",
+                        "data",
+                        "keshi_mode_total"
+                      ]
                     }
                   },
                   "required": [
@@ -100,9 +836,677 @@
                     "summary": "成功示例",
                     "value": {
                       "status": "success",
-                      "code": "2000",
+                      "code": 2000,
                       "msg": "操作成功",
-                      "result": true
+                      "result": {
+                        "param": {
+                          "city": "1",
+                          "student_id": "52253",
+                          "lesson_id": "",
+                          "class_status": "4",
+                          "start_time": "",
+                          "end_time": "",
+                          "per_page": 10,
+                          "page": 1,
+                          "port_name": "student_pad",
+                          "user_id": "5891",
+                          "port_user_campus": "101",
+                          "token": "0fce10b3e93e7d7b17ebd78ffe83e0e8"
+                        },
+                        "counts": "4",
+                        "data": [
+                          {
+                            "class_out_id": "3247724",
+                            "student_id": "52253",
+                            "serial": "0",
+                            "city": "1",
+                            "ymd": "20210319",
+                            "keshi_num": "2.0",
+                            "class_status": "4",
+                            "gradelevel": "3",
+                            "grade": "12",
+                            "subject": "3",
+                            "login_time": "0",
+                            "logout_time": "0",
+                            "mood_type": "1",
+                            "heed_type": "3",
+                            "interaction_type": "3",
+                            "teacher_comment": "",
+                            "target": "",
+                            "content": "",
+                            "remark": "",
+                            "status": "0",
+                            "ctime": "1616048624",
+                            "cuid": "3198",
+                            "mtime": "1616146039",
+                            "muid": "0",
+                            "bad_type": "100",
+                            "excellent_type": "1",
+                            "learning_type": "1",
+                            "class_type": "1",
+                            "lesson_id": "33533",
+                            "class_time": "2021-03-19 15:00",
+                            "business_id": "821246",
+                            "class_begin": "1616137200",
+                            "class_end": "1616144400",
+                            "pk_campus": "101",
+                            "class_campus": "101",
+                            "class_money": 796,
+                            "pk_userid": "3198",
+                            "pk_assistant": "7457",
+                            "class_assistant": "7457",
+                            "pk_teacher_id": "7382",
+                            "class_teacher_id": "7382",
+                            "is_sanshi": "0",
+                            "attachment": "",
+                            "op_person": "7382",
+                            "op_time": "1616146039",
+                            "class_num": "1",
+                            "time_sheet": "uploads\/keshidan\/2021\/03\/19\/20210319172718_67283.jpg",
+                            "pay_unit": "0.00",
+                            "special_course": "0",
+                            "class_grade": "12",
+                            "class_is_part": "1",
+                            "is_evaluate": "0",
+                            "is_prepare": "0",
+                            "pk_keshi_num": "2.00",
+                            "file_id": "",
+                            "time_sheet_file_id": "2918401",
+                            "check_classout_status": "2",
+                            "check_classout_time": "0",
+                            "check_classout_uid": "0",
+                            "data_locking_status": "0",
+                            "class_key": "3",
+                            "class_subject_key": "2",
+                            "ting_ke_thumb": "",
+                            "ting_ke_file_id": "",
+                            "is_finish_class": "1",
+                            "finish_class_time": "0",
+                            "finish_class_uid": "0",
+                            "down_student_face_id": "",
+                            "down_face_time": "0",
+                            "down_face_type": "0",
+                            "on_student_face_id": "",
+                            "on_face_time": "0",
+                            "on_face_type": "0",
+                            "is_print": "2",
+                            "teacher_class_key": "2",
+                            "student_name": "孙宇",
+                            "student_code": "10152262",
+                            "parent_mobile": "136****7101",
+                            "school": "海亮中学",
+                            "student_grade": "12",
+                            "lesson_tag": "1对1课程",
+                            "lesson_subject": "3",
+                            "lesson_grade": "12",
+                            "lesson_mode": "1",
+                            "lesson_mode2": "1",
+                            "lesson_type": "1",
+                            "standard_group": "0",
+                            "unit_time": "60",
+                            "lesson_name": "1对1课程-高三-英语-1对1-398",
+                            "lesson_price": "398.00",
+                            "lesson_nb_mode": "1",
+                            "class_assistant_realname": "朱晓芳",
+                            "class_assistant_is_part": "1",
+                            "class_teacher_realname": "柳胜娟",
+                            "class_teacher_is_part": "1",
+                            "realname": "柳胜娟",
+                            "is_part": "1",
+                            "f_check_classout_status": "未审核",
+                            "f_mood_type": "开心",
+                            "f_heed_type": "很集中",
+                            "f_interaction_type": "很活跃",
+                            "f_bad_type": "无",
+                            "f_excellent_type": "字迹端正",
+                            "f_learning_type": "优秀",
+                            "f_subject": "英语",
+                            "f_gradelevel": "高中",
+                            "f_grade": "高三",
+                            "f_lesson_nb_mode": "1V1",
+                            "f_lesson_type": "常规",
+                            "f_city": "杭州",
+                            "f_class_status": "已消",
+                            "f_class_type": "正常上课",
+                            "f_class_time": "",
+                            "f_is_part": "全职",
+                            "f_is_sanshi": "否",
+                            "f_keshi_num": 120,
+                            "f_standard_group": "否",
+                            "f_special_course": "否",
+                            "f_ctime": "2021-03-18 14:23",
+                            "f_cuid": "陈耀耀",
+                            "f_mtime": "2021-03-19 17:27",
+                            "f_muid": "",
+                            "f_class_begin": "2021-03-19 15:00",
+                            "f_class_end": "2021-03-19 17:00",
+                            "f_pk_assistant": "朱晓芳",
+                            "f_class_assistant": "朱晓芳",
+                            "f_pk_teacher_id": "柳胜娟",
+                            "f_class_teacher_id": "柳胜娟",
+                            "f_op_person": "柳胜娟",
+                            "f_op_time": "2021-03-19 17:27",
+                            "f_lesson_mode": "1对1",
+                            "f_lesson_mode2": "1V1",
+                            "f_lesson_subject": "英语",
+                            "f_lesson_grade": "高三",
+                            "f_class_campus": "解放",
+                            "f_student_grade": "高三",
+                            "f_file_id": [],
+                            "f_file_id_obj": [],
+                            "f_time_sheet_file_id": [
+                              "dK25\/ZQs8HNB46nyuutLB\/a9GT7aEzJSyxtu\/oBUKFiVK0qzqqm30oMGL3lkKO4lnAxv2eZjIrEIGM8iOu6hiabD26BaIWQmkNB\/2OG9lvWlnF+e1qWKsX+mOAVZge4hlOHS8L71IYu\/hQ+z38HFhQ=="
+                            ],
+                            "f_time_sheet_file_id_obj": {
+                              "dK25\/ZQs8HNB46nyuutLB\/a9GT7aEzJSyxtu\/oBUKFiVK0qzqqm30oMGL3lkKO4lnAxv2eZjIrEIGM8iOu6hiabD26BaIWQmkNB\/2OG9lvWlnF+e1qWKsX+mOAVZge4hlOHS8L71IYu\/hQ+z38HFhQ==": "2918401"
+                            },
+                            "f_prepare_thumb_file_id": [],
+                            "f_prepare_thumb_file_id_obj": [],
+                            "ci_ctime": "1615983247",
+                            "f_ci_ctime": "2021-03-17 20:14",
+                            "f_class_is_part": "全职",
+                            "f_class_date": "2021-03-19",
+                            "f_week": "周五",
+                            "time_interval": "15:00~17:00",
+                            "f_class_grade": "高三",
+                            "f_pay_unit": 0,
+                            "real_pay_unit": 398,
+                            "f_lesson_name": "1对1课程-高三-英语-398",
+                            "f_lesson_price": 398
+                          },
+                          {
+                            "class_out_id": "3247722",
+                            "student_id": "52253",
+                            "serial": "0",
+                            "city": "1",
+                            "ymd": "20210319",
+                            "keshi_num": "2.0",
+                            "class_status": "4",
+                            "gradelevel": "3",
+                            "grade": "12",
+                            "subject": "2",
+                            "login_time": "0",
+                            "logout_time": "0",
+                            "mood_type": "1",
+                            "heed_type": "3",
+                            "interaction_type": "3",
+                            "teacher_comment": "",
+                            "target": "",
+                            "content": "表现很好",
+                            "remark": "",
+                            "status": "0",
+                            "ctime": "1616048605",
+                            "cuid": "3198",
+                            "mtime": "1616158806",
+                            "muid": "0",
+                            "bad_type": "100",
+                            "excellent_type": "1",
+                            "learning_type": "1",
+                            "class_type": "1",
+                            "lesson_id": "33532",
+                            "class_time": "2021-03-19 10:00",
+                            "business_id": "821245",
+                            "class_begin": "1616119200",
+                            "class_end": "1616126400",
+                            "pk_campus": "101",
+                            "class_campus": "101",
+                            "class_money": 796,
+                            "pk_userid": "3198",
+                            "pk_assistant": "7457",
+                            "class_assistant": "7457",
+                            "pk_teacher_id": "6736",
+                            "class_teacher_id": "6736",
+                            "is_sanshi": "0",
+                            "attachment": "",
+                            "op_person": "6736",
+                            "op_time": "1616158806",
+                            "class_num": "1",
+                            "time_sheet": "uploads\/keshidan\/2021\/03\/19\/20210319210005_52862.jpg",
+                            "pay_unit": "0.00",
+                            "special_course": "0",
+                            "class_grade": "12",
+                            "class_is_part": "1",
+                            "is_evaluate": "0",
+                            "is_prepare": "0",
+                            "pk_keshi_num": "2.00",
+                            "file_id": "2919312",
+                            "time_sheet_file_id": "2919312",
+                            "check_classout_status": "2",
+                            "check_classout_time": "0",
+                            "check_classout_uid": "0",
+                            "data_locking_status": "0",
+                            "class_key": "4",
+                            "class_subject_key": "2",
+                            "ting_ke_thumb": "",
+                            "ting_ke_file_id": "",
+                            "is_finish_class": "2",
+                            "finish_class_time": "0",
+                            "finish_class_uid": "0",
+                            "down_student_face_id": "",
+                            "down_face_time": "0",
+                            "down_face_type": "0",
+                            "on_student_face_id": "",
+                            "on_face_time": "0",
+                            "on_face_type": "0",
+                            "is_print": "1",
+                            "teacher_class_key": "2",
+                            "student_name": "孙宇",
+                            "student_code": "10152262",
+                            "parent_mobile": "136****7101",
+                            "school": "海亮中学",
+                            "student_grade": "12",
+                            "lesson_tag": "1对1课程",
+                            "lesson_subject": "2",
+                            "lesson_grade": "12",
+                            "lesson_mode": "1",
+                            "lesson_mode2": "1",
+                            "lesson_type": "1",
+                            "standard_group": "0",
+                            "unit_time": "60",
+                            "lesson_name": "1对1课程-高三-数学-1对1-398",
+                            "lesson_price": "398.00",
+                            "lesson_nb_mode": "1",
+                            "class_assistant_realname": "朱晓芳",
+                            "class_assistant_is_part": "1",
+                            "class_teacher_realname": "柴映斌",
+                            "class_teacher_is_part": "1",
+                            "realname": "柴映斌",
+                            "is_part": "1",
+                            "f_check_classout_status": "未审核",
+                            "f_mood_type": "开心",
+                            "f_heed_type": "很集中",
+                            "f_interaction_type": "很活跃",
+                            "f_bad_type": "无",
+                            "f_excellent_type": "字迹端正",
+                            "f_learning_type": "优秀",
+                            "f_subject": "数学",
+                            "f_gradelevel": "高中",
+                            "f_grade": "高三",
+                            "f_lesson_nb_mode": "1V1",
+                            "f_lesson_type": "常规",
+                            "f_city": "杭州",
+                            "f_class_status": "已消",
+                            "f_class_type": "正常上课",
+                            "f_class_time": "",
+                            "f_is_part": "全职",
+                            "f_is_sanshi": "否",
+                            "f_keshi_num": 120,
+                            "f_standard_group": "否",
+                            "f_special_course": "否",
+                            "f_ctime": "2021-03-18 14:23",
+                            "f_cuid": "陈耀耀",
+                            "f_mtime": "2021-03-19 21:00",
+                            "f_muid": "",
+                            "f_class_begin": "2021-03-19 10:00",
+                            "f_class_end": "2021-03-19 12:00",
+                            "f_pk_assistant": "朱晓芳",
+                            "f_class_assistant": "朱晓芳",
+                            "f_pk_teacher_id": "柴映斌",
+                            "f_class_teacher_id": "柴映斌",
+                            "f_op_person": "柴映斌",
+                            "f_op_time": "2021-03-19 21:00",
+                            "f_lesson_mode": "1对1",
+                            "f_lesson_mode2": "1V1",
+                            "f_lesson_subject": "数学",
+                            "f_lesson_grade": "高三",
+                            "f_class_campus": "解放",
+                            "f_student_grade": "高三",
+                            "f_file_id": [
+                              "bIPmBGAtGfPvIYYMzxLb55zN46KhqxemdjLUL8l7a20nkB3bt3luZxU+tJdV2ChxDM8lbNkVPxmLqOpKv+NlXQ1SYUSLknSGRCq7BIHtgtyH22W3dBa4qqXgHgdUrlB6ABbkmNobMKKt27D2nzR4pQ=="
+                            ],
+                            "f_file_id_obj": {
+                              "bIPmBGAtGfPvIYYMzxLb55zN46KhqxemdjLUL8l7a20nkB3bt3luZxU+tJdV2ChxDM8lbNkVPxmLqOpKv+NlXQ1SYUSLknSGRCq7BIHtgtyH22W3dBa4qqXgHgdUrlB6ABbkmNobMKKt27D2nzR4pQ==": "2919312"
+                            },
+                            "f_time_sheet_file_id": [
+                              "bIPmBGAtGfPvIYYMzxLb55zN46KhqxemdjLUL8l7a20nkB3bt3luZxU+tJdV2ChxDM8lbNkVPxmLqOpKv+NlXQ1SYUSLknSGRCq7BIHtgtyH22W3dBa4qqXgHgdUrlB6ABbkmNobMKKt27D2nzR4pQ=="
+                            ],
+                            "f_time_sheet_file_id_obj": {
+                              "bIPmBGAtGfPvIYYMzxLb55zN46KhqxemdjLUL8l7a20nkB3bt3luZxU+tJdV2ChxDM8lbNkVPxmLqOpKv+NlXQ1SYUSLknSGRCq7BIHtgtyH22W3dBa4qqXgHgdUrlB6ABbkmNobMKKt27D2nzR4pQ==": "2919312"
+                            },
+                            "f_prepare_thumb_file_id": [],
+                            "f_prepare_thumb_file_id_obj": [],
+                            "ci_ctime": "1615983247",
+                            "f_ci_ctime": "2021-03-17 20:14",
+                            "f_class_is_part": "全职",
+                            "f_class_date": "2021-03-19",
+                            "f_week": "周五",
+                            "time_interval": "10:00~12:00",
+                            "f_class_grade": "高三",
+                            "f_pay_unit": 0,
+                            "real_pay_unit": 398,
+                            "f_lesson_name": "1对1课程-高三-数学-398",
+                            "f_lesson_price": 398
+                          },
+                          {
+                            "class_out_id": "3247723",
+                            "student_id": "52253",
+                            "serial": "0",
+                            "city": "1",
+                            "ymd": "20210318",
+                            "keshi_num": "2.0",
+                            "class_status": "4",
+                            "gradelevel": "3",
+                            "grade": "12",
+                            "subject": "3",
+                            "login_time": "0",
+                            "logout_time": "0",
+                            "mood_type": "1",
+                            "heed_type": "3",
+                            "interaction_type": "3",
+                            "teacher_comment": "",
+                            "target": "",
+                            "content": "",
+                            "remark": "",
+                            "status": "0",
+                            "ctime": "1616048624",
+                            "cuid": "3198",
+                            "mtime": "1616146017",
+                            "muid": "0",
+                            "bad_type": "100",
+                            "excellent_type": "1",
+                            "learning_type": "1",
+                            "class_type": "1",
+                            "lesson_id": "33533",
+                            "class_time": "2021-03-18 15:00",
+                            "business_id": "821246",
+                            "class_begin": "1616050800",
+                            "class_end": "1616058000",
+                            "pk_campus": "101",
+                            "class_campus": "101",
+                            "class_money": 796,
+                            "pk_userid": "3198",
+                            "pk_assistant": "7457",
+                            "class_assistant": "7457",
+                            "pk_teacher_id": "7382",
+                            "class_teacher_id": "7382",
+                            "is_sanshi": "0",
+                            "attachment": "",
+                            "op_person": "7382",
+                            "op_time": "1616146017",
+                            "class_num": "1",
+                            "time_sheet": "uploads\/keshidan\/2021\/03\/19\/20210319172657_77947.jpg",
+                            "pay_unit": "0.00",
+                            "special_course": "0",
+                            "class_grade": "12",
+                            "class_is_part": "1",
+                            "is_evaluate": "0",
+                            "is_prepare": "0",
+                            "pk_keshi_num": "2.00",
+                            "file_id": "",
+                            "time_sheet_file_id": "2918400",
+                            "check_classout_status": "2",
+                            "check_classout_time": "0",
+                            "check_classout_uid": "0",
+                            "data_locking_status": "0",
+                            "class_key": "2",
+                            "class_subject_key": "1",
+                            "ting_ke_thumb": "",
+                            "ting_ke_file_id": "",
+                            "is_finish_class": "1",
+                            "finish_class_time": "0",
+                            "finish_class_uid": "0",
+                            "down_student_face_id": "",
+                            "down_face_time": "0",
+                            "down_face_type": "0",
+                            "on_student_face_id": "",
+                            "on_face_time": "0",
+                            "on_face_type": "0",
+                            "is_print": "2",
+                            "teacher_class_key": "1",
+                            "student_name": "孙宇",
+                            "student_code": "10152262",
+                            "parent_mobile": "136****7101",
+                            "school": "海亮中学",
+                            "student_grade": "12",
+                            "lesson_tag": "1对1课程",
+                            "lesson_subject": "3",
+                            "lesson_grade": "12",
+                            "lesson_mode": "1",
+                            "lesson_mode2": "1",
+                            "lesson_type": "1",
+                            "standard_group": "0",
+                            "unit_time": "60",
+                            "lesson_name": "1对1课程-高三-英语-1对1-398",
+                            "lesson_price": "398.00",
+                            "lesson_nb_mode": "1",
+                            "class_assistant_realname": "朱晓芳",
+                            "class_assistant_is_part": "1",
+                            "class_teacher_realname": "柳胜娟",
+                            "class_teacher_is_part": "1",
+                            "realname": "柳胜娟",
+                            "is_part": "1",
+                            "f_check_classout_status": "未审核",
+                            "f_mood_type": "开心",
+                            "f_heed_type": "很集中",
+                            "f_interaction_type": "很活跃",
+                            "f_bad_type": "无",
+                            "f_excellent_type": "字迹端正",
+                            "f_learning_type": "优秀",
+                            "f_subject": "英语",
+                            "f_gradelevel": "高中",
+                            "f_grade": "高三",
+                            "f_lesson_nb_mode": "1V1",
+                            "f_lesson_type": "常规",
+                            "f_city": "杭州",
+                            "f_class_status": "已消",
+                            "f_class_type": "正常上课",
+                            "f_class_time": "",
+                            "f_is_part": "全职",
+                            "f_is_sanshi": "否",
+                            "f_keshi_num": 120,
+                            "f_standard_group": "否",
+                            "f_special_course": "否",
+                            "f_ctime": "2021-03-18 14:23",
+                            "f_cuid": "陈耀耀",
+                            "f_mtime": "2021-03-19 17:26",
+                            "f_muid": "",
+                            "f_class_begin": "2021-03-18 15:00",
+                            "f_class_end": "2021-03-18 17:00",
+                            "f_pk_assistant": "朱晓芳",
+                            "f_class_assistant": "朱晓芳",
+                            "f_pk_teacher_id": "柳胜娟",
+                            "f_class_teacher_id": "柳胜娟",
+                            "f_op_person": "柳胜娟",
+                            "f_op_time": "2021-03-19 17:26",
+                            "f_lesson_mode": "1对1",
+                            "f_lesson_mode2": "1V1",
+                            "f_lesson_subject": "英语",
+                            "f_lesson_grade": "高三",
+                            "f_class_campus": "解放",
+                            "f_student_grade": "高三",
+                            "f_file_id": [],
+                            "f_file_id_obj": [],
+                            "f_time_sheet_file_id": [
+                              "dK25\/ZQs8HNB46nyuutLB3Ks4IML20I4efaMoq9dNcSbnizd9OIFDQzpz1dI7hpPfSJ4PMwra60QnmLi3LWq5ybI9KxyDi0lQxay+Wi27vFQ\/U0r2X86hG\/N37Wg8fqjH\/YWgnHhVKgLyv6Pns9c5A=="
+                            ],
+                            "f_time_sheet_file_id_obj": {
+                              "dK25\/ZQs8HNB46nyuutLB3Ks4IML20I4efaMoq9dNcSbnizd9OIFDQzpz1dI7hpPfSJ4PMwra60QnmLi3LWq5ybI9KxyDi0lQxay+Wi27vFQ\/U0r2X86hG\/N37Wg8fqjH\/YWgnHhVKgLyv6Pns9c5A==": "2918400"
+                            },
+                            "f_prepare_thumb_file_id": [],
+                            "f_prepare_thumb_file_id_obj": [],
+                            "ci_ctime": "1615983247",
+                            "f_ci_ctime": "2021-03-17 20:14",
+                            "f_class_is_part": "全职",
+                            "f_class_date": "2021-03-18",
+                            "f_week": "周四",
+                            "time_interval": "15:00~17:00",
+                            "f_class_grade": "高三",
+                            "f_pay_unit": 0,
+                            "real_pay_unit": 398,
+                            "f_lesson_name": "1对1课程-高三-英语-398",
+                            "f_lesson_price": 398
+                          },
+                          {
+                            "class_out_id": "3247721",
+                            "student_id": "52253",
+                            "serial": "0",
+                            "city": "1",
+                            "ymd": "20210318",
+                            "keshi_num": "2.0",
+                            "class_status": "4",
+                            "gradelevel": "3",
+                            "grade": "12",
+                            "subject": "2",
+                            "login_time": "0",
+                            "logout_time": "0",
+                            "mood_type": "1",
+                            "heed_type": "3",
+                            "interaction_type": "3",
+                            "teacher_comment": "",
+                            "target": "",
+                            "content": "表现很好",
+                            "remark": "",
+                            "status": "0",
+                            "ctime": "1616048605",
+                            "cuid": "3198",
+                            "mtime": "1616117933",
+                            "muid": "0",
+                            "bad_type": "100",
+                            "excellent_type": "1",
+                            "learning_type": "1",
+                            "class_type": "1",
+                            "lesson_id": "33532",
+                            "class_time": "2021-03-18 10:00",
+                            "business_id": "821245",
+                            "class_begin": "1616032800",
+                            "class_end": "1616040000",
+                            "pk_campus": "101",
+                            "class_campus": "101",
+                            "class_money": 796,
+                            "pk_userid": "3198",
+                            "pk_assistant": "7457",
+                            "class_assistant": "7457",
+                            "pk_teacher_id": "6736",
+                            "class_teacher_id": "6736",
+                            "is_sanshi": "0",
+                            "attachment": "",
+                            "op_person": "6736",
+                            "op_time": "1616117933",
+                            "class_num": "1",
+                            "time_sheet": "uploads\/keshidan\/2021\/03\/19\/20210319093852_88677.jpg",
+                            "pay_unit": "0.00",
+                            "special_course": "0",
+                            "class_grade": "12",
+                            "class_is_part": "1",
+                            "is_evaluate": "0",
+                            "is_prepare": "0",
+                            "pk_keshi_num": "2.00",
+                            "file_id": "2917511",
+                            "time_sheet_file_id": "2917511",
+                            "check_classout_status": "2",
+                            "check_classout_time": "0",
+                            "check_classout_uid": "0",
+                            "data_locking_status": "0",
+                            "class_key": "1",
+                            "class_subject_key": "1",
+                            "ting_ke_thumb": "",
+                            "ting_ke_file_id": "",
+                            "is_finish_class": "2",
+                            "finish_class_time": "0",
+                            "finish_class_uid": "0",
+                            "down_student_face_id": "",
+                            "down_face_time": "0",
+                            "down_face_type": "0",
+                            "on_student_face_id": "",
+                            "on_face_time": "0",
+                            "on_face_type": "0",
+                            "is_print": "2",
+                            "teacher_class_key": "1",
+                            "student_name": "孙宇",
+                            "student_code": "10152262",
+                            "parent_mobile": "136****7101",
+                            "school": "海亮中学",
+                            "student_grade": "12",
+                            "lesson_tag": "1对1课程",
+                            "lesson_subject": "2",
+                            "lesson_grade": "12",
+                            "lesson_mode": "1",
+                            "lesson_mode2": "1",
+                            "lesson_type": "1",
+                            "standard_group": "0",
+                            "unit_time": "60",
+                            "lesson_name": "1对1课程-高三-数学-1对1-398",
+                            "lesson_price": "398.00",
+                            "lesson_nb_mode": "1",
+                            "class_assistant_realname": "朱晓芳",
+                            "class_assistant_is_part": "1",
+                            "class_teacher_realname": "柴映斌",
+                            "class_teacher_is_part": "1",
+                            "realname": "柴映斌",
+                            "is_part": "1",
+                            "f_check_classout_status": "未审核",
+                            "f_mood_type": "开心",
+                            "f_heed_type": "很集中",
+                            "f_interaction_type": "很活跃",
+                            "f_bad_type": "无",
+                            "f_excellent_type": "字迹端正",
+                            "f_learning_type": "优秀",
+                            "f_subject": "数学",
+                            "f_gradelevel": "高中",
+                            "f_grade": "高三",
+                            "f_lesson_nb_mode": "1V1",
+                            "f_lesson_type": "常规",
+                            "f_city": "杭州",
+                            "f_class_status": "已消",
+                            "f_class_type": "正常上课",
+                            "f_class_time": "",
+                            "f_is_part": "全职",
+                            "f_is_sanshi": "否",
+                            "f_keshi_num": 120,
+                            "f_standard_group": "否",
+                            "f_special_course": "否",
+                            "f_ctime": "2021-03-18 14:23",
+                            "f_cuid": "陈耀耀",
+                            "f_mtime": "2021-03-19 09:38",
+                            "f_muid": "",
+                            "f_class_begin": "2021-03-18 10:00",
+                            "f_class_end": "2021-03-18 12:00",
+                            "f_pk_assistant": "朱晓芳",
+                            "f_class_assistant": "朱晓芳",
+                            "f_pk_teacher_id": "柴映斌",
+                            "f_class_teacher_id": "柴映斌",
+                            "f_op_person": "柴映斌",
+                            "f_op_time": "2021-03-19 09:38",
+                            "f_lesson_mode": "1对1",
+                            "f_lesson_mode2": "1V1",
+                            "f_lesson_subject": "数学",
+                            "f_lesson_grade": "高三",
+                            "f_class_campus": "解放",
+                            "f_student_grade": "高三",
+                            "f_file_id": [
+                              "PaDMvygL3RC1oDAOepfEY2pftUwQ+GxG39opP7ZWFwGHEPzoUI2pawWT6sh24mbgx0iywKPGwFa9tvZ9vu6X0RcalS5P9CgMh46dF+8VSyQIjT0RvC5Espjv2wYQWOiBq1ls8rkJaGW\/Beg27238pQ=="
+                            ],
+                            "f_file_id_obj": {
+                              "PaDMvygL3RC1oDAOepfEY2pftUwQ+GxG39opP7ZWFwGHEPzoUI2pawWT6sh24mbgx0iywKPGwFa9tvZ9vu6X0RcalS5P9CgMh46dF+8VSyQIjT0RvC5Espjv2wYQWOiBq1ls8rkJaGW\/Beg27238pQ==": "2917511"
+                            },
+                            "f_time_sheet_file_id": [
+                              "PaDMvygL3RC1oDAOepfEY2pftUwQ+GxG39opP7ZWFwGHEPzoUI2pawWT6sh24mbgx0iywKPGwFa9tvZ9vu6X0RcalS5P9CgMh46dF+8VSyQIjT0RvC5Espjv2wYQWOiBq1ls8rkJaGW\/Beg27238pQ=="
+                            ],
+                            "f_time_sheet_file_id_obj": {
+                              "PaDMvygL3RC1oDAOepfEY2pftUwQ+GxG39opP7ZWFwGHEPzoUI2pawWT6sh24mbgx0iywKPGwFa9tvZ9vu6X0RcalS5P9CgMh46dF+8VSyQIjT0RvC5Espjv2wYQWOiBq1ls8rkJaGW\/Beg27238pQ==": "2917511"
+                            },
+                            "f_prepare_thumb_file_id": [],
+                            "f_prepare_thumb_file_id_obj": [],
+                            "ci_ctime": "1615983247",
+                            "f_ci_ctime": "2021-03-17 20:14",
+                            "f_class_is_part": "全职",
+                            "f_class_date": "2021-03-18",
+                            "f_week": "周四",
+                            "time_interval": "10:00~12:00",
+                            "f_class_grade": "高三",
+                            "f_pay_unit": 0,
+                            "real_pay_unit": 398,
+                            "f_lesson_name": "1对1课程-高三-数学-398",
+                            "f_lesson_price": 398
+                          }
+                        ],
+                        "keshi_mode_total": [
+                          {
+                            "mode2": "1",
+                            "keshi_num": "8.00"
+                          }
+                        ]
+                      }
                     }
                   }
                 }
@@ -112,9 +1516,9 @@
         }
       }
     },
-    "\/v2\/student\/user\/logout": {
+    "\/api\/v1\/student\/student\/info": {
       "post": {
-        "summary": "学生端 - 登出",
+        "summary": "获取学生信息",
         "description": "",
         "tags": [
           "学生端"
@@ -130,29 +1534,67 @@
                     "type": "object",
                     "properties": {
                       "student_id": {
-                        "type": "string",
-                        "description": "学生ID"
+                        "type": "string"
                       },
                       "port_name": {
-                        "type": "string",
-                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "port_user_campus": {
+                        "type": "string"
+                      },
+                      "token": {
+                        "type": "string"
                       }
                     },
                     "required": [
                       "student_id",
-                      "port_name"
+                      "port_name",
+                      "user_id",
+                      "port_user_campus",
+                      "token"
                     ]
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "integer"
+                  },
+                  "v": {
+                    "type": "integer"
+                  },
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "sign": {
+                    "type": "string"
                   }
                 },
                 "required": [
-                  "body"
+                  "body",
+                  "format",
+                  "timestamp",
+                  "v",
+                  "source_id",
+                  "sign"
                 ]
               },
               "example": {
                 "body": {
-                  "student_id": "16542",
-                  "port_name": "student_pad"
-                }
+                  "student_id": "53768",
+                  "port_name": "student_pad",
+                  "user_id": "2113",
+                  "port_user_campus": "601",
+                  "token": "13cf6df59cc00af16f56d42c8eda188e"
+                },
+                "format": "json",
+                "timestamp": 1624416194,
+                "v": 1,
+                "source_id": "nice_1653",
+                "sign": "BBA8BE00D1D586C34A9B1D110C8067D8"
               }
             }
           }
@@ -169,13 +1611,595 @@
                       "type": "string"
                     },
                     "code": {
-                      "type": "string"
+                      "type": "integer"
                     },
                     "msg": {
                       "type": "string"
                     },
                     "result": {
-                      "type": "boolean"
+                      "type": "object",
+                      "properties": {
+                        "info": {
+                          "type": "object",
+                          "properties": {
+                            "student_id": {
+                              "type": "string"
+                            },
+                            "student_code": {
+                              "type": "string"
+                            },
+                            "student_login": {
+                              "type": "string"
+                            },
+                            "student_name": {
+                              "type": "string"
+                            },
+                            "letter": {
+                              "type": "string"
+                            },
+                            "encrypt": {
+                              "type": "string"
+                            },
+                            "passwd": {
+                              "type": "string"
+                            },
+                            "avatar": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            },
+                            "idcard": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "mobile": {
+                              "type": "string"
+                            },
+                            "school": {
+                              "type": "string"
+                            },
+                            "parent_name": {
+                              "type": "string"
+                            },
+                            "parent_mobile": {
+                              "type": "string"
+                            },
+                            "gradelevel": {
+                              "type": "string"
+                            },
+                            "grade": {
+                              "type": "string"
+                            },
+                            "city": {
+                              "type": "string"
+                            },
+                            "campus": {
+                              "type": "string"
+                            },
+                            "assistant": {
+                              "type": "string"
+                            },
+                            "loginnum": {
+                              "type": "string"
+                            },
+                            "remark": {
+                              "type": "string"
+                            },
+                            "last_class_time": {
+                              "type": "string"
+                            },
+                            "class_status": {
+                              "type": "string"
+                            },
+                            "listorder": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "ctime": {
+                              "type": "string"
+                            },
+                            "cuid": {
+                              "type": "string"
+                            },
+                            "mtime": {
+                              "type": "string"
+                            },
+                            "muid": {
+                              "type": "string"
+                            },
+                            "crm_student_id": {
+                              "type": "string"
+                            },
+                            "payee": {
+                              "type": "string"
+                            },
+                            "bank": {
+                              "type": "string"
+                            },
+                            "sub_branch": {
+                              "type": "string"
+                            },
+                            "bank_card": {
+                              "type": "string"
+                            },
+                            "parent_mobile2": {
+                              "type": "string"
+                            },
+                            "parent_name2": {
+                              "type": "string"
+                            },
+                            "first_assistant": {
+                              "type": "string"
+                            },
+                            "first_ymd": {
+                              "type": "string"
+                            },
+                            "lesson_mode": {
+                              "type": "string"
+                            },
+                            "first_class_time": {
+                              "type": "string"
+                            },
+                            "token": {
+                              "type": "string"
+                            },
+                            "token_expired_time": {
+                              "type": "string"
+                            },
+                            "parent_open_id": {
+                              "type": "string"
+                            },
+                            "kf_follow_num": {
+                              "type": "string"
+                            },
+                            "last_kf_follow_time": {
+                              "type": "string"
+                            },
+                            "jtf_time": {
+                              "type": "string"
+                            },
+                            "first_pay_time": {
+                              "type": "string"
+                            },
+                            "source_from": {
+                              "type": "string"
+                            },
+                            "lesson_mode2": {
+                              "type": "string"
+                            },
+                            "student_thumb": {
+                              "type": "string"
+                            },
+                            "file_id": {
+                              "type": "string"
+                            },
+                            "classin_uid": {
+                              "type": "string"
+                            },
+                            "parent_gzh_openid": {
+                              "type": "string"
+                            },
+                            "wo_id": {
+                              "type": "string"
+                            },
+                            "yr_id": {
+                              "type": "string"
+                            },
+                            "avatar_file_id": {
+                              "type": "string"
+                            },
+                            "yr_face": {
+                              "type": "string"
+                            },
+                            "wo_face": {
+                              "type": "string"
+                            },
+                            "is_excellent": {
+                              "type": "string"
+                            },
+                            "external_id": {
+                              "type": "string"
+                            },
+                            "school_id": {
+                              "type": "string"
+                            },
+                            "is_experience": {
+                              "type": "string"
+                            },
+                            "experience_status": {
+                              "type": "string"
+                            },
+                            "cin_crm_status": {
+                              "type": "string"
+                            },
+                            "tingke_time": {
+                              "type": "string"
+                            },
+                            "experience_end_time": {
+                              "type": "string"
+                            },
+                            "initial_payment_amount": {
+                              "type": "string"
+                            },
+                            "esign_seal_id": {
+                              "type": "string"
+                            },
+                            "student_pass": {
+                              "type": "string"
+                            },
+                            "student_token": {
+                              "type": "string"
+                            },
+                            "student_token_expire_time": {
+                              "type": "string"
+                            },
+                            "counselor": {
+                              "type": "string"
+                            },
+                            "is_fee_flag2": {
+                              "type": "integer"
+                            },
+                            "first_source_from": {
+                              "type": "string"
+                            },
+                            "campus_source_from": {
+                              "type": "string"
+                            },
+                            "current_assistant": {
+                              "type": "string"
+                            },
+                            "current_student_assistant": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "student_id": {
+                                  "type": "string"
+                                },
+                                "city": {
+                                  "type": "string"
+                                },
+                                "campus": {
+                                  "type": "string"
+                                },
+                                "assistant": {
+                                  "type": "string"
+                                },
+                                "sum_keshi_free": {
+                                  "type": "string"
+                                },
+                                "sum_gift_keshi_free": {
+                                  "type": "string"
+                                },
+                                "sum_all_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l1_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l2_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l3_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l1_gift_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l2_gift_keshi_free": {
+                                  "type": "string"
+                                },
+                                "l3_gift_keshi_free": {
+                                  "type": "string"
+                                },
+                                "campus_ctime": {
+                                  "type": "string"
+                                },
+                                "campus_cuid": {
+                                  "type": "string"
+                                },
+                                "is_face_synchronous": {
+                                  "type": "string"
+                                },
+                                "is_confirm": {
+                                  "type": "string"
+                                },
+                                "campus_assistant_status": {
+                                  "type": "string"
+                                },
+                                "realname": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "student_id",
+                                "city",
+                                "campus",
+                                "assistant",
+                                "sum_keshi_free",
+                                "sum_gift_keshi_free",
+                                "sum_all_keshi_free",
+                                "l1_keshi_free",
+                                "l2_keshi_free",
+                                "l3_keshi_free",
+                                "l1_gift_keshi_free",
+                                "l2_gift_keshi_free",
+                                "l3_gift_keshi_free",
+                                "campus_ctime",
+                                "campus_cuid",
+                                "is_face_synchronous",
+                                "is_confirm",
+                                "campus_assistant_status",
+                                "realname"
+                              ]
+                            },
+                            "f_status": {
+                              "type": "string"
+                            },
+                            "f_is_experience": {
+                              "type": "string"
+                            },
+                            "f_gender": {
+                              "type": "string"
+                            },
+                            "f_gradelevel": {
+                              "type": "string"
+                            },
+                            "f_grade": {
+                              "type": "string"
+                            },
+                            "f_city": {
+                              "type": "string"
+                            },
+                            "f_campus": {
+                              "type": "string"
+                            },
+                            "f_experience_status": {
+                              "type": "string"
+                            },
+                            "f_class_status": {
+                              "type": "string"
+                            },
+                            "f_source_from": {
+                              "type": "string"
+                            },
+                            "f_is_excellent": {
+                              "type": "string"
+                            },
+                            "f_assistant": {
+                              "type": "string"
+                            },
+                            "f_ctime": {
+                              "type": "string"
+                            },
+                            "f_cuid": {
+                              "type": "string"
+                            },
+                            "f_mtime": {
+                              "type": "string"
+                            },
+                            "f_muid": {
+                              "type": "string"
+                            },
+                            "f_first_assistant": {
+                              "type": "string"
+                            },
+                            "f_lesson_mode": {
+                              "type": "string"
+                            },
+                            "f_lesson_mode2": {
+                              "type": "string"
+                            },
+                            "f_file_id": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_file_id_obj": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_avatar": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_avatar_file_id": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_avatar_file_id_obj": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_current_assistant": {
+                              "type": "string"
+                            },
+                            "f_first_source_from": {
+                              "type": "string"
+                            },
+                            "f_student_thumb": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "f_campus_source_from": {
+                              "type": "string"
+                            },
+                            "remainder": {
+                              "type": "integer"
+                            },
+                            "deposit": {
+                              "type": "string"
+                            },
+                            "freezed": {
+                              "type": "string"
+                            },
+                            "withdraw": {
+                              "type": "string"
+                            },
+                            "correction_withdraw": {
+                              "type": "string"
+                            },
+                            "used": {
+                              "type": "string"
+                            },
+                            "ks_over_num": {
+                              "type": "integer"
+                            },
+                            "ks_xh_num": {
+                              "type": "integer"
+                            },
+                            "teacher_student_ks": {
+                              "type": "integer"
+                            },
+                            "teacher_student_ks_xh": {
+                              "type": "integer"
+                            },
+                            "teacher_student_ks_over": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "student_id",
+                            "student_code",
+                            "student_login",
+                            "student_name",
+                            "letter",
+                            "encrypt",
+                            "passwd",
+                            "avatar",
+                            "gender",
+                            "idcard",
+                            "address",
+                            "mobile",
+                            "school",
+                            "parent_name",
+                            "parent_mobile",
+                            "gradelevel",
+                            "grade",
+                            "city",
+                            "campus",
+                            "assistant",
+                            "loginnum",
+                            "remark",
+                            "last_class_time",
+                            "class_status",
+                            "listorder",
+                            "status",
+                            "ctime",
+                            "cuid",
+                            "mtime",
+                            "muid",
+                            "crm_student_id",
+                            "payee",
+                            "bank",
+                            "sub_branch",
+                            "bank_card",
+                            "parent_mobile2",
+                            "parent_name2",
+                            "first_assistant",
+                            "first_ymd",
+                            "lesson_mode",
+                            "first_class_time",
+                            "token",
+                            "token_expired_time",
+                            "parent_open_id",
+                            "kf_follow_num",
+                            "last_kf_follow_time",
+                            "jtf_time",
+                            "first_pay_time",
+                            "source_from",
+                            "lesson_mode2",
+                            "student_thumb",
+                            "file_id",
+                            "classin_uid",
+                            "parent_gzh_openid",
+                            "wo_id",
+                            "yr_id",
+                            "avatar_file_id",
+                            "yr_face",
+                            "wo_face",
+                            "is_excellent",
+                            "external_id",
+                            "school_id",
+                            "is_experience",
+                            "experience_status",
+                            "cin_crm_status",
+                            "tingke_time",
+                            "experience_end_time",
+                            "initial_payment_amount",
+                            "esign_seal_id",
+                            "student_pass",
+                            "student_token",
+                            "student_token_expire_time",
+                            "counselor",
+                            "is_fee_flag2",
+                            "first_source_from",
+                            "campus_source_from",
+                            "current_assistant",
+                            "current_student_assistant",
+                            "f_status",
+                            "f_is_experience",
+                            "f_gender",
+                            "f_gradelevel",
+                            "f_grade",
+                            "f_city",
+                            "f_campus",
+                            "f_experience_status",
+                            "f_class_status",
+                            "f_source_from",
+                            "f_is_excellent",
+                            "f_assistant",
+                            "f_ctime",
+                            "f_cuid",
+                            "f_mtime",
+                            "f_muid",
+                            "f_first_assistant",
+                            "f_lesson_mode",
+                            "f_lesson_mode2",
+                            "f_file_id",
+                            "f_file_id_obj",
+                            "f_avatar",
+                            "f_avatar_file_id",
+                            "f_avatar_file_id_obj",
+                            "f_current_assistant",
+                            "f_first_source_from",
+                            "f_student_thumb",
+                            "f_campus_source_from",
+                            "remainder",
+                            "deposit",
+                            "freezed",
+                            "withdraw",
+                            "correction_withdraw",
+                            "used",
+                            "ks_over_num",
+                            "ks_xh_num",
+                            "teacher_student_ks",
+                            "teacher_student_ks_xh",
+                            "teacher_student_ks_over"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "info"
+                      ]
                     }
                   },
                   "required": [
@@ -190,9 +2214,865 @@
                     "summary": "成功示例",
                     "value": {
                       "status": "success",
-                      "code": "2000",
+                      "code": 2000,
+                      "msg": "请求成功",
+                      "result": {
+                        "info": {
+                          "student_id": "16542",
+                          "student_code": "10116442",
+                          "student_login": "",
+                          "student_name": "宋佳莹",
+                          "letter": "sjy",
+                          "encrypt": "084BDh",
+                          "passwd": "41d751eb0090721ceab521faa2ee7f9f",
+                          "avatar": "",
+                          "gender": "0",
+                          "idcard": "",
+                          "address": "",
+                          "mobile": "",
+                          "school": "江溪小学",
+                          "parent_name": "妈妈",
+                          "parent_mobile": "180****3231",
+                          "gradelevel": "2",
+                          "grade": "9",
+                          "city": "5",
+                          "campus": "504",
+                          "assistant": "1575",
+                          "loginnum": "7",
+                          "remark": "",
+                          "last_class_time": "2018-07-27 12:50",
+                          "class_status": "0",
+                          "listorder": "0",
+                          "status": "2",
+                          "ctime": "1527852272",
+                          "cuid": "20180601",
+                          "mtime": "1624505174",
+                          "muid": "0",
+                          "crm_student_id": "131766",
+                          "payee": "",
+                          "bank": "",
+                          "sub_branch": "",
+                          "bank_card": "",
+                          "parent_mobile2": "",
+                          "parent_name2": "",
+                          "first_assistant": "0",
+                          "first_ymd": "0",
+                          "lesson_mode": ",3,",
+                          "first_class_time": "2018-06-02 12:30",
+                          "token": "",
+                          "token_expired_time": "0",
+                          "parent_open_id": "",
+                          "kf_follow_num": "0",
+                          "last_kf_follow_time": "0",
+                          "jtf_time": "20180727",
+                          "first_pay_time": "0",
+                          "source_from": "0",
+                          "lesson_mode2": ",0,",
+                          "student_thumb": "",
+                          "file_id": "",
+                          "classin_uid": "0",
+                          "parent_gzh_openid": "",
+                          "wo_id": "",
+                          "yr_id": "",
+                          "avatar_file_id": "",
+                          "yr_face": "",
+                          "wo_face": "",
+                          "is_excellent": "2",
+                          "external_id": "0",
+                          "school_id": "0",
+                          "is_experience": "2",
+                          "experience_status": "2",
+                          "cin_crm_status": "0",
+                          "tingke_time": "0",
+                          "experience_end_time": "0",
+                          "initial_payment_amount": "0.00",
+                          "esign_seal_id": "",
+                          "student_pass": "7748D0F3001F1958714E21349F971259",
+                          "student_token": "c5a4e006cde88ec8afad3f94447cc332",
+                          "student_token_expire_time": "1624764374",
+                          "counselor": "0",
+                          "is_fee_flag2": 0,
+                          "first_source_from": "8",
+                          "campus_source_from": "12",
+                          "current_assistant": "0",
+                          "current_student_assistant": {
+                            "id": "16932",
+                            "student_id": "16542",
+                            "city": "5",
+                            "campus": "504",
+                            "assistant": "0",
+                            "sum_keshi_free": "0.0",
+                            "sum_gift_keshi_free": "0.0",
+                            "sum_all_keshi_free": "0.0",
+                            "l1_keshi_free": "0.0",
+                            "l2_keshi_free": "0.0",
+                            "l3_keshi_free": "0.0",
+                            "l1_gift_keshi_free": "0.0",
+                            "l2_gift_keshi_free": "0.0",
+                            "l3_gift_keshi_free": "0.0",
+                            "campus_ctime": "1527852272",
+                            "campus_cuid": "20180601",
+                            "is_face_synchronous": "2",
+                            "is_confirm": "1",
+                            "campus_assistant_status": "1",
+                            "realname": ""
+                          },
+                          "f_status": "结课",
+                          "f_is_experience": "否",
+                          "f_gender": "未知",
+                          "f_gradelevel": "初中",
+                          "f_grade": "九年级",
+                          "f_city": "江苏",
+                          "f_campus": "长江",
+                          "f_experience_status": "体验结束",
+                          "f_class_status": "已排课",
+                          "f_source_from": "",
+                          "f_is_excellent": "处理中",
+                          "f_assistant": "周婷",
+                          "f_ctime": "2018-06-01 19:24",
+                          "f_cuid": "",
+                          "f_mtime": "2021-06-24 11:26",
+                          "f_muid": "",
+                          "f_first_assistant": "",
+                          "f_lesson_mode": "班组",
+                          "f_lesson_mode2": "",
+                          "f_file_id": [],
+                          "f_file_id_obj": [],
+                          "f_avatar": [],
+                          "f_avatar_file_id": [],
+                          "f_avatar_file_id_obj": [],
+                          "f_current_assistant": "",
+                          "f_first_source_from": "转介",
+                          "f_student_thumb": [],
+                          "f_campus_source_from": "回读",
+                          "remainder": 0,
+                          "deposit": "4496.10",
+                          "freezed": "4496.10",
+                          "withdraw": "0.00",
+                          "correction_withdraw": "0.00",
+                          "used": "4496.10",
+                          "ks_over_num": 100,
+                          "ks_xh_num": 100,
+                          "teacher_student_ks": 0,
+                          "teacher_student_ks_xh": 0,
+                          "teacher_student_ks_over": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/api\/v1\/student\/Schedule\/singleStudentTimeTable": {
+      "post": {
+        "summary": "获取学生课表",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "integer"
+                      },
+                      "firstDay": {
+                        "type": "string"
+                      },
+                      "port_name": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "port_user_campus": {
+                        "type": "string"
+                      },
+                      "token": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "student_id",
+                      "type",
+                      "firstDay",
+                      "port_name",
+                      "user_id",
+                      "port_user_campus",
+                      "token"
+                    ]
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "integer"
+                  },
+                  "v": {
+                    "type": "integer"
+                  },
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "sign": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "body",
+                  "format",
+                  "timestamp",
+                  "v",
+                  "source_id",
+                  "sign"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_id": "52253",
+                  "type": 3,
+                  "firstDay": "2021-06-01",
+                  "port_name": "student_pad",
+                  "user_id": "5891",
+                  "port_user_campus": "101",
+                  "token": "db3922e467ea9a6522fc4b5d2d639e86"
+                },
+                "format": "json",
+                "timestamp": 1624513339,
+                "v": 1,
+                "source_id": "nice_1653",
+                "sign": "7B3DF1A535D4B1204C466196AFD99C0B"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "student_name": {
+                          "type": "string"
+                        },
+                        "parent_mobile": {
+                          "type": "string"
+                        },
+                        "listDay": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "firstDay": {
+                          "type": "string"
+                        },
+                        "list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "student_name": {
+                                "type": "string"
+                              },
+                              "student_code": {
+                                "type": "string"
+                              },
+                              "parent_mobile": {
+                                "type": "string"
+                              },
+                              "school": {
+                                "type": "string"
+                              },
+                              "student_grade": {
+                                "type": "string"
+                              },
+                              "class_out_id": {
+                                "type": "string"
+                              },
+                              "student_id": {
+                                "type": "string"
+                              },
+                              "serial": {
+                                "type": "string"
+                              },
+                              "city": {
+                                "type": "string"
+                              },
+                              "ymd": {
+                                "type": "string"
+                              },
+                              "keshi_num": {
+                                "type": "string"
+                              },
+                              "class_status": {
+                                "type": "string"
+                              },
+                              "gradelevel": {
+                                "type": "string"
+                              },
+                              "grade": {
+                                "type": "string"
+                              },
+                              "subject": {
+                                "type": "string"
+                              },
+                              "login_time": {
+                                "type": "string"
+                              },
+                              "logout_time": {
+                                "type": "string"
+                              },
+                              "mood_type": {
+                                "type": "string"
+                              },
+                              "heed_type": {
+                                "type": "string"
+                              },
+                              "interaction_type": {
+                                "type": "string"
+                              },
+                              "teacher_comment": {
+                                "type": "string"
+                              },
+                              "target": {
+                                "type": "string"
+                              },
+                              "content": {
+                                "type": "string"
+                              },
+                              "remark": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "ctime": {
+                                "type": "string"
+                              },
+                              "cuid": {
+                                "type": "string"
+                              },
+                              "mtime": {
+                                "type": "string"
+                              },
+                              "muid": {
+                                "type": "string"
+                              },
+                              "bad_type": {
+                                "type": "string"
+                              },
+                              "excellent_type": {
+                                "type": "string"
+                              },
+                              "learning_type": {
+                                "type": "string"
+                              },
+                              "class_type": {
+                                "type": "string"
+                              },
+                              "lesson_id": {
+                                "type": "string"
+                              },
+                              "class_time": {
+                                "type": "string"
+                              },
+                              "business_id": {
+                                "type": "string"
+                              },
+                              "class_begin": {
+                                "type": "string"
+                              },
+                              "class_end": {
+                                "type": "string"
+                              },
+                              "pk_campus": {
+                                "type": "string"
+                              },
+                              "class_campus": {
+                                "type": "string"
+                              },
+                              "class_money": {
+                                "type": "string"
+                              },
+                              "pk_userid": {
+                                "type": "string"
+                              },
+                              "pk_assistant": {
+                                "type": "string"
+                              },
+                              "class_assistant": {
+                                "type": "string"
+                              },
+                              "pk_teacher_id": {
+                                "type": "string"
+                              },
+                              "class_teacher_id": {
+                                "type": "string"
+                              },
+                              "is_sanshi": {
+                                "type": "string"
+                              },
+                              "attachment": {
+                                "type": "string"
+                              },
+                              "op_person": {
+                                "type": "string"
+                              },
+                              "op_time": {
+                                "type": "string"
+                              },
+                              "class_num": {
+                                "type": "string"
+                              },
+                              "time_sheet": {
+                                "type": "string"
+                              },
+                              "pay_unit": {
+                                "type": "string"
+                              },
+                              "special_course": {
+                                "type": "string"
+                              },
+                              "class_grade": {
+                                "type": "string"
+                              },
+                              "class_is_part": {
+                                "type": "string"
+                              },
+                              "is_evaluate": {
+                                "type": "string"
+                              },
+                              "is_prepare": {
+                                "type": "string"
+                              },
+                              "pk_keshi_num": {
+                                "type": "string"
+                              },
+                              "file_id": {
+                                "type": "string"
+                              },
+                              "time_sheet_file_id": {
+                                "type": "string"
+                              },
+                              "check_classout_status": {
+                                "type": "string"
+                              },
+                              "check_classout_time": {
+                                "type": "string"
+                              },
+                              "check_classout_uid": {
+                                "type": "string"
+                              },
+                              "data_locking_status": {
+                                "type": "string"
+                              },
+                              "class_key": {
+                                "type": "string"
+                              },
+                              "class_subject_key": {
+                                "type": "string"
+                              },
+                              "ting_ke_thumb": {
+                                "type": "string"
+                              },
+                              "ting_ke_file_id": {
+                                "type": "string"
+                              },
+                              "is_finish_class": {
+                                "type": "string"
+                              },
+                              "finish_class_time": {
+                                "type": "string"
+                              },
+                              "finish_class_uid": {
+                                "type": "string"
+                              },
+                              "down_student_face_id": {
+                                "type": "string"
+                              },
+                              "down_face_time": {
+                                "type": "string"
+                              },
+                              "down_face_type": {
+                                "type": "string"
+                              },
+                              "on_student_face_id": {
+                                "type": "string"
+                              },
+                              "on_face_time": {
+                                "type": "string"
+                              },
+                              "on_face_type": {
+                                "type": "string"
+                              },
+                              "is_print": {
+                                "type": "string"
+                              },
+                              "teacher_class_key": {
+                                "type": "string"
+                              },
+                              "realname": {
+                                "type": "string"
+                              },
+                              "is_part": {
+                                "type": "string"
+                              },
+                              "lesson_tag": {
+                                "type": "string"
+                              },
+                              "lesson_subject": {
+                                "type": "string"
+                              },
+                              "lesson_grade": {
+                                "type": "string"
+                              },
+                              "lesson_mode": {
+                                "type": "string"
+                              },
+                              "lesson_mode2": {
+                                "type": "string"
+                              },
+                              "lesson_type": {
+                                "type": "string"
+                              },
+                              "standard_group": {
+                                "type": "string"
+                              },
+                              "unit_time": {
+                                "type": "string"
+                              },
+                              "lesson_name": {
+                                "type": "string"
+                              },
+                              "lesson_price": {
+                                "type": "string"
+                              },
+                              "f_check_classout_status": {
+                                "type": "string"
+                              },
+                              "f_mood_type": {
+                                "type": "string"
+                              },
+                              "f_heed_type": {
+                                "type": "string"
+                              },
+                              "f_interaction_type": {
+                                "type": "string"
+                              },
+                              "f_bad_type": {
+                                "type": "string"
+                              },
+                              "f_excellent_type": {
+                                "type": "string"
+                              },
+                              "f_learning_type": {
+                                "type": "string"
+                              },
+                              "f_subject": {
+                                "type": "string"
+                              },
+                              "f_gradelevel": {
+                                "type": "string"
+                              },
+                              "f_grade": {
+                                "type": "string"
+                              },
+                              "f_lesson_type": {
+                                "type": "string"
+                              },
+                              "f_city": {
+                                "type": "string"
+                              },
+                              "f_class_status": {
+                                "type": "string"
+                              },
+                              "f_class_type": {
+                                "type": "string"
+                              },
+                              "f_is_part": {
+                                "type": "string"
+                              },
+                              "f_is_sanshi": {
+                                "type": "string"
+                              },
+                              "f_standard_group": {
+                                "type": "string"
+                              },
+                              "f_special_course": {
+                                "type": "string"
+                              },
+                              "f_ctime": {
+                                "type": "string"
+                              },
+                              "f_cuid": {
+                                "type": "string"
+                              },
+                              "f_mtime": {
+                                "type": "string"
+                              },
+                              "f_muid": {
+                                "type": "string"
+                              },
+                              "f_class_begin": {
+                                "type": "string"
+                              },
+                              "f_class_end": {
+                                "type": "string"
+                              },
+                              "f_pk_assistant": {
+                                "type": "string"
+                              },
+                              "f_class_assistant": {
+                                "type": "string"
+                              },
+                              "f_pk_teacher_id": {
+                                "type": "string"
+                              },
+                              "f_class_teacher_id": {
+                                "type": "string"
+                              },
+                              "f_op_person": {
+                                "type": "string"
+                              },
+                              "f_op_time": {
+                                "type": "string"
+                              },
+                              "f_lesson_mode": {
+                                "type": "string"
+                              },
+                              "f_lesson_mode2": {
+                                "type": "string"
+                              },
+                              "f_lesson_subject": {
+                                "type": "string"
+                              },
+                              "f_lesson_grade": {
+                                "type": "string"
+                              },
+                              "f_class_campus": {
+                                "type": "string"
+                              },
+                              "f_student_grade": {
+                                "type": "string"
+                              },
+                              "f_class_date": {
+                                "type": "string"
+                              },
+                              "f_time_start": {
+                                "type": "string"
+                              },
+                              "f_time_end": {
+                                "type": "string"
+                              },
+                              "week": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "student_name",
+                        "parent_mobile",
+                        "listDay",
+                        "firstDay",
+                        "list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": 2000,
                       "msg": "操作成功",
-                      "result": true
+                      "result": {
+                        "student_name": "孙宇",
+                        "parent_mobile": "136****7101",
+                        "listDay": [
+                          "2021-06-21",
+                          "2021-06-22",
+                          "2021-06-23",
+                          "2021-06-24",
+                          "2021-06-25",
+                          "2021-06-26",
+                          "2021-06-27"
+                        ],
+                        "firstDay": "2021-06-21",
+                        "list": [
+                          {
+                            "student_name": "孙宇",
+                            "student_code": "10152262",
+                            "parent_mobile": "136****7101",
+                            "school": "海亮中学",
+                            "student_grade": "12",
+                            "class_out_id": "3259877",
+                            "student_id": "52253",
+                            "serial": "0",
+                            "city": "1",
+                            "ymd": "20210621",
+                            "keshi_num": "2.00",
+                            "class_status": "0",
+                            "gradelevel": "3",
+                            "grade": "12",
+                            "subject": "2",
+                            "login_time": "0",
+                            "logout_time": "0",
+                            "mood_type": "0",
+                            "heed_type": "0",
+                            "interaction_type": "0",
+                            "teacher_comment": "",
+                            "target": "",
+                            "content": "",
+                            "remark": "",
+                            "status": "0",
+                            "ctime": "1624001550",
+                            "cuid": "49",
+                            "mtime": "0",
+                            "muid": "0",
+                            "bad_type": "",
+                            "excellent_type": "",
+                            "learning_type": "0",
+                            "class_type": "0",
+                            "lesson_id": "33532",
+                            "class_time": "2021-06-21 08:00",
+                            "business_id": "832817",
+                            "class_begin": "1624233600",
+                            "class_end": "1624240800",
+                            "pk_campus": "101",
+                            "class_campus": "101",
+                            "class_money": "796.00",
+                            "pk_userid": "49",
+                            "pk_assistant": "7457",
+                            "class_assistant": "7457",
+                            "pk_teacher_id": "49",
+                            "class_teacher_id": "49",
+                            "is_sanshi": "0",
+                            "attachment": "",
+                            "op_person": "0",
+                            "op_time": "0",
+                            "class_num": "1",
+                            "time_sheet": "",
+                            "pay_unit": "0.00",
+                            "special_course": "0",
+                            "class_grade": "12",
+                            "class_is_part": "0",
+                            "is_evaluate": "0",
+                            "is_prepare": "0",
+                            "pk_keshi_num": "2.00",
+                            "file_id": "",
+                            "time_sheet_file_id": "",
+                            "check_classout_status": "2",
+                            "check_classout_time": "0",
+                            "check_classout_uid": "0",
+                            "data_locking_status": "0",
+                            "class_key": "0",
+                            "class_subject_key": "0",
+                            "ting_ke_thumb": "",
+                            "ting_ke_file_id": "",
+                            "is_finish_class": "2",
+                            "finish_class_time": "0",
+                            "finish_class_uid": "0",
+                            "down_student_face_id": "",
+                            "down_face_time": "0",
+                            "down_face_type": "0",
+                            "on_student_face_id": "",
+                            "on_face_time": "0",
+                            "on_face_type": "0",
+                            "is_print": "2",
+                            "teacher_class_key": "0",
+                            "realname": "刘艳",
+                            "is_part": "1",
+                            "lesson_tag": "1对1课程",
+                            "lesson_subject": "2",
+                            "lesson_grade": "12",
+                            "lesson_mode": "1",
+                            "lesson_mode2": "1",
+                            "lesson_type": "1",
+                            "standard_group": "0",
+                            "unit_time": "60",
+                            "lesson_name": "1对1课程-高三-数学-1对1-398",
+                            "lesson_price": "398.00",
+                            "f_check_classout_status": "未审核",
+                            "f_mood_type": "",
+                            "f_heed_type": "",
+                            "f_interaction_type": "",
+                            "f_bad_type": "",
+                            "f_excellent_type": "",
+                            "f_learning_type": "",
+                            "f_subject": "数学",
+                            "f_gradelevel": "高中",
+                            "f_grade": "高三",
+                            "f_lesson_type": "常规",
+                            "f_city": "杭州",
+                            "f_class_status": "已排",
+                            "f_class_type": "",
+                            "f_is_part": "全职",
+                            "f_is_sanshi": "否",
+                            "f_standard_group": "否",
+                            "f_special_course": "否",
+                            "f_ctime": "2021-06-18 15:32",
+                            "f_cuid": "刘艳",
+                            "f_mtime": "",
+                            "f_muid": "",
+                            "f_class_begin": "2021-06-21 08:00",
+                            "f_class_end": "2021-06-21 10:00",
+                            "f_pk_assistant": "朱晓芳",
+                            "f_class_assistant": "朱晓芳",
+                            "f_pk_teacher_id": "刘艳",
+                            "f_class_teacher_id": "刘艳",
+                            "f_op_person": "",
+                            "f_op_time": "",
+                            "f_lesson_mode": "1对1",
+                            "f_lesson_mode2": "1V1",
+                            "f_lesson_subject": "数学",
+                            "f_lesson_grade": "高三",
+                            "f_class_campus": "解放",
+                            "f_student_grade": "高三",
+                            "f_class_date": "2021-06-21",
+                            "f_time_start": "08:00",
+                            "f_time_end": "10:00",
+                            "week": "1"
+                          }
+                        ]
+                      }
                     }
                   }
                 }
@@ -470,6 +3350,14 @@
                         "port_name": {
                           "type": "string",
                           "description": "操作端"
+                        },
+                        "token": {
+                          "type": "string",
+                          "description": "token"
+                        },
+                        "token_expire_time": {
+                          "type": "string",
+                          "description": "token过期时间"
                         }
                       },
                       "required": [
@@ -535,7 +3423,9 @@
                         "yr_face",
                         "wo_face",
                         "userid",
-                        "port_name"
+                        "port_name",
+                        "token",
+                        "token_expire_time"
                       ]
                     }
                   },
@@ -571,7 +3461,7 @@
                         "city": "5",
                         "campus": "504",
                         "assistant": "1575",
-                        "loginnum": "0",
+                        "loginnum": "7",
                         "remark": "",
                         "last_class_time": "2018-07-27 12:50",
                         "class_status": "0",
@@ -579,7 +3469,7 @@
                         "status": "2",
                         "ctime": "1527852272",
                         "cuid": "20180601",
-                        "mtime": "1527852272",
+                        "mtime": "1624505174",
                         "muid": "0",
                         "crm_student_id": "131766",
                         "crm_assistant": "0",
@@ -616,8 +3506,202 @@
                         "yr_face": "",
                         "wo_face": "",
                         "userid": "16542",
-                        "port_name": "student_pad"
+                        "port_name": "student_pad",
+                        "token": "c5a4e006cde88ec8afad3f94447cc332",
+                        "token_expire_time": "1624764374"
                       }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/v2\/student\/user\/resetPass": {
+      "post": {
+        "summary": "学生端 - 修改密码",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_id": {
+                        "type": "string",
+                        "description": "学生ID"
+                      },
+                      "old_passwd": {
+                        "type": "string",
+                        "description": "旧密码"
+                      },
+                      "new_passwd": {
+                        "type": "string",
+                        "description": "新密码"
+                      },
+                      "port_name": {
+                        "type": "string",
+                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                      }
+                    },
+                    "required": [
+                      "student_id",
+                      "old_passwd",
+                      "port_name",
+                      "new_passwd"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_id": "16542",
+                  "old_passwd": "student6542",
+                  "port_name": "student_pad",
+                  "new_passwd": "student1234"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/v2\/student\/user\/logout": {
+      "post": {
+        "summary": "学生端 - 登出",
+        "description": "",
+        "tags": [
+          "学生端"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application\/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "student_id": {
+                        "type": "string",
+                        "description": "学生ID"
+                      },
+                      "port_name": {
+                        "type": "string",
+                        "description": "操作端：student_pad , student_phone, student_pc 等"
+                      }
+                    },
+                    "required": [
+                      "student_id",
+                      "port_name"
+                    ]
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              },
+              "example": {
+                "body": {
+                  "student_id": "16542",
+                  "port_name": "student_pad"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "code",
+                    "msg",
+                    "result"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "status": "success",
+                      "code": "2000",
+                      "msg": "操作成功",
+                      "result": true
                     }
                   }
                 }

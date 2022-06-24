@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [\App\Http\Controllers\SmploteController::class, 'index']);
+
+Route::prefix('v1')->group(function () {
+    Route::get('index', [\App\Http\Controllers\SmploteController::class, 'index']);
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });

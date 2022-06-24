@@ -12,8 +12,7 @@ class SmploteController extends Controller {
      * @author wuj@igancao.com
      * @date 2022/06/24 09:44
      */
-    public function index(): string
-    {
+    public function index(): string {
         return 'welcome to smplote';
     }
 

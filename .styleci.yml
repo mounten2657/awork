@@ -1,12 +1,14 @@
 php:
   preset: laravel
+  version: 8
   disabled:
     - no_unused_imports
   finder:
     not-name:
       - index.php
+      - server.php
 js:
   finder:
     not-name:
-      - vite.config.js
+      - webpack.mix.js
 css: true

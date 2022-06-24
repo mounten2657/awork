@@ -1,0 +1,127 @@
+
+.time-sm-line
+{
+    min-height: 40px;
+    line-height: 2em;
+}
+
+.platform-sm-line
+{
+    line-height: 1.5em;
+}
+
+.platform-sm-line #image_list,#doc_list a
+{
+    background: #0a9afe;
+    border-color: #0a9afe;
+}
+
+.string-sm-line
+{
+    line-height: 1em;
+}
+
+.string-sm-line input
+{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 99.6%;
+}
+
+.string-sm-line textarea
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 99.6%;
+}
+
+.string-sm-line label
+{
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+.btn:hover,.btn:focus
+{
+    outline: none;
+}
+
+.to-fix-select.layui-layer-content
+{
+    overflow: visible;
+}
+
+.layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn
+{
+    padding-right: 25px;
+}
+
+body h4
+{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#d_mark
+{
+    height: 200px;
+}
+#big_data img
+{
+    margin-left: 34%;
+    height: 250px;
+    width: auto;
+}
+
+#x_gitee a
+{
+    background: #C71D23;
+    border-color: #C71D23;
+}
+#x_github a
+{
+    background: #24292E;
+    border-color: #24292E;
+}
+#gitlib_i a
+{
+    background: #F1A699;
+    border-color: #F1A699;
+}
+#x_docker_lib a
+{
+    background: #099CEC;
+    border-color: #099CEC;
+}
+#x_qr_code a
+{
+    background: #56A059;
+    border-color: #56A059;
+}
+#x_font_awesome a
+{
+    background: #0A0A0A;
+    border-color: #0A0A0A;
+}
+#x_uni_app a
+{
+    background: #2B9939;
+    border-color: #2B9939;
+}
+#x_google_fy a
+{
+    background: #1A73E8;
+    border-color: #1A73E8;
+}
+#x_youdao_net a
+{
+    background: #257FE6;
+    border-color: #257FE6;
+}
+#tool_other a{
+    background: #58c9f3;
+    border-color: #5bc0de;
+}
+
+
+

@@ -77,6 +77,7 @@
                 <label><a href="{{base_url()}}/kodbox/index.php?share/folder&user=1&sid=4biYpd8J" target="_blank" type="button" class="btn btn-primary btn-xs">Images</a></label>
                 <label><a href="{{base_url()}}/kodbox?share/folder&user=1&sid=M8Ud6WQK" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #0a9afe">Documents</a></label>
                 <label><a href="{{base_url()}}/kodbox/plugins/adminer/adminer/" target="_blank" type="button" class="btn btn-primary btn-xs">Mysql Adminer</a></label>
+                <label><a href="{{base_url()}}/layui" target="_blank" type="button" class="btn btn-primary btn-xs">Layui</a></label>
             </div>
             <!-- Mark -->
             <div class="row lh-2">

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>awork</title>
-    <link rel="stylesheet" type="text/css" href="{{baseUrl()}}/assets/common/css/bootstrap_v3_3_0.min.css">
-    <link rel="stylesheet" type="text/css" href="{{baseUrl()}}/assets/common/layui-v2.5.6/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="{{baseUrl()}}/assets/common/css/short.css">
-    <link rel="stylesheet" type="text/css" href="{{baseUrl()}}/assets/awork/css/index.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/bootstrap_v3_3_0.min.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/layui-v2.5.6/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/short.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/awork/css/index.css">
 </head>
 
 <body>
-<h4 class="text-center">Awork <<$awork_version>> index
+<h4 class="text-center">Awork {{$awork_version}} index
     <small>
-        (<a href="/test/index" target="_blank">Go to test</a>) . --- lasted update at <<$awork_updated_at>>)
+        --- last updated at {{$awork_updated_at}}
     </small>
 </h4>
 
@@ -52,80 +52,69 @@
             <!-- Api -->
             <div class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Api</code></div>
-                <label id="test_api"><a href="/test/index" target="_blank" type="button" class="btn btn-primary btn-xs">Test Api</a></label>
-                <label id="php_i"><a href="/test/index?tcode=phpinfo" target="_blank" type="button" class="btn btn-primary btn-xs">phpinfo</a></label>
-                <label id="test_first"><a href="/test/index?tcode=first" target="_blank" type="button" class="btn btn-primary btn-xs">index</a></label>
-                <label id="h210_api"><a href="/extra/url?h210_api" target="_blank" type="button" class="btn btn-primary btn-xs">210 Api</a></label>
-                <label id="h210_auth"><a href="/extra/url?h210_auth" target="_blank" type="button" class="btn btn-primary btn-xs">210 Auth</a></label>
-                <label id="h210_back"><a href="/extra/url?h210_back" target="_blank" type="button" class="btn btn-primary btn-xs">210 Back</a></label>
+                <label><a href="{{base_url()}}/api/awork/index" target="_blank" type="button" class="btn btn-primary btn-xs">Awork List</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=phpinfo" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Info</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientIp" target="_blank" type="button" class="btn btn-primary btn-xs">Client IP</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientDns" target="_blank" type="button" class="btn btn-primary btn-xs">Client DNS</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientUa" target="_blank" type="button" class="btn btn-primary btn-xs">User Agent</a></label>
             </div>
-            <!-- Html -->
+            <!-- Server -->
             <div  class="row platform-sm-line">
-                <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Html</code></div>
-                <label id="current_i"><button type="button" class="btn btn-primary btn-xs">Current</button></label>
-                <label id="host_ip"><a href="javascript:" type="button" class="btn btn-primary btn-xs">Host IP</a></label>
-                <label id="code_bch"><a href="javascript:" type="button" class="btn btn-primary btn-xs">Code Branch</a></label>
-                <label id="php_ver"><a href="javascript:" type="button" class="btn btn-primary btn-xs">PHP Version</a></label>
-                <label id="ch_submit"><a href="javascript:" type="button" class="btn btn-danger btn-xs">Submit</a></label>
-                <label id="ch_check"><a href="/extra/url?ch_check" target="_blank" type="button" class="btn btn-primary btn-xs">Check</a></label>
+                <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Server</code></div>
+                <label><a href="{{base_url()}}/joplin" target="_blank" type="button" class="btn btn-primary btn-xs">Joplin</a></label>
+                <label><a href="{{base_url()}}/photo" target="_blank" type="button" class="btn btn-primary btn-xs">Photo Station</a></label>
+                <label><a href="{{base_url()}}/video" target="_blank" type="button" class="btn btn-primary btn-xs">Video Station</a></label>
+                <label><a href="{{base_url()}}/audio" target="_blank" type="button" class="btn btn-primary btn-xs">Audio Station</a></label>
+                <label><a href="{{base_url()}}/synology" target="_blank" type="button" class="btn btn-primary btn-xs">Synology</a></label>
+                <label><a href="{{base_url()}}/baota" target="_blank" type="button" class="btn btn-primary btn-xs">BaoTa</a></label>
             </div>
             <!-- File -->
             <div class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>File</code></div>
-                <label id="file_list"><a href="/exp/#explorer" target="_blank" type="button" class="btn btn-primary btn-xs">File List</a></label>
-                <label id="file_back"><a href="/exp/index.php?desktop" target="_blank" type="button" class="btn btn-primary btn-xs">Desktop</a></label>
-                <label id="image_list"><a href="/exp/index.php?share/folder&user=1&sid=4biYpd8J" target="_blank" type="button" class="btn btn-primary btn-xs">Images</a></label>
-                <label id="doc_list"><a href="/exp?share/folder&user=1&sid=M8Ud6WQK" target="_blank" type="button" class="btn btn-primary btn-xs">Documents</a></label>
-                <label id="tool_list"><a href="/exp/plugins/adminer/adminer/" target="_blank" type="button" class="btn btn-primary btn-xs">Mysql Adminer</a></label>
-                <label id="tool_other"><a href="/ibarn" target="_blank" type="button" class="btn btn-primary btn-xs">Ibarn</a></label>
+                <label><a href="{{base_url()}}/kodbox/#explorer" target="_blank" type="button" class="btn btn-primary btn-xs">File List</a></label>
+                <label><a href="{{base_url()}}/kodbox/index.php?desktop" target="_blank" type="button" class="btn btn-primary btn-xs">Desktop</a></label>
+                <label><a href="{{base_url()}}/kodbox/index.php?share/folder&user=1&sid=4biYpd8J" target="_blank" type="button" class="btn btn-primary btn-xs">Images</a></label>
+                <label><a href="{{base_url()}}/kodbox?share/folder&user=1&sid=M8Ud6WQK" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #0a9afe">Documents</a></label>
+                <label><a href="{{base_url()}}/kodbox/plugins/adminer/adminer/" target="_blank" type="button" class="btn btn-primary btn-xs">Mysql Adminer</a></label>
             </div>
             <!-- Mark -->
             <div class="row lh-2">
                 <div id="d_mark" class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Mark</code></div>
-                <label id="show_doc"><a href="/extra/url?show_doc" target="_blank" type="button" class="btn btn-primary btn-xs">ShowDoc</a></label>
-                <label id="redis_back"><a href="/extra/url?redis_back" target="_blank" type="button" class="btn btn-primary btn-xs">Redis</a></label>
-                <label id="mongo_back"><a href="/extra/url?mongo_back" target="_blank" type="button" class="btn btn-primary btn-xs">Mongo</a></label>
-                <label id="gitlib_i"><a href="/extra/url?github_i" target="_blank" type="button" class="btn btn-primary btn-xs">250 GitLib</a></label>
-                <label id="zentao_i"><a href="/extra/url?zentao_i" target="_blank" type="button" class="btn btn-primary btn-xs">241 ZenTao</a></label>
-                <label id="h152_i"><a href="/extra/url?h152_i" target="_blank" type="button" class="btn btn-primary btn-xs">152 v1906</a></label>
-
-                <br>
-                <label id="x_baidu"><a href="https://www.baidu.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Baidu</a></label>
-                <label id="x_baidu_fy"><a href="https://fanyi.baidu.com/" target="_blank" type="button" class="btn btn-primary btn-xs">BaiduFanYi</a></label>
-                <label id="x_google_fy"><a href="https://translate.google.cn/" target="_blank" type="button" class="btn btn-primary btn-xs">GTranslate</a></label>
-                <label id="x_google"><a href="https://www.google.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Google</a></label>
-                <label id="x_ip1"><a href="https://ip.sb/" target="_blank" type="button" class="btn btn-primary btn-xs">IP1</a></label>
-                <label id="x_ip2"><a href="https://www.ipaddress.com/" target="_blank" type="button" class="btn btn-primary btn-xs">IP2</a></label>
-                <label id="x_json"><a href="http://www.bejson.com/" target="_blank" type="button" class="btn btn-primary btn-xs">BEJSON</a></label>
-                <label id="x_cnzz"><a href="https://tool.chinaz.com/" target="_blank" type="button" class="btn btn-primary btn-xs">ChinaZ</a></label>
+                <label><a href="https://www.baidu.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Baidu</a></label>
+                <label><a href="https://fanyi.baidu.com/" target="_blank" type="button" class="btn btn-primary btn-xs">BaiduFanYi</a></label>
+                <label><a href="https://translate.google.cn/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #1A73E8">GTranslate</a></label>
+                <label><a href="https://www.google.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Google</a></label>
+                <label><a href="https://ip.sb/" target="_blank" type="button" class="btn btn-primary btn-xs">IP1</a></label>
+                <label><a href="https://www.ipaddress.com/" target="_blank" type="button" class="btn btn-primary btn-xs">IP2</a></label>
+                <label><a href="http://www.bejson.com/" target="_blank" type="button" class="btn btn-primary btn-xs">BEJSON</a></label>
+                <label><a href="https://tool.chinaz.com/" target="_blank" type="button" class="btn btn-primary btn-xs">ChinaZ</a></label>
 
                 </br>
-                <label id="x_gitee"><a href="https://gitee.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Gitee</a></label>
-                <label id="x_github"><a href="https://github.com/" target="_blank" type="button" class="btn btn-primary btn-xs">GitHub</a></label>
-                <label id="x_docker_hub"><a href="https://hub.docker.com/" target="_blank" type="button" class="btn btn-primary btn-xs">DockerHub</a></label>
-                <label id="x_docker_lib"><a href="https://hub.docker.com/u/library" target="_blank" type="button" class="btn btn-primary btn-xs">DockerLib</a></label>
-                <label id="x_bucket"><a href="https://bitbucket.org/" target="_blank" type="button" class="btn btn-primary btn-xs">BitBucket</a></label>
-                <label id="x_itellu"><a href="https://msdn.itellyou.cn/" target="_blank" type="button" class="btn btn-primary btn-xs">ITELLU</a></label>
-                <label id="x_dnmp"><a href="https://github.com/yeszao/dnmp" target="_blank" type="button" class="btn btn-primary btn-xs">Dnmp</a></label>
+                <label><a href="https://gitee.com/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #C71D23">Gitee</a></label>
+                <label><a href="https://github.com/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #24292E">GitHub</a></label>
+                <label><a href="https://hub.docker.com/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #099CEC">DockerHub</a></label>
+                <label><a href="https://hub.docker.com/u/library" target="_blank" type="button" class="btn btn-primary btn-xs">DockerLib</a></label>
+                <label><a href="https://bitbucket.org/" target="_blank" type="button" class="btn btn-primary btn-xs">BitBucket</a></label>
+                <label><a href="https://msdn.itellyou.cn/" target="_blank" type="button" class="btn btn-primary btn-xs">ITELLU</a></label>
+                <label><a href="https://github.com/yeszao/dnmp" target="_blank" type="button" class="btn btn-primary btn-xs">Dnmp</a></label>
 
                 </br>
-                <label id="x_layui"><a href="https://www.layui.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Layui</a></label>
-                <label id="x_echart"><a href="https://echarts.apache.org/zh/index.html" target="_blank" type="button" class="btn btn-primary btn-xs">EChart</a></label>
-                <label id="x_font_awesome"><a href="https://fontawesome.dashgame.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Font Awesome</a></label>
-                <label id="x_uni_app"><a href="https://uniapp.dcloud.io/" target="_blank" type="button" class="btn btn-primary btn-xs">Uni App</a></label>
-                <label id="x_php_web"><a href="https://www.kancloud.cn/logoove/we7/678511" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Web</a></label>
-                <label id="x_qr_code"><a href="https://cli.im/" target="_blank" type="button" class="btn btn-primary btn-xs">QR Code</a></label>
-                <label id="x_wall_paper"><a href="http://www.netbian.com/dongman1920_1080/" target="_blank" type="button" class="btn btn-primary btn-xs">Wall Paper</a></label>
+                <label><a href="https://www.layui.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Layui</a></label>
+                <label><a href="https://echarts.apache.org/zh/index.html" target="_blank" type="button" class="btn btn-primary btn-xs">EChart</a></label>
+                <label><a href="https://fontawesome.dashgame.com/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #0A0A0A">Font Awesome</a></label>
+                <label><a href="https://uniapp.dcloud.io/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #2B9939">Uni App</a></label>
+                <label><a href="https://www.kancloud.cn/logoove/we7/678511" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Web</a></label>
+                <label><a href="https://cli.im/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #56A059">QR Code</a></label>
+                <label><a href="http://www.netbian.com/dongman1920_1080/" target="_blank" type="button" class="btn btn-primary btn-xs">Wall Paper</a></label>
 
                 </br>
-                <label id="x_post"><a href="http://coolaf.com/tool/post" target="_blank" type="button" class="btn btn-primary btn-xs">POST</a></label>
-                <label id="x_markdown"><a href="http://coolaf.com/tool/md" target="_blank" type="button" class="btn btn-primary btn-xs">Markdown</a></label>
-                <label id="x_tableconvert"><a href="https://tableconvert.com/" target="_blank" type="button" class="btn btn-primary btn-xs">TableConvert</a></label>
-                <label id="x_ppt"><a href="http://www.1ppt.com/" target="_blank" type="button" class="btn btn-primary btn-xs">PPT</a></label>
-                <label id="x_photo_pea"><a href="https://www.photopea.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Photo Pea</a></label>
-                <label id="x_youdao_net"><a href="http://note.youdao.com/" target="_blank" type="button" class="btn btn-primary btn-xs">YouDao Net</a></label>
-                <label id="x_process_on"><a href="https://www.processon.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Process On</a></label>
-
+                <label><a href="http://coolaf.com/tool/post" target="_blank" type="button" class="btn btn-primary btn-xs">POST</a></label>
+                <label><a href="http://coolaf.com/tool/md" target="_blank" type="button" class="btn btn-primary btn-xs">Markdown</a></label>
+                <label><a href="https://tableconvert.com/" target="_blank" type="button" class="btn btn-primary btn-xs">TableConvert</a></label>
+                <label><a href="http://www.1ppt.com/" target="_blank" type="button" class="btn btn-primary btn-xs">PPT</a></label>
+                <label><a href="https://www.photopea.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Photo Pea</a></label>
+                <label><a href="http://note.youdao.com/" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #257FE6">YouDao Net</a></label>
+                <label><a href="https://www.processon.com/" target="_blank" type="button" class="btn btn-primary btn-xs">Process On</a></label>
 
             </div>
         </div>
@@ -144,10 +133,9 @@
             <label id="unicode"><button type="button" class="btn btn-primary btn-xs">unicode</button></label>
             <label><span style="width: 100px" class="col-lg-2"></span></label>
             <label id="rand_passwd"><button type="button" class="btn btn-primary btn-xs">rand passwd</button></label>
-            <label id="version_bat"><button type="button" class="btn btn-warning btn-xs" title="双击下载">version bat</button></label>
             <label id="sql_format"><button type="button" class="btn btn-primary btn-xs" title="双击精简">sql format</button></label>
             <label id="xml_format"><button type="button" class="btn btn-primary btn-xs" title="双击精简">xml format</button></label>
-            <label id="md5"><button type="button" class="btn btn-primary btn-xs" title="双击再加密">md5</button></label>
+            <label id="md5"><button type="button" class="btn btn-warning btn-xs" title="双击再加密">md5</button></label>
             <label id="base64_encode"><button type="button" class="btn btn-primary btn-xs" title="双击替换">base64 encode</button></label>
             <label id="base64_decode"><button type="button" class="btn btn-primary btn-xs" title="双击替换">base64 decode</button></label>
             <label id="sha256"><button type="button" class="btn btn-primary btn-xs">sha256</button></label>
@@ -198,7 +186,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a id="big_data" href="javascript:" ><img src="{{baseUrl()}}/assets/awork/img/big_data.jpg"></a>
+            <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data.jpg"></a>
         </div>
     </div>
 
@@ -206,14 +194,14 @@
 
 </div>
 
-<script src="{{baseUrl()}}/assets/common/js/vue_v2_2_2.min.js"></script>
-<script src="{{baseUrl()}}/assets/common/js/jquery_v2_1_1.min.js"></script>
-<script src="{{baseUrl()}}/assets/common/layui-v2.5.6/layui.all.js"></script>
-<script src="{{baseUrl()}}/assets/common/js/public.js"></script>
-<script src="{{baseUrl()}}/assets/common/js/md5.js"></script>
-<script src="{{baseUrl()}}/assets/common/js/base64.js"></script>
-<script src="{{baseUrl()}}/assets/awork/js/index_function.js"></script>
-<script src="{{baseUrl()}}/assets/awork/js/index.js" charset="gb2312"></script>
+<script src="{{base_url()}}/assets/common/js/vue_v2_2_2.min.js"></script>
+<script src="{{base_url()}}/assets/common/js/jquery_v2_1_1.min.js"></script>
+<script src="{{base_url()}}/assets/common/layui-v2.5.6/layui.all.js"></script>
+<script src="{{base_url()}}/assets/common/js/public.js"></script>
+<script src="{{base_url()}}/assets/common/js/md5.js"></script>
+<script src="{{base_url()}}/assets/common/js/base64.js"></script>
+<script src="{{base_url()}}/assets/awork/js/index_function.js"></script>
+<script src="{{base_url()}}/assets/awork/js/index.js" charset="gb2312"></script>
 
 </body>
 </html>

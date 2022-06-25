@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// index default
-Route::get('/', [\App\Http\Controllers\SmploteController::class, 'index']);
+// default index
+Route::redirect('/', '/v1/index.html');
 
 // awork
-Route::get('/awork', [\App\Http\Controllers\SmploteController::class, 'awork']);
+Route::get('/awork', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);
 
-// v1
+// v1 page
 Route::prefix('v1')->group(function () {
-    Route::get('index', [\App\Http\Controllers\SmploteController::class, 'index']);
+    Route::get('index.html', [\App\Http\Controllers\Smplote\SmploteController::class, 'index']);
 });
 
 // welcome

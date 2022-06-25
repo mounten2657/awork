@@ -1,10 +1,10 @@
 
-//ÊµÊ±Ê±¼ä
+//å®æ—¶æ—¶é—´
 function getNowTime()
 {
-    //»ñÈ¡µ±Ç°Ê±¼ä²¢¸ñÊ½»¯ÎªÊ±¼ä´Á
+    //è·å–å½“å‰æ—¶é—´å¹¶æ ¼å¼åŒ–ä¸ºæ—¶é—´æˆ³
     let timestamp = parseInt((new Date()).getTime()/1000);
-    //½«Ê±¼äĞ´Èë±êÇ©
+    //å°†æ—¶é—´å†™å…¥æ ‡ç­¾
     let str = '';
     let strLen = timestamp%4;
     if (3 === strLen) strLen = 1;
@@ -19,7 +19,7 @@ function getNowTime()
     $('#now_date_record').html(formatTime(timestamp));
 }
 
-//Ê±¼ä´Á×ªÈÕÆÚ¸ñÊ½
+//æ—¶é—´æˆ³è½¬æ—¥æœŸæ ¼å¼
 function formatTime (timestamp)
 {
     let unixtimestamp = new Date(timestamp*1000);
@@ -35,7 +35,7 @@ function formatTime (timestamp)
         + second.substring(second.length-2, second.length);
 }
 
-//ÈÕÆÚ×ªÊ±¼ä´Á
+//æ—¥æœŸè½¬æ—¶é—´æˆ³
 function formatDate(timeDate)
 {
     let time = new Date(timeDate.replace(/-/g,"/"));
@@ -43,7 +43,7 @@ function formatDate(timeDate)
     return parseInt(timeInt/1000);
 }
 
-//JSON½âÂë
+//JSONè§£ç 
 function formatJsonEncode(text)
 {
     let json = text.toString();
@@ -58,7 +58,7 @@ function formatJsonEncode(text)
     return  json;
 }
 
-//JSON±àÂë
+//JSONç¼–ç 
 function formatJsonDecode (json, options)
 {
     let reg = null,
@@ -140,7 +140,7 @@ function formatJsonDecode (json, options)
     return formatted;
 }
 
-//»ñÈ¡ url ²ÎÊı
+//è·å– url å‚æ•°
 function getUrlParams(url) {
     let json = {};
     let arr = url.substr(url.indexOf('?') + 1).split('&');
@@ -151,7 +151,7 @@ function getUrlParams(url) {
     return json;
 }
 
-//×Ö·û´®Êı×éÅÅĞò
+//å­—ç¬¦ä¸²æ•°ç»„æ’åº
 function sortStr(str, spliter) {
     let arr = str.split(spliter);
     arr.sort(function(a, b){
@@ -160,7 +160,7 @@ function sortStr(str, spliter) {
     return arr.join(spliter);
 }
 
-// unicode ±àÂë
+// unicode ç¼–ç 
 function unicode(str)
 {
     var value='';
@@ -178,7 +178,8 @@ function leftZero4(str)
     }
     return str;
 }
-// unicode ½âÂë
+
+// unicode è§£ç 
 function deUnicode(str){
     str = str.replace(/(\\u)(\w{1,4})/gi,function($0){
         return (String.fromCharCode(parseInt((escape($0).replace(/(%5Cu)(\w{1,4})/g,"$2")),16)));

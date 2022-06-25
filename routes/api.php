@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// ua
+Route::middleware('trim')->get('/ua', function (Request $request) {
+    return $request->header('user-agent');
 });
+
+// awork
+Route::prefix('awork')->group(function () {
+    Route::get('index', [\App\Http\Controllers\Awork\AworkController::class, 'index']);
+});
+
+

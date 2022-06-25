@@ -2,7 +2,7 @@
 $(function () {
 
     /**************************************Tool for timestamp***********************************************/
-    //≥ı ºªØ
+    //ÂàùÂßãÂåñ
     let color = '#333';
     let errColor = '#c7254e';
     let nowTimer = setInterval("getNowTime()",1000);
@@ -15,7 +15,7 @@ $(function () {
     $('#date_in').val(formatTime(nowTimeInt));
     $('#date_out').html(nowTimeInt);
 
-    //µ„ª˜ Stop
+    //ÁÇπÂáª Stop
     $('#now_stop').click(function () {
         let val = $(this).data('val');
         if (val) {
@@ -33,13 +33,13 @@ $(function () {
         }
     });
 
-    //µ„ª˜ Date
+    //ÁÇπÂáª Date
     $('#time_in + label').click(function () {
         let nowTimeInt = $('#time_in').val();
         $('#time_out').html(formatTime(nowTimeInt));
     });
 
-    //µ„ª˜ Time
+    //ÁÇπÂáª Time
     $('#date_in + label').click(function () {
         let nowTimeDate = $('#date_in').val();
         $('#date_out').html(formatDate(nowTimeDate));
@@ -47,7 +47,7 @@ $(function () {
 
     /**************************************Tool for string***********************************************/
     let clickTimer = null;
-    //µ„ª˜ json decode
+    //ÁÇπÂáª json decode
     $('#json_decode').click(function () {
         let json = '';
         let text = $('#text_in').val();
@@ -62,13 +62,13 @@ $(function () {
         $('#text_out').val(json).css('color', color);
     });
 
-    //µ„ª˜ json encode
+    //ÁÇπÂáª json encode
     $('#json_encode').click(function () {
         let text = $('#text_in').val();
         $('#text_out').val(formatJsonEncode(text)).css('color', color);
     });
 
-    //µ„ª˜ url decode
+    //ÁÇπÂáª url decode
     $('#url_decode').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -78,7 +78,7 @@ $(function () {
             $('#text_out').val(text).css('color', color);
         },300);
     });
-    //À´ª˜ url decode
+    //ÂèåÂáª url decode
     $('#url_decode').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
@@ -87,7 +87,7 @@ $(function () {
         $('#text_out').val(text).css('color', color);
     });
 
-    //µ„ª˜ url encode
+    //ÁÇπÂáª url encode
     $('#url_encode').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -95,14 +95,14 @@ $(function () {
             $('#text_out').val(encodeURI(text)).css('color', color);
         },300);
     });
-    //À´ª˜ url encode
+    //ÂèåÂáª url encode
     $('#url_encode').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
         $('#text_out').val(encodeURIComponent(text)).css('color', color);
     });
 
-    //µ„ª˜ implode
+    //ÁÇπÂáª implode
     $('#implode').click(function () {
         let text = $('#text_in').val();
         text = text.replace(/\ +/g, ',');
@@ -110,7 +110,7 @@ $(function () {
         $('#text_out').val(text).css('color', color);
     });
 
-    //µ„ª˜ explode
+    //ÁÇπÂáª explode
     $('#explode').click(function () {
         let text = $('#text_in').val();
         text = text.replace(/\,/g, "\r\n");
@@ -118,7 +118,7 @@ $(function () {
         $('#text_out').val(text).css('color', color);
     });
 
-    //µ„ª˜ rand passwd
+    //ÁÇπÂáª rand passwd
     $('#rand_passwd').click(function () {
         let text = (new Date()).getTime().toString() + Math.floor((Math.random()*10000)+1);
         let str = '';
@@ -131,51 +131,19 @@ $(function () {
         $('#text_out').val(str).css('color', color);
     });
 
-    //µ„ª˜ version bat
-    $('#version_bat').click(function () {
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(function () {
-            let text = $('#text_in').val();
-            text = text.replace(/\ +/g, ',');
-            $.ajax({
-                url: '/index/api/generateBat',
-                type: 'post',
-                data: {text: text},
-                success: function (res) {
-                    res = JSON.parse(res);
-                    if (res.code === '0') {
-                        $('#text_out').val(res.data.bat).css('color', color);
-                    } else {
-                        $('#text_out').val(res.msg).css('color', errColor);
-                    }
-                }
-            });
-        },300);
-        return true;
-    });
-    //À´ª˜ version bat
-    $('#version_bat').dblclick(function () {
-        clearTimeout(clickTimer);
-        let text = $('#text_in').val();
-        text = text.replace(/\ +/g, ',');
-        if (text !== '') {
-            window.location.href = '/index/api/downloadBat?text='+text;
-        }
-    });
-
-    //µ„ª˜ unicode
+    //ÁÇπÂáª unicode
     $('#unicode').click(function () {
         let text = $('#text_in').val();
         $('#text_out').val(unicode(text)).css('color', color);
     });
 
-    //µ„ª˜ uni_decode
+    //ÁÇπÂáª uni_decode
     $('#uni_decode').click(function () {
         let text = $('#text_in').val();
         $('#text_out').val(deUnicode(text)).css('color', color);
     });
 
-    //µ„ª˜ sql_format
+    //ÁÇπÂáª sql_format
     $('#sql_format').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -184,14 +152,14 @@ $(function () {
         },300);
         return true;
     });
-    //À´ª˜ sql_format
+    //ÂèåÂáª sql_format
     $('#sql_format').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
         tooLuFormat(text, 'compress', 'sql_format');
     });
 
-    //µ„ª˜ xml_format
+    //ÁÇπÂáª xml_format
     $('#xml_format').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -200,14 +168,14 @@ $(function () {
         },300);
         return true;
     });
-    //À´ª˜ xml_format
+    //ÂèåÂáª xml_format
     $('#xml_format').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
         tooLuFormat(text, 'purify', 'xml_format');
     });
 
-    //µ„ª˜ md5
+    //ÁÇπÂáª md5
     $('#md5').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -215,14 +183,14 @@ $(function () {
             $('#text_out').val($.md5(text)).css('color', color);
         },300);
     });
-    //À´ª˜ md5
+    //ÂèåÂáª md5
     $('#md5').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_out').val();
         $('#text_out').val($.md5(text)).css('color', color);
     });
 
-    //µ„ª˜ base64_encode
+    //ÁÇπÂáª base64_encode
     $('#base64_encode').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -230,14 +198,14 @@ $(function () {
             $('#text_out').val($.base64.encode(text)).css('color', color);
         },300);
     });
-    //À´ª˜ base64_encode
+    //ÂèåÂáª base64_encode
     $('#base64_encode').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
         $('#text_out').val($.base64.encodeExt(text)).css('color', color);
     });
 
-    //µ„ª˜ base64_decode
+    //ÁÇπÂáª base64_decode
     $('#base64_decode').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -245,14 +213,14 @@ $(function () {
             $('#text_out').val($.base64.decode(text)).css('color', color);
         },300);
     });
-    //À´ª˜ base64_decode
+    //ÂèåÂáª base64_decode
     $('#base64_decode').dblclick(function () {
         clearTimeout(clickTimer);
         let text = $('#text_in').val();
         $('#text_out').val($.base64.decodeExt(text)).css('color', color);
     });
 
-    //µ„ª˜ sha256
+    //ÁÇπÂáª sha256
     $('#sha256').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -262,7 +230,7 @@ $(function () {
         return true;
     });
 
-    //µ„ª˜ sha512
+    //ÁÇπÂáª sha512
     $('#sha512').click(function () {
         clearTimeout(clickTimer);
         clickTimer = setTimeout(function () {
@@ -273,158 +241,6 @@ $(function () {
     });
 
     /**************************************Tool for platform***********************************************/
-    // ªÒ»°∞Ê±æ–≈œ¢
-    let version = {};
-    let deny = '#host_ip,#code_bch,#php_ver,#ch_submit,#ch_check';
-    deny += ',#h210_api,#h210_auth,#h210_back,#gitlib_i,#zentao_i,#h152_i';
-    disableServer(deny);
-    version = {data:null,msg:"Server Offline!"};
-    /*let loadIndex = layer.load(2, {time: 10 * 1000});
-    setTimeout(function () {
-        $.ajax({
-            url: '/extra/url?current_i',
-            type:'post',
-            data:{},
-            success:function (res) {
-                res = JSON.parse(res);
-                if (res.code !== '0') {
-                    version.data = null;
-                    version.msg = res.msg;
-                    disableServer(deny);
-                    layer.close(loadIndex);
-                    return layer.msg(res.msg);
-                }
-                version = res.data;
-                // ª˘±æ–≈œ¢
-                let info = version.data.branch + ' + ' + version.data.version;
-                $('#current_i button').html(info);
-                $('#host_text').html(version.data.host);
-                $('#branch_text').html('release/'+version.data.branch);
-                $('#version_text').html('PHP '+version.data.version);
-                // select ∏≥÷µ
-                $('#HostIP').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.host + '"]').click();
-                $('#CodeBranch').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.branch + '"]').click();
-                $('#PHPVersion').siblings("div.layui-form-select").find('dl').find('dd[lay-value="' + version.data.version + '"]').click();
-                // Ω˚”√∑«’˝ Ωπ¶ƒ‹
-                if (version.data.isProduct === '1') {
-                    disableServer(deny);
-                }
-                layer.close(loadIndex);
-            }
-        });
-    },500);*/
-
-    // deny
-    let tips = null;
-    $(deny).hover(function() {
-        let id = $(this).attr('id');
-        let title = $(this).attr('title');
-        if (title) {
-            tips = layer.tips(title, '#'+id, {tips: [1, '#c7254e']});
-        }
-    }, function () {
-        layer.close(tips);
-        return false;
-    });
-
-    //µ„ª˜ current_i
-    $('#current_i').click(function () {
-        if (version.data) {
-            var info = version.data.host + ' <br> ' + version.data.branch + ' <br> ' + version.data.version;
-            layer.tips(info, '#current_i', {tips:[1, '#111'],time:3000});
-        } else {
-            layer.tips(version.msg, '#current_i', {tips:[1, '#111'],time:3000});
-        }
-    });
-
-    //µ„ª˜ host_ip
-    $('#host_ip').click(function () {
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(function () {
-            var info = version.data.host;
-            layer.tips(info, '#host_ip', {tips:[1, '#111'],time:3000});
-        },300);
-    });
-
-    //µ„ª˜ code_bch
-    $('#code_bch').click(function () {
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(function () {
-            var info = version.data.branch;
-            layer.tips(info, '#code_bch', {tips:[1, '#111'],time:3000});
-        },300);
-    });
-
-    //µ„ª˜ php_ver
-    $('#php_ver').click(function () {
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(function () {
-            var info = version.data.version;
-            layer.tips(info, '#php_ver', {tips:[1, '#111'],time:3000});
-        },300);
-    });
-
-    //À´ª˜ host_ip code_bch php_ver
-    $('#host_ip,#code_bch,#php_ver').dblclick(function () {
-        clearTimeout(clickTimer);
-        layer.open({
-            title: 'Select Property Of Html'
-            ,type: 1
-            ,area: ['480px', '420px']
-            ,offset: ['20%', '20%']
-            ,btn: ['&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;', 'Cancel']
-            ,content: $('#host_form')
-            ,yes: function (index) {
-                layer.msg('The html has been set, click \'Submit\' to save it.');
-                layer.close(index)
-            }
-            ,btn2: function (index) {
-                layer.close(index);
-            }
-        });
-    });
-
-    //µ„ª˜ ch_submit
-    $('#ch_submit').click(function () {
-        var host = $('#HostIP').val();
-        var branch = $('#CodeBranch').val();
-        var php = $('#PHPVersion').val();
-        layer.prompt({
-            title: 'Enter Your Password : '
-            ,formType: 1
-            ,maxlength: 50
-            ,offset: ['30%', '25%']
-            ,btn: ['Ok', 'Cancel']
-            ,yes: function (index) {
-                var loadIndex = layer.load(2, {time: 5 * 1000});
-                var pass = layui.jquery('#layui-layer'+ index + " .layui-layer-input").val();
-                pass = $.md5($.md5(pass));
-                console.log(host,branch,php,pass);
-                $.ajax({
-                    url: '/extra/url?ch_submit',
-                    type: 'post',
-                    async: false,
-                    data: {branch:branch,php:php,pass:pass},
-                    success: function (res) {
-                        console.log(res);
-                        res = JSON.parse(res);
-                        if (res.code !== '0' || res.code === '30010') {
-                            return layer.msg(res.msg);
-                        }
-                        layer.msg('The project has been changed successful!');
-                    }
-                });
-                layer.close(index);
-                setTimeout(function () {
-                    layer.close(loadIndex);
-                    window.location.reload();
-                }, 3000);
-            }
-            ,btn2: function (index) {
-                layer.close(index);
-            }
-        });
-    });
 
     $('#big_data').click(function () {
         layer.tips('Value: A large amount of irrelevant information, predictable analysis of future trends and patterns, in-depth and complex analysis, and rapid extraction of the valuable information from the massive data resources, bringing real benefits to customers. (For example: machine learning, artificial intelligence, data aggregation, etc.)\n' +
@@ -433,13 +249,13 @@ $(function () {
             'Veracity: The content of big data is closely related to what happens in the real world. The study of big data is to extract the process of explaining and predicting real events from huge network data. Improve the accuracy and reliability of data and ensure data quality. It can also be used to predict a certain trend in the future and use data to extract real demand points.\n', '#big_data img', {tips:[2, '#ccc'],area:['495px','250px'],time:3000});
     });
 
-    // «¿æ€Ωπ
-    var focus = setInterval(function () {
-        $('#text_in').focus();
-    }, 100);
-    setTimeout(function () {
-        window.clearInterval(focus)
-    },2000)
+    // Êä¢ËÅöÁÑ¶
+    // var focus = setInterval(function () {
+    //     $('#text_in').focus();
+    // }, 100);
+    // setTimeout(function () {
+    //     window.clearInterval(focus)
+    // },2000)
 
 });
 

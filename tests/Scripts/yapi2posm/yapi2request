@@ -1,0 +1,392 @@
+<?php
+
+namespace test\Yapi2Posm;
+
+use function simple\osapp;
+
+include '../../../lib/common/simple.class.php';
+
+class yapi2request
+{
+
+    /**
+     * get command help info
+     * @return bool
+     */
+    public static function helper()
+    {
+        $helper = PHP_EOL;
+        $helper .= "@usage: php yapi2request [config file] [generate file] [type]" . PHP_EOL . PHP_EOL;
+        $helper .= "    [config file] the json file export from your yapi project." . PHP_EOL;
+        $helper .= "    [generate file] the json file that want import into your project." . PHP_EOL;
+        $helper .= "    [type] the execute type for your project." . PHP_EOL . PHP_EOL;
+        $helper .= "@example: php yapi2request conf-api.php gen-api.txt api" . PHP_EOL;
+        echo $helper . PHP_EOL;
+        return false;
+    }
+
+    /**
+     * host list
+     * @var array
+     */
+    public static $host = [
+        'api' => 'https://dapi.tingjunapp.com/api',
+        'app' => 'https://dapp.tingjunapp.com/api',
+    ];
+
+    /**
+     * @param $data
+     * @return bool
+     */
+    public static function run($data)
+    {
+        //error_reporting(0);
+        $params = array(
+            'source_file' => isset($data[1]) ? $data[1] : '',
+            'direct_file' => isset($data[2]) ? $data[2] : '',
+            'type' => isset($data[3]) ? $data[3] : 'api',
+        );
+        if (empty($params['source_file']) || empty($params['direct_file'])) {
+            return self::helper();
+        }
+        return self::handler($params);
+    }
+
+    /**
+     * @param $params
+     * @return bool
+     */
+    public static function handler($params)
+    {
+        echo PHP_EOL . "[START] transform config file ..." . PHP_EOL;
+
+        $host = self::$host[$params['type']];
+        $urlList = self::includeFile($params['source_file']);
+        $client = osapp()->http();
+        ksort($urlList);
+
+        if (!$urlList) {
+            echo "[ERROR] invalid source file! - 1002".PHP_EOL;
+            return false;
+        }
+
+        // generate request list
+        $i = 1;
+        $content = '[Request List] : ' . PHP_EOL . PHP_EOL;
+        $response = [];
+        foreach ($urlList as $uri => $prop) {
+            $url = $host . $uri;
+            echo "requesting api [{$i}] : {$prop['method']} - {$url} ..." . PHP_EOL;
+            if (empty($prop['mock']) || $prop['mock'] == 'null') {
+                $result = $client->request($prop['method'], $url, $prop['params']);
+                $result = json_encode($result);
+            } else {
+                $result = $prop['mock'];
+            }
+            $class = self::getClassName($uri);
+            $response[] = [
+                'uri' => $uri,
+                'method' => $prop['method'],
+                'controller' => $class['controller'],
+                'index' => $class['index'] == 'list' ? 'getList' : $class['index'],
+                'name' => $class['name'],
+                'request' => json_encode($prop['params']),
+                'response' => $result,
+            ];
+            $content .= $uri . PHP_EOL
+                . json_encode($prop['params']) . PHP_EOL
+                //. $result . PHP_EOL . PHP_EOL;
+                . substr($result, 0, 500) . PHP_EOL . PHP_EOL;
+            $i ++;
+        }
+
+        // generate route list
+        $content .= PHP_EOL . PHP_EOL . '[Route List] : ' . PHP_EOL . PHP_EOL;
+        foreach ($response as $key => $v) {
+            $content .= self::getRouteTpl($v);
+        }
+        $content .= PHP_EOL . 'uri list : ' . PHP_EOL . print_r(array_keys($urlList), true);
+
+        // generate controller file
+        $content .= PHP_EOL . PHP_EOL . '[Controller List] : ' . PHP_EOL . PHP_EOL;
+        $controller = '';
+        $path = 'data/20201204/'. $params['type']. '/Api/';
+        $controllerList = [];
+        $validate = '';
+        foreach ($response as $key => $v) {
+            if (!$key) {
+                $validate .= self::getValidate($v['index'], self::getVali($v['request']));
+                $controller .= self::getIndexTpl($v);
+            } elseif ($key < count($response) - 1) {
+                if ($response[$key - 1]['controller'] == $response[$key]['controller']) {
+                    $validate .= self::getValidate($v['index'], self::getVali($v['request']));
+                    $controller .= self::getIndexTpl($v);
+                } else {
+                    $file = $path . $response[$key - 1]['controller'].'.php';
+                    $msg = 'generate controller : ' . $file . ' ... ' . PHP_EOL;
+                    $content .= $msg;
+                    echo $msg;
+                    $controllerList[] =  $response[$key - 1]['controller'];
+                    file_put_contents($file, self::getIndexHeadTpl($response[$key - 1]['controller'], self::getValidateTpl($validate) . $controller));
+                    $validate = self::getValidate($v['index'], self::getVali($v['request']));
+                    $controller = self::getIndexTpl($v);
+                }
+            } else {
+                $file = $path . $response[$key]['controller'].'.php';
+                $msg = 'generate controller : ' . $file . ' ... ' . PHP_EOL;
+                $content .= $msg;
+                echo $msg;
+                $controllerList[] =  $response[$key]['controller'];
+                file_put_contents($file, self::getIndexHeadTpl($response[$key]['controller'], self::getValidateTpl($validate) .$controller));
+            }
+        }
+        $content .= PHP_EOL . 'controller list : ' . PHP_EOL . print_r($controllerList, true);
+        return false;
+
+        // generate service and repository file
+        $sPath = 'data/20201204/'. $params['type']. '/Services/';
+        $rPath = 'data/20201204/'. $params['type']. '/Repository/';
+        $sProp = $rProp = '';
+        foreach ($controllerList as $controller) {
+            $service = str_replace('Controller', 'Service', $controller);
+            $repository = str_replace('Controller', 'Repository', $controller);
+            file_put_contents($sPath.$service.'.php', self::getServiceTpl($service));
+            file_put_contents($rPath.$repository.'.php', self::getRepositoryTpl($repository));
+            $sProp .= self::getPropTpl($service);
+            $rProp .= self::getPropTpl($repository);
+        }
+        $content .= PHP_EOL . 'service prop list : ' . PHP_EOL . $sProp;
+        $content .= PHP_EOL . 'repository prop list : ' . PHP_EOL . $rProp;
+
+
+        file_put_contents($params['direct_file'], $content);
+
+        echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+        return true;
+    }
+
+    /**
+     * get class name
+     * @param $uri
+     * @return array
+     */
+    public static function getClassName($uri)
+    {
+        $uri = substr($uri, 1);
+        $uri = explode('/', $uri);
+        $name = implode('.', $uri);
+        if (!isset($uri[1])) $uri[1] = $uri[0];
+        list($class, $index) = $uri;
+        $class = ucfirst($class);
+        if (false !== strpos($class, '-')) {
+            $tmpAry = explode('-', $class);
+            $class = '';
+            foreach ($tmpAry as $tmp) {
+                $class .= ucfirst($tmp);
+            }
+        }
+        if (false !== strpos($index, '-')) {
+            $tmpAry = explode('-', $index);
+            $index = '';
+            foreach ($tmpAry as $key => $tmp) {
+                if (!$key) {
+                    $index .= $tmp;
+                    continue;
+                }
+                $index .= ucfirst($tmp);
+            }
+        }
+        $class .= 'Controller';
+        return [
+            'controller' => $class,
+            'index' => $index,
+            'name' => $name
+        ];
+    }
+
+    /**
+     * get route tpl
+     * @param $v
+     * @return string
+     */
+    public static function getRouteTpl($v)
+    {
+        $tpl = "Route::%s('%s', [\App\Http\Controllers\Api\%s::class, '%s'])->name('%s');";
+        return vsprintf($tpl, [strtolower($v['method']), $v['uri'], $v['controller'], $v['index'], $v['name']]) . PHP_EOL;
+    }
+
+    /**
+     * get prop tpl
+     * @param $class
+     * @return string
+     */
+    public static function getPropTpl($class)
+    {
+        $tpl = ' * @property %s $%s';
+        return vsprintf($tpl, [$class, $class]) . PHP_EOL;
+    }
+
+    /**
+     * get service tpl
+     * @param $class
+     * @param string $index
+     * @return string
+     */
+    public static function getServiceTpl($class, $index = '')
+    {
+        $tpl = '<?php
+
+namespace App\Services;
+
+/**
+ * @package App\Services
+ * @see %s
+ */
+class %s extends BaseService
+{
+%s
+}';
+        return vsprintf($tpl, [$class, $class, $index]);
+    }
+
+    /**
+     * get repository tpl
+     * @param $class
+     * @param string $index
+     * @return string
+     */
+    public static function getRepositoryTpl($class, $index = '')
+    {
+        $tpl = '<?php
+
+namespace App\Repository;
+
+/**
+ * @package App\Repository
+ * @see %s
+ */
+class %s extends BaseRepository
+{
+%s
+}';
+        return vsprintf($tpl, [$class, $class, $index]);
+    }
+
+    /**
+     * get index head tpl
+     * @param $class
+     * @param $index
+     * @return string
+     */
+    public static function getIndexHeadTpl($class, $index)
+    {
+        $tpl = '<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\BaseController;
+use Illuminate\Http\Request;
+
+/**
+ * @package App\Http\Controllers\Api
+ * @see %s
+ */
+class %s extends BaseController
+{
+%s
+}';
+        return vsprintf($tpl, [$class, $class, $index]);
+    }
+
+    /**
+     * @param $v
+     * @return string
+     */
+    public static function getValidateTpl($v)
+    {
+        $tpl = '    /**
+     * 参数验证器
+     * [!] 可包含 rules(验证规则) 和 messages(报错信息) 两个节点
+     * @var array $validate
+     * @example ["index" => ["rules" => ["id" => "required|string|max:5"],"message" => ["id.max" => "The id may not be illegal"]],]
+     */
+    public $validate = [
+%s    ];';
+        return PHP_EOL . vsprintf($tpl, [$v]) . PHP_EOL;
+    }
+
+    /**
+     * @param $method
+     * @param $vali
+     * @return string
+     */
+    public static function getValidate($method, $vali)
+    {
+        $tpl = '        "%s" => ["rules" => [
+%s        ]],';
+        return vsprintf($tpl, [$method, $vali]) . PHP_EOL;
+    }
+
+    /**
+     * @param $v
+     * @return string
+     */
+    public static function getVali($v)
+    {
+        $vali = '';
+        $request = json_decode($v, true);
+        $tpl = '            "%s" => "required|string|max:1000",';
+        foreach ($request as $key => $val) {
+            $vali .= vsprintf($tpl, [$key]) . PHP_EOL;
+        }
+        return  $vali;
+    }
+
+    /**
+     * get index tpl
+     * @param $v
+     * @return string
+     */
+    public static function getIndexTpl($v)
+    {
+        $tpl = '
+    /**
+     * %s
+     * @uri %s
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @request %s
+     * @response %s
+     */
+    public function %s(Request $request)
+    {
+        $params = $request->all();
+
+        // @todo api data from mock.
+        $mock = json_decode(
+            mb_convert_encoding(
+                \'%s\'
+                , \'UTF-8\', \'UTF-8,GBK,GB2312,BIG5\' )
+            , true
+        );
+        $data = $mock[\'result\'];
+
+        return $this->apiReturn($data);
+    }';
+        return vsprintf($tpl, [$v['index'], $v['uri'], $v['request'], $v['response'], $v['index'], $v['response']]) . PHP_EOL;
+
+    }
+
+    /**
+     * include file
+     * @param $file
+     * @return mixed
+     */
+    protected static function includeFile($file)
+    {
+        return include $file;
+    }
+
+}
+
+yapi2request::run($argv);

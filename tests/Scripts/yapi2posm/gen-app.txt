@@ -1,0 +1,674 @@
+[Request List] : 
+
+/api-info
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/article/get-detail
+{"article_id":"A8118D810EF65080"}
+{"success":true,"statusCode":200,"result":{"author_id":"00KDI3UBCCJ58V7ATXCDSK25","id":"00KDZATK1EXYWJ9MDEB3PLXD","article_source":"\u5fae\u4fe1\u516c\u4f17\u53f7","content":"<p style=\"margin-right: 16px;margin-left: 16px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: normal;box-sizing: border-box !important;overflow-wrap: break-word !important\"><br><\/p><p style=\"box-sizing: border-box;font-size: 16px\"><br><\/p><
+
+/article/note-line-list
+{"article_id":"0F4BFB06F7995455","start_index":"05E2CCB1035C2D91","end_index":"A52AAE61799E19F0","last_id":"ACF54235C4129793"}
+{"success":true,"statusCode":200,"result":{"totalCount":1,"pageSize":20,"page":1,"list":[{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00K9CC70ZDBR7XJMKQRMKAXF","type":2,"created_at":1604556070,"is_public":true,"id":"00KH4F97VLCDUFXJIIP1ZGA5","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD"},"content":"\u5212\u7ebf\u7b14\u8bb01026","selected":"","note_share_url":"note\/00KH4F97VLCDUFXJIIP1ZGA
+
+/article/note-list
+{"article_id":"E79EBE38ADCEDE4E","tab":"341C482786EEA271","order_type":"FDA46A1CE4E4AD4A","last_id":"1495A1F9E2E3C5E4"}
+{"success":true,"statusCode":200,"result":{"totalCount":3,"pageSize":20,"page":1,"list":[{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00K6M6PAPS378XO8TW8BZOQA","type":1,"created_at":1601432780,"is_public":1,"id":"00KFORQ9KGHBYMCKJE59VSUE","content":"\u54c8\u54c8","selected":"","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD"},"article":[],"note_share_url":"note\/00KFORQ9KGHBYMCKJE59VSUE"},{"user_id":"00K8SG
+
+/attention/list
+{"last_id":"10A1C0D7875E3F8B"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"user_id":"00KCBK4H5XL8DLGGD4D5XZSW","type":1,"created_at":1604632694,"target_id":"00KH5OVHV1E0TF13K0WDOH6A","target_type":1,"id":"00KH5OVIXQXUTVVFLFYDWW7L","is_like":false,"user":{"user_id":"00KCBK4H5XL8DLGGD4D5XZSW","avatar":"default.png","nickname":"\u542c\u541b031233","id":"00KCBK4H5XL8DLGGD4D5XZSW"},"article":{"title":"\u8fd921\u6b3eApp\u8fdd\u6cd5\uff01\u53ef\u80fd\u4f60\u4e5f\u5728\u7528|\u4e00\u5468
+
+/attention/refresh
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/collect/add
+{"target_id":"82DDB8CFBC991AC0","target_type":"EFBDD49442B61D4C","package_id":"EA52C0F8765218AD"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/collect/cancel
+{"target_id":"357A72D5E598090E","target_type":"C8672E54A20E51D6","package_id":"80BA80687D881140"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/comment/add
+{"target_id":"10EE4AF2B0264E47","target_type":"B3C22476CE75B7A9","content":"8F474775033C274F"}
+{"success":true,"statusCode":200,"result":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","target_id":"00KGQG9MJRNPCBOQG6MVFRMU","target_type":"2","content":"\u65b0\u589e\u7b14\u8bb0\u8bc4\u8bba","created_at":1604458953,"updated_at":1604458953,"id":"00KH2TFNMUPYLT3ECWYXGKYA","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD","author_identify":1},"reply":[],"count":{"like":0,"reply":0},"is_deleted":false},"mess
+
+/comment/del
+{"comment_id":"81E8D8C8A8FB927C","target_type":"FA00D0FF31E118EB","target_id":"B4311BAA46F0D223"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/comment/list
+{"target_id":"E6980871B22B93B5","target_type":"83CB71E0CC7984E4","order":"292C3F759D3CED84"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"target_id":"00KGQG9MJRNPCBOQG6MVFRMU","target_type":2,"is_deleted":false,"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","updated_at":1604412607,"id":"00KH21UB3JAUCBMH91USJUXV","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD","author_identify":1},"reply":[],"count":{"like":0,"reply":0}},{"target_id":"00KGQG9MJRNPCBOQG6M
+
+/copy
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/desktop/collect-list
+{"last_id":"0AC83E868C99A2AB"}
+{"success":true,"statusCode":200,"result":{"totalCount":6,"pageSize":20,"page":1,"list":[{"id":581,"target_id":"00KH1B7QN8GXQMM79MU48VQE","target_type":1,"package_id":112,"created_at":1604371833,"is_fail":false,"article":{"title":"\u5982\u4f55\u4ece Notion \u6279\u91cf\u5bfc\u51fa Markdown\uff1f","cover_url":"a6dac801be16d048777c4445738a4810.jpg","id":"00KH1B7QN8GXQMM79MU48VQE","is_collect":true,"is_fail":false,"count":{"note":0}},"note":[]},{"id":575,"target_id":"00KGUDNOV7BHLH0W5ZB7QTBO","targ
+
+/desktop/collect-refresh
+{"first_id":"0C929664133A866C"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/desktop/get-favorite-count
+[]
+{"success":true,"statusCode":200,"result":15,"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/desktop/note-list
+{"last_id":"D0B6C38462F30E53"}
+{"success":true,"statusCode":200,"result":{"totalCount":21,"pageSize":20,"page":1,"list":[{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00K9CC70ZDBR7XJMKQRMKAXF","type":2,"created_at":1604556070,"is_public":true,"id":"00KH4F97VLCDUFXJIIP1ZGA5","is_collect":false,"is_like":false,"content":"\u5212\u7ebf\u7b14\u8bb01026","selected":"\u8fc7\u5206\u8fc7\u5206\u8fc7\u5206\u8fc7\u5206\u8fc7\u5206","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619",
+
+/desktop/search
+{"search":"1237B0F57AB321B5","search_type":"A645627DAF898930","last_id":"77E80C6BE89D6996"}
+{"success":true,"statusCode":200,"result":{"collect_list":{"totalCount":0,"pageSize":20,"page":1,"list":[]},"note_list":{"totalCount":0,"pageSize":20,"page":1,"list":[]},"favorites_list":{"totalCount":0,"pageSize":20,"page":1,"list":[]},"user_list":{"totalCount":5,"pageSize":20,"page":1,"list":[{"user_id":"00KDI3UBCCJ58V7ATXCDSK25","avatar":"467cc648bfb276c534b543b7bb0aa2d5.png","nickname":"\u5218\u4e00\u5929"},{"user_id":"00K88A34P3DFOSSUA1W5XUZA","avatar":"ffRFWBCZepxM7q44Yceidwnozv-2INLL.jpg"
+
+/dynamic/del
+{"id":"6E828D0C78D36423"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/dynamic/get-detail
+[]
+{"success":true,"statusCode":200,"result":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","type":2,"target_id":"00KH5SLW51RU71FIWSIPJS9X","id":"00KH5SLW71PD7MDN5HM8U3WB","article":[],"note":{"id":"00KH5SLW51RU71FIWSIPJS9X","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00K9CC70ZDBR7XJMKQRMKAXF","type":1,"is_choice":0,"is_public":true,"created_at":1604638963,"updated_at":1604638963,"selected":"","content":"\u5475\u5475\u54c8\u54c8\u54c8","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.pn
+
+/favorites/add
+{"name":"5A5D436DD367D295","description":"B0690F533A9F5D6D","is_public":"C176C52A91616484","target_id":"8619172396422C90","target_type":"F0F5F01FF45E78CB"}
+{"success":true,"statusCode":200,"result":{"id":119,"name":"\u65b0\u5efa\u6536\u85cf\u5939","summary":"\u6682\u65e0\u63cf\u8ff0","total":0,"is_public":true,"is_default":false,"updated_at":1602489111},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/favorites/del
+{"id":"98A64CA249C68213"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/favorites/detail-list
+{"target_type":"1BFBC30CBF209ACA","target_id":"4FC8D4A1CA053D31"}
+{"success":true,"statusCode":200,"result":{"totalCount":3,"pageSize":20,"page":1,"list":[{"id":27,"name":"\u9ed8\u8ba4\u6536\u85cf\u5939","summary":"","total":5,"is_public":true,"is_default":true,"updated_at":1601448800,"is_collect":true},{"id":113,"name":"\u6211\u7684\u79c1\u5bc6\u6536\u85cf","summary":"","total":0,"is_public":false,"is_default":true,"updated_at":1603266506,"is_collect":false},{"id":112,"name":"\u65b0\u5efa\u6536\u85cf\u5939","summary":"\u54c8\u54c8\u54c8","total":0,"is_public"
+
+/favorites/edit
+{"id":"D41E720251D79C8B","name":"A0DC6188FEA6AFBF","description":"A9C1F48F47DDC1AF","is_public":"805D26535F5A6CE8"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/favorites/get-detail
+{"id":"6728EDBA14984B19","other_id":"496BB5AE29FD7047"}
+{"success":true,"statusCode":200,"result":{"id":13,"name":"\u65b0\u5efa\u6536\u85cf\u5939","summary":"\u6682\u65e0\u63cf\u8ff0","total":0,"is_public":2,"is_default":1,"updated_at":1599638840},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/followers/list/
+{"last_id":"BA17E44396665183","other_id":"4AC050594DB46A50"}
+{"success":true,"statusCode":200,"result":{"totalCount":4,"pageSize":20,"page":0,"list":[{"id":"00K8PKE1GR0GBGQEWILLCX0C","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","follow_id":"00K8PKE1GR0GBGQEWILLCX0C","attention_status":4,"is_official":false,"avatar":"default.png","nickname":"\u542c\u541bac1b27"},{"id":"00K9W4ZLI5HDNSCFC4EJJU1H","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","follow_id":"00K9W4ZLI5HDNSCFC4EJJU1H","attention_status":4,"is_official":false,"avatar":"014b5c5c56db70ea4a336acc0438337e.png","nickna
+
+/following/list/
+{"last_id":"A688175470F707DC","other_id":"38F08F5E635E130E"}
+{"success":true,"statusCode":200,"result":{"totalCount":6,"pageSize":20,"page":0,"list":[{"id":"00K8PKE1GR0GBGQEWILLCX0C","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","follow_id":"00K8PKE1GR0GBGQEWILLCX0C","attention_status":4,"is_official":false,"avatar":"default.png","nickname":"\u542c\u541bac1b27"},{"id":"00K9W4ZLI5HDNSCFC4EJJU1H","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","follow_id":"00K9W4ZLI5HDNSCFC4EJJU1H","attention_status":4,"is_official":false,"avatar":"014b5c5c56db70ea4a336acc0438337e.png","nickna
+
+/like/add
+{"target_id":"86702FC852405D2A","target_type":"82AF0A16CCF76F0C"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/like/cancel
+{"target_id":"9B137E968D049CE8","target_type":"67A7B209205A876C"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/message/comment-list
+{"type":"F089BBDAC946A0ED","last_id":"8032491FFDA53065"}
+{"success":true,"statusCode":200,"result":{"totalCount":5,"pageSize":20,"page":1,"list":[{"id":57,"created_at":1605594500,"main":{"comment_id":"00KHLLGICEKOKBLJO1QV2DLT","reply_id":"00KHLLIDDRXNXWXCCO0KI5NY","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","target_type":4,"created_at":1605594500,"target_id":"00KHIL6NRVNHG2GFTLIEXM3B","content":"\u6211\u4e00\u76f4\u4ee5\u4e3a","to_user_id":"00KCBK4H5XL8DLGGD4D5XZSW","type":1,"to_reply_id":"","id":"00KHLLIDDRXNXWXCCO0KI5NY","user":{"user_id":"00K8SG5FNDFYVHJD
+
+/message/like-list
+{"last_id":"082FF0CCE34E77A5"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"id":792,"created_at":1605595208,"main":{"comment_id":"00KHKBKDNKJA5B26UA0F1PME","reply_id":"00KHKBR8AUBBARULXWAP2MGC","target_type":4,"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","to_user_id":"00KCBK4H5XL8DLGGD4D5XZSW","content":"\u54c8\u54c8\u54c8","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"f475cac06e10cbcf944272a38145d605.png","nickname":"\u65af\u6587\u7684\u5c0f\u8d25\u7c7b","id":"00K8SG5FNDFYVHJDPW
+
+/message/system-list
+{"last_id":"4C85B9D52A62E159"}
+{"success":true,"statusCode":200,"result":{"list":{"totalCount":32,"pageSize":20,"page":0,"list":[{"id":32,"title":"\u60a8\u7684\u4f5c\u8005\u5165\u9a7b\u7533\u8bf7\u5df2\u7ecf\u901a\u8fc7","content":"\u60a8\u7684\u4f5c\u8005\u7533\u8bf7\u5df2\u8ba4\u8bc1\u901a\u8fc7\uff0c\u8d76\u7d27\u767b\u5f55\u7f51\u7ad9\u5199\u6587\u7ae0\u5427\u3002","created_at":1592193743,"del":false},{"id":31,"title":"\u60a8\u7684\u4f5c\u8005\u5165\u9a7b\u7533\u8bf7\u5df2\u7ecf\u901a\u8fc7","content":"\u60a8\u7684\u4f5c\
+
+/message/unread
+[]
+{"success":true,"statusCode":200,"result":{"comment":1,"like":1,"announce":0,"total":2},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/note/add
+{"article_id":"D56F3D283DC97D4C","content":"472EF9AD87D1F006","selected":"46AC3AFAF61C1730","start_index":"EFC72D232C847A7F","end_index":"65EB46FE876D5823","is_public":"96A2F28C1AB5C39A","type":"5D7281EEFBFE39D1"}
+{"success":true,"statusCode":200,"result":{"note_id":"00KH5SLW51RU71FIWSIPJS9X","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00K9CC70ZDBR7XJMKQRMKAXF","is_public":"1","type":"1","created_at":1604638963,"updated_at":1604638963,"id":772,"start_index":0,"end_index":0,"article":{"id":"00K9CC70ZDBR7XJMKQRMKAXF"}},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/note/del
+{"id":"8860B3BC4186730C","package_id ":"E3F79EF87D168E90"}
+{"success":true,"statusCode":200,"result":{"id":"00KDY8EAQ6GTAAKDIJR9IDRH","start_index":1304,"end_index":1308},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/note/edit
+{"id":"C1A3ABC58720CA1B"}
+{"success":true,"statusCode":200,"result":"00KDY76SXV4I9PUFWLO5MHSN","message":"\u4fdd\u5b58\u6210\u529f"}
+
+/note/get-detail
+{"id":"28792A5F2509EEED"}
+{"success":true,"statusCode":200,"result":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","is_public":false,"type":1,"article_id":"00KEI4FQBJQBMBYAETPVQNTJ","created_at":1603701036,"selected":"","id":"00KGQA6UY5BDRGZ57NFDQ6C5","content":"\u6587\u7ae0\u7b14\u8bb03","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD"},"is_collect":false,"count":{"like":0,"comment":0},"article":{"title":"\u534e\u4e3a\u57fa\u672c\u6cd5\u5b8c\u6574
+
+/one-click-collect/favorites-list
+[]
+{"success":true,"statusCode":200,"result":{"totalCount":4,"pageSize":20,"page":1,"list":[{"id":5,"name":"\u9ed8\u8ba4\u6536\u85cf\u5939","summary":"","total":0,"is_public":true,"is_default":true,"updated_at":1602729326,"is_collect":false},{"id":121,"name":"\u6211\u7684\u79c1\u5bc6\u6536\u85cf","summary":"","total":0,"is_public":false,"is_default":true,"updated_at":1602732625,"is_collect":false},{"id":119,"name":"\u65b0\u5efa\u6536\u85cf\u5939","summary":"\u6682\u65e0\u63cf\u8ff0","total":0,"is_p
+
+/one-click-collect/preview
+{"url":"CE07CDD3A72F0124"}
+{"success":true,"statusCode":200,"result":{"title":"\u6293\u53d6\u7684\u6587\u7ae0\u6807\u9898","cover_url":"default.phg"},"message":"OK"}
+
+/one-click-collect/save
+{"package_id":"4392F700B87E7EDF","url":"99900DE5757F9765"}
+{"success":true,"statusCode":200,"result":{"article_id":"lyj"},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/opinion/add
+{"content":"E8533482BFA2B19E","contact":"45A4B6546701AA84"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/recommend/list
+{"last_id":"4D98ACA1A25C5AC0"}
+{"success":true,"statusCode":200,"result":{"totalCount":4,"pageSize":20,"page":1,"list":[{"target_type":2,"note":{"id":"lyj","content":"\u201c\u5feb\u9910\u901f\u98df\u6587\u5316\u7684\u5404\u79cd\u57f9\u8bad\u73ed\uff0c\u51fa\u6765\u4e86\u5404\u79cd\u2018\u5e08\u2019\uff0c\u4ed6\u4eec\u771f\u7684\u4e86\u89e3\u513f\u7ae5\u53d1\u5c55\u548c\u4eb2\u5b50\u5173\u7cfb\u5417\uff1f\n\u5982\u679c\u6709\u4e00\u79cd\u65b9\u6cd5\u662f\u8ba9\u4f60\u6cef\u706d\u7236\u6bcd\u7684\u76f4\u89c9\u611f\u53d7\uff0c\u
+
+/reply/add
+{"to_id":"5D03B6EAD5F71F48","target_id":"233B32B9D264DBD8","content":"43BC3E1648E72707","comment_id":"AAE502976C2F050F","target_type":"BFF79F440D0A64DB"}
+{"success":true,"statusCode":200,"result":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","to_user_id":"00K8SG5FNDFYVHJDPWBMPIJD","comment_id":"00KH2TFNMUPYLT3ECWYXGKYA","content":"\u56de\u590d","type":2,"created_at":1604460477,"updated_at":1604460477,"id":"00KH2UCBX02HN8W7WNOXVAGR","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD","author_identify":1},"to_user":[],"count":{"like":0}},"message":"\u56de\u590d\
+
+/reply/del
+{"comment_id":"1818F2F00ED9E3A7","reply_id":"1D1E7DBD3C37FC96","target_id":"008F90B7CA1DC278"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/reply/list
+{"comment_id":"8B415E1583B6ED38","target_id":"61250DB6845DAE49","last_id":"C07122FF2453777D"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"comment_id":"00KH21UB3JAUCBMH91USJUXV","created_at":1604412780,"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","to_user_id":"00K8SG5FNDFYVHJDPWBMPIJD","content":"\u56de\u590d\u7684\u56de\u590d","id":"00KH21Y0NNG5YJFDLTU2DWHG","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD","author_identify":0},"to_user":[],"count":{"li
+
+/report/add
+{"report":"EBC6E0D764F2B5A4","content":"47721B0E0309D1DF","target_id":"7D3578CC0A5E4978","target_type":"E1B1899B2A77CCE6","other_id":"1A9AA8BABD3A4792"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/setting/cancel-bind
+{"auth_type":"C015ADE89D84A8B6"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/setting/change-binding
+{"tel":"A0854BAC37D01821","new_code":"43C91541155AF9FD","old_code":"DCF004C5A5654290"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/setting/original-tel-auth
+{"code":"2B10CD137B90BA05","sms_template":"C4306B348F285E06"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/setting/reset-password
+{"new_password":"453229998BBF0455","code":"2A40FEA9951F18BA"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/setting/wx-bind
+{"code":"A351CF73C30BB1CC"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/bind
+{"tel":"222EB617E70B6FAC","code":"05CD2DF3B3ECA7F5"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/logout
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/oauth-login
+[]
+{"success":true,"statusCode":200,"result":{"id":"00K8SG5FNDFYVHJDPWBMPIJD","phone":"19941381023","nickname":"\u542c\u541ba1d619","avatar":"default.png","identity":1,"status":1,"wechat":{"nickname":"\u5fc3\u6709\u6843\u82b1\u6e90\uff0c\u5904\u5904\u6c34\u4e91\u95f4","avatar":"316456b8f6a2a7dcd91e6cabb9739f3b.jpg"},"count":{"attention":5,"fans":1,"note":3,"self_note":3,"dynamic":2},"login_method":1,"access_token":"UEhmd0ZmN3FZZDFpNHBzNVRnQ0pjVE9XbjNreUhGMEc0NGdYRkR5QjZQN2M4STYwaWZvQkplOW9ndWpXQ25Z
+
+/site/original-tel-auth
+{"tel":"6E733BB3A14F4F62","code":"1A4CCDBF45CD9121","type":"15BE3BE1B73EB71F"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/pwd-login
+{"tel":"896BE6AED128D056","password":"5FDD8ED335E655FB"}
+{"success":true,"statusCode":200,"result":{"id":"00K8SG5FNDFYVHJDPWBMPIJD","phone":"19941381023","nickname":"\u542c\u541ba1d619","avatar":"default.png","identity":1,"status":1,"wechat":{"nickname":"\u5fc3\u6709\u6843\u82b1\u6e90\uff0c\u5904\u5904\u6c34\u4e91\u95f4","avatar":"316456b8f6a2a7dcd91e6cabb9739f3b.jpg"},"count":{"attention":5,"fans":1,"note":3,"self_note":3,"dynamic":2},"login_method":1,"access_token":"UEhmd0ZmN3FZZDFpNHBzNVRnQ0pjVE9XbjNreUhGMEc0NGdYRkR5QjZQN2M4STYwaWZvQkplOW9ndWpXQ25Z
+
+/site/reset-password
+{"tel":"7EAAC02DF44DE59E","code":"8982D2EB05B02789","new_password":"C88FC8F54ADB99B3","confirm_password":"8BED90B2D835D244"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/send-sms
+{"tel":"2CC196D3DF847C36","type":"0108A0CDB754EB1B"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/site/tel-login
+{"tel":"487D4F8DFD136C4A","code":"EFAF1CFE96C58E60"}
+{"success":true,"statusCode":200,"result":{"id":"00K8SG5FNDFYVHJDPWBMPIJD","phone":"19941381023","nickname":"\u542c\u541ba1d619","avatar":"default.png","identity":1,"status":1,"wechat":{"nickname":"\u5fc3\u6709\u6843\u82b1\u6e90\uff0c\u5904\u5904\u6c34\u4e91\u95f4","avatar":"316456b8f6a2a7dcd91e6cabb9739f3b.jpg"},"count":{"attention":5,"fans":1,"note":3,"self_note":3,"dynamic":2},"login_method":1,"access_token":"UEhmd0ZmN3FZZDFpNHBzNVRnQ0pjVE9XbjNreUhGMEc0NGdYRkR5QjZQN2M4STYwaWZvQkplOW9ndWpXQ25Z
+
+/site/tourist
+[]
+{"success":true,"statusCode":200,"result":{"apply_status":1,"identity":3,"nickname":"\u6e38\u5ba2_CbL3bc","phone":"","status":10,"avatar":"","is_office":1,"is_link_recommend":1,"is_guide":1,"server_time":1602212167,"device_id":"iosKBBNT11MFO9WEFVGGCSMOO","access_token":"OUgvSG5DdlNMazJjaUJUODB6Z2EzemZCUS9oWXBFUVFJZDNTdVVOc29MWWRoNGlPWHRIWVY4K2wzZnRRcHBXWQ==","id":"00KG1NR8G6VNHXGYF1DXZBRI"},"message":"\u4fdd\u5b58\u6210\u529f"}
+
+/site/wx-login
+{"code":"CF08336E9344B28D","wx_access_token":"4A7566F8ACB9DAC5","openid":"E16A14209452C24C"}
+{"success":true,"statusCode":200,"result":{"id":"00KACK7267SB2EG2DME3OALZ","study_id":202174142,"access_id":"00KACK7267SB2EG2DME3OALZ","access_token":"vMeCmewtIlfR2BjPiWjcp9nxDighMKE0","identity":2,"phone":"13012810766","nickname":"\u5fae\u98ce","name":"","username":"13012810766","password_hash":"","email":"","summary":"","avatar":"9UqvpBRZqDM540teMxrXZs0gNjwOBTii.jpg","special_signature":"","gender":1,"birthday":0,"education":"","industry":"","job":"","reason":"gfjgfj ","is_guide":2,"is_officia
+
+/sys-configure/add-android-channel
+{"app_channel":"2BD05C4CB134C28B"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/sys-configure/city-list
+{"pid":"A368751F286DE08C"}
+{"success":true,"statusCode":200,"result":[{"id":168781,"sid":"691","pid":"240","name":"\u897f\u53cc\u7248\u7eb3\u50a3\u65cf\u81ea\u6cbb\u5dde","level":2},{"id":168782,"sid":"692","pid":"240","name":"\u5fb7\u5b8f\u50a3\u65cf\u666f\u9887\u65cf\u81ea\u6cbb\u5dde","level":2},{"id":168783,"sid":"870","pid":"240","name":"\u662d\u901a\u5e02","level":2},{"id":168784,"sid":"871","pid":"240","name":"\u6606\u660e\u5e02","level":2},{"id":168785,"sid":"872","pid":"240","name":"\u5927\u7406\u767d\u65cf\u81ea
+
+/sys-configure/common-config
+{"api_version":"6D0F9F3456A0DFC4"}
+{"success":true,"statusCode":200,"result":{"assets":"https:\/\/test.tingjunapp.com\/","api":"https:\/\/tapp.tingjunapp.com\/api_an\/","assets_article_cover":"https:\/\/test.tingjunapp.com\/resources\/article\/cover\/","assets_article_editor":"https:\/\/test.tingjunapp.com\/resources\/article\/editor\/","assets_article_video":"https:\/\/test.tingjunapp.com\/resources\/article\/video\/","assets_article_audio":"https:\/\/test.tingjunapp.com\/resources\/article\/audio\/","assets_article_info":"https
+
+/sys-configure/country-list
+[]
+{"success":true,"statusCode":200,"result":[{"id":224581,"sid":"CN","pid":"0","name":"\u4e2d\u56fd","level":0},{"id":224582,"sid":"0","pid":"0","name":"\u5176\u4ed6\u56fd\u5bb6","level":0}],"message":"OK"}
+
+/sys-configure/dev-common-config
+{"api_version":"5F68EE2526E40E09"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/sys-configure/education
+[]
+{"success":true,"statusCode":200,"result":[{"id":7,"name":"\u9ad8\u4e2d\u53ca\u4ee5\u4e0b"},{"id":8,"name":"\u4e13\u79d1"},{"id":9,"name":"\u672c\u79d1"},{"id":10,"name":"\u7855\u58eb"},{"id":11,"name":"\u535a\u58eb\u53ca\u4ee5\u4e0a"}],"message":"OK"}
+
+/sys-configure/get-agreement
+{"route":"72A9987798546C25"}
+{"success":true,"statusCode":200,"result":{"content":"<div class=WordSection1 style='layout-grid:15.6pt'><p class=MsoNormal align=center style='text-align:center;background:white'><b><spanstyle='font-size:16.0pt;color:black'>\u542c\u541b\u5e73\u53f0\u670d\u52a1\u4f7f\u7528\u534f\u8bae<\/span><\/b><\/p><p class=MsoNormal align=left style='margin-bottom:12.0pt;text-align:left;background:white'><b><span style='font-size:14.0pt;color:black'>\u3010\u7279\u522b\u63d0\u793a\u3011<\/span><\/b><\/p><p cl
+
+/sys-configure/industry
+[]
+{"success":true,"statusCode":200,"result":[{"id":237,"parent_id":0,"name":"\u5176\u4ed6","is_other":true},{"id":236,"parent_id":225,"name":"\u4e8b\u4e1a\u5355\u4f4d"},{"id":235,"parent_id":225,"name":"\u56fd\u9645\u673a\u6784"},{"id":234,"parent_id":225,"name":"\u793e\u4f1a\u56e2\u4f53"},{"id":233,"parent_id":225,"name":"\u4eba\u6c11\u653f\u534f"},{"id":232,"parent_id":225,"name":"\u8857\u9053\u529e"},{"id":231,"parent_id":225,"name":"\u5c45\u59d4\u4f1a"},{"id":230,"parent_id":225,"name":"\u6cd5
+
+/sys-configure/job
+[]
+{"success":true,"statusCode":200,"result":[{"id":1,"parent_id":0,"name":"\u5b66\u751f"},{"id":2,"parent_id":0,"name":"\u521b\u4e1a\u8005"},{"id":3,"parent_id":0,"name":"\u7a0b\u5e8f\u5458"},{"id":4,"parent_id":0,"name":"\u5de5\u7a0b\u5e08"},{"id":5,"parent_id":0,"name":"\u9500\u552e"},{"id":6,"parent_id":0,"name":"\u8fd0\u8425"},{"id":7,"parent_id":0,"name":"\u4f01\u4e1a\u5bb6"},{"id":8,"parent_id":0,"name":"\u4e2d\u9ad8\u5c42\u7ba1\u7406\u8005"},{"id":9,"parent_id":0,"name":"\u666e\u901a\u767d\
+
+/sys-configure/province-list
+{"pid":"0A051EC33579A9CD"}
+{"success":true,"statusCode":200,"result":[{"id":168436,"sid":"240","pid":"CN","name":"\u4e91\u5357\u7701","level":1},{"id":168437,"sid":"40","pid":"CN","name":"\u5185\u8499\u53e4","level":1},{"id":168438,"sid":"10","pid":"CN","name":"\u5317\u4eac","level":1},{"id":168439,"sid":"80","pid":"CN","name":"\u5409\u6797","level":1},{"id":168440,"sid":"230","pid":"CN","name":"\u56db\u5ddd\u7701","level":1},{"id":168441,"sid":"30","pid":"CN","name":"\u5929\u6d25","level":1},{"id":168442,"sid":"270","pid
+
+/sys-configure/report
+[]
+{"success":true,"statusCode":200,"result":[{"id":"1","name":"\u6050\u6016\u8840\u8165"},{"id":"2","name":"\u8272\u60c5\u4f4e\u4fd7"},{"id":"3","name":"\u6807\u9898\/\u5c01\u9762\u515a"},{"id":"4","name":"\u8fdd\u7981\u5185\u5bb9"},{"id":"5","name":"\u6d89\u53ca\u4fb5\u6743"},{"id":"6","name":"\u5176\u4ed6"}],"message":"OK"}
+
+/sys-configure/test-common-config
+{"api_version":"EB6B69BF46FD2239"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/sys-configure/version-control
+[]
+{"success":true,"statusCode":200,"result":{"id":1,"version":"1.0.0","new_version":"","content":"","created_at":1591604081,"updated_at":1591604081,"is_forced_updating":0,"title":"","updated_url":"www","is_bring":1,"api_version":0,"build_version":"20200707"},"message":"OK"}
+
+/think-tank/category
+[]
+{"success":true,"statusCode":200,"result":{"totalCount":8,"pageSize":20,"page":1,"list":{"totalCount":8,"pageSize":20,"page":1,"list":[{"name":"\u804c\u4e1a\u53d1\u5c55","id":2},{"name":"\u884c\u4e1a\u7ecf\u9a8c","id":3},{"name":"\u4e92\u8054\u7f51+","id":4},{"name":"\u751f\u6d3b\u670d\u52a1","id":5},{"name":"\u521b\u4e1a\u878d\u8d44","id":6},{"name":"\u6559\u80b2\u5b66\u4e60","id":7},{"name":"\u6295\u8d44\u7406\u8d22","id":8},{"name":"\u5176\u4ed6","id":9}]}},"message":"OK"}
+
+/think-tank/join
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/think-tank/list
+{"category_id":"DB64836E9F0CF816"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"category_id":2,"weight":1,"id":1,"avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png","nickname":"\u7c89\u5237\u5320-\u667a\u56ca\u56e2","description":"\u7c89\u5237\u5320-\u667a\u56ca\u56e2\u7684\u7b80\u4ecb","user_id":"00K5H1KO60NAEIXXDT1SPMMM","phone":""},{"category_id":2,"weight":0,"id":5,"avatar":"default.png","nickname":"\u542c\u541b0fs89b","description":"","user_id":"00K5KDAWIKT8GU8J14F5ZQGO","phone":""}]
+
+/toast
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user-homepage/collect-list
+{"last_id":"DCDB168BED398DA2","type":"67944F0486FD962B","package_id":"1ABC5FBBD41144C7","other_id":"EAD04ADF7A6424CD"}
+{"success":true,"statusCode":200,"result":{"totalCount":3,"pageSize":20,"page":1,"list":[{"id":551,"target_id":"00KFO02WREA33PEABSPPVM3TAKFO02WRG","target_type":1,"package_id":5,"article":{"id":"00KFO02WREA33PEABSPPVM3TAKFO02WRG","title":"\u4e60\u8fd1\u5e73\u4e3b\u6301\u4e2d\u5171\u4e2d\u592e\u653f\u6cbb\u5c40\u4f1a\u8bae","cover_url":"bb8e9adc010d4d37f448fc9ba498e40f.jpg","created_at":1601386340,"summary":"\u4e2d\u5171\u4e2d\u592e\u653f\u6cbb\u5c40\u53ec\u5f00\u4f1a\u8bae\u8ba8\u8bba\u62df\u63d
+
+/user-homepage/dynamic-list
+{"other_id":"D5A747429973729F"}
+{"success":true,"statusCode":200,"result":{"totalCount":8,"pageSize":20,"page":1,"list":[{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","type":1,"created_at":1604371752,"target_id":"00KH1B7QN8GXQMM79MU48VQE","id":"00KH1DIMS2JKPRFNUOWVVTIJ","is_like":false,"user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD"},"article":{"title":"\u5982\u4f55\u4ece Notion \u6279\u91cf\u5bfc\u51fa Markdown\uff1f","cover_url":"a6dac801be16d048777c
+
+/user-homepage/favorites-list
+{"other_id":"DC8AEA412A6F91C8"}
+{"success":true,"statusCode":200,"result":{"totalCount":3,"pageSize":20,"page":1,"list":[{"id":6,"name":"\u9ed8\u8ba4\u6536\u85cf\u5939","summary":"","total":0,"is_public":1,"is_default":1,"updated_at":1599536114},{"id":7,"name":"\u79c1\u5bc6\u6536\u85cf\u5939","summary":"","total":0,"is_public":0,"is_default":1,"updated_at":1599536114},{"id":5,"name":"\u563f\u563f\u563f","summary":"","total":1,"is_public":0,"is_default":1,"updated_at":1598952946},{"id":4,"name":"\u6536\u85cf","summary":"","tota
+
+/user-homepage/like-list
+{"last_id":"6FEE1DFB0A1D6C02","other_id":"F2A0844DAD948054"}
+{"success":true,"statusCode":200,"result":{"totalCount":2,"pageSize":20,"page":1,"list":[{"id":326,"target_id":"00KGGD4Z5MJ2YU5YJUUKYIQW","target_type":2,"sender_id":"00K8SG5FNDFYVHJDPWBMPIJD","created_at":1604999411,"updated_at":1604999411,"is_fail":false,"article":[],"note":{"type":2,"created_at":1603101325,"article_id":"00KFP6HXM3DBGYXDNHINECY1","user_id":"00K8SG5FNDFYVHJDPWBMPIJD","is_public":true,"id":"00KGGD4Z5MJ2YU5YJUUKYIQW","is_collect":false,"is_like":true,"content":"\u4e0d\u9519","sel
+
+/user-homepage/note-list
+{"other_id":"C8506CC75D7E059B"}
+{"success":true,"statusCode":200,"result":{"totalCount":10,"pageSize":20,"page":1,"list":[{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","article_id":"00KFP6HXM3DBGYXDNHINECY1","type":2,"created_at":1603101325,"is_public":1,"id":"00KGGD4Z5MJ2YU5YJUUKYIQW","content":"\u4e0d\u9519","selected":"\u52a8\u6548\u548c\u8282\u594f\u90fd\u4ee4\u4eba","user":{"user_id":"00K8SG5FNDFYVHJDPWBMPIJD","avatar":"default.png","nickname":"\u542c\u541ba1d619","id":"00K8SG5FNDFYVHJDPWBMPIJD"},"article":{"title":"\u770b\u5b8c2
+
+/user/add-experience-officer
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/attention
+{"followed_id":"0F58772ED4E3E982"}
+{"success":true,"statusCode":200,"result":{"attention_status":2},"message":"\u6210\u529f"}
+
+/user/cancel-attention
+{"followed_id":"391AC3465EAB26CB"}
+{"success":true,"statusCode":200,"result":{"attention_status":2},"message":"\u53d6\u6d88\u6210\u529f"}
+
+/user/del-history
+{"id":"CA656DB328771B7C"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/edit
+{"nickname":"7BC2955D0F2C3632","avatar":"72547E91D6751719","special_signature":"75EAAB53CC5FD42C","gender":"83BD056CC28A6EAB","birthday":"3BCB4E2568DB1C14","address":"18D02B30A68BD88C","country":"739962066DE09EBE","province":"11C7833615B30503","city":"840D00AD189C0D42","industry_id":"D47B5E176C75E496","education_id":"DC80C3F106CE4E4F","job_id":"CFB0E5F946E480FB"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/get-detail
+{"other_id":"6F6963D0EA624ADC"}
+{"success":true,"statusCode":200,"result":{"id":"00K8SG5FNDFYVHJDPWBMPIJD","identity":1,"nickname":"\u542c\u541ba1d619","phone":"19941381023","wechat":{"nickname":"\u5fc3\u6709\u6843\u82b1\u6e90\uff0c\u5904\u5904\u6c34\u4e91\u95f4","avatar":"316456b8f6a2a7dcd91e6cabb9739f3b.jpg"},"avatar":"default.png","status":1,"sign":"","is_attention":3,"count":{"attention":5,"fans":1,"note":3,"self_note":3,"dynamic":2},"gender":3,"birthday":0,"education":"","industry":"\u91d1\u878d","job":"","province":0,"ad
+
+/user/get-experience-officer
+[]
+{"success":true,"statusCode":200,"result":{"status":0,"url":""},"message":"OK"}
+
+/user/history
+{"page":"30B8234697DAFA4A","last_id":"C88C17BCC6BEDDE0"}
+{"success":true,"statusCode":200,"result":{"totalCount":4,"pageSize":20,"page":1,"list":[{"id":"00K8PYMO97IHZDVKMG7WWMQHCQ8F7Q7","article_title":"\u600e\u6837\u521b\u5efa“\u60c5\u7eea\u6e05\u5355”\u6765\u7f13\u89e3\u62d6\u5ef6\u75c7","type":1,"updated_at":1592452659,"cover_url":"2d9448c6a38ec2cf3be8fce4396a6d64.png","title":"\u600e\u6837\u521b\u5efa“\u60c5\u7eea\u6e05\u5355”\u6765\u7f13\u89e3\u62d6\u5ef6\u75c7","author":{"id":"00K7PP1O9624IXRYF5SYY6NN","nickname":"\u963f\u62c9\u5e0c\u917
+
+/user/upload
+{"file":"4A812FEF82259BF2"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+
+
+[Route List] : 
+
+Route::get('/api-info', [\App\Http\Controllers\Api\ApiInfoController::class, 'apiInfo'])->name('api-info');
+Route::post('/article/get-detail', [\App\Http\Controllers\Api\ArticleController::class, 'getDetail'])->name('article.get-detail');
+Route::post('/article/note-line-list', [\App\Http\Controllers\Api\ArticleController::class, 'noteLineList'])->name('article.note-line-list');
+Route::post('/article/note-list', [\App\Http\Controllers\Api\ArticleController::class, 'noteList'])->name('article.note-list');
+Route::post('/attention/list', [\App\Http\Controllers\Api\AttentionController::class, 'getList'])->name('attention.list');
+Route::post('/attention/refresh', [\App\Http\Controllers\Api\AttentionController::class, 'refresh'])->name('attention.refresh');
+Route::post('/collect/add', [\App\Http\Controllers\Api\CollectController::class, 'add'])->name('collect.add');
+Route::post('/collect/cancel', [\App\Http\Controllers\Api\CollectController::class, 'cancel'])->name('collect.cancel');
+Route::post('/comment/add', [\App\Http\Controllers\Api\CommentController::class, 'add'])->name('comment.add');
+Route::post('/comment/del', [\App\Http\Controllers\Api\CommentController::class, 'del'])->name('comment.del');
+Route::post('/comment/list', [\App\Http\Controllers\Api\CommentController::class, 'getList'])->name('comment.list');
+Route::get('/copy', [\App\Http\Controllers\Api\CopyController::class, 'copy'])->name('copy');
+Route::post('/desktop/collect-list', [\App\Http\Controllers\Api\DesktopController::class, 'collectList'])->name('desktop.collect-list');
+Route::post('/desktop/collect-refresh', [\App\Http\Controllers\Api\DesktopController::class, 'collectRefresh'])->name('desktop.collect-refresh');
+Route::get('/desktop/get-favorite-count', [\App\Http\Controllers\Api\DesktopController::class, 'getFavoriteCount'])->name('desktop.get-favorite-count');
+Route::post('/desktop/note-list', [\App\Http\Controllers\Api\DesktopController::class, 'noteList'])->name('desktop.note-list');
+Route::post('/desktop/search', [\App\Http\Controllers\Api\DesktopController::class, 'search'])->name('desktop.search');
+Route::post('/dynamic/del', [\App\Http\Controllers\Api\DynamicController::class, 'del'])->name('dynamic.del');
+Route::post('/dynamic/get-detail', [\App\Http\Controllers\Api\DynamicController::class, 'getDetail'])->name('dynamic.get-detail');
+Route::post('/favorites/add', [\App\Http\Controllers\Api\FavoritesController::class, 'add'])->name('favorites.add');
+Route::post('/favorites/del', [\App\Http\Controllers\Api\FavoritesController::class, 'del'])->name('favorites.del');
+Route::post('/favorites/detail-list', [\App\Http\Controllers\Api\FavoritesController::class, 'detailList'])->name('favorites.detail-list');
+Route::post('/favorites/edit', [\App\Http\Controllers\Api\FavoritesController::class, 'edit'])->name('favorites.edit');
+Route::post('/favorites/get-detail', [\App\Http\Controllers\Api\FavoritesController::class, 'getDetail'])->name('favorites.get-detail');
+Route::post('/followers/list/', [\App\Http\Controllers\Api\FollowersController::class, 'getList'])->name('followers.list.');
+Route::post('/following/list/', [\App\Http\Controllers\Api\FollowingController::class, 'getList'])->name('following.list.');
+Route::post('/like/add', [\App\Http\Controllers\Api\LikeController::class, 'add'])->name('like.add');
+Route::post('/like/cancel', [\App\Http\Controllers\Api\LikeController::class, 'cancel'])->name('like.cancel');
+Route::post('/message/comment-list', [\App\Http\Controllers\Api\MessageController::class, 'commentList'])->name('message.comment-list');
+Route::post('/message/like-list', [\App\Http\Controllers\Api\MessageController::class, 'likeList'])->name('message.like-list');
+Route::post('/message/system-list', [\App\Http\Controllers\Api\MessageController::class, 'systemList'])->name('message.system-list');
+Route::post('/message/unread', [\App\Http\Controllers\Api\MessageController::class, 'unread'])->name('message.unread');
+Route::post('/note/add', [\App\Http\Controllers\Api\NoteController::class, 'add'])->name('note.add');
+Route::post('/note/del', [\App\Http\Controllers\Api\NoteController::class, 'del'])->name('note.del');
+Route::post('/note/edit', [\App\Http\Controllers\Api\NoteController::class, 'edit'])->name('note.edit');
+Route::post('/note/get-detail', [\App\Http\Controllers\Api\NoteController::class, 'getDetail'])->name('note.get-detail');
+Route::post('/one-click-collect/favorites-list', [\App\Http\Controllers\Api\OneClickCollectController::class, 'favoritesList'])->name('one-click-collect.favorites-list');
+Route::post('/one-click-collect/preview', [\App\Http\Controllers\Api\OneClickCollectController::class, 'preview'])->name('one-click-collect.preview');
+Route::post('/one-click-collect/save', [\App\Http\Controllers\Api\OneClickCollectController::class, 'save'])->name('one-click-collect.save');
+Route::post('/opinion/add', [\App\Http\Controllers\Api\OpinionController::class, 'add'])->name('opinion.add');
+Route::post('/recommend/list', [\App\Http\Controllers\Api\RecommendController::class, 'getList'])->name('recommend.list');
+Route::post('/reply/add', [\App\Http\Controllers\Api\ReplyController::class, 'add'])->name('reply.add');
+Route::post('/reply/del', [\App\Http\Controllers\Api\ReplyController::class, 'del'])->name('reply.del');
+Route::post('/reply/list', [\App\Http\Controllers\Api\ReplyController::class, 'getList'])->name('reply.list');
+Route::post('/report/add', [\App\Http\Controllers\Api\ReportController::class, 'add'])->name('report.add');
+Route::post('/setting/cancel-bind', [\App\Http\Controllers\Api\SettingController::class, 'cancelBind'])->name('setting.cancel-bind');
+Route::post('/setting/change-binding', [\App\Http\Controllers\Api\SettingController::class, 'changeBinding'])->name('setting.change-binding');
+Route::post('/setting/original-tel-auth', [\App\Http\Controllers\Api\SettingController::class, 'originalTelAuth'])->name('setting.original-tel-auth');
+Route::post('/setting/reset-password', [\App\Http\Controllers\Api\SettingController::class, 'resetPassword'])->name('setting.reset-password');
+Route::post('/setting/wx-bind', [\App\Http\Controllers\Api\SettingController::class, 'wxBind'])->name('setting.wx-bind');
+Route::post('/site/bind', [\App\Http\Controllers\Api\SiteController::class, 'bind'])->name('site.bind');
+Route::post('/site/logout', [\App\Http\Controllers\Api\SiteController::class, 'logout'])->name('site.logout');
+Route::get('/site/oauth-login', [\App\Http\Controllers\Api\SiteController::class, 'oauthLogin'])->name('site.oauth-login');
+Route::post('/site/original-tel-auth', [\App\Http\Controllers\Api\SiteController::class, 'originalTelAuth'])->name('site.original-tel-auth');
+Route::post('/site/pwd-login', [\App\Http\Controllers\Api\SiteController::class, 'pwdLogin'])->name('site.pwd-login');
+Route::post('/site/reset-password', [\App\Http\Controllers\Api\SiteController::class, 'resetPassword'])->name('site.reset-password');
+Route::post('/site/send-sms', [\App\Http\Controllers\Api\SiteController::class, 'sendSms'])->name('site.send-sms');
+Route::post('/site/tel-login', [\App\Http\Controllers\Api\SiteController::class, 'telLogin'])->name('site.tel-login');
+Route::post('/site/tourist', [\App\Http\Controllers\Api\SiteController::class, 'tourist'])->name('site.tourist');
+Route::post('/site/wx-login', [\App\Http\Controllers\Api\SiteController::class, 'wxLogin'])->name('site.wx-login');
+Route::post('/sys-configure/add-android-channel', [\App\Http\Controllers\Api\SysConfigureController::class, 'addAndroidChannel'])->name('sys-configure.add-android-channel');
+Route::post('/sys-configure/city-list', [\App\Http\Controllers\Api\SysConfigureController::class, 'cityList'])->name('sys-configure.city-list');
+Route::post('/sys-configure/common-config', [\App\Http\Controllers\Api\SysConfigureController::class, 'commonConfig'])->name('sys-configure.common-config');
+Route::post('/sys-configure/country-list', [\App\Http\Controllers\Api\SysConfigureController::class, 'countryList'])->name('sys-configure.country-list');
+Route::post('/sys-configure/dev-common-config', [\App\Http\Controllers\Api\SysConfigureController::class, 'devCommonConfig'])->name('sys-configure.dev-common-config');
+Route::post('/sys-configure/education', [\App\Http\Controllers\Api\SysConfigureController::class, 'education'])->name('sys-configure.education');
+Route::post('/sys-configure/get-agreement', [\App\Http\Controllers\Api\SysConfigureController::class, 'getAgreement'])->name('sys-configure.get-agreement');
+Route::post('/sys-configure/industry', [\App\Http\Controllers\Api\SysConfigureController::class, 'industry'])->name('sys-configure.industry');
+Route::post('/sys-configure/job', [\App\Http\Controllers\Api\SysConfigureController::class, 'job'])->name('sys-configure.job');
+Route::post('/sys-configure/province-list', [\App\Http\Controllers\Api\SysConfigureController::class, 'provinceList'])->name('sys-configure.province-list');
+Route::post('/sys-configure/report', [\App\Http\Controllers\Api\SysConfigureController::class, 'report'])->name('sys-configure.report');
+Route::post('/sys-configure/test-common-config', [\App\Http\Controllers\Api\SysConfigureController::class, 'testCommonConfig'])->name('sys-configure.test-common-config');
+Route::post('/sys-configure/version-control', [\App\Http\Controllers\Api\SysConfigureController::class, 'versionControl'])->name('sys-configure.version-control');
+Route::post('/think-tank/category', [\App\Http\Controllers\Api\ThinkTankController::class, 'category'])->name('think-tank.category');
+Route::get('/think-tank/join', [\App\Http\Controllers\Api\ThinkTankController::class, 'join'])->name('think-tank.join');
+Route::post('/think-tank/list', [\App\Http\Controllers\Api\ThinkTankController::class, 'getList'])->name('think-tank.list');
+Route::get('/toast', [\App\Http\Controllers\Api\ToastController::class, 'toast'])->name('toast');
+Route::post('/user-homepage/collect-list', [\App\Http\Controllers\Api\UserHomepageController::class, 'collectList'])->name('user-homepage.collect-list');
+Route::post('/user-homepage/dynamic-list', [\App\Http\Controllers\Api\UserHomepageController::class, 'dynamicList'])->name('user-homepage.dynamic-list');
+Route::post('/user-homepage/favorites-list', [\App\Http\Controllers\Api\UserHomepageController::class, 'favoritesList'])->name('user-homepage.favorites-list');
+Route::post('/user-homepage/like-list', [\App\Http\Controllers\Api\UserHomepageController::class, 'likeList'])->name('user-homepage.like-list');
+Route::post('/user-homepage/note-list', [\App\Http\Controllers\Api\UserHomepageController::class, 'noteList'])->name('user-homepage.note-list');
+Route::post('/user/add-experience-officer', [\App\Http\Controllers\Api\UserController::class, 'addExperienceOfficer'])->name('user.add-experience-officer');
+Route::post('/user/attention', [\App\Http\Controllers\Api\UserController::class, 'attention'])->name('user.attention');
+Route::post('/user/cancel-attention', [\App\Http\Controllers\Api\UserController::class, 'cancelAttention'])->name('user.cancel-attention');
+Route::post('/user/del-history', [\App\Http\Controllers\Api\UserController::class, 'delHistory'])->name('user.del-history');
+Route::post('/user/edit', [\App\Http\Controllers\Api\UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/get-detail', [\App\Http\Controllers\Api\UserController::class, 'getDetail'])->name('user.get-detail');
+Route::post('/user/get-experience-officer', [\App\Http\Controllers\Api\UserController::class, 'getExperienceOfficer'])->name('user.get-experience-officer');
+Route::post('/user/history', [\App\Http\Controllers\Api\UserController::class, 'history'])->name('user.history');
+Route::post('/user/upload', [\App\Http\Controllers\Api\UserController::class, 'upload'])->name('user.upload');
+
+uri list : 
+Array
+(
+    [0] => /api-info
+    [1] => /article/get-detail
+    [2] => /article/note-line-list
+    [3] => /article/note-list
+    [4] => /attention/list
+    [5] => /attention/refresh
+    [6] => /collect/add
+    [7] => /collect/cancel
+    [8] => /comment/add
+    [9] => /comment/del
+    [10] => /comment/list
+    [11] => /copy
+    [12] => /desktop/collect-list
+    [13] => /desktop/collect-refresh
+    [14] => /desktop/get-favorite-count
+    [15] => /desktop/note-list
+    [16] => /desktop/search
+    [17] => /dynamic/del
+    [18] => /dynamic/get-detail
+    [19] => /favorites/add
+    [20] => /favorites/del
+    [21] => /favorites/detail-list
+    [22] => /favorites/edit
+    [23] => /favorites/get-detail
+    [24] => /followers/list/
+    [25] => /following/list/
+    [26] => /like/add
+    [27] => /like/cancel
+    [28] => /message/comment-list
+    [29] => /message/like-list
+    [30] => /message/system-list
+    [31] => /message/unread
+    [32] => /note/add
+    [33] => /note/del
+    [34] => /note/edit
+    [35] => /note/get-detail
+    [36] => /one-click-collect/favorites-list
+    [37] => /one-click-collect/preview
+    [38] => /one-click-collect/save
+    [39] => /opinion/add
+    [40] => /recommend/list
+    [41] => /reply/add
+    [42] => /reply/del
+    [43] => /reply/list
+    [44] => /report/add
+    [45] => /setting/cancel-bind
+    [46] => /setting/change-binding
+    [47] => /setting/original-tel-auth
+    [48] => /setting/reset-password
+    [49] => /setting/wx-bind
+    [50] => /site/bind
+    [51] => /site/logout
+    [52] => /site/oauth-login
+    [53] => /site/original-tel-auth
+    [54] => /site/pwd-login
+    [55] => /site/reset-password
+    [56] => /site/send-sms
+    [57] => /site/tel-login
+    [58] => /site/tourist
+    [59] => /site/wx-login
+    [60] => /sys-configure/add-android-channel
+    [61] => /sys-configure/city-list
+    [62] => /sys-configure/common-config
+    [63] => /sys-configure/country-list
+    [64] => /sys-configure/dev-common-config
+    [65] => /sys-configure/education
+    [66] => /sys-configure/get-agreement
+    [67] => /sys-configure/industry
+    [68] => /sys-configure/job
+    [69] => /sys-configure/province-list
+    [70] => /sys-configure/report
+    [71] => /sys-configure/test-common-config
+    [72] => /sys-configure/version-control
+    [73] => /think-tank/category
+    [74] => /think-tank/join
+    [75] => /think-tank/list
+    [76] => /toast
+    [77] => /user-homepage/collect-list
+    [78] => /user-homepage/dynamic-list
+    [79] => /user-homepage/favorites-list
+    [80] => /user-homepage/like-list
+    [81] => /user-homepage/note-list
+    [82] => /user/add-experience-officer
+    [83] => /user/attention
+    [84] => /user/cancel-attention
+    [85] => /user/del-history
+    [86] => /user/edit
+    [87] => /user/get-detail
+    [88] => /user/get-experience-officer
+    [89] => /user/history
+    [90] => /user/upload
+)
+
+
+[Controller List] : 
+
+generate controller : data/20201204/app/Api/ApiInfoController.php ... 
+generate controller : data/20201204/app/Api/ArticleController.php ... 
+generate controller : data/20201204/app/Api/AttentionController.php ... 
+generate controller : data/20201204/app/Api/CollectController.php ... 
+generate controller : data/20201204/app/Api/CommentController.php ... 
+generate controller : data/20201204/app/Api/CopyController.php ... 
+generate controller : data/20201204/app/Api/DesktopController.php ... 
+generate controller : data/20201204/app/Api/DynamicController.php ... 
+generate controller : data/20201204/app/Api/FavoritesController.php ... 
+generate controller : data/20201204/app/Api/FollowersController.php ... 
+generate controller : data/20201204/app/Api/FollowingController.php ... 
+generate controller : data/20201204/app/Api/LikeController.php ... 
+generate controller : data/20201204/app/Api/MessageController.php ... 
+generate controller : data/20201204/app/Api/NoteController.php ... 
+generate controller : data/20201204/app/Api/OneClickCollectController.php ... 
+generate controller : data/20201204/app/Api/OpinionController.php ... 
+generate controller : data/20201204/app/Api/RecommendController.php ... 
+generate controller : data/20201204/app/Api/ReplyController.php ... 
+generate controller : data/20201204/app/Api/ReportController.php ... 
+generate controller : data/20201204/app/Api/SettingController.php ... 
+generate controller : data/20201204/app/Api/SiteController.php ... 
+generate controller : data/20201204/app/Api/SysConfigureController.php ... 
+generate controller : data/20201204/app/Api/ThinkTankController.php ... 
+generate controller : data/20201204/app/Api/ToastController.php ... 
+generate controller : data/20201204/app/Api/UserHomepageController.php ... 
+generate controller : data/20201204/app/Api/UserController.php ... 
+
+controller list : 
+Array
+(
+    [0] => ApiInfoController
+    [1] => ArticleController
+    [2] => AttentionController
+    [3] => CollectController
+    [4] => CommentController
+    [5] => CopyController
+    [6] => DesktopController
+    [7] => DynamicController
+    [8] => FavoritesController
+    [9] => FollowersController
+    [10] => FollowingController
+    [11] => LikeController
+    [12] => MessageController
+    [13] => NoteController
+    [14] => OneClickCollectController
+    [15] => OpinionController
+    [16] => RecommendController
+    [17] => ReplyController
+    [18] => ReportController
+    [19] => SettingController
+    [20] => SiteController
+    [21] => SysConfigureController
+    [22] => ThinkTankController
+    [23] => ToastController
+    [24] => UserHomepageController
+    [25] => UserController
+)
+
+service prop list : 
+ * @property ApiInfoService $ApiInfoService
+ * @property ArticleService $ArticleService
+ * @property AttentionService $AttentionService
+ * @property CollectService $CollectService
+ * @property CommentService $CommentService
+ * @property CopyService $CopyService
+ * @property DesktopService $DesktopService
+ * @property DynamicService $DynamicService
+ * @property FavoritesService $FavoritesService
+ * @property FollowersService $FollowersService
+ * @property FollowingService $FollowingService
+ * @property LikeService $LikeService
+ * @property MessageService $MessageService
+ * @property NoteService $NoteService
+ * @property OneClickCollectService $OneClickCollectService
+ * @property OpinionService $OpinionService
+ * @property RecommendService $RecommendService
+ * @property ReplyService $ReplyService
+ * @property ReportService $ReportService
+ * @property SettingService $SettingService
+ * @property SiteService $SiteService
+ * @property SysConfigureService $SysConfigureService
+ * @property ThinkTankService $ThinkTankService
+ * @property ToastService $ToastService
+ * @property UserHomepageService $UserHomepageService
+ * @property UserService $UserService
+
+repository prop list : 
+ * @property ApiInfoRepository $ApiInfoRepository
+ * @property ArticleRepository $ArticleRepository
+ * @property AttentionRepository $AttentionRepository
+ * @property CollectRepository $CollectRepository
+ * @property CommentRepository $CommentRepository
+ * @property CopyRepository $CopyRepository
+ * @property DesktopRepository $DesktopRepository
+ * @property DynamicRepository $DynamicRepository
+ * @property FavoritesRepository $FavoritesRepository
+ * @property FollowersRepository $FollowersRepository
+ * @property FollowingRepository $FollowingRepository
+ * @property LikeRepository $LikeRepository
+ * @property MessageRepository $MessageRepository
+ * @property NoteRepository $NoteRepository
+ * @property OneClickCollectRepository $OneClickCollectRepository
+ * @property OpinionRepository $OpinionRepository
+ * @property RecommendRepository $RecommendRepository
+ * @property ReplyRepository $ReplyRepository
+ * @property ReportRepository $ReportRepository
+ * @property SettingRepository $SettingRepository
+ * @property SiteRepository $SiteRepository
+ * @property SysConfigureRepository $SysConfigureRepository
+ * @property ThinkTankRepository $ThinkTankRepository
+ * @property ToastRepository $ToastRepository
+ * @property UserHomepageRepository $UserHomepageRepository
+ * @property UserRepository $UserRepository

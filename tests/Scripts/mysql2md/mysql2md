@@ -1,0 +1,89 @@
+#!/usr/bin/env php
+<?php
+/**
+ * this script is used to generate markdown file for mysql table.
+ * @usage: php mysql2md [host] [user] [password] [dbname]
+ * @example php mysql2md 192.168.150.128 root 123456 listen_test_v2_0
+ * @author wujun@lanqb.cn
+ * @date 2020.11.17 15:11:13
+ */
+
+// get help
+if (!isset($argv[1]) || (isset($argv[1]) && in_array($argv[1], array('-h', '--help'))) || !isset($argv[4])) {
+    echo PHP_EOL . '@usage: php mysql2md [host] [user] [password] [dbname]' . PHP_EOL;exit;
+}
+
+// get params
+$params = [
+    'host'     => isset($argv[1]) ? $argv[1] : '',
+    'user'     => isset($argv[2]) ? $argv[2] : '',
+    'password' => isset($argv[3]) ? $argv[3] : '',
+    'dbname'   => isset($argv[4]) ? $argv[4] : '',
+];
+$servername = empty($params['host']) ? "localhost" : $params['host'];
+$username = empty($params['user']) ? "root" : $params['user'];
+$password = empty($params['password']) ? "root" : $params['password'];
+$dbname = empty($params['dbname']) ? "ht_silo" : $params['dbname'];
+
+// generate markdown file
+getMd($servername, $username, $password, $dbname);
+echo PHP_EOL . "generate md file successful. preview: $dbname.md" . PHP_EOL;
+
+/**
+ * generate md file
+ * @param $servername
+ * @param $username
+ * @param $password
+ * @param $dbname
+ */
+function getMd($servername, $username, $password, $dbname)
+{
+    try {
+        error_reporting(0);
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            echo "[Error] mysql connect failed : " . $conn->connect_error . PHP_EOL;exit;
+        }
+    } catch (\Exception $e) {
+        echo "[Error] mysql connect exception : ". $e->getMessage() . PHP_EOL;exit;
+    }
+    echo 'start querying ...' . PHP_EOL;
+    $conn->query('set names utf8');
+    $result = $conn->query("show tables");
+    if ($result->num_rows > 0) {
+        $mark = '#' . $dbname . ' 数据字典' . PHP_EOL;
+        $i = 1;
+        while ($row = $result->fetch_assoc()) {
+            $table_name = $row["Tables_in_{$dbname}"];
+            // 跳过分表
+            $tabSuffix = array('_1', '_2', '_3', '_4', '_5', '_6', '_7', '_8');
+            if (in_array(substr($table_name, -2, 2), $tabSuffix)) continue;
+            $obj = $conn->query("show full columns from {$table_name}");
+            $table_comment = $conn->query("SELECT TABLE_COMMENT FROM INFORMATION_SCHEMA.TABLES WHERE table_name = '{$table_name}'")->fetch_assoc();
+            $mark .= '### ' . $i . '.  `' . $table_name . '` ' . $table_comment['TABLE_COMMENT'] . PHP_EOL;
+            $mark .= '| 字段名 | 数据类型 | 字段类型 | 长度 | 是否为空 | 默认值 | 备注 |' . PHP_EOL;
+            $mark .= '| ------ | -------- | -------- | ---- | -------- | ------ | ---- |' . PHP_EOL;
+            while ($data = $obj->fetch_assoc()) {
+                $cType = explode('(',$data['Type']);
+                $cLength = substr($data['Type'], strpos($data['Type'], '(') + 1);
+                $cLength = substr($cLength, 0, strpos($cLength, ')'));
+                $cDefault = $data['Default'] ? : ($data['Default'] === '0' ? 0 : ($data['Default'] === NULL ? 'NULL' : ''));
+                $mark .= '| ' . $data['Field']
+                    . ' | ' . $data['Type']
+                    . ' | ' . $cType[0]
+                    . ' | ' . $cLength
+                    . ' | ' . $data['Null']
+                    . ' | ' . $cDefault
+                    . ' | ' . $data['Comment']
+                    . ' | ' . PHP_EOL;
+            }
+            $sql = $conn->query("show create table {$table_name}")->fetch_assoc();
+            $mark .= '建表语句：' . PHP_EOL . '```sql' . PHP_EOL . $sql["Create Table"] . PHP_EOL . '```' . PHP_EOL;
+            echo $table_name . PHP_EOL;
+            $i++;
+            //break;
+        }
+        file_put_contents($dbname . '.md', $mark);
+    }
+    $conn->close();
+}

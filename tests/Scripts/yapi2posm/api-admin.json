@@ -1,0 +1,3431 @@
+[
+  {
+    "index": 0,
+    "name": "公共分类",
+    "desc": "公共分类",
+    "add_time": 1602206680,
+    "up_time": 1602206680,
+    "list": [
+      {
+        "query_path": {
+          "path": "/global-range",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5024,
+        "method": "POST",
+        "catid": 1330,
+        "title": "全局值域",
+        "path": "/global-range",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603432150,
+        "up_time": 1603432207,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f926f0f8183db28bcf3cea6",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.TB链接：<span class=\"colour\" style=\"color: rgb(38, 38, 38);\"><a href=\"https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105\">https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105</a></span></p>\n",
+        "markdown": "1.TB链接：<span class=\"colour\" style=\"color: rgb(38, 38, 38);\">[https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105](https://thoughts.teambition.com/workspaces/5e23ee5e8d0a96001ac16c9e/docs/5f8d34e6e6eed500018bc105)</span>",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "文章管理",
+    "desc": null,
+    "add_time": 1603430571,
+    "up_time": 1603430571,
+    "list": [
+      {
+        "query_path": {
+          "path": "/article-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5023,
+        "method": "POST",
+        "catid": 1516,
+        "title": "值域请看备注",
+        "path": "/article-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603431910,
+        "up_time": 1603432081,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f926e918183db28bcf3cea5",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.【original_id】：来源ID，1微信公众号，2.36氪，3虎嗅，4知乎文章，5知乎回答，6少数派，7简书，8掘金，9CSDN，10博客园<br>\n2.【is_deleted】：是否删除，0正常，1删除<br>\n3.【is_have_report】：是否存在待处理的举报，0否，1是</p>\n",
+        "markdown": "1.【original_id】：来源ID，1微信公众号，2.36氪，3虎嗅，4知乎文章，5知乎回答，6少数派，7简书，8掘金，9CSDN，10博客园\n2.【is_deleted】：是否删除，0正常，1删除\n3\\.【is\\_have\\_report】：是否存在待处理的举报，0否，1是",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/article/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5020,
+        "method": "POST",
+        "catid": 1516,
+        "title": "列表",
+        "path": "/article/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603430586,
+        "up_time": 1604466797,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa2386d8183db28bcf3d161",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa2386d8183db28bcf3d166",
+            "name": "keywords_article",
+            "type": "text",
+            "desc": "文章标题/文章ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa2386d8183db28bcf3d165",
+            "name": "original_id",
+            "type": "text",
+            "example": "",
+            "desc": "来源ID，1微信公众号，2.36氪，3虎嗅，4知乎文章，5知乎回答，6少数派，7简书，8掘金，9CSDN，10博客园"
+          },
+          {
+            "required": "0",
+            "_id": "5fa2386d8183db28bcf3d164",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa2386d8183db28bcf3d163",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa2386d8183db28bcf3d162",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
+      },
+      {
+        "query_path": {
+          "path": "/article/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5021,
+        "method": "POST",
+        "catid": 1516,
+        "title": "详情",
+        "path": "/article/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603431360,
+        "up_time": 1603431975,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f926e278183db28bcf3cea1",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f926e278183db28bcf3cea2",
+            "name": "id",
+            "type": "text",
+            "desc": "文章ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"id\":\"文章ID\",\n        \"content\":\"文章内容\",\n        \"original\":\"来源，如：微信公众号\",\n        \"cover_url\":\"封面图\",\n        \"is_have_report\":\"是否存在待处理的举报，0否，1是\",\n        \"original\": {\n          \"author_name\": \"原作者名称\",\n          \"from\": \"微信公众号\",\n          \"time\": \"原文章发布时间，不是时间戳\"\n        },\n        \"created_at\":\"首次收藏时间\",\n        \"authod\":{\n            \"id\":\"用户ID\",\n            \"nickname\":\"名称\",\n            \"avatar\":\"头像\"\n        },\n        \"count\":{\n            \"collect_user\":\"收藏人数\",\n            \"collect\":\"收藏数\",\n            \"view\":\"浏览数\",\n            \"note\":\"笔记数\"\n        },\n        \"report\":{\n            \"id\":\"举报ID\",\n            \"report\":\"具备类型字符串\",\n            \"content\":\"\",\n            \"count\":\"待处理举报数量\"\n        }\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/article/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 3,
+        "tag": [],
+        "_id": 5022,
+        "method": "POST",
+        "catid": 1516,
+        "title": "删除",
+        "path": "/article/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603431738,
+        "up_time": 1603432011,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f926e4b8183db28bcf3cea3",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f926e4b8183db28bcf3cea4",
+            "name": "id",
+            "type": "text",
+            "desc": "文章ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【产品】后续影响待定</p>\n",
+        "markdown": "1.【产品】后续影响待定",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/article/normal",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5031,
+        "method": "POST",
+        "catid": 1516,
+        "title": "恢复",
+        "path": "/article/normal",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603790721,
+        "up_time": 1603790768,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97e7b08183db28bcf3cf29",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f97e7b08183db28bcf3cf2a",
+            "name": "id",
+            "type": "text",
+            "desc": "文章ID，以逗号分隔"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"code\": 200,\n  \"result\": true,\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/article/comment-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 5,
+        "tag": [],
+        "_id": 5032,
+        "method": "POST",
+        "catid": 1516,
+        "title": "评论列表请看备注",
+        "path": "/article/comment-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f992c488183db28bcf3cfb2",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "desc": "<p><span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span><br>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.</span>转看【评论管理 - 列表】</p>\n",
+        "markdown": "<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.</span>转看【评论管理 - 列表】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"评论ID\",\n                \"type\":\"评论/回复的类型，1评论，2回复评论，3回复楼中回复\",\n                \"target_type\":\"主体类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹\",\n                \"content\":\"评论内容\",\n                \"is_have_report\":\"是否有待处理的举报，0否，1是\",\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"created_at\":\"\",\n                \"user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"count\":{\n                    \"like\":\"点赞数\",\n                    \"reply\":\"回复数\"\n                }\n            },\n            {\n                \"id\":\"回复ID\",\n                \"type\":\"评论/回复的类型，1评论，2回复评论，3回复楼中回复\",\n                \"target_type\":\"主体类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹\",\n                \"content\":\"回复内容\",\n                \"is_have_report\":\"是否有待处理的举报，0否，1是\",\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"created_at\":\"\",\n                \"user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"to_user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"count\":{\n                    \"like\":\"点赞数\",\n                    \"reply\":\"回复数\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603790953,
+        "up_time": 1603873864,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/article/user-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 6,
+        "tag": [],
+        "_id": 5039,
+        "method": "POST",
+        "catid": 1516,
+        "title": "收藏人列表",
+        "path": "/article/user-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603873994,
+        "up_time": 1603874140,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f992d5c8183db28bcf3cfc2",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f992d5c8183db28bcf3cfc3",
+            "name": "article_id",
+            "type": "text",
+            "desc": "文章ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】点击【收藏人数】调用此接口</p>\n",
+        "markdown": "1.【前端】点击【收藏人数】调用此接口",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"用户ID\",\n                \"nickname\":\"用户昵称\",\n                \"avatar\":\"1.jpg\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/article/note-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 7,
+        "tag": [],
+        "_id": 5038,
+        "method": "POST",
+        "catid": 1516,
+        "title": "笔记列表请看备注",
+        "path": "/article/note-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603873793,
+        "up_time": 1603873907,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f992c738183db28bcf3cfb4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p><span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span><br>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.转看【笔记管理 - 列表】</span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.转看【笔记管理 - 列表】</span>",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/article/report-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 8,
+        "tag": [],
+        "_id": 5040,
+        "method": "POST",
+        "catid": 1516,
+        "title": "举报列表请看备注",
+        "path": "/article/report-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603874219,
+        "up_time": 1603874248,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f992dc88183db28bcf3cfc4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p><span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span><br>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.</span><span class=\"colour\" style=\"color: rgb(85, 85, 85);\">转看【举报管理 - 列表】</span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">1.此接口所有信息均为占位</span>\n<span class=\"colour\" style=\"color: rgb(85, 85, 85);\">2.</span><span class=\"colour\" style=\"color: rgb(85, 85, 85);\">转看【举报管理 - 列表】</span>",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "笔记管理",
+    "desc": null,
+    "add_time": 1603417411,
+    "up_time": 1603417411,
+    "list": [
+      {
+        "query_path": {
+          "path": "/note-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5015,
+        "method": "POST",
+        "catid": 1510,
+        "title": "值域请看备注",
+        "path": "/note-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603419157,
+        "up_time": 1603419239,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f923c678183db28bcf3ce1b",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.【is_public】：是否公开，0私密，1公开<br>\n2.【is_deleted】：是否删除，0正常，1删除<br>\n3.【is_notify_user】：删除/屏蔽笔记时，是否通知用户，0否，1是</p>\n",
+        "markdown": "1.【is_public】：是否公开，0私密，1公开\n2.【is_deleted】：是否删除，0正常，1删除\n3\\.【is\\_notify\\_user】：删除/屏蔽笔记时，是否通知用户，0否，1是",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/note/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5010,
+        "method": "POST",
+        "catid": 1510,
+        "title": "列表",
+        "path": "/note/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603417663,
+        "up_time": 1604365670,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0ad668183db28bcf3d019",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d023",
+            "name": "article_id",
+            "type": "text",
+            "example": "",
+            "desc": "文章ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d022",
+            "name": "keywords_note",
+            "type": "text",
+            "desc": "笔记内容/笔记ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d021",
+            "name": "keywords_user",
+            "type": "text",
+            "example": "",
+            "desc": "用户昵称/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d020",
+            "name": "keywords_article",
+            "type": "text",
+            "example": "",
+            "desc": "文章标题/文章ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01f",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01e",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私密，1公开"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01d",
+            "name": "start_at",
+            "type": "text",
+            "example": "",
+            "desc": "发布开始日期时间戳"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01c",
+            "name": "end_at",
+            "type": "text",
+            "example": "",
+            "desc": "发布结束日期时间戳"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01b",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ad668183db28bcf3d01a",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"笔记ID\",\n                \"content\":\"笔记内容\",\n                \"selected\":\"文章节选内容\",\n                \"is_have_report\":\"是否有待处理的举报，0否，1是\",\n                \"is_public\":\"是否公开，0私密，1公开\",\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"is_shield\":\"是否屏蔽，0否，1是\",\n                \"created_at\":\"\",\n                \"user\":{\n                    \"id\":\"用户ID\",\n                    \"avatar\":\"头像\",\n                    \"nickname\":\"昵称\"\n                },\n                \"article\":{\n                    \"id\":\"文章ID\",\n                    \"cover_url\":\"封面图\",\n                    \"title\":\"标题\"\n                },\n                \"count\":{\n                    \"comment\":\"评论数\",\n                    \"reply\":\"回复数\",\n                    \"collect\":\"收藏人数\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5011,
+        "method": "POST",
+        "catid": 1510,
+        "title": "详情",
+        "path": "/note/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603418520,
+        "up_time": 1604487994,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa28b3a8183db28bcf3d19a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa28b3a8183db28bcf3d19b",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"note_id\": \"00K927W4DMZHVOZP8PUM0FBA\",\n        \"user_id\": \"00K925P7MBSHYTI4ZGGKVPOW\",\n        \"article_id\": \"00K6H9545EUBHBQW0SLTVFUO\",\n        \"is_choice\": 0,\n        \"is_deleted\": 1,\n        \"is_public\": 1,\n        \"is_shield\": 0,\n        \"created_at\": 1587008511,\n        \"is_have_report\": 0,\n        \"content\": \"well\",\n        \"selected\": \"\",\n        \"user\": {\n            \"id\": 107,\n            \"user_id\": \"00K925P7MBSHYTI4ZGGKVPOW\",\n            \"nickname\": \"豌豆先森\",\n            \"avatar\": \"default.png\"\n        },\n        \"article\": {\n            \"id\": \"00K6H9545EUBHBQW0SLTVFUO\",\n            \"cover_url\": \"a344fcfb55caa03a77e64d1b21636689.jpg\",\n            \"title\": \"后台系统：产品设计“七步法”\",\n            \"is_deleted\": 1,\n            \"is_shield\": 1,\n            \"created_at\": 1603086228\n        },\n        \"report\": {},\n        \"count\": {\n            \"view\": 0,\n            \"fake_view\": 10,\n            \"collect\": 0,\n            \"fake_collect\": 0,\n            \"like\": 0,\n            \"fake_like\": 10,\n            \"collect_user\": 0,\n            \"comment\": 0,\n            \"share\": 0\n        }\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 3,
+        "tag": [],
+        "_id": 5012,
+        "method": "POST",
+        "catid": 1510,
+        "title": "删除",
+        "path": "/note/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603418747,
+        "up_time": 1603418803,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f923ab38183db28bcf3ce10",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f923ab38183db28bcf3ce12",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID，以逗号分隔"
+          },
+          {
+            "required": "1",
+            "_id": "5f923ab38183db28bcf3ce11",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知用户，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5030,
+        "method": "POST",
+        "catid": 1510,
+        "title": "修改",
+        "path": "/note/edit",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603779762,
+        "up_time": 1603779940,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97bd648183db28bcf3cf1d",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f97bd648183db28bcf3cf22",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID，以逗号隔开"
+          },
+          {
+            "required": "0",
+            "_id": "5f97bd648183db28bcf3cf21",
+            "name": "is_choice",
+            "type": "text",
+            "example": "",
+            "desc": "是否精选，0否1是"
+          },
+          {
+            "required": "0",
+            "_id": "5f97bd648183db28bcf3cf20",
+            "name": "fake_view",
+            "type": "text",
+            "example": "",
+            "desc": "设置浏览数"
+          },
+          {
+            "required": "0",
+            "_id": "5f97bd648183db28bcf3cf1f",
+            "name": "fake_collect",
+            "type": "text",
+            "example": "",
+            "desc": "设置收藏数"
+          },
+          {
+            "required": "0",
+            "_id": "5f97bd648183db28bcf3cf1e",
+            "name": "fake_like",
+            "type": "text",
+            "example": "",
+            "desc": "设置点赞数"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/shield",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 5,
+        "tag": [],
+        "_id": 5013,
+        "method": "POST",
+        "catid": 1510,
+        "title": "屏蔽",
+        "path": "/note/shield",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603418852,
+        "up_time": 1604047527,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f9bd2a78183db28bcf3d000",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f9bd2a78183db28bcf3d002",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID，以逗号分隔"
+          },
+          {
+            "required": "1",
+            "_id": "5f9bd2a78183db28bcf3d001",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知用户，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【所有人】此功能v2.0暂时不做~</p>\n",
+        "markdown": "1.【所有人】此功能v2.0暂时不做~",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/normal",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 6,
+        "tag": [],
+        "_id": 5014,
+        "method": "POST",
+        "catid": 1510,
+        "title": "恢复",
+        "path": "/note/normal",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603419010,
+        "up_time": 1603419075,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f923bc38183db28bcf3ce19",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f923bc38183db28bcf3ce1a",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID，以逗号分隔"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/comment-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 7,
+        "tag": [],
+        "_id": 5016,
+        "method": "POST",
+        "catid": 1510,
+        "title": "评论列表请看备注",
+        "path": "/note/comment-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603419378,
+        "up_time": 1603792308,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97edb48183db28bcf3cf6e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.转看【评论管理 - 列表】</p>\n",
+        "markdown": "1.转看【评论管理 - 列表】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"评论ID\",\n                \"type\":\"评论/回复的类型，1评论，2回复评论，3回复楼中回复\",\n                \"target_type\":\"主体类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹\",\n                \"content\":\"评论内容\",\n                \"is_have_report\":\"是否有待处理的举报，0否，1是\",\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"created_at\":\"\",\n                \"user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"count\":{\n                    \"like\":\"点赞数\",\n                    \"reply\":\"回复数\"\n                }\n            },\n            {\n                \"id\":\"回复ID\",\n                \"type\":\"评论/回复的类型，1评论，2回复评论，3回复楼中回复\",\n                \"target_type\":\"主体类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹\",\n                \"content\":\"回复内容\",\n                \"is_have_report\":\"是否有待处理的举报，0否，1是\",\n                \"is_deleted\":\"是否删除，0正常，1删除\",\n                \"created_at\":\"\",\n                \"user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"to_user\":{\n                    \"id\":\"\",\n                    \"nickname\":\"\",\n                    \"avatar\":\"\"\n                },\n                \"count\":{\n                    \"like\":\"点赞数\",\n                    \"reply\":\"回复数\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/note/collect-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 8,
+        "tag": [],
+        "_id": 5044,
+        "method": "POST",
+        "catid": 1510,
+        "title": "收藏人列表",
+        "path": "/note/collect-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0ada38183db28bcf3d024",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0ada38183db28bcf3d025",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          }
+        ],
+        "desc": "<p>1.【前端】点击【收藏人数】调用此接口</p>\n",
+        "markdown": "1.【前端】点击【收藏人数】调用此接口",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"用户ID\",\n                \"nickname\":\"用户昵称\",\n                \"avatar\":\"1.jpg\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603874474,
+        "up_time": 1604365731,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/note/like-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 9,
+        "tag": [],
+        "_id": 5043,
+        "method": "POST",
+        "catid": 1510,
+        "title": "点赞人列表",
+        "path": "/note/like-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0adaf8183db28bcf3d026",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0adaf8183db28bcf3d027",
+            "name": "id",
+            "type": "text",
+            "desc": "笔记ID"
+          }
+        ],
+        "desc": "<p>1.【前端】点击【点赞数】调用此接口</p>\n",
+        "markdown": "1.【前端】点击【点赞数】调用此接口",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"用户ID\",\n                \"nickname\":\"用户昵称\",\n                \"avatar\":\"1.jpg\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603874329,
+        "up_time": 1604365743,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/note/report-list",
+          "params": []
+        },
+        "edit_uid": 11,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 10,
+        "tag": [],
+        "_id": 5041,
+        "method": "POST",
+        "catid": 1510,
+        "title": "举报列表请看备注",
+        "path": "/note/report-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f992e768183db28bcf3cfcb",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "desc": "<p><span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.此接口所有信息均为占位</span><br>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">2.</span><span class=\"colour\" style=\"color:rgb(85, 85, 85)\">转看【举报管理 - 列表】</span></p>\n",
+        "markdown": "<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">1.此接口所有信息均为占位</span>\n<span class=\"colour\" style=\"color:rgb(85, 85, 85)\">2.</span><span class=\"colour\" style=\"color:rgb(85, 85, 85)\">转看【举报管理 - 列表】</span>",
+        "req_body_type": "form",
+        "res_body": "",
+        "uid": 11,
+        "add_time": 1603874317,
+        "up_time": 1603874422,
+        "__v": 0
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "评论管理",
+    "desc": null,
+    "add_time": 1603792098,
+    "up_time": 1603792098,
+    "list": [
+      {
+        "query_path": {
+          "path": "/comment/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5033,
+        "method": "POST",
+        "catid": 1528,
+        "title": "列表",
+        "path": "/comment/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa26ec38183db28bcf3d186",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa26ec38183db28bcf3d18d",
+            "name": "target_id",
+            "type": "text",
+            "example": "",
+            "desc": "主体ID，如：文章/笔记ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d18c",
+            "name": "keywords_user",
+            "type": "text",
+            "desc": "用户昵称/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d18b",
+            "name": "is_only_comment",
+            "type": "text",
+            "example": "",
+            "desc": "是否只展示评论，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d18a",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d189",
+            "name": "order",
+            "type": "text",
+            "example": "",
+            "desc": "最新比在：前：asc，后：desc"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d188",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa26ec38183db28bcf3d187",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "desc": "<p>1.【前端 - 字段返回中的type】：回复的类型，0评论，1回复的评论，2回复的回复<br>\n2.【前端 - 被回复者】：先判断【to_user】节点是否有，如果没有，根据【target_type】：1文章，2笔记，5动态，6收藏夹，否则填充【to_user.nickname】</p>\n",
+        "markdown": "1.【前端 - 字段返回中的type】：回复的类型，0评论，1回复的评论，2回复的回复\n2\\.【前端 \\- 被回复者】：先判断【to\\_user】节点是否有，如果没有，根据【target\\_type】：1文章，2笔记，5动态，6收藏夹，否则填充【to\\_user\\.nickname】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 2,\n        \"page_size\": 20,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": \"00KECKRCGF9V9UMAYZPVJXCA\",\n                \"user_id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"target_type\": 2,\n                \"content\": \"十月之交，朔月辛卯。日有食之，亦孔之丑。\\n彼月而微，此日而微；今此下民，亦孔之哀。\\n日月告凶，不用其行。四国无政，不用其良。\\n彼月而食，则维其常；此日而食，于何不臧。\",\n                \"is_deleted\": 0,\n                \"is_view\": 1,\n                \"created_at\": 1598518696,\n                \"type\": 0,\n                \"to_user\": {},\n                \"user\": {\n                    \"id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                    \"nickname\": \"书山执\",\n                    \"avatar\": \"24d1aa925b98fb86ebe982e5f5fbc11b.png\"\n                },\n                \"count\": {\n                    \"reply\": 0,\n                    \"like\": 0\n                }\n            },\n            {\n                \"id\": \"00K8Y61ZFRDQOSDFHJMWGUIO\",\n                \"user_id\": \"00K85OV9NTO86TMJG1SDD22O\",\n                \"to_user_id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"content\": \"该“出手”时就“出手”\",\n                \"type\": 1,\n                \"target_type\": 1,\n                \"is_deleted\": 1,\n                \"created_at\": 1586763560,\n                \"user\": {\n                    \"id\": \"00K85OV9NTO86TMJG1SDD22O\",\n                    \"nickname\": \"江程晓\",\n                    \"avatar\": \"00f40d7d2d5b242e2b9cf6f991563eb0.png\"\n                },\n                \"to_user\": {\n                    \"id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                    \"nickname\": \"书山执\",\n                    \"avatar\": \"24d1aa925b98fb86ebe982e5f5fbc11b.png\"\n                },\n                \"count\": {\n                    \"reply\": 0,\n                    \"like\": 0\n                }\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603792172,
+        "up_time": 1604480707,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/comment/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5035,
+        "method": "POST",
+        "catid": 1528,
+        "title": "删除",
+        "path": "/comment/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603792571,
+        "up_time": 1603792663,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97ef178183db28bcf3cf7f",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f97ef178183db28bcf3cf81",
+            "name": "id",
+            "type": "text",
+            "desc": "评论ID，以逗号隔开"
+          },
+          {
+            "required": "0",
+            "_id": "5f97ef178183db28bcf3cf80",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知用户，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "回复管理",
+    "desc": null,
+    "add_time": 1603792327,
+    "up_time": 1603792327,
+    "list": [
+      {
+        "query_path": {
+          "path": "/reply/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5034,
+        "method": "POST",
+        "catid": 1534,
+        "title": "列表",
+        "path": "/reply/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa4c2688183db28bcf3d1b3",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b9",
+            "name": "keywords_user",
+            "type": "text",
+            "example": "",
+            "desc": "用户昵称/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b8",
+            "name": "comment_id",
+            "type": "text",
+            "example": "",
+            "desc": "评论ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b7",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b6",
+            "name": "order",
+            "type": "text",
+            "example": "",
+            "desc": "最新回复在，asc：前，desc：后"
+          },
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b5",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa4c2688183db28bcf3d1b4",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 1,\n        \"page_size\": 20,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": \"00K8Y61ZFRDQOSDFHJMWGUIO\",\n                \"user_id\": \"00K85OV9NTO86TMJG1SDD22O\",\n                \"to_user_id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"content\": \"该“出手”时就“出手”\",\n                \"type\": 1,\n                \"is_deleted\": 1,\n                \"created_at\": 1586763560,\n                \"user\": {\n                    \"id\": \"00K85OV9NTO86TMJG1SDD22O\",\n                    \"nickname\": \"江程晓\",\n                    \"avatar\": \"00f40d7d2d5b242e2b9cf6f991563eb0.png\"\n                },\n                \"to_user\": {\n                    \"id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                    \"nickname\": \"书山执\",\n                    \"avatar\": \"24d1aa925b98fb86ebe982e5f5fbc11b.png\"\n                },\n                \"count\": {\n                    \"reply\": 0,\n                    \"like\": 0\n                },\n                \"is_have_report\": 0\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603792351,
+        "up_time": 1604633192,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/reply/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5036,
+        "method": "POST",
+        "catid": 1534,
+        "title": "删除",
+        "path": "/reply/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97ef468183db28bcf3cf85",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f97ef468183db28bcf3cf87",
+            "name": "id",
+            "type": "text",
+            "desc": "回复ID，以逗号隔开"
+          },
+          {
+            "required": "0",
+            "_id": "5f97ef468183db28bcf3cf86",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知用户，0否，1是"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}",
+        "uid": 11,
+        "add_time": 1603792665,
+        "up_time": 1603792710,
+        "__v": 0
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "收藏夹管理",
+    "desc": null,
+    "add_time": 1603353283,
+    "up_time": 1603353283,
+    "list": [
+      {
+        "query_path": {
+          "path": "/favorites-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5009,
+        "method": "POST",
+        "catid": 1504,
+        "title": "值域看备注",
+        "path": "/favorites-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603417443,
+        "up_time": 1603417640,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f9236288183db28bcf3cdff",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.【is_public】：是否公开，0私密，1公开<br>\n2.【is_deleted】：是否删除，0正常，1删除<br>\n3.【is_notify_user】：删除收藏夹时，是否通知收藏夹用户，0否，1是<br>\n4.【target_type】：主体类型，1文章，2笔记</p>\n",
+        "markdown": "1.【is_public】：是否公开，0私密，1公开\n2.【is_deleted】：是否删除，0正常，1删除\n3\\.【is\\_notify\\_user】：删除收藏夹时，是否通知收藏夹用户，0否，1是\n4.【target_type】：主体类型，1文章，2笔记",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/favorites/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5003,
+        "method": "POST",
+        "catid": 1504,
+        "title": "列表",
+        "path": "/favorites/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603353303,
+        "up_time": 1604382163,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0edd38183db28bcf3d0a7",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0af",
+            "name": "user_id",
+            "type": "text",
+            "example": "",
+            "desc": "用户ID，【用户管理 - 收藏夹】需要传入"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0ae",
+            "name": "keywords_user",
+            "type": "text",
+            "desc": "用户名称/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0ad",
+            "name": "keywords_favorites",
+            "type": "text",
+            "example": "",
+            "desc": "收藏夹名称/收藏夹ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0ac",
+            "name": "is_public",
+            "type": "text",
+            "example": "",
+            "desc": "是否公开，0私密，1公开"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0ab",
+            "name": "is_default",
+            "type": "text",
+            "example": "",
+            "desc": "是否为默认收藏夹，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0aa",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0a9",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0edd38183db28bcf3d0a8",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】is_default = 1的收藏夹不可【查看详情，删除】</p>\n",
+        "markdown": "1.【前端】is_default = 1的收藏夹不可【查看详情，删除】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":3,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"00KEL6YU7YA6PPXSPIMSC1F3\",\n                \"user_id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                \"name\":\"资料\",\n                \"description\":\"\",\n                \"total\":0,\n                \"is_default\":0,\n                \"is_deleted\":0,\n                \"is_public\":1,\n                \"created_at\":1599039727,\n                \"updated_at\":1603864290,\n                \"is_have_report\":1,\n                \"user\":{\n                    \"id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                    \"nickname\":\"书山执\",\n                    \"avatar\":\"24d1aa925b98fb86ebe982e5f5fbc11b.png\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/favorites/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5005,
+        "method": "POST",
+        "catid": 1504,
+        "title": "删除",
+        "path": "/favorites/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603415060,
+        "up_time": 1603415138,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f922c628183db28bcf3cdd4",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f922c628183db28bcf3cdd6",
+            "name": "id",
+            "type": "text",
+            "desc": "收藏夹ID，以逗号分隔"
+          },
+          {
+            "required": "1",
+            "_id": "5f922c628183db28bcf3cdd5",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知收藏夹用户，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/favorites/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 3,
+        "tag": [],
+        "_id": 5006,
+        "method": "POST",
+        "catid": 1504,
+        "title": "详情",
+        "path": "/favorites/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603415172,
+        "up_time": 1604481438,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa2719e8183db28bcf3d197",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa2719e8183db28bcf3d199",
+            "name": "favorites_id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fa2719e8183db28bcf3d198",
+            "name": "user_id",
+            "type": "text",
+            "example": "",
+            "desc": "用户ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"id\": \"00KEL6YU7YA6PPXSPIMSC1F3\",\n        \"user_id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n        \"name\": \"资料\",\n        \"description\": \"\",\n        \"total\": 0,\n        \"is_default\": 0,\n        \"is_deleted\": 1,\n        \"is_public\": 1,\n        \"created_at\": 1599039727,\n        \"updated_at\": 1604384335,\n        \"is_have_report\": 1,\n        \"user\": {\n            \"id\": 33,\n            \"user_id\": \"00K6BQZ99T1IZB9ZXO0IUSZX\",\n            \"nickname\": \"书山执\",\n            \"avatar\": \"24d1aa925b98fb86ebe982e5f5fbc11b.png\"\n        },\n        \"report\": {\n            \"id\": 4,\n            \"category_id\": 1,\n            \"target_id\": \"00KEL6YU7YA6PPXSPIMSC1F3\",\n            \"content\": \"收藏夹举报\",\n            \"count\": 1\n        }\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/favorites/target-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5007,
+        "method": "POST",
+        "catid": 1504,
+        "title": "收藏内容列表",
+        "path": "/favorites/target-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603415770,
+        "up_time": 1604295620,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f9f9bc48183db28bcf3d003",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5f9f9bc48183db28bcf3d007",
+            "name": "id",
+            "type": "text",
+            "desc": "收藏夹ID"
+          },
+          {
+            "required": "0",
+            "_id": "5f9f9bc48183db28bcf3d006",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记"
+          },
+          {
+            "required": "0",
+            "_id": "5f9f9bc48183db28bcf3d005",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5f9f9bc48183db28bcf3d004",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"文章ID\",\n                \"target_type\":\"主体类型，1文章，2笔记\",\n                \"target_sign\":\"文章标题或笔记内容\",\n                \"cover_url\":\"1.jpg\",\n                \"is_deleted\":0,\n                \"is_shield\":1,\n                \"created_at\":\"\"\n            },\n            {\n                \"id\":\"笔记ID\",\n                \"target_type\":\"主体类型，1文章，2笔记\",\n                \"target_sign\":\"文章标题或笔记内容\",\n                \"cover_url\":\"\",\n                \"is_deleted\":1,\n                \"is_shield\":1,\n                \"created_at\":\"\"\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "用户管理",
+    "desc": null,
+    "add_time": 1603760412,
+    "up_time": 1603760412,
+    "list": [
+      {
+        "query_path": {
+          "path": "/user/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5027,
+        "method": "POST",
+        "catid": 1522,
+        "title": "修改",
+        "path": "/user/edit",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603760980,
+        "up_time": 1603761023,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f97737f8183db28bcf3cef1",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5f97737f8183db28bcf3cef3",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5f97737f8183db28bcf3cef2",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "启用状态，0禁用，1启用"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5025,
+        "method": "POST",
+        "catid": 1522,
+        "title": "列表",
+        "path": "/user/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603760515,
+        "up_time": 1604635216,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa4ca508183db28bcf3d1bc",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa4ca508183db28bcf3d1bf",
+            "name": "keywords_user",
+            "type": "text",
+            "desc": "用户昵称/用户手机号/用户ID"
+          },
+          {
+            "required": "1",
+            "_id": "5fa4ca508183db28bcf3d1be",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "1",
+            "_id": "5fa4ca508183db28bcf3d1bd",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"name\":\"粉刷匠\",\n                \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n                \"phone\":\"15715867560\",\n                \"status\":\"启用状态，0禁用，1启用\",\n                \"created_at\":\"注册时间\",\n                \"wechat\":{\n                    \"name\":\"微信昵称\"\n                },\n                \"count\":{\n                    \"favorites\":\"收藏夹数\",\n                    \"note\":\"笔记数\",\n                    \"collect\":\"收藏数\",\n                    \"attention\":\"关注数\",\n                    \"fans\":\"粉丝数\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/user/favorites-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5028,
+        "method": "POST",
+        "catid": 1522,
+        "title": "收藏夹列表请看备注",
+        "path": "/user/favorites-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603761121,
+        "up_time": 1603846803,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f98c2938183db28bcf3cf8a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.此接口所有信息均为占位<br>\n2.转看【收藏夹管理 - 列表】</p>\n",
+        "markdown": "1.此接口所有信息均为占位\n2.转看【收藏夹管理 - 列表】",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/user/note-list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5029,
+        "method": "POST",
+        "catid": 1522,
+        "title": "笔记列表请看备注",
+        "path": "/user/note-list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603761163,
+        "up_time": 1603846813,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f98c29d8183db28bcf3cf8b",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.此接口所有信息均为占位<br>\n2.转看【笔记管理 - 列表】</p>\n",
+        "markdown": "1.此接口所有信息均为占位\n2.转看【笔记管理 - 列表】",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/user/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5026,
+        "method": "POST",
+        "catid": 1522,
+        "title": "详情",
+        "path": "/user/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603760812,
+        "up_time": 1604635162,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa4ca1a8183db28bcf3d1ba",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa4ca1a8183db28bcf3d1bb",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n        \"nickname\":\"粉刷匠\",\n        \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n        \"phone\":\"15715867560\",\n        \"status\":\"启用状态，0禁用，1启用\",\n        \"sign\":\"个性签名\",\n        \"birthday\":\"出生年月\",\n        \"industry\":\"行业\",\n        \"job\":\"职业\",\n        \"education\":\"学历\",\n        \"created_at\":\"注册时间\",\n        \"wechat\":{\n            \"name\":\"微信昵称\"\n        },\n        \"count\":{\n            \"favorites\":\"收藏夹数\",\n            \"note\":\"笔记数\",\n            \"collect\":\"收藏数\",\n            \"attention\":\"关注数\",\n            \"fans\":\"粉丝数\"\n        }\n    },\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "智囊团管理",
+    "desc": null,
+    "add_time": 1603347241,
+    "up_time": 1603347241,
+    "list": [
+      {
+        "query_path": {
+          "path": "/pro-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 4995,
+        "method": "POST",
+        "catid": 1486,
+        "title": "值域请看备注",
+        "path": "/pro-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603349705,
+        "up_time": 1604368871,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0b9e78183db28bcf3d056",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.<strong>【status】</strong>：启用状态，0禁用，1启用<br>\n2.<strong>【is_recommend】</strong>：是否推荐，0否，1是</p>\n",
+        "markdown": "1.**【status】**：启用状态，0禁用，1启用\n2.**【is_recommend】**：是否推荐，0否，1是",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/pro/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 4990,
+        "method": "POST",
+        "catid": 1486,
+        "title": "列表",
+        "path": "/pro/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603347261,
+        "up_time": 1604368881,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0b9f18183db28bcf3d057",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d05d",
+            "name": "keywords_user",
+            "type": "text",
+            "desc": "用户名/手机号/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d05c",
+            "name": "category_id",
+            "type": "text",
+            "example": "",
+            "desc": "全部传all，否则传具体分类ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d05b",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "启用状态，0禁用，1启用"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d05a",
+            "name": "is_recommend",
+            "type": "text",
+            "example": "",
+            "desc": "是否推荐，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d059",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f18183db28bcf3d058",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"name\":\"粉刷匠\",\n                \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\",\n                \"phone\":\"15715867560\",\n                \"description\":\"简介，不同于用户自身的简介\",\n                \"status\":1,\n                \"is_recommend\":1,\n                \"created_at\":\"\",\n                \"category\":[\n                    {\n                        \"id\":1,\n                        \"name\":\"分类名称1\"\n                    },\n                    {\n                        \"id\":2,\n                        \"name\":\"分类名称2\"\n                    },\n                    {\n                        \"id\":3,\n                        \"name\":\"分类名称3\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 4991,
+        "method": "POST",
+        "catid": 1486,
+        "title": "添加",
+        "path": "/pro/add",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603347967,
+        "up_time": 1604368889,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0b9f98183db28bcf3d05e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0b9f98183db28bcf3d061",
+            "name": "phone",
+            "type": "text",
+            "desc": "手机号"
+          },
+          {
+            "required": "1",
+            "_id": "5fa0b9f98183db28bcf3d060",
+            "name": "category",
+            "type": "text",
+            "example": "",
+            "desc": "分类名称，以逗号隔开"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0b9f98183db28bcf3d05f",
+            "name": "description",
+            "type": "text",
+            "example": "",
+            "desc": "简介"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.category支持自定义</p>\n",
+        "markdown": "1.category支持自定义",
+        "req_body_type": "form",
+        "res_body": "{\n  \"success\": true,\n  \"code\": 200,\n  \"result\": true,\n  \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 3,
+        "tag": [],
+        "_id": 4992,
+        "method": "POST",
+        "catid": 1486,
+        "title": "修改",
+        "path": "/pro/edit",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603348654,
+        "up_time": 1604371310,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0c36e8183db28bcf3d08d",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0c36e8183db28bcf3d094",
+            "name": "id",
+            "type": "text",
+            "example": "",
+            "desc": "用户ID，可以传多个，以逗号分隔"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d093",
+            "name": "avatar",
+            "type": "text",
+            "example": "",
+            "desc": "头像url，此参数传入【头像上传】接口的返回值"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d092",
+            "name": "category",
+            "type": "text",
+            "desc": "分类名称，以逗号隔开"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d091",
+            "name": "description",
+            "type": "text",
+            "example": "",
+            "desc": "简介"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d090",
+            "name": "is_recommend",
+            "type": "text",
+            "example": "",
+            "desc": "是否推荐，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d08f",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "启用状态，0禁用，1启用"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0c36e8183db28bcf3d08e",
+            "name": "weight",
+            "type": "text",
+            "example": "",
+            "desc": "排序权重"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.可以修改所属分类、简介、推荐状态、启用状态</p>\n",
+        "markdown": "1.可以修改所属分类、简介、推荐状态、启用状态",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro/avatar",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 4,
+        "tag": [],
+        "_id": 5045,
+        "method": "POST",
+        "catid": 1486,
+        "title": "头像上传",
+        "path": "/pro/avatar",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604371336,
+        "up_time": 1604371419,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0c3db8183db28bcf3d095",
+            "name": "Content-Type",
+            "value": "multipart/form-data"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0c3db8183db28bcf3d096",
+            "name": "file",
+            "type": "file",
+            "desc": "本地文件，注意类型是file"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"url\":\"1.jpg\"\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 5,
+        "tag": [],
+        "_id": 4993,
+        "method": "POST",
+        "catid": 1486,
+        "title": "详情",
+        "path": "/pro/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603349317,
+        "up_time": 1604368905,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0ba098183db28bcf3d068",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0ba098183db28bcf3d069",
+            "name": "id",
+            "type": "text",
+            "desc": "用户ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>原型暂时没有</p>\n",
+        "markdown": "原型暂时没有",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "智囊团分类管理",
+    "desc": null,
+    "add_time": 1603349950,
+    "up_time": 1603349950,
+    "list": [
+      {
+        "query_path": {
+          "path": "/pro-category/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 4999,
+        "method": "POST",
+        "catid": 1492,
+        "title": "修改",
+        "path": "/pro-category/edit",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603350472,
+        "up_time": 1604974235,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa9f69b8183db28bcf3d20c",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa9f69b8183db28bcf3d20f",
+            "name": "id",
+            "type": "text",
+            "desc": "分类ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa9f69b8183db28bcf3d20e",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "启用状态，0禁用，1启用"
+          },
+          {
+            "required": "0",
+            "_id": "5fa9f69b8183db28bcf3d20d",
+            "name": "name",
+            "type": "text",
+            "example": "",
+            "desc": "名称"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【后端】修改一条记录的排序权重，需要将其他记录的排序权重也同步更新<br>\n2.【前端】如果修改权重，参数为：【id】【必传】【以逗号分隔】</p>\n",
+        "markdown": "1.【后端】修改一条记录的排序权重，需要将其他记录的排序权重也同步更新\n2.【前端】如果修改权重，参数为：【id】【必传】【以逗号分隔】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro-category-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 4996,
+        "method": "POST",
+        "catid": 1492,
+        "title": "值域请看备注",
+        "path": "/pro-category-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603349963,
+        "up_time": 1604368915,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0ba138183db28bcf3d06a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.<strong>【status】</strong>：启用状态，0禁用，1启用</p>\n",
+        "markdown": "1.**【status】**：启用状态，0禁用，1启用",
+        "res_body": "",
+        "req_body_type": "form"
+      },
+      {
+        "query_path": {
+          "path": "/pro-category/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 4997,
+        "method": "POST",
+        "catid": 1492,
+        "title": "列表",
+        "path": "/pro-category/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603350101,
+        "up_time": 1604374611,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0d0538183db28bcf3d097",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa0d0538183db28bcf3d09b",
+            "name": "keywords_pro_category",
+            "type": "text",
+            "desc": "智囊团分类名称"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0d0538183db28bcf3d09a",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "启用状态，0禁用，1启用"
+          },
+          {
+            "required": "1",
+            "_id": "5fa0d0538183db28bcf3d099",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "1",
+            "_id": "5fa0d0538183db28bcf3d098",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 9,\n        \"page_size\": 1,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": 1,\n                \"name\": \"心理\",\n                \"member_count\": 1,\n                \"weight\": 9,\n                \"status\": 1,\n                \"is_deleted\": 1,\n                \"created_at\": 1604374196\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/pro-category/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 4998,
+        "method": "POST",
+        "catid": 1492,
+        "title": "添加",
+        "path": "/pro-category/add",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603350323,
+        "up_time": 1604368932,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa0ba248183db28bcf3d070",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa0ba248183db28bcf3d072",
+            "name": "name",
+            "type": "text",
+            "desc": "名称"
+          },
+          {
+            "required": "0",
+            "_id": "5fa0ba248183db28bcf3d071",
+            "name": "is_top",
+            "type": "text",
+            "example": "",
+            "desc": "是否置顶，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "举报管理",
+    "desc": null,
+    "add_time": 1603351219,
+    "up_time": 1603351219,
+    "list": [
+      {
+        "query_path": {
+          "path": "/report-value-area",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5004,
+        "method": "POST",
+        "catid": 1498,
+        "title": "值域请看备注",
+        "path": "/report-value-area",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1603414670,
+        "up_time": 1603414863,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f922b4f8183db28bcf3cdcd",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "<p>1.【target_type】：内容类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹<br>\n2.【status】：处理状态，0未处理，1已忽略，2已处理<br>\n3.【is_normal】：主体是否正常，0失效，1正常【注意：对内容的处理，结果告知被举报人开关可以使用】<br>\n4.【is_delete_target】：是否删除被举报主体，0否，1是<br>\n5.【is_notify_reporter】：是否通知举报人，0否，1是<br>\n6.【is_notify_reported】：是否通知被举报人，0否，1是</p>\n",
+        "markdown": "1.【target_type】：内容类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹\n2.【status】：处理状态，0未处理，1已忽略，2已处理\n3.【is_normal】：主体是否正常，0失效，1正常【注意：对内容的处理，结果告知被举报人开关可以使用】\n4\\.【is\\_delete\\_target】：是否删除被举报主体，0否，1是\n5\\.【is\\_notify\\_reporter】：是否通知举报人，0否，1是\n6\\.【is\\_notify\\_reported】：是否通知被举报人，0否，1是",
+        "req_body_type": "form",
+        "res_body": ""
+      },
+      {
+        "query_path": {
+          "path": "/report/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 1,
+        "tag": [],
+        "_id": 5000,
+        "method": "POST",
+        "catid": 1498,
+        "title": "列表",
+        "path": "/report/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603351243,
+        "up_time": 1604979774,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faa0c3e8183db28bcf3d210",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d216",
+            "name": "keywors_report",
+            "type": "text",
+            "desc": "举报内容"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d215",
+            "name": "target_id",
+            "type": "text",
+            "example": "",
+            "desc": "主体ID"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d214",
+            "name": "target_type",
+            "type": "text",
+            "example": "",
+            "desc": "主体类型，1文章，2笔记，3评论，4回复，5动态，6收藏夹"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d213",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "处理状态，0未处理，1已忽略，2通过"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d212",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c3e8183db28bcf3d211",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【后端】通过【content】搜索时，需要同时匹配【文章标题】，【笔记内容】，【评论内容】，【回复内容】，【收藏夹名称】</p>\n",
+        "markdown": "1.【后端】通过【content】搜索时，需要同时匹配【文章标题】，【笔记内容】，【评论内容】，【回复内容】，【收藏夹名称】",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":{\n        \"total_count\":30,\n        \"page_size\":20,\n        \"page\":1,\n        \"list\":[\n            {\n                \"id\":1,\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"category_id\":1,\n                \"deal_admin_id\":1,\n                \"target_id\":\"00KEB0UZJJKGF2S83VFJYZGL\",\n                \"target_type\":1,\n                \"content\":\"文章举报\",\n                \"status\":0,\n                \"is_deleted\":0,\n                \"deal_at\":0,\n                \"created_at\":1603952884,\n                \"updated_at\":1603952884,\n                \"target\":{\n                    \"article_id\":\"00KEB0UZJJKGF2S83VFJYZGL\",\n                    \"author_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"title\":\"链表排序都写不出来能通过BAT面试吗？\",\n                    \"is_deleted\":1,\n                    \"is_shield\":0\n                },\n                \"user\":{\n                    \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\":\"粉刷匠\",\n                    \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"deal_user\":{\n                    \"id\":1,\n                    \"name\":\"admin\",\n                    \"username\":\"admin\",\n                    \"status\":1,\n                    \"is_deleted\":0,\n                    \"created_at\":1482305564\n                },\n                \"reported_user\":{\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"nickname\":\"张晓萌\",\n                    \"avatar\":\"186767b5e3219c0c640196a7a9200ae4.png\"\n                }\n            },\n            {\n                \"id\":2,\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"category_id\":1,\n                \"deal_admin_id\":1,\n                \"target_id\":\"00KB7D8B0VHMWESOHLALECGC\",\n                \"target_type\":2,\n                \"content\":\"笔记举报\",\n                \"status\":1,\n                \"is_deleted\":0,\n                \"deal_at\":1603952922,\n                \"created_at\":1603952888,\n                \"updated_at\":1603952888,\n                \"target\":{\n                    \"id\":2,\n                    \"note_id\":\"00KB7D8B0VHMWESOHLALECGC\",\n                    \"content\":\"沟通，站在对方的角度思考，他关心的是什么？这点真的非常重要！各讲各的，就没法儿同频共振。\",\n                    \"created_at\":1591673373,\n                    \"updated_at\":1591673928\n                },\n                \"user\":{\n                    \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\":\"粉刷匠\",\n                    \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"deal_user\":{\n                    \"id\":1,\n                    \"name\":\"admin\",\n                    \"username\":\"admin\",\n                    \"status\":1,\n                    \"is_deleted\":0,\n                    \"created_at\":1482305564\n                },\n                \"reported_user\":{\n                    \"user_id\":\"00K5M5AQKM1YGHAQ11F4DVJZ\",\n                    \"nickname\":\"陈能\",\n                    \"avatar\":\"d3c829ef6cf628f0b8f39184eda76d75.png\"\n                }\n            },\n            {\n                \"id\":3,\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"category_id\":1,\n                \"deal_admin_id\":1,\n                \"target_id\":\"00KECKSFXPQQ1USO2SZEBEPS\",\n                \"target_type\":3,\n                \"content\":\"评论举报\",\n                \"status\":2,\n                \"is_deleted\":0,\n                \"deal_at\":1603952938,\n                \"created_at\":1603952889,\n                \"updated_at\":1603952889,\n                \"target\":{\n                    \"comment_id\":\"00KEB0UZJJKGF2S83VFJYZGL\",\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"content\":\"评论内容\",\n                    \"is_deleted\":1,\n                    \"is_shield\":0\n                },\n                \"user\":{\n                    \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\":\"粉刷匠\",\n                    \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"deal_user\":{\n                    \"id\":1,\n                    \"name\":\"admin\",\n                    \"username\":\"admin\",\n                    \"status\":1,\n                    \"is_deleted\":0,\n                    \"created_at\":1482305564\n                },\n                \"reported_user\":{\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"nickname\":\"张晓萌\",\n                    \"avatar\":\"186767b5e3219c0c640196a7a9200ae4.png\"\n                }\n            },\n            {\n                \"id\":4,\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"category_id\":1,\n                \"deal_admin_id\":1,\n                \"target_id\":\"00KECKSFXPQQ1USO2SZEBEPS\",\n                \"target_type\":3,\n                \"content\":\"回复举报\",\n                \"status\":2,\n                \"is_deleted\":0,\n                \"deal_at\":1603952938,\n                \"created_at\":1603952889,\n                \"updated_at\":1603952889,\n                \"target\":{\n                    \"reply_id\":\"00KEB0UZJJKGF2S83VFJYZGL\",\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"content\":\"回复内容\",\n                    \"is_deleted\":1,\n                    \"is_shield\":0\n                },\n                \"user\":{\n                    \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\":\"粉刷匠\",\n                    \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"deal_user\":{\n                    \"id\":1,\n                    \"name\":\"admin\",\n                    \"username\":\"admin\",\n                    \"status\":1,\n                    \"is_deleted\":0,\n                    \"created_at\":1482305564\n                },\n                \"reported_user\":{\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"nickname\":\"张晓萌\",\n                    \"avatar\":\"186767b5e3219c0c640196a7a9200ae4.png\"\n                }\n            },\n            {\n                \"id\":5,\n                \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"category_id\":1,\n                \"deal_admin_id\":1,\n                \"target_id\":\"00KEL6YU7YA6PPXSPIMSC1F3\",\n                \"target_type\":6,\n                \"content\":\"收藏夹举报\",\n                \"status\":0,\n                \"is_deleted\":0,\n                \"deal_at\":0,\n                \"created_at\":1603952890,\n                \"updated_at\":1603952890,\n                \"target\":{\n                    \"favorites_id\":\"00KEL6YU7YA6PPXSPIMSC1F3\",\n                    \"user_id\":\"00K6BQZ99T1IZB9ZXO0IUSZX\",\n                    \"name\":\"资料\"\n                },\n                \"user\":{\n                    \"user_id\":\"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\":\"粉刷匠\",\n                    \"avatar\":\"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                },\n                \"deal_user\":{\n                    \"id\":1,\n                    \"name\":\"admin\",\n                    \"username\":\"admin\",\n                    \"status\":1,\n                    \"is_deleted\":0,\n                    \"created_at\":1482305564\n                },\n                \"reported_user\":{\n                    \"user_id\":\"00KDQOW5QT7GY2UANVXGSTHG\",\n                    \"nickname\":\"张晓萌\",\n                    \"avatar\":\"186767b5e3219c0c640196a7a9200ae4.png\"\n                }\n            }\n        ]\n    },\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/report/solve",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 2,
+        "tag": [],
+        "_id": 5001,
+        "method": "POST",
+        "catid": 1498,
+        "title": "处理",
+        "path": "/report/solve",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1603352330,
+        "up_time": 1604979833,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5faa0c798183db28bcf3d21e",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5faa0c798183db28bcf3d223",
+            "name": "id",
+            "type": "text",
+            "desc": "举报id，以逗号隔开"
+          },
+          {
+            "required": "1",
+            "_id": "5faa0c798183db28bcf3d222",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "处理状态，1已忽略，2通过"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c798183db28bcf3d221",
+            "name": "is_notify_reporter",
+            "type": "text",
+            "example": "",
+            "desc": "【status=2必传】是否通知举报人，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c798183db28bcf3d220",
+            "name": "is_notify_reported",
+            "type": "text",
+            "example": "",
+            "desc": "【status=2必传】是否通知被举报人，0否，1是"
+          },
+          {
+            "required": "0",
+            "_id": "5faa0c798183db28bcf3d21f",
+            "name": "is_delete_note",
+            "type": "text",
+            "example": "",
+            "desc": "【status=2，且通过的是文章举报必传】是否删除笔记，0否，1是"
+          }
+        ],
+        "__v": 0,
+        "desc": "<p>1.【前端】一定一定要有二次确认弹窗！<br>\n2.【后端】若主体状态异常（如【被删除】、【被屏蔽】等）不需要通知被举报人</p>\n",
+        "markdown": "1.【前端】一定一定要有二次确认弹窗！\n2.【后端】若主体状态异常（如【被删除】、【被屏蔽】等）不需要通知被举报人",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"code\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "意见反馈管理",
+    "desc": null,
+    "add_time": 1604386475,
+    "up_time": 1604386475,
+    "list": [
+      {
+        "query_path": {
+          "path": "/feedback/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5046,
+        "method": "POST",
+        "catid": 1540,
+        "title": "列表",
+        "path": "/feedback/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604386497,
+        "up_time": 1604394601,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa11e698183db28bcf3d126",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12f",
+            "name": "keywords_user",
+            "type": "text",
+            "desc": "用户昵称/用户手机号/用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12e",
+            "name": "keywords_feedback",
+            "type": "text",
+            "example": "",
+            "desc": "反馈内容"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12d",
+            "name": "start_at",
+            "type": "text",
+            "example": "",
+            "desc": "开始时间戳"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12c",
+            "name": "end_at",
+            "type": "text",
+            "example": "",
+            "desc": "结束时间戳"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12b",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "处理状态，0未处理，1已忽略，2已处理"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d12a",
+            "name": "is_deleted",
+            "type": "text",
+            "example": "",
+            "desc": "是否被删除，0正常，1删除"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d129",
+            "name": "platform",
+            "type": "text",
+            "example": "",
+            "desc": "1Web端，2小程序，3iOS，4安卓"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d128",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "0",
+            "_id": "5fa11e698183db28bcf3d127",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 1,\n        \"page_size\": 20,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": 1,\n                \"user_id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                \"contact\": \"联系方式\",\n                \"content\": \"意见反馈内容\",\n                \"platform\": 1,\n                \"status\": 0,\n                \"is_deleted\": 0,\n                \"deal_at\": 0,\n                \"created_at\": 0,\n                \"updated_at\": 0,\n                \"user\": {\n                    \"id\": \"00K5H1KO60NAEIXXDT1SPMMM\",\n                    \"nickname\": \"粉刷匠\",\n                    \"avatar\": \"2e40f4e2d75d6db4e2deba6dc58f1105.png\"\n                }\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/feedback/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5048,
+        "method": "POST",
+        "catid": 1540,
+        "title": "删除",
+        "path": "/feedback/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa102698183db28bcf3d0dd",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa102698183db28bcf3d0de",
+            "name": "id",
+            "type": "text",
+            "desc": "反馈ID，以逗号分隔"
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}",
+        "uid": 11,
+        "add_time": 1604387411,
+        "up_time": 1604387433,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/feedback/solve",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5047,
+        "method": "POST",
+        "catid": 1540,
+        "title": "处理",
+        "path": "/feedback/solve",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604387103,
+        "up_time": 1604395031,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa120178183db28bcf3d130",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa120178183db28bcf3d133",
+            "name": "id",
+            "type": "text",
+            "desc": "反馈ID，以逗号分隔"
+          },
+          {
+            "required": "1",
+            "_id": "5fa120178183db28bcf3d132",
+            "name": "is_notify_user",
+            "type": "text",
+            "example": "",
+            "desc": "是否通知用户，0否，1是"
+          },
+          {
+            "required": "1",
+            "_id": "5fa120178183db28bcf3d131",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "处理状态，0未处理，1已忽略，2已处理"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": true,\n    \"message\": \"OK\"\n}"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "协议管理",
+    "desc": null,
+    "add_time": 1604387507,
+    "up_time": 1604387507,
+    "list": [
+      {
+        "query_path": {
+          "path": "/agreement/edit",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5051,
+        "method": "POST",
+        "catid": 1546,
+        "title": "修改",
+        "path": "/agreement/edit",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604387653,
+        "up_time": 1604392684,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa105028183db28bcf3d0f6",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa105028183db28bcf3d0fa",
+            "name": "id",
+            "type": "text",
+            "desc": "协议ID"
+          },
+          {
+            "required": "0",
+            "_id": "5fa105028183db28bcf3d0f9",
+            "name": "title",
+            "type": "text",
+            "example": "",
+            "desc": "标题"
+          },
+          {
+            "required": "0",
+            "_id": "5fa105028183db28bcf3d0f8",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "状态，0禁用，1启用"
+          },
+          {
+            "required": "0",
+            "_id": "5fa105028183db28bcf3d0f7",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "内容"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/agreement/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5050,
+        "method": "POST",
+        "catid": 1546,
+        "title": "列表",
+        "path": "/agreement/list",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604387530,
+        "up_time": 1604389723,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa10b5b8183db28bcf3d104",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa10b5b8183db28bcf3d108",
+            "name": "keywords_agreement",
+            "type": "text",
+            "desc": "协议名称"
+          },
+          {
+            "required": "1",
+            "_id": "5fa10b5b8183db28bcf3d107",
+            "name": "status",
+            "type": "text",
+            "example": "",
+            "desc": "状态，0禁用，1启用"
+          },
+          {
+            "required": "1",
+            "_id": "5fa10b5b8183db28bcf3d106",
+            "name": "page",
+            "type": "text",
+            "example": "",
+            "desc": "页数，默认是1"
+          },
+          {
+            "required": "1",
+            "_id": "5fa10b5b8183db28bcf3d105",
+            "name": "page_size",
+            "type": "text",
+            "example": "",
+            "desc": "每页个数，默认是20"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"result\": {\n        \"total_count\": 9,\n        \"page_size\": 20,\n        \"page\": 1,\n        \"list\": [\n            {\n                \"id\": 1,\n                \"title\": \"听君隐私政策\",\n                \"route\": \"privacyagreement\",\n                \"url\": \"privacyagreement.json\",\n                \"status\": 2,\n                \"is_deleted\": 0,\n                \"created_at\": 1591770879,\n                \"updated_at\": 1592475658\n            }\n        ]\n    },\n    \"message\": \"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/agreement/del",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5053,
+        "method": "POST",
+        "catid": 1546,
+        "title": "删除",
+        "path": "/agreement/del",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604387837,
+        "up_time": 1604392679,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa105138183db28bcf3d0fd",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa105138183db28bcf3d0fe",
+            "name": "id",
+            "type": "text",
+            "desc": "协议ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/agreement/add",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5054,
+        "method": "POST",
+        "catid": 1546,
+        "title": "新增",
+        "path": "/agreement/add",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604389850,
+        "up_time": 1604390023,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa10c878183db28bcf3d10d",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa10c878183db28bcf3d110",
+            "name": "title",
+            "type": "text",
+            "desc": "标题"
+          },
+          {
+            "required": "1",
+            "_id": "5fa10c878183db28bcf3d10f",
+            "name": "content",
+            "type": "text",
+            "example": "",
+            "desc": "内容"
+          },
+          {
+            "required": "0",
+            "_id": "5fa10c878183db28bcf3d10e",
+            "name": "route",
+            "type": "text",
+            "example": "",
+            "desc": "路由，由【前端】提供"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\n    \"success\":true,\n    \"statusCode\":200,\n    \"result\":true,\n    \"message\":\"OK\"\n}"
+      },
+      {
+        "query_path": {
+          "path": "/agreement/get-detail",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": true,
+        "index": 0,
+        "tag": [],
+        "_id": 5052,
+        "method": "POST",
+        "catid": 1546,
+        "title": "详情",
+        "path": "/agreement/get-detail",
+        "project_id": 86,
+        "req_params": [],
+        "res_body_type": "raw",
+        "uid": 11,
+        "add_time": 1604387802,
+        "up_time": 1604392681,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5fa1050b8183db28bcf3d0fb",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5fa1050b8183db28bcf3d0fc",
+            "name": "id",
+            "type": "text",
+            "desc": "协议ID"
+          }
+        ],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": ""
+      }
+    ]
+  }
+]

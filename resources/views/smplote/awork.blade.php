@@ -52,11 +52,12 @@
             <!-- Api -->
             <div class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Api</code></div>
-                <label><a href="{{base_url()}}/api/awork/index" target="_blank" type="button" class="btn btn-primary btn-xs">Awork List</a></label>
-                <label><a href="{{base_url()}}/api/awork/index?t_code=phpinfo" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Info</a></label>
-                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientIp" target="_blank" type="button" class="btn btn-primary btn-xs">Client IP</a></label>
-                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientDns" target="_blank" type="button" class="btn btn-primary btn-xs">Client DNS</a></label>
-                <label><a href="{{base_url()}}/api/awork/index?t_code=getClientUa" target="_blank" type="button" class="btn btn-primary btn-xs">User Agent</a></label>
+                <label><a href="{{base_url()}}/api/awork/index" target="_blank" type="button" class="btn btn-primary btn-xs">Api List</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=phpVersion" target="_blank" type="button" class="btn btn-primary btn-xs">PHP Version</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=clientIp" target="_blank" type="button" class="btn btn-primary btn-xs">Client IP</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=clientDns" target="_blank" type="button" class="btn btn-primary btn-xs">Client DNS</a></label>
+                <label><a href="{{base_url()}}/api/awork/index?t_code=clientUa" target="_blank" type="button" class="btn btn-primary btn-xs">User Agent</a></label>
+                <label><a href="{{base_url()}}/cnzz" target="_blank" type="button" class="btn btn-primary btn-xs">Cnzz</a></label>
             </div>
             <!-- Server -->
             <div  class="row platform-sm-line">

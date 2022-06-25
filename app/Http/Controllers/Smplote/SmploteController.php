@@ -34,4 +34,16 @@ class SmploteController extends Controller {
         return view('smplote.awork', $data);
     }
 
+    /**
+     * cnzz index
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * <li> true </li>
+     * @author smplote@gmail.com
+     * @date 2022/06/24 22:02
+     */
+    public function cnzz() {
+        return view('smplote.cnzz');
+    }
+
 }

@@ -19,7 +19,7 @@ class Controller extends BaseController
      * @param integer $code
      * @return \Illuminate\Http\JsonResponse
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:38
      */
     public function success($data = [], $msg = 'success', $code = 0) {
@@ -35,7 +35,7 @@ class Controller extends BaseController
      * @param array $data
      * @return \Illuminate\Http\JsonResponse
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:39
      */
     public function fail($msg = 'fail', $code = 9999, $data = []) {
@@ -49,7 +49,7 @@ class Controller extends BaseController
      * @param $data
      * @return \Illuminate\Http\JsonResponse
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:41
      */
     public function jsonReturn($data) {

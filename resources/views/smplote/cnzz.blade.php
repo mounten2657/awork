@@ -7,11 +7,11 @@
 
 <body>
 
-    <div>CNZZ 测试统计</div>
+<div>CNZZ 测试统计</div>
 
-    <button id="cnzz_btn1">CNZZ1</button>
-    <button id="cnzz_btn2">CNZZ2</button>
-    <button id="cnzz_btn3">CNZZ3</button>
+<button id="cnzz_btn1">CNZZ1</button>
+<button id="cnzz_btn2">CNZZ2</button>
+<button id="cnzz_btn3">CNZZ3</button>
 
 </body>
 

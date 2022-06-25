@@ -18,6 +18,8 @@ Route::redirect('/', '/v1/index.html');
 
 // awork
 Route::get('/awork', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);
+// cnzz
+Route::get('/cnzz', [\App\Http\Controllers\Smplote\SmploteController::class, 'cnzz']);
 
 // v1 page
 Route::prefix('v1')->group(function () {

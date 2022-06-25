@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Awork;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AworkController extends Controller {
@@ -13,14 +14,18 @@ class AworkController extends Controller {
      * @param Request $request
      * @return false|\Illuminate\Http\JsonResponse
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 10:47
      */
     public function index(Request $request) {
         // jump to target method
         $target = $request->get('t_code', 'index');
         if ($target != 'index') {
-            return $this->success($this->$target());
+            $ret = $this->$target();
+            if ($ret instanceof JsonResponse) {
+                return $ret;
+            }
+            return $this->success();
         }
         // list all methods
         echo "Current ID : " . md5(time()) . "<br>";
@@ -46,14 +51,26 @@ class AworkController extends Controller {
     /*************************************************** start *******************************************************/
 
     /**
+     * get current php version
+     *
+     * @return string
+     * <li> true </li>
+     * @author smplote@gmail.com
+     * @date 2022/06/25 15:17
+     */
+    public function phpVersion() {
+        return PHP_VERSION;
+    }
+
+    /**
      * get client ip
      *
      * @return mixed|string
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:09
      */
-    public function getClientIp() {
+    public function clientIp() {
         return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
     }
 
@@ -62,10 +79,10 @@ class AworkController extends Controller {
      *
      * @return array|false
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:28
      */
-    public function getClientDns() {
+    public function clientDns() {
         return dns_get_record(basename(base_url()));
     }
 
@@ -74,10 +91,10 @@ class AworkController extends Controller {
      *
      * @return array|false
      * <li> true </li>
-     * @author wuj@igancao.com
+     * @author smplote@gmail.com
      * @date 2022/06/25 11:28
      */
-    public function getClientUa() {
+    public function clientUa() {
         return request()->header('user-agent');
     }
 
@@ -86,12 +103,16 @@ class AworkController extends Controller {
     /**
      * display php info
      *
-     * @return bool
+     * @return JsonResponse
      * <li> true </li>
      * @date 2022/06/25 10:48
      */
     public function phpinfo() {
-        return phpinfo();
+        if (request('code', '') != 'awork') {
+            return $this->fail('invalid code');
+        }
+        phpinfo();
+        exit();
     }
 
     /**

@@ -242,11 +242,12 @@ $(function () {
 
     /**************************************Tool for platform***********************************************/
 
-    $('#big_data').click(function () {
+    $('#big_data').mouseenter(function () {
         layer.tips('Value: A large amount of irrelevant information, predictable analysis of future trends and patterns, in-depth and complex analysis, and rapid extraction of the valuable information from the massive data resources, bringing real benefits to customers. (For example: machine learning, artificial intelligence, data aggregation, etc.)\n' +
             'Variety: the heterogeneity and diversification of big data, and the presentation of many different forms (structured data, unstructured data, semi-structured data) is not limited to text, images, interfaces, files, databases, standards Format etc.\n' +
             'Speedy Velocity: Real-time analysis instead of batch analysis, rapid data extraction, cleaning, aggregation, labeling, specific to people and things, immediate results rather than after-event results. Data of trillions or more is processed at all times, so it is time-sensitive, high-speed processing, and quick response.\n' +
-            'Veracity: The content of big data is closely related to what happens in the real world. The study of big data is to extract the process of explaining and predicting real events from huge network data. Improve the accuracy and reliability of data and ensure data quality. It can also be used to predict a certain trend in the future and use data to extract real demand points.\n', '#big_data img', {tips:[2, '#ccc'],area:['495px','250px'],time:3000});
+            'Veracity: The content of big data is closely related to what happens in the real world. The study of big data is to extract the process of explaining and predicting real events from huge network data. Improve the accuracy and reliability of data and ensure data quality. It can also be used to predict a certain trend in the future and use data to extract real demand points.\n',
+            '#big_data img', {tips:[2, '#ccc'],area:['495px','250px'],time:3000});
     });
 
     // 抢聚焦

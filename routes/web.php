@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // default index
-Route::redirect('/', '/v1/index.html');
+Route::redirect('/', '/awork');
 
 // awork
 Route::get('/awork', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);

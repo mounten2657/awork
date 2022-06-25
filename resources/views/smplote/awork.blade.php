@@ -67,7 +67,7 @@
                 <label><a href="{{base_url()}}/video" target="_blank" type="button" class="btn btn-primary btn-xs">Video Station</a></label>
                 <label><a href="{{base_url()}}/audio" target="_blank" type="button" class="btn btn-primary btn-xs">Audio Station</a></label>
                 <label><a href="{{base_url()}}/synology" target="_blank" type="button" class="btn btn-primary btn-xs">Synology</a></label>
-                <label><a href="{{base_url()}}/baota" target="_blank" type="button" class="btn btn-primary btn-xs">BaoTa</a></label>
+                <label><a href="{{base_url()}}/baota/f3a1cb39/" target="_blank" type="button" class="btn btn-primary btn-xs">BaoTa</a></label>
             </div>
             <!-- File -->
             <div class="row platform-sm-line">
@@ -191,7 +191,7 @@
         </div>
     </div>
 
-    <footer style="text-align: center">© 2020-2030 Awork. All rights reserved.</footer>
+    <footer style="text-align: center; margin-top: 45px;">© 2020-2030 awork. all rights reserved.</footer>
 
 </div>
 

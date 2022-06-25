@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "b228c19c-ecb8-4405-aadb-e655dad93d27",
+		"name": "test-auto-v3",
+		"description": "auto test v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "day1122",
+			"item": [
+				{
+					"name": "A02-/site/phone-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "15757117946",
+									"description": "手机号",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "123456",
+									"description": "验证码",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/site/phone-login",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"site",
+								"phone-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/search/article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "author_id",
+									"value": "00KA3D5KI0EM8X8S5MBNZO51",
+									"type": "text"
+								},
+								{
+									"key": "test_id",
+									"value": "00KA3D5KI0EM8X8S5MBNZO51",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/search/article",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"search",
+								"article"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

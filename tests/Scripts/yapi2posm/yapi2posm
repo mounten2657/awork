@@ -1,0 +1,192 @@
+<?php
+/**
+ * yapi2posm
+ * this script is used to transform yapi project json to postman project json file,
+ * you can import postman project from yapi through this json file.
+ * yapi-project -> yapi-json -> php-script -> postman-json -> postman-project
+ * @copyright (c) 2012-2020, Hangzhou Awork Tech Co., Ltd.
+ * This is NOT a freeware, use is subject to license terms.
+ * @package yapi2posm.php
+ * @link http://www.awork.com
+ * @author wujun@lanqb.cn
+ * @usage php yapi2posm [yapi-project.json] [postman-project.json] [project_name]
+ * @example php yapi2posm api-admin.json test-v3.json admin
+ * @: yapi2posm.php 311001 2020-11-22 15:28:54 $
+ * */
+
+namespace test\Yapi2Posm;
+
+class yapi2posm
+{
+
+    /**
+     * get command help info
+     * @return bool
+     */
+    public static function helper()
+    {
+        $helper = PHP_EOL;
+        $helper .= "@usage: php yapi2posm [yapi-project.json] [postman-project.json] [project_name]" . PHP_EOL . PHP_EOL;
+        $helper .= "    [yapi-project.json] the json file export from your yapi project." . PHP_EOL;
+        $helper .= "    [postman-project.json] the json file that want import into your postman project." . PHP_EOL;
+        $helper .= "    [project_name] the prefix name of you postman project." . PHP_EOL . PHP_EOL;
+        $helper .= "@example: php yapi2posm api-admin.json test-v3.json admin" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/app.json app-latest.json app" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/api.json api.csv csv" . PHP_EOL;
+        $helper .= "@example: php yapi2posm data/20201201/api.json api.json url" . PHP_EOL;
+        echo $helper . PHP_EOL;
+        return false;
+    }
+
+    /**
+     * load extra params
+     * @param $params
+     * @return array
+     */
+    public static function extra($params)
+    {
+        return array_merge($params, array(
+            'project_name' => $params['env_name'] . '-' . date('YmdHis'),
+            'subject_name' => 'auto-test-' . $params['env_name'],
+        ));
+    }
+
+    /**
+     * run application
+     * @param array $data
+     * @return mixed
+     */
+    public static function run($data = array())
+    {
+        error_reporting(0);
+        $params = array(
+            'source_file' => isset($data[1]) ? $data[1] : '',
+            'direct_file' => isset($data[2]) ? $data[2] : '',
+            'env_name' => isset($data[3]) ? $data[3] : 'api',
+        );
+        $params = self::extra($params);
+        if (empty($params['source_file']) || empty($params['direct_file'])) {
+            return self::helper();
+        }
+        return self::handler($params);
+    }
+
+    /**
+     * handle process
+     * @param $params
+     * @return mixed
+     */
+    public static function handler($params)
+    {
+        echo PHP_EOL . "[START] transform json file ..." . PHP_EOL;
+        echo json_encode($params) . PHP_EOL;
+
+        // read yapi
+        $yapi = file_get_contents($params['source_file']);
+        $yapi = json_decode($yapi, true);
+        if (!$yapi || !isset($yapi[0]['list'])) {
+            echo "[ERROR] invalid source file! - 1001".PHP_EOL;
+            return false;
+        }
+        // get api list
+        $apiList = array();
+        foreach ($yapi as $key => $val) {
+            foreach ($val['list'] as $k => $v) {
+                $apiList[] = array(
+                    'url' => $v['path'],
+                    'method' => $v['method'],
+                    'params' => $v['req_body_form'],
+                    'mock' => $v['res_body'],
+                );
+            }
+        }
+        // generate url file
+        if ('url' == $params['env_name']) {
+            $content  = [];
+            foreach ($apiList as $value) {
+                $item = [];
+                foreach ($value as $key => $val) {
+                    foreach ($val as $k => $v ) {
+                        $item[$v['name']] = strtoupper(substr(md5(uniqid()), 15, 16));
+                    }
+                }
+                $value['mock'] = str_replace(PHP_EOL, '', $value['mock']);
+                $content[$value['url']] = [
+                    'method' => $value['method'],
+                    'params' => $item,
+                    'mock' => htmlspecialchars(json_encode(json_decode($value['mock'], true))),
+                ];
+            }
+            $content = json_encode($content, JSON_UNESCAPED_SLASHES);
+            file_put_contents($params['direct_file'], $content);
+            echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+            return true;
+        }
+        // generate csv file
+        if ('csv' == $params['env_name']) {
+            $csv  = 'url,method';
+            foreach ($apiList as $value) {
+                $csv .= PHP_EOL . "{$value['url']},{$value['method']}";
+            }
+            file_put_contents($params['direct_file'], $csv);
+            echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+            return true;
+        }
+        // generate api list
+        $template = self::template($params['project_name'], $params['subject_name']);
+        foreach ($apiList as $key => $api) {
+            $template['item'][0]['item'][] = self::item($api, $params);
+        }
+        file_put_contents($params['direct_file'], json_encode($template));
+
+        echo "[SUCCESS] finished. preview file: {$params['direct_file']}" . PHP_EOL;
+        return true;
+    }
+
+
+    /**
+     * get postman template
+     * @param $projectName
+     * @param $subjectName
+     * @return mixed
+     */
+    public static function template($projectName, $subjectName)
+    {
+        return json_decode(
+            mb_convert_encoding(
+                '{"info":{"_postman_id":"b228c19c-ecb8-4405-aadb-e655dad93d27","name":"'.$projectName.'","description":"generate by php : auto test used.","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"'.$subjectName.'","item":[],"protocolProfileBehavior":{}}],"protocolProfileBehavior":{}}'
+                , 'UTF-8', 'UTF-8,GBK,GB2312,BIG5' )
+            , true
+        );
+    }
+
+    /**
+     * get postman item
+     * @param $api
+     * @param $params
+     * @return mixed
+     */
+    public static function item($api, $params)
+    {
+        $item = json_decode(
+            mb_convert_encoding(
+                '{"name":"'.$api['url'].'","event":[{"listen":"test","script":{"id":"55ae05a5-2e23-4248-96a2-b60dec1a1000","exec":["pm.test(\"statusCode\", function () {\r","    var jsonData = pm.response.json();\r","    pm.expect(jsonData.statusCode).to.eql(200);\r","});\r",""],"type":"text/javascript"}}],"request":{"method":"'.$api['method'].'","header":[],"body":{"mode":"urlencoded","urlencoded":[]},"url":{"raw":"{{'.$params['env_name'].'}}'.$api['url'].'","host":["{{'.$params['env_name'].'}}"],"path":["","'.substr($api['url'], 1).'"]}},"response":[]}'
+                , 'UTF-8', 'UTF-8,GBK,GB2312,BIG5' )
+            , true
+        );
+        foreach ($api as $key => $val) {
+            foreach ($val as $k => $v ) {
+                $item['request']['body']['urlencoded'][] = array(
+                    'key' => $v['name'],
+                    'value' => '',
+                    'description' => $v['desc'],
+                    'type' => $v['type'],
+                );
+            }
+        }
+        return $item;
+    }
+
+}
+
+yapi2posm::run($argv);

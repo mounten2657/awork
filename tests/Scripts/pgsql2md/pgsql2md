@@ -1,0 +1,95 @@
+#!/usr/bin/env php
+<?php
+/**
+ * this script is used to generate markdown file for pgsql table.
+ * @usage: php mysql2md [host] [user] [password] [dbname]
+ * @example php pgsql2md 192.168.150.128 postgres 123456 chnnice_edu 5432 nice_crm2
+ * @author smplote@gmail.com
+ * @date 2021.05.31 15:11:13
+ */
+
+// get help
+if (!isset($argv[1]) || (isset($argv[1]) && in_array($argv[1], array('-h', '--help'))) || !isset($argv[4])) {
+    echo PHP_EOL . '@usage: php pgsql2md [host] [user] [password] [dbname] [tbname]' . PHP_EOL;exit;
+}
+
+// get params
+$params = [
+    'host'     => isset($argv[1]) ? $argv[1] : '',
+    'user'     => isset($argv[2]) ? $argv[2] : '',
+    'password' => isset($argv[3]) ? $argv[3] : '',
+    'dbname'   => isset($argv[4]) ? $argv[4] : '',
+    'port'     => isset($argv[5]) ? $argv[5] : '',
+    'tbname'   => isset($argv[6]) ? $argv[6] : '',
+];
+$servername = empty($params['host']) ? "localhost" : $params['host'];
+$username = empty($params['user']) ? "root" : $params['user'];
+$password = empty($params['password']) ? "root" : $params['password'];
+$dbname = empty($params['dbname']) ? "pg_db" : $params['dbname'];
+$port = empty($params['port']) ? "5432" : $params['port'];
+$tbname = empty($params['tbname']) ? "crm2" : $params['tbname'];
+
+// generate markdown file
+getMd($servername, $username, $password, $dbname, $port, $tbname);
+echo PHP_EOL . "generate md file successful. preview: $dbname.md" . PHP_EOL;
+
+/**
+ * generate md file
+ * @param $servername
+ * @param $username
+ * @param $password
+ * @param $dbname
+ * @param $port
+ * @param $tbname
+ */
+function getMd($servername, $username, $password, $dbname, $port, $tbname = '')
+{
+    try {
+        //error_reporting(0);
+        $conn = pg_connect("host=$servername port=$port dbname=$dbname user=$username password=$password");
+        if (!$conn) {
+            echo "[Error] pgsql connect failed!" . PHP_EOL;exit;
+        }
+    } catch (\Exception $e) {
+        echo "[Error] pgsql connect exception : ". $e->getMessage() . PHP_EOL;exit;
+    }
+    echo 'start querying ...' . PHP_EOL;
+    $sql = "select relname as tabname,cast(obj_description(relfilenode,'pg_class') as varchar) as comment from pg_class c where  relkind = 'r' and c.relname like '%$tbname%' order by tabname";
+    $result = pg_query($conn, $sql);
+    $result = $result ? pg_fetch_all($result) : [];
+    if ($result) {
+        $mark = '#' . $dbname . ' 数据字典' . PHP_EOL;
+        $i = 1;
+        foreach ($result as $val) {
+            $table_name = $val['tabname'];
+            $table_comment = $val['comment'];
+            // 跳过分表
+            $tabSuffix = array('_1', '_2', '_3', '_4', '_5', '_6', '_7', '_8');
+            if (in_array(substr($table_name, -2, 2), $tabSuffix)) continue;
+            $mark .= PHP_EOL . '### ' . $i . '.  `' . $table_name . '` ' . $table_comment . PHP_EOL;
+            $mark .= '| 字段名 | 字段类型 | 长度 | 是否为空 | 默认值 | 备注 |' . PHP_EOL;
+            $mark .= '| ------ | -------- | ---- | -------- | ------ | ---- |' . PHP_EOL;
+            $sql = "select col.table_schema, col.table_name, col.ordinal_position, col.column_name, col.data_type, col.character_maximum_length, col.numeric_precision, col.numeric_scale, col.is_nullable, col.column_default, des.description from information_schema.columns col left join pg_description des on col.table_name::regclass = des.objoid and col.ordinal_position = des.objsubid where table_schema = 'public' and table_name = '$table_name' order by ordinal_position;";
+            $res = pg_query($conn, $sql);
+            $res = $res ? pg_fetch_all($res) : [];
+            foreach ($res as $data ) {
+                $cType = $data['data_type'];
+                $cLength = $data['numeric_precision'] ? : 0;
+                $cDefault = is_numeric($data['column_default']) ? $data['column_default'] : "''";
+                $mark .= '| ' . $data['column_name']
+                    . ' | ' . $cType
+                    . ' | ' . $cLength
+                    . ' | ' . $data['is_nullable']
+                    . ' | ' . $cDefault
+                    . ' | ' . ( $data['description'] ? : ' - ' )
+                    . ' | ' . PHP_EOL;
+            }
+            echo $table_name . PHP_EOL;
+            $i++;
+            //break;
+        }
+        file_put_contents($dbname . '.md', $mark);
+    }
+    pg_close($conn);
+    return true;
+}

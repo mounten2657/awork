@@ -1,0 +1,434 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "igancao.com - app",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "病历导出--pathology"
+    }
+  ],
+  "paths": {
+    "\/patient\/gapis\/igc_crm.doctor_app.pathology.client_opt.export\/GET_EXPORT_STAT": {
+      "post": {
+        "summary": "获取导出病历统计数据",
+        "description": "",
+        "tags": [
+          "病历导出--pathology"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "{{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application\/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "string",
+                    "description": "gapis 请求参数， json 格式",
+                    "example": "{\"did\":\"163433\", \"contact_id\":\"1153888\"}"
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "count_list": {
+                          "type": "object",
+                          "properties": {
+                            "consult": {
+                              "type": "integer",
+                              "description": "咨询数"
+                            },
+                            "inquiry_invest": {
+                              "type": "integer",
+                              "description": "小程序咨询数"
+                            },
+                            "disease": {
+                              "type": "integer",
+                              "description": "录入病历数"
+                            },
+                            "recipel": {
+                              "type": "integer",
+                              "description": "处方数"
+                            }
+                          },
+                          "required": [
+                            "consult",
+                            "inquiry_invest",
+                            "disease",
+                            "recipel"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "count_list"
+                      ]
+                    },
+                    "status": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "msg": {
+                          "type": "string"
+                        },
+                        "runtime": {
+                          "type": "integer"
+                        },
+                        "trace_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "msg",
+                        "runtime",
+                        "trace_id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "result": {
+                        "count_list": {
+                          "consult": 0,
+                          "inquiry_invest": 0,
+                          "disease": 1,
+                          "recipel": 1
+                        }
+                      },
+                      "status": {
+                        "code": "00000",
+                        "msg": "处理成功",
+                        "runtime": 29,
+                        "trace_id": "2109171438347934731"
+                      }
+                    }
+                  },
+                  "2": {
+                    "summary": "成功示例",
+                    "value": {
+                      "result": {
+                        "count_list": {
+                          "consult": 0,
+                          "inquiry_invest": 0,
+                          "disease": 1,
+                          "recipel": 1
+                        }
+                      },
+                      "status": {
+                        "code": "00000",
+                        "msg": "处理成功",
+                        "runtime": 9,
+                        "trace_id": "2109171455457934135"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/patient\/gapis\/igc_crm.doctor_app.pathology.client_opt.export\/GET_EXPORT_PREVIEW": {
+      "post": {
+        "summary": "获取导出病历预览链接",
+        "description": "",
+        "tags": [
+          "病历导出--pathology"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "{{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application\/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "string",
+                    "description": "gapis 请求参数， json 格式",
+                    "example": "{\"did\":\"163433\", \"contact_id\":\"1153888\"}"
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "预览链接"
+                        }
+                      },
+                      "required": [
+                        "url"
+                      ]
+                    },
+                    "status": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "msg": {
+                          "type": "string"
+                        },
+                        "runtime": {
+                          "type": "integer"
+                        },
+                        "trace_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "msg",
+                        "runtime",
+                        "trace_id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "result": {
+                        "url": "http:\/\/dev.igancao.com\/\/patient\/pathology_preview\/163433\/1153888?code=c47720d289fe8492f84d15a86338e6c1"
+                      },
+                      "status": {
+                        "code": "00000",
+                        "msg": "处理成功",
+                        "runtime": 13,
+                        "trace_id": "2109171438087934411"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "\/patient\/gapis\/igc_crm.doctor_app.pathology.client_opt.export\/SEND_EXPORT_MAIL": {
+      "post": {
+        "summary": "发送患者病历到邮箱",
+        "description": "",
+        "tags": [
+          "病历导出--pathology"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "{{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application\/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "string",
+                    "description": "gapis 请求参数， json 格式",
+                    "example": "{\"did\":\"163433\",\"contact_id\":\"1153888\",\"mail\":\"wuj@igancao.com\"}"
+                  }
+                },
+                "required": [
+                  "body"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application\/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "ret": {
+                          "type": "object",
+                          "properties": {
+                            "result": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "status": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string"
+                                },
+                                "msg": {
+                                  "type": "string"
+                                },
+                                "runtime": {
+                                  "type": "integer"
+                                },
+                                "trace_id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "msg",
+                                "runtime",
+                                "trace_id"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "result",
+                            "status"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "ret"
+                      ]
+                    },
+                    "status": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "msg": {
+                          "type": "string"
+                        },
+                        "runtime": {
+                          "type": "integer"
+                        },
+                        "trace_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "msg",
+                        "runtime",
+                        "trace_id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "result": {
+                        "ret": {
+                          "result": [],
+                          "status": {
+                            "code": "00000",
+                            "msg": "处理成功",
+                            "runtime": 4,
+                            "trace_id": "2109171454587934679"
+                          }
+                        }
+                      },
+                      "status": {
+                        "code": "00000",
+                        "msg": "处理成功",
+                        "runtime": 35,
+                        "trace_id": "2109171454587934679"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": []
+  }
+}

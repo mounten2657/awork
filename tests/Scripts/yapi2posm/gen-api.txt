@@ -1,0 +1,566 @@
+[Request List] : 
+
+/agreement/get-detail
+{"route":"7290D62CDC6CFDAF"}
+{"success":true,"statusCode":200,"result":{"title":"\u8fd9\u662f\u534f\u8bae\u6807\u9898","content":"\u8fd9\u662f\u534f\u8bae\u5185\u5bb9"},"message":"OK"}
+
+/article/get-detail
+{"id":"1202217367F82C4D"}
+{"success":true,"statusCode":200,"result":{"id":"00KHZ8JNDGFMN3CUSTFSY6WW","cover_url":"676d6f4a2e7ccf9534fbf07ba1776a36.jpeg","title":"\u6587\u7ae0\u6807\u9898","description":"\u6587\u7ae0\u63cf\u8ff0","is_deleted":0,"is_shield":0,"created_at":1606419251,"original_url":"https:\/\/mp.weixin.qq.com\/s\/PybM-v4_-O2Obw_5u53uow","content":"\u6587\u7ae0\u5185\u5bb9","original":{"author_name":"","from":"\u5fae\u4fe1\u516c\u4f17\u53f7","time":"1606205585","url":"https:\/\/mp.weixin.qq.com\/s\/PybM-v4_-
+
+/collect/add
+{"target_id":"486763C1072AA8E9","target_type":"A6E40C7A5636E07A","package_id":"994E326CA7A8C8FF"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/collect/cancel
+{"target_id":"3078720EC593C622","target_type":"D97F711694D7BAF4"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/comment/add
+{"target_id":"1CECDBE8EA49424C","target_type":"CC65B92A7EA17AFE","content":"9581B138BC97283C"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u8bc4\u8bbaID","content":"\u8bc4\u8bba\u5185\u5bb9","is_deleted":0,"is_like":false,"created_at":1599198791,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"count":{"reply":0,"like":0}},"message":"OK"}
+
+/comment/del
+{"id":"E140FB398B386D1E"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/comment/list
+{"target_id":"24725B085B532374","target_type":"02E99371B4E6502E","order":"333D4A2759A9EEB4"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":10,"page":1,"list":[{"id":"24\u4f4d\u8bc4\u8bbaID","content":"\u8bc4\u8bba\u5185\u5bb9","is_deleted":0,"is_like":false,"created_at":1599198791,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"count":{"reply":0,"like":0},"reply":{"total_count"
+
+/dynamic/del
+{"id":"131F916D15E4A602"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/dynamic/get-detail
+{"id":"524326420240EB1C"}
+{"success":true,"statusCode":200,"result":{"id":"00KEFGC0YMS64RZ35SJRYJ2O","user_id":"00KA3D5KI0EM8X8S5MBNZO51","target_id":"00KEFGC1GPYEDTEXZCNNGCGB","target_type":1,"type":1,"is_deleted":0,"created_at":1598692662,"user":{"id":"00KA3D5KI0EM8X8S5MBNZO51","nickname":"\u5343\u5343","avatar":"bd3833c6d047c3e093bfac85395d305f.png"},"article":{"\u3010\u6ce8\u610f\u3011":"\u6b64\u8282\u70b9\u5728\u3010\u6587\u7ae0\u52a8\u6001\u3011\u4e2d\u624d\u6709\u503c\uff0c\u5426\u5219\u4e3a\u7a7a\u5bf9\u8c61","id
+
+/feedback/add
+{"content":"CBE255F8119AF4BC"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/home/collect-list
+{"last_id":"E1CC09102F1DD583"}
+{"success":true,"statusCode":200,"result":{"total_count":2,"page_size":20,"page":1,"list":[{"id":"00KF3FHQABQOQSU8HQ1HM6ZJ","user_id":"00K6R8O5C6SPAIDSTALCF5GJ","article_id":"00KDTRSSL6RF5UF49UH0OFYK","is_choice":0,"is_deleted":0,"is_public":1,"is_shield":0,"created_at":1606790559,"target_type":2,"content":"\u53ef\u60dc\u8fd1\u6bb5\u65f6\u95f4\u5370\u5ea6\u7684\u79cd\u79cd\u884c\u4e3a\u5145\u5206\u53cd\u6620\u4e86\u4ed6\u4eec\u5e76\u6ca1\u6709\u8fd9\u79cd\u610f\u8bc6","selected":"\u5370\u5ea6\u6
+
+/home/note-list
+{"last_id":"8226EEDBE499D0FC"}
+{"success":true,"statusCode":200,"result":{"have_more":false,"list":[{"id":"00KHZCII8WDJR6RBTOCIL0ZS","user_id":"00K5H1KO60NAEIXXDT1SPMMM","article_id":"00KGSTUO1LNFEFGDA5AIYMBX","is_choice":0,"is_deleted":0,"is_public":1,"is_shield":0,"created_at":1606425916,"start_index":12942,"end_index":13301,"content":"\u7b14\u8bb0\u5185\u5bb9","selected":"\u6587\u7ae0\u8282\u9009","is_like":false,"is_collect":false,"user":{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d7
+
+/home/package-list
+{"last_id":"A3898E8713A05CA2"}
+{"success":true,"statusCode":200,"result":{"have_more":false,"list":[{"id":"00KFNW99P017PBNZGEGGZU6Y","user_id":"00K5H1KO60NAEIXXDT1SPMMM","name":"\u9ed8\u8ba4\u6536\u85cf\u5939","description":"","total":6,"is_default":1,"is_deleted":0,"is_public":1,"updated_at":1606572208},{"id":"00KHZ2RM1B0TSQDSQATGAEPA","user_id":"00K5H1KO60NAEIXXDT1SPMMM","name":"\u79c1\u5bc6\u6536\u85cf\u5939","description":"","total":3,"is_default":1,"is_deleted":0,"is_public":0,"updated_at":1606468389}]},"message":"OK"}
+
+/industry/add
+{"name":"CEA47ECDC060A85B"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/industry/list
+{"page":"B762CB47E4C606E6"}
+{"success":true,"statusCode":200,"result":{"total_count":10,"page_size":20,"page":1,"list":[{"id":1,"name":"\u5176\u4ed6","is_other":1}]},"message":"OK"}
+
+/inter/allow
+{"id":"A1B10731DB7786B2"}
+{"success":true,"statusCode":200,"result":[{"id":"00KHEMRDWZNJAJWYYV096VIM","identity":3,"nickname":"\u6e38\u5ba25dMblR","phone":"","status":1,"avatar":"","login_method":1,"server_time":1606658564,"access_token":"UVJSL0dlYmFSL3d5UHhDZ28xL2xxMUxOVVhsYlV0Z0NPaXdQNmxMSGFLSk4zeXh5WCtsVzBEREFVUUQzb1hoMQ=="},{"id":"00KHEMRDWZNJAJWYYV096VIM","identity":3,"nickname":"\u6e38\u5ba25dMblR","phone":"","status":1,"avatar":"","login_method":1,"server_time":1606658564,"access_token":"UVJSL0dlYmFSL3d5UHhDZ28xL2
+
+/inter/logout
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/job/add
+{"name":"2240DEF2E4B769DD"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/job/list
+[]
+{"success":true,"statusCode":200,"result":{"total_count":10,"page_size":20,"page":1,"list":[{"id":1,"name":"\u5176\u4ed6"}]},"message":"OK"}
+
+/like/add
+{"target_id":"33E2B1E05AF376FB","target_type":"4F45E166A80FDCD1"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/like/cancel
+{"target_id":"9C951EA4B321D2F4","target_type":"27BB8FACEB41E005"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/message/announce
+[]
+{"success":true,"statusCode":200,"result":{"total_count":4,"page":1,"page_size":20,"list":[{"id":1,"title":"\u7cfb\u7edf\u6d88\u606f\u6807\u9898","content":{"html":"\u516c\u544a\u5185\u5bb9","operating":"\u64cd\u4f5c"},"created_at":1597112552}]},"message":"OK"}
+
+/message/clean
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/message/comment-receive
+[]
+{"success":true,"statusCode":200,"result":{"total_count":6,"page":1,"page_size":2,"list":[{"id":5,"created_at":1597198306,"main":{"id":"00KDNW0H4Q0USZ8I4PB60BV9","target_type":4,"content":"\u8fd9\u662f\u7b14\u8bb0\u7684\u8bc4\u8bba","user":{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"ff56248a614b537781b7ff3cd4b3ad84.jpg"}},"child":{"id":"00KDNW6BWCYCHFITS38CXZGQ","content":"\u8fd9\u662f\u7b14\u8bb0\u7684\u56de\u590d","target_type":3,"user":{"id":"00K5HIY7S5QLRA0HE8D
+
+/message/comment-send
+[]
+{"success":true,"statusCode":200,"result":{"total_count":6,"page":1,"page_size":2,"list":[{"id":5,"created_at":1597198306,"main":{"id":"00KDNW0H4Q0USZ8I4PB60BV9","target_type":4,"content":"\u8fd9\u662f\u7b14\u8bb0\u7684\u8bc4\u8bba","user":{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"ff56248a614b537781b7ff3cd4b3ad84.jpg"}},"child":{"id":"00KDNW6BWCYCHFITS38CXZGQ","content":"\u8fd9\u662f\u7b14\u8bb0\u7684\u56de\u590d","target_type":3,"user":{"id":"00K5HIY7S5QLRA0HE8D
+
+/message/like
+[]
+{"success":true,"statusCode":200,"result":{"total_count":6,"page":1,"page_size":2,"list":[{"id":382,"created_at":1605677998,"main":{"target_type":2},"child":{"id":"00KF3COB6DYZFZ0RV2R61Q23","target_type":2,"content":"\u7b14\u8bb0\u5185\u5bb9","is_fail":false,"article":{"id":"00KDBT47KI7EMIYZQAHZJN26","target_type":1,"cover_url":"5aec4dc84bb149aeb2b35bc7fd305571.jpg","title":"\u6587\u7ae0\u6807\u9898","description":"\u6587\u7ae0\u63cf\u8ff0","is_fail":false}}},{"id":383,"created_at":1605682371,"m
+
+/message/unread
+[]
+{"success":true,"statusCode":200,"result":{"comment":8,"like":99,"announce":109},"message":"OK"}
+
+/note/add
+{"article_id":"34799AC564657D74","content":"BCD171A97955A9CC","is_public":"C280125F841B1852"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u7b14\u8bb0ID"},"message":"OK"}
+
+/note/add-line
+{"article_id":"542B068C4A70D3F7","content":"479112326A4F5F57","selected":"F7807CE169CA2644","start_index":"445AC2C43DA61956","end_index":"7BCE776B9C7C324C","is_public":"EF2CCEDD5EE681DA"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u7b14\u8bb0ID","start_index":3,"end_index":5},"message":"OK"}
+
+/note/article-list
+{"article_id":"71E4AE8DC2B8C8F8","tab":"A3CB99EA82E86BF6","order":"0FE18CBC3EA2BC20","last_id":"771A5FF744F71DE3"}
+{"success":true,"statusCode":200,"result":{"have_more":40,"list":[{"id":"24\u4f4d\u6587\u7ae0ID","content":"\u7b14\u8bb0\u5185\u5bb9","selected":"\u6587\u7ae0\u8282\u9009","start_index":3,"end_index":5,"is_fail":0,"is_public":2,"is_collect":false,"is_like":false,"created_at":1592910533,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1
+
+/note/del
+{"id":"B410E5FF50A7B4A4"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/note/edit
+{"id":"AAFBA5BC0B9E41E1","is_public":"F16BB3648F71D8CF"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/note/get-detail
+{"id":"2528587434B0BAF6"}
+{"success":true,"statusCode":200,"result":{"id":"00KI11C79HFZO4XLP9JK8O82","user_id":"00K5H1KO60NAEIXXDT1SPMMM","article_id":"00KI01SU497ZFJWUVUULMX53","is_choice":0,"is_deleted":0,"is_public":1,"is_shield":0,"created_at":1606528079,"content":"123","selected":"\u6587\u7ae0\u8282\u9009","user":{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png"},"article":{"id":"00KI01SU497ZFJWUVUULMX53","cover_url":"","title":"\u6587\u7ae0\u6807\u9898"
+
+/note/line-list
+{"start_index":"F1C8ECE8893DB6ED","end_index":"ABA9909D55817313","order":"F41FBF476953F3F5","last_id":"4BAF8346D32C7F5A"}
+{"success":true,"statusCode":200,"result":{"have_more":false,"list":[{"id":"00KI11C79HFZO4XLP9JK8O82","user_id":"00K5H1KO60NAEIXXDT1SPMMM","article_id":"00KI01SU497ZFJWUVUULMX53","is_choice":0,"is_deleted":0,"is_public":1,"is_shield":0,"created_at":1606528079,"start_index":2427,"end_index":2501,"content":"123","selected":"\u6587\u7ae0\u8282\u9009","is_like":false,"is_collect":false,"user":{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.
+
+/package/add
+{"name":"F11072E237189722","description":"A18AC22DC025C57D","is_public":"1E603E90CA728094"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u6536\u85cf\u5939ID","name":"\u8fd9\u662f\u67d0\u7528\u6237\u65b0\u5efa\u7684\u6536\u85cf\u5939","description":"\u8fd9\u662f\u6536\u85cf\u5939\u63cf\u8ff0","total":"\u5185\u5bb9\u6570","is_default":0,"is_public":1,"is_deleted":0},"message":"OK"}
+
+/package/del
+{"id":"D92F543C7AF566B9"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/package/edit
+{"id":"FC04903FA0539A1C","name":"B7309308140FDF5D","description":"7BBE84122A861115","is_public":"8BC230C7D1818512"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u6536\u85cf\u5939ID","name":"\u8fd9\u662f\u67d0\u7528\u6237\u65b0\u5efa\u7684\u6536\u85cf\u5939","description":"\u8fd9\u662f\u6536\u85cf\u5939\u63cf\u8ff0","total":"\u5185\u5bb9\u6570","is_default":0,"is_public":1,"is_deleted":0},"message":"OK"}
+
+/package/get-detail
+{"id":"C6644367E9BBE3E2"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u6536\u85cf\u5939ID","name":"\u8fd9\u662f\u67d0\u7528\u6237\u65b0\u5efa\u7684\u6536\u85cf\u5939","description":"\u8fd9\u662f\u6536\u85cf\u5939\u63cf\u8ff0","total":"\u5185\u5bb9\u6570","is_default":0,"is_public":1,"is_deleted":0},"message":"OK"}
+
+/package/list
+{"last_id":"171607ABA56047F6","user_id":"74F819898CA97333","target_id":"AA990B5295303E7F"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"00K6BQZ99T1IZB9ZXO0IUSZX","user_id":"00K6BQZ99T1IZB9ZXO0IUSZX","name":"\u9ed8\u8ba4\u6536\u85cf\u5939","description":"","total":7,"is_default":1,"is_deleted":0,"is_public":1,"updated_at":1605189506},{"id":"00KFNW99PUTOJA1JOAJSSUWE","user_id":"00K5H1KO60NAEIXXDT1SPMMM","name":"\u9ed8\u8ba4\u6536\u85cf\u5939","description":"","total":8,"is_default":1,"is_deleted":0,"is_public":1,"updated_at":160527362
+
+/package/more-list
+{"id":"77341CB0FC482B34"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"00K6BQZ99T1IZB9ZXO0IUSZX","user_id":"00K6BQZ99T1IZB9ZXO0IUSZX","name":"\u9ed8\u8ba4\u6536\u85cf\u5939","description":"","total":7,"is_default":1,"is_deleted":0,"is_public":1,"updated_at":1605189506}]},"message":"OK"}
+
+/package/target-list
+{"package_id":"47368D35E0FB7FAA","tab_type":"all","page_size":"3"}
+{"success":true,"statusCode":200,"result":{"total_count":14,"page_size":3,"page":1,"list":[{"id":"00KC95OJSN7YUKOAMNANOOKG","cover_url":"b32caaecb7a14e9b5dd119d2569325c8.jpg","title":"如何用运营思维找到男朋友","description":"🔼点击上方蓝字关注我，和奥利一起进步互联网商业其实就是三个核心词：产品、流量、转化率。也就是产品的比拼、流量","is_deleted":0,"is_shield":0,"created_at":1594104659,"package_id":"00KEL6YTXKUZGAHBW7VGMDI7","coll
+
+/pro-category/list
+[]
+{"success":true,"statusCode":200,"result":{"total_count":8,"page_size":20,"page":1,"list":[{"id":2,"name":"\u804c\u4e1a\u53d1\u5c55"}]},"message":"OK"}
+
+/pro/list
+{"category_id":"D3EAC374EC4F820B"}
+{"success":true,"statusCode":200,"result":{"total_count":10,"page":1,"page_size":5,"list":[{"id":"00K5H1KO60NAEIXXDT1SPMMM","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png","description":"\u674e\u5929\u5176\u7b80\u4ecb","qrcode":"","created_at":1606616678,"phone":"15715867560","category":[{"id":1,"name":"\u5fc3\u7406","member_count":1,"weight":9,"status":1,"is_deleted":0,"created_at":1604374196},{"id":2,"name":"\u804c\u4e1a\u53d1\u5c55","member_count":1,"weight":8,
+
+/pro/recommend-list
+{"page":"5824534AE449D5E4"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"24\u4f4d\u667a\u56ca\u56e2ID","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png","nickname":"\u667a\u56ca\u56e2\u6635\u79f0","description":"\u667a\u56ca\u56e2\u7b80\u4ecb","qrcode":"\u5fae\u4fe1\u4e8c\u7ef4\u7801\u56fe\u7247","category":{"id":1,"name":"\u667a\u56ca\u56e2\u5206\u7c7b\u540d\u79f0"}}]},"message":"OK"}
+
+/quick/collect
+{"url":"548CC1CF32C3B810","package_id":"E84CAA99F50DEC7D"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u6587\u7ae0ID","title":"\u6587\u7ae0\u6807\u9898","description":"\u6587\u7ae0\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c"},"message":"OK"}
+
+/quick/preview
+{"url":"59A5ABC5BD336F25"}
+{"success":true,"statusCode":200,"result":{"title":"\u6587\u7ae0\u6807\u9898","description":"\u6587\u7ae0\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c"},"message":"OK"}
+
+/relationship/add
+{"follow_id":"972AD72468BBD124"}
+{"success":true,"statusCode":200,"result":{"attention_status":"\u5173\u6ce8\u5173\u7cfb\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"message":"OK"}
+
+/relationship/cancel
+{"follow_id":"B0CA204957A761DB"}
+{"success":true,"statusCode":200,"result":{"attention_status":"\u5173\u6ce8\u5173\u7cfb\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"message":"OK"}
+
+/relationship/follower
+{"id":"BE88038952589322","last_id":"C708850574FC4895"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"}]},"message":"OK"}
+
+/relationship/following
+{"id":"8064B81ADDACD2C6","last_id":"3FB6E5FB94065F1B"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"}]},"message":"OK"}
+
+/reply/add
+{"parent_id":"0DB197160731D5B8","content":"D8871107AC1F2B94"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u56de\u590dID","content":"\u56de\u590d\u5185\u5bb9","is_deleted":0,"is_like":false,"created_at":1599198791,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"to_user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50c
+
+/reply/del
+{"id":"1E5C84A7E73F631A"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/reply/list
+{"comment_id":"ED855763012FEDCF","page":"692091DB29002EA6"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":10,"page":1,"list":[{"id":"24\u4f4d\u56de\u590dID","content":"\u56de\u590d\u5185\u5bb9","is_deleted":0,"is_like":false,"created_at":1599198791,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173"},"to_user":{"id":"24\u4f4d\u7528\u6237ID","nickname"
+
+/report/add
+{"category_id":"C1450271B1490AA2","target_id":"242F7719B7112C02","target_type":"DEE27BCF07A5D5C0","content":"78029582F52DE969"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/search/article
+{"keywords_article":"93C217C6F853F7E8","last_id":"AF7F6363952FE762"}
+{"success":true,"statusCode":200,"result":{"have_more":false,"list":[{"id":"00KHZ79WZYNM3ISK8HMNO6TP","cover_url":"","title":"\u6587\u7ae0\u6807\u9898","description":"\u6587\u7ae0\u63cf\u8ff0","is_deleted":0,"is_shield":0,"created_at":1606417117,"original":{"author_name":"\u9ea6\u5927\u4eba","from":7,"time":1597498069},"count":{"collect":2,"note":1}}]},"message":"OK"}
+
+/search/user
+{"keywords_user":"8C101FD2C65F581D","last_id":"FBEA1D2D991A6E05"}
+{"success":true,"statusCode":200,"result":{"have_more":false,"list":[{"id":"00K5M5AQKM1YGHAQ11F4DVJZ","nickname":"\u9648\u80fd","avatar":"d3c829ef6cf628f0b8f39184eda76d75.png","special_signature":"\u9762\u5bf9\u73b0\u5b9e\uff0c\u6781\u5ea6\u5f00\u653e\uff0c\u4e0e\u4eba\u4e3a\u5584\uff0c\u4e0d\u4e22\u6389\u521d\u5fc3\u548c\u81ea\u5df1\uff01"}]},"message":"OK"}
+
+/share/upload
+{"target_type":"D144DEF28352DCF3"}
+{"success":true,"statusCode":200,"result":{"result":"1.jpg"},"message":"OK"}
+
+/site/phone-login
+{"phone":"D8F3E623A91D70DC","code":"3D6512A77BF0BC26"}
+{"success":true,"statusCode":200,"result":{"id":"00K5H1KO60NAEIXXDT1SPMMM","phone":"157****7560","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png","status":1,"special_signature":"\u6211\u662f\u4e00\u4e2a\u7c89\u5237\u5320~","birthday":960336000,"gender":1,"description":"","province":0,"city":0,"industry":0,"job":1,"education":7,"created_at":1579197762,"login_method":1,"server_time":1606627751},"message":"OK"}
+
+/site/pwd-login
+{"phone":"70EDF71FD18DEC92","password":"671C584C218C0806"}
+{"success":true,"statusCode":200,"result":{"id":"00K5H1KO60NAEIXXDT1SPMMM","phone":"157****7560","nickname":"\u7c89\u5237\u5320","avatar":"2e40f4e2d75d6db4e2deba6dc58f1105.png","status":1,"special_signature":"\u6211\u662f\u4e00\u4e2a\u7c89\u5237\u5320~","birthday":960336000,"gender":1,"description":"","province":0,"city":0,"industry":0,"job":1,"education":7,"created_at":1579197762,"login_method":1,"server_time":1606627751},"message":"OK"}
+
+/sms/send
+{"template":"4387B1AD08BF68FF","phone":"91387CA72ABAE54D"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/square/attention-list
+{"last_id":"A0B75EACDCCAFE25"}
+{"success":true,"statusCode":200,"result":{"has_more":true,"list":[{"id":"24\u4f4d\u52a8\u6001ID","created_at":1604632694,"target_type":1,"user":{"id":"24\u4f4d\u7528\u6237ID","avatar":"default.png","nickname":"\u542c\u541b031233"},"article":{"id":"24\u4f4d\u6587\u7ae0ID","title":"\u6587\u7ae0\u6807\u9898","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","description":"\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","is_deleted":0,"count":{"like":0,"collect":0}},"note":{"id
+
+/square/recommend-list
+{"last_id":"BF9F7A6C3E62266F"}
+{"success":true,"statusCode":200,"result":{"has_more":true,"list":[{"id":"24\u4f4d\u52a8\u6001ID","created_at":1604632694,"target_type":1,"user":{"id":"24\u4f4d\u7528\u6237ID","avatar":"default.png","nickname":"\u542c\u541b031233"},"article":{"id":"24\u4f4d\u6587\u7ae0ID","title":"\u6587\u7ae0\u6807\u9898","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","description":"\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","is_deleted":0,"count":{"like":0,"collect":0}},"note":{"id
+
+/user/avatar
+{"id":"7DFF4E754C4E2451","file":"481D355834D2C764"}
+{"success":true,"statusCode":200,"result":{"url":"1.jpg"},"message":"OK"}
+
+/user/change-phone
+{"prev_code":"EA1B0AB0552A93C2","code":"56D6D7302B2F8214","phone":"20D124E504DD8678"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/dynamic-list
+{"last_id":"F8F6273053BC5BAF"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"24\u4f4d\u52a8\u6001ID","created_at":1604632694,"target_type":1,"user":{"id":"24\u4f4d\u7528\u6237ID","avatar":"default.png","nickname":"\u542c\u541b031233"},"article":{"id":"24\u4f4d\u6587\u7ae0ID","title":"\u6587\u7ae0\u6807\u9898","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","description":"\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","is_fail":false,"count":{"like":0,
+
+/user/edit
+{"id":"6CCADC19F36EB0DD","nickname":"B012BE92FCED1C67","sign":"9A0B6AF0ED880610","gender":"2CC31705DE53016C","birthday":"3D4EFEA6A7B22188","country":"148AF674A36DE931","province":"C7752877C9D7555B","city":"2B8BC0B7FD659B22","industry":"104C35B754E7D527","education":"3C6CCB84006296CE","job":"6F128BCED70E4044"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/get-detail
+{"id":"54919627F2A0816E"}
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u6635\u79f0","avatar":"\u5c01\u9762\u56fe","identity":2,"phone":"\u624b\u673a\u53f7\uff0c\u6ce8\u610f\u9690\u85cf\u4e2d\u95f44\u4f4d","is_fail":"\u662f\u5426\u5f02\u5e38\uff0c0\u5426\uff0c1\u662f","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1\uff0c4\u4e92\u5173","wechat":{"nickname":"\u5fae\u4fe1\u6635\u79f0"},"created_at":1579197762,"gender":"
+
+/user/get-info
+[]
+{"success":true,"statusCode":200,"result":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u6635\u79f0","avatar":"\u5c01\u9762\u56fe","is_fail":"\u662f\u5426\u5f02\u5e38\uff0c0\u5426\uff0c1\u662f","created_at":1579197762,"count":{"note":1,"dynamic":1}},"message":"OK"}
+
+/user/like-list
+{"id":"EA4A980F5707E66D"}
+{"success":true,"statusCode":200,"result":{"total_count":1,"page_size":20,"page":1,"list":[{"id":"","created_at":1604632694,"target_type":1,"user":{"id":"24\u4f4d\u7528\u6237ID","avatar":"default.png","nickname":"\u542c\u541b031233"},"article":{"id":"24\u4f4d\u6587\u7ae0ID","title":"\u6587\u7ae0\u6807\u9898","cover_url":"\u5c01\u9762\u56fe\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","description":"\u6458\u8981\uff0c\u53ef\u80fd\u4f4d\u7a7a\u503c","is_fail":false,"count":{"like":0,"collect":0}},"note":{
+
+/user/note-list
+{"id":"F5132FD135DE38AE","last_id":"9273F791E3CDA4BE"}
+{"success":true,"statusCode":200,"result":{"have_more":40,"list":[{"id":"24\u4f4d\u6587\u7ae0ID","content":"\u7b14\u8bb0\u5185\u5bb9","selected":"\u6587\u7ae0\u8282\u9009","start_index":3,"end_index":5,"is_fail":0,"is_public":2,"is_collect":false,"is_like":false,"created_at":1592910533,"user":{"id":"24\u4f4d\u7528\u6237ID","nickname":"\u7528\u6237\u6635\u79f0","avatar":"\u5934\u50cf","attention_status":"\u5173\u6ce8\u72b6\u6001\uff0c1\u6ca1\u5173\u6ce8\uff0c2\u5173\u6ce8\u4e86\uff0c3\u81ea\u5df1
+
+/user/package-list
+{"last_id":"8010A0340D5FFF28"}
+{"success":true,"statusCode":200,"result":{"have_more":true,"list":[{"id":"24\u4f4d\u6536\u85cf\u5939ID","name":"\u540d\u79f0","description":"\u6458\u8981","total":"\u5185\u5bb9\u6570","is_public":2,"is_default":2,"is_deleted":"\u662f\u5426\u5220\u9664\uff0c0\u6b63\u5e38\uff0c1\u5220\u9664","updated_at":1597200251}]},"message":"OK"}
+
+/user/re-pwd
+{"code":"2C8F4683C94168DF","pwd":"5F65C19BA138E968","confirm_pwd":"500F998EE22A0717"}
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+/user/unbind-wx
+[]
+{"success":true,"statusCode":200,"result":true,"message":"OK"}
+
+
+
+[Route List] : 
+
+Route::post('/agreement/get-detail', [\App\Http\Controllers\Api\AgreementController::class, 'getDetail'])->name('agreement.get-detail');
+Route::post('/article/get-detail', [\App\Http\Controllers\Api\ArticleController::class, 'getDetail'])->name('article.get-detail');
+Route::post('/collect/add', [\App\Http\Controllers\Api\CollectController::class, 'add'])->name('collect.add');
+Route::post('/collect/cancel', [\App\Http\Controllers\Api\CollectController::class, 'cancel'])->name('collect.cancel');
+Route::post('/comment/add', [\App\Http\Controllers\Api\CommentController::class, 'add'])->name('comment.add');
+Route::post('/comment/del', [\App\Http\Controllers\Api\CommentController::class, 'del'])->name('comment.del');
+Route::post('/comment/list', [\App\Http\Controllers\Api\CommentController::class, 'getList'])->name('comment.list');
+Route::post('/dynamic/del', [\App\Http\Controllers\Api\DynamicController::class, 'del'])->name('dynamic.del');
+Route::post('/dynamic/get-detail', [\App\Http\Controllers\Api\DynamicController::class, 'getDetail'])->name('dynamic.get-detail');
+Route::post('/feedback/add', [\App\Http\Controllers\Api\FeedbackController::class, 'add'])->name('feedback.add');
+Route::post('/home/collect-list', [\App\Http\Controllers\Api\HomeController::class, 'collectList'])->name('home.collect-list');
+Route::post('/home/note-list', [\App\Http\Controllers\Api\HomeController::class, 'noteList'])->name('home.note-list');
+Route::post('/home/package-list', [\App\Http\Controllers\Api\HomeController::class, 'packageList'])->name('home.package-list');
+Route::post('/industry/add', [\App\Http\Controllers\Api\IndustryController::class, 'add'])->name('industry.add');
+Route::post('/industry/list', [\App\Http\Controllers\Api\IndustryController::class, 'getList'])->name('industry.list');
+Route::post('/inter/allow', [\App\Http\Controllers\Api\InterController::class, 'allow'])->name('inter.allow');
+Route::post('/inter/logout', [\App\Http\Controllers\Api\InterController::class, 'logout'])->name('inter.logout');
+Route::post('/job/add', [\App\Http\Controllers\Api\JobController::class, 'add'])->name('job.add');
+Route::post('/job/list', [\App\Http\Controllers\Api\JobController::class, 'getList'])->name('job.list');
+Route::post('/like/add', [\App\Http\Controllers\Api\LikeController::class, 'add'])->name('like.add');
+Route::post('/like/cancel', [\App\Http\Controllers\Api\LikeController::class, 'cancel'])->name('like.cancel');
+Route::post('/message/announce', [\App\Http\Controllers\Api\MessageController::class, 'announce'])->name('message.announce');
+Route::post('/message/clean', [\App\Http\Controllers\Api\MessageController::class, 'clean'])->name('message.clean');
+Route::post('/message/comment-receive', [\App\Http\Controllers\Api\MessageController::class, 'commentReceive'])->name('message.comment-receive');
+Route::post('/message/comment-send', [\App\Http\Controllers\Api\MessageController::class, 'commentSend'])->name('message.comment-send');
+Route::post('/message/like', [\App\Http\Controllers\Api\MessageController::class, 'like'])->name('message.like');
+Route::post('/message/unread', [\App\Http\Controllers\Api\MessageController::class, 'unread'])->name('message.unread');
+Route::post('/note/add', [\App\Http\Controllers\Api\NoteController::class, 'add'])->name('note.add');
+Route::post('/note/add-line', [\App\Http\Controllers\Api\NoteController::class, 'addLine'])->name('note.add-line');
+Route::post('/note/article-list', [\App\Http\Controllers\Api\NoteController::class, 'articleList'])->name('note.article-list');
+Route::post('/note/del', [\App\Http\Controllers\Api\NoteController::class, 'del'])->name('note.del');
+Route::post('/note/edit', [\App\Http\Controllers\Api\NoteController::class, 'edit'])->name('note.edit');
+Route::post('/note/get-detail', [\App\Http\Controllers\Api\NoteController::class, 'getDetail'])->name('note.get-detail');
+Route::post('/note/line-list', [\App\Http\Controllers\Api\NoteController::class, 'lineList'])->name('note.line-list');
+Route::post('/package/add', [\App\Http\Controllers\Api\PackageController::class, 'add'])->name('package.add');
+Route::post('/package/del', [\App\Http\Controllers\Api\PackageController::class, 'del'])->name('package.del');
+Route::post('/package/edit', [\App\Http\Controllers\Api\PackageController::class, 'edit'])->name('package.edit');
+Route::post('/package/get-detail', [\App\Http\Controllers\Api\PackageController::class, 'getDetail'])->name('package.get-detail');
+Route::post('/package/list', [\App\Http\Controllers\Api\PackageController::class, 'getList'])->name('package.list');
+Route::post('/package/more-list', [\App\Http\Controllers\Api\PackageController::class, 'moreList'])->name('package.more-list');
+Route::post('/package/target-list', [\App\Http\Controllers\Api\PackageController::class, 'targetList'])->name('package.target-list');
+Route::post('/pro-category/list', [\App\Http\Controllers\Api\ProCategoryController::class, 'getList'])->name('pro-category.list');
+Route::post('/pro/list', [\App\Http\Controllers\Api\ProController::class, 'getList'])->name('pro.list');
+Route::post('/pro/recommend-list', [\App\Http\Controllers\Api\ProController::class, 'recommendList'])->name('pro.recommend-list');
+Route::post('/quick/collect', [\App\Http\Controllers\Api\QuickController::class, 'collect'])->name('quick.collect');
+Route::post('/quick/preview', [\App\Http\Controllers\Api\QuickController::class, 'preview'])->name('quick.preview');
+Route::post('/relationship/add', [\App\Http\Controllers\Api\RelationshipController::class, 'add'])->name('relationship.add');
+Route::post('/relationship/cancel', [\App\Http\Controllers\Api\RelationshipController::class, 'cancel'])->name('relationship.cancel');
+Route::post('/relationship/follower', [\App\Http\Controllers\Api\RelationshipController::class, 'follower'])->name('relationship.follower');
+Route::post('/relationship/following', [\App\Http\Controllers\Api\RelationshipController::class, 'following'])->name('relationship.following');
+Route::post('/reply/add', [\App\Http\Controllers\Api\ReplyController::class, 'add'])->name('reply.add');
+Route::post('/reply/del', [\App\Http\Controllers\Api\ReplyController::class, 'del'])->name('reply.del');
+Route::post('/reply/list', [\App\Http\Controllers\Api\ReplyController::class, 'getList'])->name('reply.list');
+Route::post('/report/add', [\App\Http\Controllers\Api\ReportController::class, 'add'])->name('report.add');
+Route::post('/search/article', [\App\Http\Controllers\Api\SearchController::class, 'article'])->name('search.article');
+Route::post('/search/user', [\App\Http\Controllers\Api\SearchController::class, 'user'])->name('search.user');
+Route::post('/share/upload', [\App\Http\Controllers\Api\ShareController::class, 'upload'])->name('share.upload');
+Route::post('/site/phone-login', [\App\Http\Controllers\Api\SiteController::class, 'phoneLogin'])->name('site.phone-login');
+Route::post('/site/pwd-login', [\App\Http\Controllers\Api\SiteController::class, 'pwdLogin'])->name('site.pwd-login');
+Route::post('/sms/send', [\App\Http\Controllers\Api\SmsController::class, 'send'])->name('sms.send');
+Route::post('/square/attention-list', [\App\Http\Controllers\Api\SquareController::class, 'attentionList'])->name('square.attention-list');
+Route::post('/square/recommend-list', [\App\Http\Controllers\Api\SquareController::class, 'recommendList'])->name('square.recommend-list');
+Route::post('/user/avatar', [\App\Http\Controllers\Api\UserController::class, 'avatar'])->name('user.avatar');
+Route::post('/user/change-phone', [\App\Http\Controllers\Api\UserController::class, 'changePhone'])->name('user.change-phone');
+Route::post('/user/dynamic-list', [\App\Http\Controllers\Api\UserController::class, 'dynamicList'])->name('user.dynamic-list');
+Route::post('/user/edit', [\App\Http\Controllers\Api\UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/get-detail', [\App\Http\Controllers\Api\UserController::class, 'getDetail'])->name('user.get-detail');
+Route::post('/user/get-info', [\App\Http\Controllers\Api\UserController::class, 'getInfo'])->name('user.get-info');
+Route::post('/user/like-list', [\App\Http\Controllers\Api\UserController::class, 'likeList'])->name('user.like-list');
+Route::post('/user/note-list', [\App\Http\Controllers\Api\UserController::class, 'noteList'])->name('user.note-list');
+Route::post('/user/package-list', [\App\Http\Controllers\Api\UserController::class, 'packageList'])->name('user.package-list');
+Route::post('/user/re-pwd', [\App\Http\Controllers\Api\UserController::class, 'rePwd'])->name('user.re-pwd');
+Route::post('/user/unbind-wx', [\App\Http\Controllers\Api\UserController::class, 'unbindWx'])->name('user.unbind-wx');
+
+uri list : 
+Array
+(
+    [0] => /agreement/get-detail
+    [1] => /article/get-detail
+    [2] => /collect/add
+    [3] => /collect/cancel
+    [4] => /comment/add
+    [5] => /comment/del
+    [6] => /comment/list
+    [7] => /dynamic/del
+    [8] => /dynamic/get-detail
+    [9] => /feedback/add
+    [10] => /home/collect-list
+    [11] => /home/note-list
+    [12] => /home/package-list
+    [13] => /industry/add
+    [14] => /industry/list
+    [15] => /inter/allow
+    [16] => /inter/logout
+    [17] => /job/add
+    [18] => /job/list
+    [19] => /like/add
+    [20] => /like/cancel
+    [21] => /message/announce
+    [22] => /message/clean
+    [23] => /message/comment-receive
+    [24] => /message/comment-send
+    [25] => /message/like
+    [26] => /message/unread
+    [27] => /note/add
+    [28] => /note/add-line
+    [29] => /note/article-list
+    [30] => /note/del
+    [31] => /note/edit
+    [32] => /note/get-detail
+    [33] => /note/line-list
+    [34] => /package/add
+    [35] => /package/del
+    [36] => /package/edit
+    [37] => /package/get-detail
+    [38] => /package/list
+    [39] => /package/more-list
+    [40] => /package/target-list
+    [41] => /pro-category/list
+    [42] => /pro/list
+    [43] => /pro/recommend-list
+    [44] => /quick/collect
+    [45] => /quick/preview
+    [46] => /relationship/add
+    [47] => /relationship/cancel
+    [48] => /relationship/follower
+    [49] => /relationship/following
+    [50] => /reply/add
+    [51] => /reply/del
+    [52] => /reply/list
+    [53] => /report/add
+    [54] => /search/article
+    [55] => /search/user
+    [56] => /share/upload
+    [57] => /site/phone-login
+    [58] => /site/pwd-login
+    [59] => /sms/send
+    [60] => /square/attention-list
+    [61] => /square/recommend-list
+    [62] => /user/avatar
+    [63] => /user/change-phone
+    [64] => /user/dynamic-list
+    [65] => /user/edit
+    [66] => /user/get-detail
+    [67] => /user/get-info
+    [68] => /user/like-list
+    [69] => /user/note-list
+    [70] => /user/package-list
+    [71] => /user/re-pwd
+    [72] => /user/unbind-wx
+)
+
+
+[Controller List] : 
+
+generate controller : data/20201204/api/Api/AgreementController.php ... 
+generate controller : data/20201204/api/Api/ArticleController.php ... 
+generate controller : data/20201204/api/Api/CollectController.php ... 
+generate controller : data/20201204/api/Api/CommentController.php ... 
+generate controller : data/20201204/api/Api/DynamicController.php ... 
+generate controller : data/20201204/api/Api/FeedbackController.php ... 
+generate controller : data/20201204/api/Api/HomeController.php ... 
+generate controller : data/20201204/api/Api/IndustryController.php ... 
+generate controller : data/20201204/api/Api/InterController.php ... 
+generate controller : data/20201204/api/Api/JobController.php ... 
+generate controller : data/20201204/api/Api/LikeController.php ... 
+generate controller : data/20201204/api/Api/MessageController.php ... 
+generate controller : data/20201204/api/Api/NoteController.php ... 
+generate controller : data/20201204/api/Api/PackageController.php ... 
+generate controller : data/20201204/api/Api/ProCategoryController.php ... 
+generate controller : data/20201204/api/Api/ProController.php ... 
+generate controller : data/20201204/api/Api/QuickController.php ... 
+generate controller : data/20201204/api/Api/RelationshipController.php ... 
+generate controller : data/20201204/api/Api/ReplyController.php ... 
+generate controller : data/20201204/api/Api/ReportController.php ... 
+generate controller : data/20201204/api/Api/SearchController.php ... 
+generate controller : data/20201204/api/Api/ShareController.php ... 
+generate controller : data/20201204/api/Api/SiteController.php ... 
+generate controller : data/20201204/api/Api/SmsController.php ... 
+generate controller : data/20201204/api/Api/SquareController.php ... 
+generate controller : data/20201204/api/Api/UserController.php ... 
+
+controller list : 
+Array
+(
+    [0] => AgreementController
+    [1] => ArticleController
+    [2] => CollectController
+    [3] => CommentController
+    [4] => DynamicController
+    [5] => FeedbackController
+    [6] => HomeController
+    [7] => IndustryController
+    [8] => InterController
+    [9] => JobController
+    [10] => LikeController
+    [11] => MessageController
+    [12] => NoteController
+    [13] => PackageController
+    [14] => ProCategoryController
+    [15] => ProController
+    [16] => QuickController
+    [17] => RelationshipController
+    [18] => ReplyController
+    [19] => ReportController
+    [20] => SearchController
+    [21] => ShareController
+    [22] => SiteController
+    [23] => SmsController
+    [24] => SquareController
+    [25] => UserController
+)
+
+service prop list : 
+ * @property AgreementService $AgreementService
+ * @property ArticleService $ArticleService
+ * @property CollectService $CollectService
+ * @property CommentService $CommentService
+ * @property DynamicService $DynamicService
+ * @property FeedbackService $FeedbackService
+ * @property HomeService $HomeService
+ * @property IndustryService $IndustryService
+ * @property InterService $InterService
+ * @property JobService $JobService
+ * @property LikeService $LikeService
+ * @property MessageService $MessageService
+ * @property NoteService $NoteService
+ * @property PackageService $PackageService
+ * @property ProCategoryService $ProCategoryService
+ * @property ProService $ProService
+ * @property QuickService $QuickService
+ * @property RelationshipService $RelationshipService
+ * @property ReplyService $ReplyService
+ * @property ReportService $ReportService
+ * @property SearchService $SearchService
+ * @property ShareService $ShareService
+ * @property SiteService $SiteService
+ * @property SmsService $SmsService
+ * @property SquareService $SquareService
+ * @property UserService $UserService
+
+repository prop list : 
+ * @property AgreementRepository $AgreementRepository
+ * @property ArticleRepository $ArticleRepository
+ * @property CollectRepository $CollectRepository
+ * @property CommentRepository $CommentRepository
+ * @property DynamicRepository $DynamicRepository
+ * @property FeedbackRepository $FeedbackRepository
+ * @property HomeRepository $HomeRepository
+ * @property IndustryRepository $IndustryRepository
+ * @property InterRepository $InterRepository
+ * @property JobRepository $JobRepository
+ * @property LikeRepository $LikeRepository
+ * @property MessageRepository $MessageRepository
+ * @property NoteRepository $NoteRepository
+ * @property PackageRepository $PackageRepository
+ * @property ProCategoryRepository $ProCategoryRepository
+ * @property ProRepository $ProRepository
+ * @property QuickRepository $QuickRepository
+ * @property RelationshipRepository $RelationshipRepository
+ * @property ReplyRepository $ReplyRepository
+ * @property ReportRepository $ReportRepository
+ * @property SearchRepository $SearchRepository
+ * @property ShareRepository $ShareRepository
+ * @property SiteRepository $SiteRepository
+ * @property SmsRepository $SmsRepository
+ * @property SquareRepository $SquareRepository
+ * @property UserRepository $UserRepository

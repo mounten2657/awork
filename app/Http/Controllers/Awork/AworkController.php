@@ -25,7 +25,7 @@ class AworkController extends Controller {
             if ($ret instanceof JsonResponse) {
                 return $ret;
             }
-            return $this->success();
+            return $this->success($ret);
         }
         // list all methods
         echo "Current ID : " . md5(time()) . "<br>";
@@ -71,7 +71,7 @@ class AworkController extends Controller {
      * @date 2022/06/25 11:09
      */
     public function clientIp() {
-        return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+        return client_ip();
     }
 
     /**

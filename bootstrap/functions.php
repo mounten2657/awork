@@ -73,3 +73,17 @@ if (!function_exists('base_url')) {
         return $sUrl;
     }
 }
+
+if (!function_exists('client_ip')) {
+    /**
+     * 获取客户端 IP
+     *
+     * @return mixed|string
+     * <li> true </li>
+     * @date 2022/06/25 16:45
+     */
+    function client_ip() {
+        return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '';
+    }
+}
+

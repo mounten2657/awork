@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // default index
-Route::get('/', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);
+Route::redirect('/', '/stack/');  // proxy to web stack
 
 // awork
-Route::get('/awork', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);
+Route::get('/{uri}', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork'])
+    ->where('uri', 'awork|index|index.html');
 // cnzz
 Route::get('/cnzz', [\App\Http\Controllers\Smplote\SmploteController::class, 'cnzz']);
 

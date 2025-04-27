@@ -188,7 +188,7 @@
 
     <div class="row" style="display: none">
         <div class="col-sm-12">
-            <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data_new.jpg"></a>
+            <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data.jpg"></a>
         </div>
     </div>
 

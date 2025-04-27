@@ -62,22 +62,22 @@
             <!-- Server -->
             <div  class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>Server</code></div>
-                <label><a href="{{base_url()}}/joplin" target="_blank" type="button" class="btn btn-primary btn-xs">Joplin</a></label>
-                <label><a href="{{base_url()}}/photo" target="_blank" type="button" class="btn btn-primary btn-xs">Photo Station</a></label>
-                <label><a href="{{base_url()}}/video" target="_blank" type="button" class="btn btn-primary btn-xs">Video Station</a></label>
-                <label><a href="{{base_url()}}/audio" target="_blank" type="button" class="btn btn-primary btn-xs">Audio Station</a></label>
-                <label><a href="{{base_url()}}/synology" target="_blank" type="button" class="btn btn-primary btn-xs">Synology</a></label>
-                <label><a href="{{base_url()}}/baota/f3a1cb39/" target="_blank" type="button" class="btn btn-primary btn-xs">BaoTa</a></label>
+                <label><a href="https://joplin.smplote.com" target="_blank" type="button" class="btn btn-primary btn-xs">Joplin</a></label>
+                <label><a href="https://synology.smplote.com/photo" target="_blank" type="button" class="btn btn-primary btn-xs">Photo Station</a></label>
+                <label><a href="https://synology.smplote.com/video" target="_blank" type="button" class="btn btn-primary btn-xs">Video Station</a></label>
+                <label><a href="https://synology.smplote.com/audio" target="_blank" type="button" class="btn btn-primary btn-xs">Audio Station</a></label>
+                <label><a href="https://synology.smplote.com" target="_blank" type="button" class="btn btn-primary btn-xs">Synology</a></label>
+                <label><a href="https://pannael.somplote.com/f3a1cb39/" target="_blank" type="button" class="btn btn-primary btn-xs">BaoTa</a></label>
             </div>
             <!-- File -->
             <div class="row platform-sm-line">
                 <div class="col-sm-2 form-group"><span class="mg-r-20"></span><code>File</code></div>
-                <label><a href="{{base_url()}}/kodbox/#explorer" target="_blank" type="button" class="btn btn-primary btn-xs">File List</a></label>
-                <label><a href="{{base_url()}}/kodbox/index.php?desktop" target="_blank" type="button" class="btn btn-primary btn-xs">Desktop</a></label>
-                <label><a href="{{base_url()}}/kodbox/index.php?share/folder&user=1&sid=4biYpd8J" target="_blank" type="button" class="btn btn-primary btn-xs">Images</a></label>
-                <label><a href="{{base_url()}}/kodbox?share/folder&user=1&sid=M8Ud6WQK" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #0a9afe">Documents</a></label>
-                <label><a href="{{base_url()}}/kodbox/plugins/adminer/adminer/" target="_blank" type="button" class="btn btn-primary btn-xs">Mysql Adminer</a></label>
-                <label><a href="{{base_url()}}/layui" target="_blank" type="button" class="btn btn-primary btn-xs">Layui</a></label>
+                <label><a href="https://www.smplote.com/kodbox/#explorer" target="_blank" type="button" class="btn btn-primary btn-xs">File List</a></label>
+                <label><a href="https://www.smplote.com/kodbox/index.php?desktop" target="_blank" type="button" class="btn btn-primary btn-xs">Desktop</a></label>
+                <label><a href="https://www.smplote.com/kodbox/index.php?share/folder&user=1&sid=4biYpd8J" target="_blank" type="button" class="btn btn-primary btn-xs">Images</a></label>
+                <label><a href="https://www.smplote.com/kodbox?share/folder&user=1&sid=M8Ud6WQK" target="_blank" type="button" class="btn btn-primary btn-xs" style="background: #0a9afe">Documents</a></label>
+                <label><a href="https://www.smplote.com/kodbox/plugins/adminer/adminer/" target="_blank" type="button" class="btn btn-primary btn-xs">Mysql Adminer</a></label>
+                <label><a href="https://www.smplote.com/layui" target="_blank" type="button" class="btn btn-primary btn-xs">Layui</a></label>
             </div>
             <!-- Mark -->
             <div class="row lh-2">
@@ -186,9 +186,9 @@
         </form>
     </div>
 
-    <div class="row" style="display: none">
+    <div class="row" style="display: block">
         <div class="col-sm-12">
-            <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data.jpg"></a>
+            <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data.png"></a>
         </div>
     </div>
 

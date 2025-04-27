@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // default index
-Route::redirect('/', '/stack/');  // proxy to web stack
+Route::get('/', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork']);
 
 // awork
 Route::get('/{uri}', [\App\Http\Controllers\Smplote\SmploteController::class, 'awork'])

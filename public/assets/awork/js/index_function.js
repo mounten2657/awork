@@ -240,19 +240,21 @@ function tooLuFormat(code, operate, id)
     return true;
 }
 
-// ssha256 and ssha512
+// sha256 and sha512
 function ssha(code, id)
 {
     var loadIndex = layer.load(2, {time: 10 * 1000});
     $.ajax({
-        url: '/extra/url?' + id,
+        url: '/awork/api/extra/sha',
         type: 'post',
-        data: {code: code},
+        data: {code: code, 'type': id},
         success: function (res) {
             res = JSON.parse(res);
-            if (res.code === '0') {
+            if (res.code === 0) {
+                tout('');
                 tout(res.data);
             } else {
+                tout('');
                 tout(res.msg, true);
             }
             layer.close(loadIndex);

@@ -47,13 +47,14 @@ class Controller extends BaseController
      * 接口 json 返回
      *
      * @param $data
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse | string
      * <li> true </li>
      * @author smplote@gmail.com
      * @date 2022/06/25 11:41
      */
     public function jsonReturn($data) {
-        return response()->json($data);
+        return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        //return response()->json($data);
     }
 
 }

@@ -9,15 +9,22 @@
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/awork/css/index.css">
 </head>
 
-<body>
-<h4 class="text-center">Awork {{$awork_version}} index
-    <small>
-        --- last updated at {{$awork_updated_at}}
-    </small>
-</h4>
+<body style="
+    background-image: url('{{base_url()}}/assets/awork/img/big_data.png');
+    background-color: rgba(125, 125, 125, 0.02);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+">
 
-<div class="container" style="width: 1500px; line-height: 3em">
-
+<div class="container" style="width: auto; line-height: 3em;">
+    <h4 class="text-center">Awork {{$awork_version}} index
+        <small>
+            --- last updated at {{$awork_updated_at}}
+        </small>
+    </h4>
     <div class="row">
 
         <div class="col-lg-6">
@@ -133,7 +140,7 @@
             <label id="explode"><button type="button" class="btn btn-primary btn-xs">explode</button></label>
             <label id="uni_decode"><button type="button" class="btn btn-primary btn-xs">unicode decode</button></label>
             <label id="unicode"><button type="button" class="btn btn-primary btn-xs">unicode</button></label>
-            <label><span style="width: 100px" class="col-lg-2"></span></label>
+            <label><span style="width: 100px; display: none" class="col-lg-2"></span></label>
             <label id="rand_passwd"><button type="button" class="btn btn-primary btn-xs">rand passwd</button></label>
             <label id="sql_format"><button type="button" class="btn btn-primary btn-xs" title="双击精简">sql format</button></label>
             <label id="xml_format"><button type="button" class="btn btn-primary btn-xs" title="双击精简">xml format</button></label>
@@ -186,7 +193,7 @@
         </form>
     </div>
 
-    <div class="row" style="display: block">
+    <div class="row" style="display: none">
         <div class="col-sm-12">
             <a id="big_data" href="javascript:" ><img src="{{base_url()}}/assets/awork/img/big_data.png"></a>
         </div>

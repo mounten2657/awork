@@ -199,7 +199,7 @@
         </div>
     </div>
 
-    <footer style="text-align: center; margin-top: 45px;">© 2020-2030 awork. all rights reserved.</footer>
+    <footer style="text-align: center; padding: 45px;">© 2020-2030 awork. all rights reserved.</footer>
 
 </div>
 

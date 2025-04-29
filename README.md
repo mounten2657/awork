@@ -51,15 +51,15 @@ php artisan key:generate
 php artisan serve
 ```
 
-安装完成：http://127.0.0.1
+finish：http://127.0.0.1
 
 ## License
-- 这个项目免费开源，不存在收费。
-- 本工具仅供学习和技术研究使用，不得用于任何商业或非法行为。
-- 本工具的作者不对本工具的安全性、完整性、可靠性、有效性、正确性或适用性做任何明示或暗示的保证，也不对本工具的使用或滥用造成的任何直接或间接的损失、责任、索赔、要求或诉讼承担任何责任。
-- 本工具的作者保留随时修改、更新、删除或终止本工具的权利，无需事先通知或承担任何义务。
-- 本工具的使用者应遵守相关法律法规，尊重微信的版权和隐私，不得侵犯微信或其他第三方的合法权益，不得从事任何违法或不道德的行为。
-- 本工具的使用者在下载、安装、运行或使用本工具时，即表示已阅读并同意本免责声明。如有异议，请立即停止使用本工具，并删除所有相关文件。
-- 代码仅用于对技术的交流学习使用，禁止用于实际生产项目，请勿用于非法用途和商业用途！如因此产生任何法律纠纷，均与作者无关！
+- This project is free and open source, and there is no charge.
+- This tool is for learning and technical research only and shall not be used for any commercial or illegal behavior.
+- The author of this tool does not make any express or implied guarantee for the security, integrity, reliability, effectiveness, correctness or applicability of this tool, and does not assume any responsibility for any direct or indirect loss, liability, claim, demand or lawsuit caused by the use or abuse of this tool.
+- The author of this tool reserves the right to modify, update, delete or terminate this tool at any time without prior notice or any obligation.
+- Users of this tool should abide by relevant laws and regulations, respect the copyright and privacy of WeChat, shall not infringe the legitimate rights and interests of WeChat or other third parties, and shall not engage in any illegal or unethical behavior.
+- When users of this tool download, install, run or use this tool, they are deemed to have read and agreed to this disclaimer. If you have any objection, please stop using this tool immediately and delete all related files.
+- The code is only used for technical communication and learning, and is prohibited from being used in actual production projects. Please do not use it for illegal and commercial purposes! If any legal disputes arise from this, it has nothing to do with the author!
 
 

@@ -1,6 +1,7 @@
 # **Smplote** :
 
-## a tiny and simple framework.
+## summary
+    a tiny and simple framework.
     simple time toool and str tool for daily coding.
 
 ![首页](public/assets/awork/img/index.png)
@@ -39,7 +40,7 @@
 
 ```
 
-## 快速开始
+## quick start
 ```bash
 git clone https://gitee.com/mounten2657/smplote.git
 

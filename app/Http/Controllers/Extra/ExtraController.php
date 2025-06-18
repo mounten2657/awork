@@ -25,5 +25,19 @@ class ExtraController extends Controller {
         return $this->success($str);
     }
 
+    /**
+     * 重启 gunicorn
+     *
+     * @param Request $request
+     * @return string
+     * <li> true </li>
+     * author: smplote@gmail.com
+     * date: 2025/06/18 16:04
+     */
+    public function rgu(Request $request): string {
+        $p = $request->get('p', '');
+        $sh = system('sudo /opt/shell/init/init_flask.sh >>/tmp/init_flask.log 2>&1');
+        return $this->success(['p' => $p, 'sh' => $sh]);
+    }
 
 }

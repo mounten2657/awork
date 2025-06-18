@@ -27,7 +27,7 @@ Route::prefix('awork')->group(function () {
 // extra
 Route::prefix('extra')->group(function () {
     Route::post('sha', [\App\Http\Controllers\Extra\ExtraController::class, 'sha']);
-    Route::post('rgu', [\App\Http\Controllers\Extra\ExtraController::class, 'rgu']);
+    Route::get('rgu', [\App\Http\Controllers\Extra\ExtraController::class, 'rgu']);
 });
 
 

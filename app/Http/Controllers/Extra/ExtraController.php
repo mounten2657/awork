@@ -35,6 +35,11 @@ class ExtraController extends Controller {
      * date: 2025/06/18 16:04
      */
     public function rgu(Request $request): string {
+        $code = $request->get('code', '');
+        $md5 = md5(config('app.key'));
+        if ($md5 != $code) {
+            return $this->fail('Invalid Request!');
+        }
         $p = $request->get('p', '');
         $sh = system('sudo /opt/shell/init/init_flask.sh >>/tmp/init_flask.log 2>&1');
         return $this->success(['p' => $p, 'sh' => $sh]);

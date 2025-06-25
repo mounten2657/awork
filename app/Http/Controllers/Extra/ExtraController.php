@@ -41,7 +41,7 @@ class ExtraController extends Controller {
             return $this->fail('Invalid Request!');
         }
         $p = $request->get('p', '');
-        $sh = system('sudo /opt/shell/init/init_flask.sh >>/tmp/init_flask.log 2>&1');
+        $sh = system('sudo /opt/shell/init/init_flask.sh 1 >>/tmp/init_flask.log 2>&1');
         return $this->success(['p' => $p, 'sh' => $sh]);
     }
 

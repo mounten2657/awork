@@ -10,17 +10,17 @@
 </head>
 
 <body style="
-    background-image: url('{{base_url()}}/assets/awork/img/big_data.png');
     background-color: rgba(125, 125, 125, 0.02);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-color: #181A1B;
 ">
 
 <div class="container" style="width: auto; line-height: 3em;">
-    <h4 class="text-center">Awork {{$awork_version}} index
+    <h4 class="text-center" style="color: #AAA;">Awork {{$awork_version}} index
         <small>
             --- last updated at {{$awork_updated_at}}
         </small>
@@ -53,7 +53,7 @@
                     <label for="date_in"><button type="button" class="btn btn-primary btn-xs">Time</button></label>
                 </div>
                 <code id="date_out">/</code>
-            </div><hr>
+            </div><hr style="background-color: #000;">
             <!-- Tool for platform -->
             <h4 class="text-info mg-b-15">Tool for platform</h4>
             <!-- Api -->
@@ -199,7 +199,7 @@
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 45px;">© 2020-2030 awork. all rights reserved.</footer>
+    <footer style="text-align: center; padding: 45px; color:#AAA;">© 2020-2030 awork. all rights reserved.</footer>
 
 </div>
 

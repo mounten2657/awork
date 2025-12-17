@@ -197,7 +197,7 @@ function deUnicode(str){
 function tout(msg, err = false) {
     msg = deUnicode(msg);
     if (!err) {
-        $('#text_out').val(msg).css('color', '#333');
+        $('#text_out').val(msg).css('color', '#ddd');
     } else {
         $('#text_out').val(msg).css('color', '#c7254e');
     }

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>awork</title>
-    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/bootstrap_v3_3_0.min.css?v={{$awork_updated_at}}">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/bootstrap_v3_3_0.min.css?v={{$awork_version}}">
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/layui-v2.5.6/css/layui.css">
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/short.css">
-    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/awork/css/index.css?v={{$awork_updated_at}}">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/awork/css/index.css?v={{$awork_version}}">
 </head>
 
 <body style="
@@ -209,8 +209,8 @@
 <script src="{{base_url()}}/assets/common/js/public.js"></script>
 <script src="{{base_url()}}/assets/common/js/md5.js"></script>
 <script src="{{base_url()}}/assets/common/js/base64.js"></script>
-<script src="{{base_url()}}/assets/awork/js/index_function.js?v={{$awork_updated_at}}"></script>
-<script src="{{base_url()}}/assets/awork/js/index.js?v={{$awork_updated_at}}" charset="gb2312"></script>
+<script src="{{base_url()}}/assets/awork/js/index_function.js?v={{$awork_version}}"></script>
+<script src="{{base_url()}}/assets/awork/js/index.js?v={{$awork_version}}" charset="gb2312"></script>
 
 </body>
 </html>

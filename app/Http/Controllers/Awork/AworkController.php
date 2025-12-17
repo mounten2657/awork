@@ -29,8 +29,8 @@ class AworkController extends Controller {
             return $this->success($ret);
         }
         // list all methods
-        echo "Current ID : " . md5(time()) . "<br>";
-        $listHtml = '';
+        // echo "Current ID : " . md5(time()) . "<br>";
+        // $listHtml = '';
         $methods = get_class_methods($this);
         return $this->success($methods);
         foreach ($methods as $key => $method) {

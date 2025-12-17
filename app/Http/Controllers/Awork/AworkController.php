@@ -25,7 +25,7 @@ class AworkController extends Controller {
             if ($ret instanceof JsonResponse) {
                 return $ret;
             }
-            $ret = ['arg' => $request->all(), 'ret' => $ret];
+            // $ret = ['arg' => $request->all(), 'ret' => $ret];
             return $this->success($ret);
         }
         // list all methods

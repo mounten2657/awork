@@ -149,7 +149,7 @@
             <label id="base64_decode"><button type="button" class="btn btn-primary btn-xs" title="双击替换">base64 decode</button></label>
             <label id="sha256"><button type="button" class="btn btn-primary btn-xs">sha256</button></label>
             <label id="sha512"><button type="button" class="btn btn-primary btn-xs">sha512</button></label>
-            <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none; color: #555;" ></textarea>
+            <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none;" ></textarea>
         </div>
 
     </div>

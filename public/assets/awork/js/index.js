@@ -3,7 +3,7 @@ $(function () {
 
     /**************************************Tool for timestamp***********************************************/
     //初始化
-    let color = '#333';
+    let color = '#555';
     let errColor = '#c7254e';
     let nowTimer = setInterval("getNowTime()",1000);
     let nowTimeInt = parseInt((new Date()).getTime()/1000);

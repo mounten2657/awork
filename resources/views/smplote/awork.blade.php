@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>awork</title>
-    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/bootstrap_v3_3_0.min.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/bootstrap_v3_3_0.min.css?v=20251201">
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/layui-v2.5.6/css/layui.css">
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/common/css/short.css">
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/assets/awork/css/index.css">
@@ -149,7 +149,7 @@
             <label id="base64_decode"><button type="button" class="btn btn-primary btn-xs" title="双击替换">base64 decode</button></label>
             <label id="sha256"><button type="button" class="btn btn-primary btn-xs">sha256</button></label>
             <label id="sha512"><button type="button" class="btn btn-primary btn-xs">sha512</button></label>
-            <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none" ></textarea>
+            <textarea title="" id="text_out" class="form-control" rows="20" placeholder="" style="resize: none; color: #555;" ></textarea>
         </div>
 
     </div>

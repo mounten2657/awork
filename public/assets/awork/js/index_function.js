@@ -231,7 +231,7 @@ function tooLuFormat(code, operate, id)
 {
     var loadIndex = layer.load(2, {time: 10 * 1000});
     $.ajax({
-        url: base_url + '/extra/url?' + id,
+        url: base_url + '/api/extra/url?id=' + id,  // 功能待开发
         type: 'post',
         data: {code: code, operate: operate},
         success: function (res) {

@@ -1,4 +1,11 @@
 
+//网站根路径
+function getBaseUrl()
+{
+    return $('#web_base_url').text();
+}
+var base_url = getBaseUrl();
+
 //实时时间
 function getNowTime()
 {
@@ -224,7 +231,7 @@ function tooLuFormat(code, operate, id)
 {
     var loadIndex = layer.load(2, {time: 10 * 1000});
     $.ajax({
-        url: '/extra/url?' + id,
+        url: base_url + 'extra/url?' + id,
         type: 'post',
         data: {code: code, operate: operate},
         success: function (res) {
@@ -245,7 +252,7 @@ function ssha(code, id)
 {
     var loadIndex = layer.load(2, {time: 10 * 1000});
     $.ajax({
-        url: '/api/extra/sha',
+        url: base_url + 'api/extra/sha',
         type: 'post',
         data: {code: code, 'type': id},
         success: function (res) {

@@ -35,16 +35,15 @@ class ExtraController extends Controller {
      * date: 2025/06/18 16:04
      */
     public function rgu(Request $request): string {
-        $type = $request->get('type', 'r');
+        $p = $request->get('p', 'r');
         $code = $request->get('code', '');
         $md5 = md5(config('app.key'));
-        $action = 'restart' ? $type == 'r' : 'stop';
+        $proc = 'restart' ? $p == 'r' : 'stop';
         if ($md5 != $code) {
             return $this->fail('Invalid Request!');
         }
-        $p = $request->get('p', '');
-        $sh = system("sudo curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/www-python/{$action}");
-        return $this->success(['p' => $p, 'sh' => $sh]);
+        $sh = system("sudo curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/www-python/{$proc}");
+        return $this->success(['p' => $proc, 'sh' => $sh]);
     }
 
 }

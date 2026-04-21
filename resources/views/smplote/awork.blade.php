@@ -24,6 +24,7 @@
         <small>
             --- last updated at {{$awork_updated_at}}
         </small>
+        <span id="web_base_url" style="display: none;">{{base_url()}}</span>
     </h4>
     <div class="row">
 

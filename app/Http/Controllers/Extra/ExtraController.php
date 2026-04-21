@@ -38,7 +38,7 @@ class ExtraController extends Controller {
         $type = $request->get('type', 'r');
         $code = $request->get('code', '');
         $md5 = md5(config('app.key'));
-        $action = 'restart' ? $type == 'r' : 'stop'
+        $action = 'restart' ? $type == 'r' : 'stop';
         if ($md5 != $code) {
             return $this->fail('Invalid Request!');
         }
